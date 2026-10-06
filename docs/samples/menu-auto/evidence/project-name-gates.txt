@@ -1,0 +1,14 @@
+MUD-022 final gates 2026-10-06
+43 Test functions passed; 24 name/mode subcases
+go test ./...: exit0
+go test -race -coverpkg=./internal/mudarro/...: exit0
+go vet ./...: exit0
+Linux CLI build: exit0
+Darwin arm64 terminal tests cross-compile: exit0; not runtime
+bash -n demo-menu.sh record-menu.sh: exit0
+validate-menu.sh actual npm/node/menu/supervisor: exit0
+git diff --check: exit0
+coverage deduplicated1063/1451=73.26%
+GIF decode/composed frame view inspection: Aurora verified,983x7398frames15.04s
+Binary ef36e6c1142bd7294e543208895cea21e125c6898d14ec168e40c1c7eb327890
+Previous checkpoints/evidence preserved

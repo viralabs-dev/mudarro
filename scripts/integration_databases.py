@@ -18,17 +18,30 @@ def run(args, cwd, env=None, capture=False):
 
 with (nullcontext(os.environ["MUDARRO_TEST_ROOT"]) if os.environ.get("MUDARRO_TEST_ROOT") else tempfile.TemporaryDirectory(prefix="mudarro-databases-")) as temp:
     base = Path(temp)
-    venv = base / "python-env"
-    run([sys.executable, "-m", "venv", str(venv)], base)
-    python = str(venv / "bin/python")
-    run([python, "-m", "pip", "install", "alembic", "sqlalchemy", "django", "psycopg[binary]"], base)
-    js = base / "js-deps"
-    js.mkdir()
-    (js / "package.json").write_text('{"private":true}')
-    run(["npm", "install", "--no-audit", "--no-fund", "prisma@7", "@prisma/client@7"], js)
-    run(["node", "node_modules/@prisma/engines/scripts/postinstall.js"], js)
+    # Reuse mode never installs; both paths must point to existing dependencies.
+    reuse_python = os.environ.get("MUDARRO_PYTHON_ENV")
+    reuse_js = os.environ.get("MUDARRO_JS_DEPS")
+    if bool(reuse_python) != bool(reuse_js):
+        raise SystemExit("Configure MUDARRO_PYTHON_ENV e MUDARRO_JS_DEPS juntos")
     if not shutil.which("goose"):
-        raise SystemExit("Instale Goose antes deste teste: go install github.com/pressly/goose/v3/cmd/goose@v3.24.1")
+        raise SystemExit("Goose ausente; nenhum pacote instalado. Forneça um Goose existente no PATH")
+    if reuse_python:
+        venv = Path(reuse_python).resolve()
+        js = Path(reuse_js).resolve()
+        python = str(venv / "bin/python")
+        run([python, "-c", "import alembic, sqlalchemy, django, psycopg"], base)
+        if not (js / "node_modules/prisma").is_dir():
+            raise SystemExit("Prisma ausente nas dependências fornecidas; nenhuma instalação feita")
+    else:
+        venv = base / "python-env"
+        run([sys.executable, "-m", "venv", str(venv)], base)
+        python = str(venv / "bin/python")
+        run([python, "-m", "pip", "install", "alembic", "sqlalchemy", "django", "psycopg[binary]"], base)
+        js = base / "js-deps"
+        js.mkdir()
+        (js / "package.json").write_text('{"private":true}')
+        run(["npm", "install", "--no-audit", "--no-fund", "prisma@7", "@prisma/client@7"], js)
+        run(["node", "node_modules/@prisma/engines/scripts/postinstall.js"], js)
     kinds = ["sqlite"]
     if os.environ.get("TEST_POSTGRES_URL"):
         kinds.append("postgresql")

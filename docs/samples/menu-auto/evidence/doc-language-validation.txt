@@ -1,0 +1,17 @@
+Documentation audit 2026-10-06
+Markdown documents checked: 24
+Broken relative links: 0
+English default: README.md and docs/*.md
+Portuguese mirrors: docs/pt-BR (12 documents)
+Shared evidence/assets: no duplicate copies in localization
+Test tree physical files confirmed: 16
+Final metrics checked against test-tree coverage/functions: 1035/1427=72.53%; terminal138/152; HasColor100%; Choose97.3%; terminalSize81.8%
+Commands/keys/checksums/license references retained; executable Portuguese comments retained deliberately
+Vault untouched
+
+MUD-022 final audit 2026-10-06
+Documents checked: 24; broken relative links: 0
+Current stage: 43 tests, 24 name-mode cases; 1063/1451=73.26%, 388 uncovered
+Terminal function metrics read from project-name-coverage-functions.txt
+MUD-017 measurements preserved historical; final media 983x739/8frames/15.04s; graphical screenshot pending, user design approved
+English/pt-BR updated; Vault/production/tests untouched by docs owner

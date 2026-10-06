@@ -1,0 +1,89 @@
+Creating cluster "mudarro-helm-test-561632" ...
+ • Ensuring node image (kindest/node:v1.32.2) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.32.2) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 2m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 2m0s for control-plane = Ready ⏳
+ • Ready after 17s 💚
+Set kubectl context to "kind-mudarro-helm-test-561632"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-mudarro-helm-test-561632
+
+Have a nice day! 👋
+namespace/mudarro-helm created
+OK web: kubectl
+OK web: helm
+Nenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.
+gerar: .mudarro/scripts/web/down.sh
+gerar: .mudarro/scripts/web/logs.sh
+gerar: .mudarro/scripts/web/restart.sh
+gerar: .mudarro/scripts/web/status.sh
+gerar: .mudarro/scripts/web/up.sh
+gerar: menu.sh
+Release "web" does not exist. Installing it now.
+NAME: web
+LAST DEPLOYED: Tue Oct  6 00:54:49 2026
+NAMESPACE: mudarro-helm
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+NAME: web
+LAST DEPLOYED: Tue Oct  6 00:54:49 2026
+NAMESPACE: mudarro-helm
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+helm-ready
+deployment.apps/web restarted
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+deployment "web" successfully rolled out
+deployment.apps/web scaled
+NAME        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+keep-data   Bound    pvc-16e9c2b2-dd69-4096-9e3f-8bb9450a7360   1Mi        RWO            standard       <unset>                 11s
+persistentvolumeclaim/keep-data condition met
+pod/web-66c6bbf59f-75q2w condition met
+pod/web-6d456d9644-ls82z condition met
+Release "web" has been upgraded. Happy Helming!
+NAME: web
+LAST DEPLOYED: Tue Oct  6 00:55:32 2026
+NAMESPACE: mudarro-helm
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+mudarro-owned-fixture-588851
+deployment.apps/web scaled
+pod/web-66c6bbf59f-k5hp8 condition met
+Release "web" has been upgraded. Happy Helming!
+NAME: web
+LAST DEPLOYED: Tue Oct  6 00:56:06 2026
+NAMESPACE: mudarro-helm
+STATUS: deployed
+REVISION: 3
+TEST SUITE: None
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+deployment.apps/web restarted
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+deployment "web" successfully rolled out
+deployment.apps/web scaled
+PVC persistence: OK; Bound, same UID, content survived down/up/restart (mudarro-helm)
+Deleting cluster "mudarro-helm-test-561632" ...
+Deleted nodes: ["mudarro-helm-test-561632-control-plane"]

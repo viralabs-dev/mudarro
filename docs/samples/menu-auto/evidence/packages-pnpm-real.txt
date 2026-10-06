@@ -1,0 +1,118 @@
+{
+  "config": {
+    "version": 1,
+    "name": "mudarro-menu-sample",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "pnpm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "pnpm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "pnpm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "pnpm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "hello",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "hello"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "start",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "start"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    }
+  ],
+  "warnings": null
+}
+Projeto: mudarro-menu-sample
+- app-javascript (.): javascript / pnpm / local
+  sugestão: app-javascript:hello [package.json]
+  sugestão: app-javascript:start [package.json]
+  sugestão: app-javascript:test [package.json]
+Criado mudarro.yaml. Revise as pendências e execute mudarro generate.
+gerar: .mudarro/scripts/app-javascript/down.sh
+gerar: .mudarro/scripts/app-javascript/hello.sh
+gerar: .mudarro/scripts/app-javascript/install.sh
+gerar: .mudarro/scripts/app-javascript/logs.sh
+gerar: .mudarro/scripts/app-javascript/restart.sh
+gerar: .mudarro/scripts/app-javascript/start.sh
+gerar: .mudarro/scripts/app-javascript/status.sh
+gerar: .mudarro/scripts/app-javascript/test.sh
+gerar: .mudarro/scripts/app-javascript/up.sh
+gerar: menu.sh
+$ node -e "console.log('sample quality OK')"
+sample quality OK
+$ node -e "console.log('sample custom OK')"
+sample custom OK
+app-javascript: iniciado (PID 600722)
+app-javascript: já está em execução
+app-javascript: em execução (PID 600722)
+sample ready
+app-javascript: iniciado (PID 600820)
+app-javascript: parado
+pnpm real generated wrappers/supervisor: OK; no install action executed

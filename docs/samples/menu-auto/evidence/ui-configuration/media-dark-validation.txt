@@ -1,0 +1,4 @@
+/tmp/mudarro-gif-frame-0.png
+/tmp/mudarro-gif-frame-8.png
+/tmp/mudarro-gif-frame-16.png
+GIF 983x739; 17 frames; 12.90 seconds; loop 0

@@ -1,0 +1,90 @@
+{
+  "profile": "aurora-light-ptbr",
+  "locale": "pt-BR",
+  "theme": "light",
+  "terminal": {
+    "columns": 100,
+    "rows": 32
+  },
+  "binary": "/tmp/mudarro-ui-bin/mudarro",
+  "binary_sha256": "260fb0f6703fda29ef02040a0e4e691e5c3a3233f908f5f1bd89fd27d67e4053",
+  "exit_code": 0,
+  "duration_seconds": 9.92,
+  "output_bytes": 124416,
+  "events": [
+    {
+      "time": 0.800334,
+      "label": "select service 1",
+      "hex": "310a",
+      "injected": true
+    },
+    {
+      "time": 1.600628,
+      "label": "select quality group 1",
+      "hex": "310a",
+      "injected": true
+    },
+    {
+      "time": 2.600785,
+      "label": "Down: expand preview",
+      "hex": "1b5b42",
+      "injected": true
+    },
+    {
+      "time": 3.800881,
+      "label": "PageDown: scroll preview",
+      "hex": "1b5b367e",
+      "injected": true
+    },
+    {
+      "time": 4.801051,
+      "label": "SGR wheel down (injected mouse event)",
+      "hex": "1b5b3c36353b39383b31354d",
+      "injected": true
+    },
+    {
+      "time": 5.801244,
+      "label": "SGR scrollbar left press",
+      "hex": "1b5b3c303b3130303b31304d",
+      "injected": true
+    },
+    {
+      "time": 6.301424,
+      "label": "SGR scrollbar drag",
+      "hex": "1b5b3c33323b3130303b32344d",
+      "injected": true
+    },
+    {
+      "time": 7.301561,
+      "label": "SGR scrollbar release",
+      "hex": "1b5b3c303b3130303b32346d",
+      "injected": true
+    },
+    {
+      "time": 7.801826,
+      "label": "Up: collapse preview",
+      "hex": "1b5b41",
+      "injected": true
+    },
+    {
+      "time": 8.80204,
+      "label": "q: return from actions without executing",
+      "hex": "71",
+      "injected": true
+    },
+    {
+      "time": 9.402443,
+      "label": "q + Enter: return from groups",
+      "hex": "710a",
+      "injected": true
+    },
+    {
+      "time": 9.902816,
+      "label": "q + Enter: exit service menu",
+      "hex": "710a",
+      "injected": true
+    }
+  ],
+  "action_executed": false,
+  "capture": "actual PTY application output; no GUI capture; keyboard and SGR mouse bytes injected by helper"
+}

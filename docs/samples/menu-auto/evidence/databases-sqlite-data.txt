@@ -1,0 +1,4 @@
+PASS sqlite/goose: actual table goose_probe, rows=0; seed hook is log-only, no persisted seed asserted
+PASS sqlite/alembic: actual table alembic_probe, rows=1; seed persisted once after two runs
+PASS sqlite/django: actual table probe_record, rows=1; seed persisted once after two runs
+PASS sqlite/prisma: actual table PrismaProbe, rows=0; seed hook is log-only, no persisted seed asserted

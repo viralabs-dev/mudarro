@@ -1,0 +1,118 @@
+{
+  "config": {
+    "version": 1,
+    "name": "aurora",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "pnpm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "pnpm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "pnpm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "pnpm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "hello",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "hello"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "start",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "start"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    }
+  ],
+  "warnings": null
+}
+Project: aurora
+- app-javascript (.): javascript / pnpm / local
+  suggestion: app-javascript:hello [package.json]
+  suggestion: app-javascript:start [package.json]
+  suggestion: app-javascript:test [package.json]
+Created mudarro.yaml. Review pending choices, then run mudarro generate.
+gerar: .mudarro/scripts/app-javascript/down.sh
+gerar: .mudarro/scripts/app-javascript/hello.sh
+gerar: .mudarro/scripts/app-javascript/install.sh
+gerar: .mudarro/scripts/app-javascript/logs.sh
+gerar: .mudarro/scripts/app-javascript/restart.sh
+gerar: .mudarro/scripts/app-javascript/start.sh
+gerar: .mudarro/scripts/app-javascript/status.sh
+gerar: .mudarro/scripts/app-javascript/test.sh
+gerar: .mudarro/scripts/app-javascript/up.sh
+gerar: menu.sh
+$ node -e "console.log('sample quality OK')"
+sample quality OK
+$ node -e "console.log('sample custom OK')"
+sample custom OK
+app-javascript: started (PID 718364)
+app-javascript: already running
+app-javascript: running (PID 718364)
+sample ready
+app-javascript: started (PID 718481)
+app-javascript: stopped
+pnpm real generated wrappers/supervisor: OK; no install action executed

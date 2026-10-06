@@ -23,14 +23,14 @@ YAML
 "$bin" generate --root "$root"
 "$bin" run app:up --root "$root"
 "$bin" run app:up --root "$root"
-"$bin" run app:status --root "$root" | grep 'em execução'
+"$bin" run app:status --root "$root" | grep -E 'running|em execução'
 "$bin" run app:logs --root "$root" | grep ready
 "$bin" run app:check --root "$root" | grep 'literal'
 test ! -e "$root/injected"
 "$bin" run app:restart --root "$root"
 "$bin" run app:down --root "$root"
-"$bin" run app:status --root "$root" | grep parado
+"$bin" run app:status --root "$root" | grep -E 'stopped|parado'
 printf '1\n0\n0\n' | "$bin" menu --root "$root" > "$root/menu-output"
-grep 'infraestrutura' "$root/menu-output"
+grep -E 'infrastructure|infraestrutura' "$root/menu-output"
 "$bin" scan --root "$root" --json > "$root/scan.json"
 echo 'Smoke local: OK'

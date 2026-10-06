@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "name": "Aurora",
+  "ui": {
+    "locale": "en",
+    "theme": "dark",
+    "lettering": "auto",
+    "preview": {
+      "enabled": true,
+      "mouse": "on"
+    }
+  },
+  "services": [
+    {
+      "id": "aurora",
+      "dir": ".",
+      "language": "custom",
+      "infrastructure": {
+        "kind": "custom"
+      },
+      "commands": {
+        "test": {
+          "args": [
+            "bash",
+            "scripts/quality.sh"
+          ],
+          "group": "qualidade"
+        }
+      }
+    }
+  ]
+}

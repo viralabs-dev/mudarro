@@ -1,0 +1,41 @@
+Creating cluster "mudarro-validation-431818" ...
+ • Ensuring node image (kindest/node:v1.32.2) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.32.2) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 2m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 2m0s for control-plane = Ready ⏳
+ • Ready after 17s 💚
+Set kubectl context to "kind-mudarro-validation-431818"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-mudarro-validation-431818
+
+Not sure what to do next? 😅  Check out https://kind.sigs.k8s.io/docs/user/quick-start/
+namespace/mudarro-test-1791256687-442380 created
+deployment.apps/web created
+persistentvolumeclaim/keep-data created
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/web   1/1     1            1           4s
+
+NAME                              STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/keep-data   Pending                                      standard       <unset>                 4s
+ready
+deployment.apps/web restarted
+deployment.apps/web scaled
+NAME        STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+keep-data   Pending                                      standard       <unset>                 5s
+Kubernetes: OK; PVC preservado
+namespace "mudarro-test-1791256687-442380" deleted
+Deleting cluster "mudarro-validation-431818" ...
+Deleted nodes: ["mudarro-validation-431818-control-plane"]

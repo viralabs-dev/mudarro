@@ -1,0 +1,33 @@
+version: 1
+name: Aurora
+services:
+    - id: app-javascript
+      dir: .
+      language: javascript
+      manager: npm
+      infrastructure:
+        kind: local
+      commands:
+        hello:
+            args:
+                - npm
+                - run
+                - hello
+            group: scripts
+        install:
+            args:
+                - npm
+                - install
+            group: dependencias
+        start:
+            args:
+                - npm
+                - run
+                - start
+            group: aplicacao
+        test:
+            args:
+                - npm
+                - run
+                - test
+            group: qualidade

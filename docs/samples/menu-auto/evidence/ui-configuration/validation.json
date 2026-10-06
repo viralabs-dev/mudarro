@@ -1,0 +1,90 @@
+[
+  {
+    "profile": "aurora-dark-en",
+    "cast_output_events": 159,
+    "checks": "alternate screen/mouse restored; actual scrolling expanded/collapsed; no execution marker; JSON cast valid",
+    "states": [
+      {
+        "event": "Down: expand preview",
+        "source_lines_visible_min_max": [
+          1,
+          17
+        ],
+        "bytes": 21900
+      },
+      {
+        "event": "PageDown: scroll preview",
+        "source_lines_visible_min_max": [
+          18,
+          43
+        ],
+        "bytes": 20950
+      },
+      {
+        "event": "SGR wheel down (injected mouse event)",
+        "source_lines_visible_min_max": [
+          21,
+          46
+        ],
+        "bytes": 20950
+      },
+      {
+        "event": "SGR scrollbar drag",
+        "source_lines_visible_min_max": [
+          27,
+          52
+        ],
+        "bytes": 20950
+      },
+      {
+        "event": "Up: collapse preview",
+        "source_lines_visible_min_max": [],
+        "bytes": 1290
+      }
+    ]
+  },
+  {
+    "profile": "aurora-light-ptbr",
+    "cast_output_events": 156,
+    "checks": "alternate screen/mouse restored; actual scrolling expanded/collapsed; no execution marker; JSON cast valid",
+    "states": [
+      {
+        "event": "Down: expand preview",
+        "source_lines_visible_min_max": [
+          1,
+          17
+        ],
+        "bytes": 22116
+      },
+      {
+        "event": "PageDown: scroll preview",
+        "source_lines_visible_min_max": [
+          18,
+          43
+        ],
+        "bytes": 21030
+      },
+      {
+        "event": "SGR wheel down (injected mouse event)",
+        "source_lines_visible_min_max": [
+          21,
+          46
+        ],
+        "bytes": 21030
+      },
+      {
+        "event": "SGR scrollbar drag",
+        "source_lines_visible_min_max": [
+          27,
+          52
+        ],
+        "bytes": 21030
+      },
+      {
+        "event": "Up: collapse preview",
+        "source_lines_visible_min_max": [],
+        "bytes": 1370
+      }
+    ]
+  }
+]

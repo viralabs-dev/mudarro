@@ -1,0 +1,34 @@
+Mudarro local UI configuration gate — 2026-10-06, personal Pop!_OS
+Base commit: 049a405a3c19369e92bebfad468e7f36d5ae0db4
+Final Linux binary SHA256: 260fb0f6703fda29ef02040a0e4e691e5c3a3233f908f5f1bd89fd27d67e4053
+GOCACHE=/tmp/mudarro-go-cache; Go=/home/danielsouza/sdk/go1.27.1/bin/go
+PASS: go test -race -coverpkg=./internal/mudarro/... -coverprofile=coverage.out -v ./...
+       MUDARRO_INTERACTIVE_CAST=/tmp/mudarro-final-interactive-api.cast includes optional PTY capture.
+PASS: go vet ./...
+PASS: go build -o /tmp/mudarro-ui-bin/mudarro ./cmd/mudarro
+PASS: GOOS=darwin GOARCH=arm64 go build ./cmd/mudarro (compilation only, no macOS execution)
+PASS: Bash syntax for all scripts; Python py_compile for recorder/converter/database runner
+PASS: git diff --check
+PASS: scripts/smoke.sh BIN
+PASS: scripts/validate-menu.sh BIN
+PASS: scripts/validate-ui.sh BIN
+PASS: scripts/integration-languages.sh BIN (Python and Go, existing toolchains, no installs)
+PASS: scripts/integration-pnpm.sh BIN (existing pnpm, no install action)
+PASS: scripts/integration-dockerfile.sh BIN (own container/image; ownership refusal)
+PASS: scripts/validate-databases.sh BIN (8/8 SQLite/PostgreSQL×Goose/Alembic/Django/Prisma)
+      PATH=/tmp/mudarro-test-tools:$PATH
+      MUDARRO_PYTHON_ENV=/tmp/mudarro-prisma-debug/python-env
+      MUDARRO_JS_DEPS=/tmp/mudarro-prisma-debug/js-deps
+PASS: scripts/record-ui-preview.py BIN /tmp/mudarro-ui-recording-final
+      Real CLI output over isolated PTY, Down/PageDown/wheel/scrollbar/Up/back, no action executed.
+      Keyboard/mouse events injected by helper; no GUI gesture acceptance inferred.
+PASS: agg rendering + Go image/gif DecodeAll + composed frame inspection for both profiles.
+Current profile totals in coverage-summary.tsv; verbose test results in tests-race.txt.
+Graphical screenshot: NOT EXECUTED; portal needs user's gesture, user asleep, not reopened.
+Physical emulator mouse/drag: NOT EXECUTED; implemented and PTY-tested only.
+Font family application: NOT IMPLEMENTED; emulator identity/integration decision missing.
+Terminal background/global settings: NOT MODIFIED; GIF background is renderer choice.
+Yarn/uv/poetry/Podman/macOS/WSL runtime/native PostgreSQL: NOT EXECUTED.
+Kubernetes/Helm/PVC real tests retain earlier package-stage evidence; not rerun in this UI stage.
+GitHub CI: NOT EXECUTED; user disabled Actions exclusively for Mudarro. Do not enable/trigger.
+No merge, deploy, force push or security/global-terminal changes.

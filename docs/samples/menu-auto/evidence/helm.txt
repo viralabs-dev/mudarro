@@ -1,0 +1,58 @@
+Creating cluster "mudarro-helm-test-414888" ...
+ • Ensuring node image (kindest/node:v1.32.2) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.32.2) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 2m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 2m0s for control-plane = Ready ⏳
+ • Ready after 16s 💚
+Set kubectl context to "kind-mudarro-helm-test-414888"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-mudarro-helm-test-414888
+
+Have a nice day! 👋
+namespace/mudarro-helm created
+OK web: kubectl
+OK web: helm
+Nenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.
+gerar: .mudarro/scripts/web/down.sh
+gerar: .mudarro/scripts/web/logs.sh
+gerar: .mudarro/scripts/web/restart.sh
+gerar: .mudarro/scripts/web/status.sh
+gerar: .mudarro/scripts/web/up.sh
+gerar: menu.sh
+Release "web" does not exist. Installing it now.
+NAME: web
+LAST DEPLOYED: Tue Oct  6 00:14:58 2026
+NAMESPACE: mudarro-helm
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+NAME: web
+LAST DEPLOYED: Tue Oct  6 00:14:58 2026
+NAMESPACE: mudarro-helm
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+helm-ready
+deployment.apps/web restarted
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+deployment "web" successfully rolled out
+deployment.apps/web scaled
+NAME        STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+keep-data   Pending                                      standard       <unset>                 7s
+Helm: OK; release/PVC preserved, workload scaled to zero (no persisted data assertion)
+Deleting cluster "mudarro-helm-test-414888" ...
+Deleted nodes: ["mudarro-helm-test-414888-control-plane"]

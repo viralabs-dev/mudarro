@@ -1,0 +1,6 @@
+/tmp/mudarro-gif-frame-0.png
+/tmp/mudarro-gif-frame-3.png
+/tmp/mudarro-gif-frame-6.png
+GIF 983x739; 7 frames; 15.05 seconds; loop 0
+
+Both GIFs decode; composed dark/light menu frames visually inspected. PNG preview is frame of terminal recording, not graphical screenshot.

@@ -1,0 +1,7 @@
+Package	Covered	Total	Percent
+github.com/viralabs-dev/mudarro/internal/mudarro	865	1270	68.11
+github.com/viralabs-dev/mudarro/internal/mudarro/adapters	279	304	91.78
+github.com/viralabs-dev/mudarro/internal/mudarro/executor	10	13	76.92
+github.com/viralabs-dev/mudarro/internal/mudarro/projectfs	19	23	82.61
+github.com/viralabs-dev/mudarro/internal/mudarro/terminal	379	422	89.81
+TOTAL	1552	2032	76.38

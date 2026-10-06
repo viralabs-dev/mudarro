@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "files": {
+    ".mudarro/scripts/app-javascript/down.sh": "be5f6a07e80b3b77607b666e1882b49221fa0d96f307e86d1c12b943e29c4d9a",
+    ".mudarro/scripts/app-javascript/hello.sh": "aab8428278bd8ea7be5ee6b7a9a18ac6576455f3bdbd775557fbe290b9ca4dcb",
+    ".mudarro/scripts/app-javascript/install.sh": "65f75316e77fc15c0ea037c627d98c18955b7d26358afa2e077474d51a1ef991",
+    ".mudarro/scripts/app-javascript/logs.sh": "1b8826f46909f7f7a09c23c9f0889decb91a841bd3b1814fef4dd58960d473bc",
+    ".mudarro/scripts/app-javascript/restart.sh": "39cc4b3c9c2eb121786176801e933ac0d118bf243cb16414b162105bbd75e6ef",
+    ".mudarro/scripts/app-javascript/start.sh": "d1a70df6cefb438c1c6eed59851bdc314def69ed75c8868763636a00370f8663",
+    ".mudarro/scripts/app-javascript/status.sh": "d14ad2ec4fc2db38a4cc10e40a1f2e5e6f6f4f90ecbeacd9c3e31176d6e89d4b",
+    ".mudarro/scripts/app-javascript/test.sh": "3d99554091a25244ded20128780ff2b83cb97be1ab8044d809ab04c9715cf4ce",
+    ".mudarro/scripts/app-javascript/up.sh": "f27d35778835934aac822a0c115180136c6f26557b49d3d27ed4e9d302dc9ca0",
+    "menu.sh": "1d5e0b38a0b819fa5096c465b6477ad2431365d591dbde4a5e7006d79518b27f"
+  }
+}

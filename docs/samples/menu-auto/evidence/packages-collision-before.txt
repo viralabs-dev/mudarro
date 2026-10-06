@@ -1,0 +1,5 @@
+--- FAIL: TestScriptNormalizationCollisionRequiresExplicitCommand (0.00s)
+    script_collision_test.go:6: ambiguous normalized script offered
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/internal/mudarro	0.003s
+FAIL

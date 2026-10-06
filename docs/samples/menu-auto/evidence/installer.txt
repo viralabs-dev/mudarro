@@ -1,0 +1,8 @@
+Mudarro instalado: /tmp/tmp.BVBUOdmA9x/install/mudarro
+Adicione ao PATH: export PATH="/tmp/tmp.BVBUOdmA9x/install:$PATH"
+test-version
+Mudarro instalado: /tmp/tmp.BVBUOdmA9x/install/mudarro
+Adicione ao PATH: export PATH="/tmp/tmp.BVBUOdmA9x/install:$PATH"
+test-version
+Checksum divergente; instalação interrompida.
+Instalação, atualização e remoção simuladas: OK

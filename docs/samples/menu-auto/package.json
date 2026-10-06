@@ -1,0 +1,1 @@
+{"name":"aurora","private":true,"scripts":{"start":"node app.js","test":"node -e \"console.log('sample quality OK')\"","hello":"node -e \"console.log('sample custom OK')\""}}

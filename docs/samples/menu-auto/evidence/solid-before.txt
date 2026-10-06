@@ -1,0 +1,19 @@
+--- FAIL: TestDockerfileOwnershipUsesExecutor (0.09s)
+    --- FAIL: TestDockerfileOwnershipUsesExecutor/docker/owned (0.03s)
+        solid_regression_test.go:50: missing injected inspect: <nil> [[docker run -d --name mudarro-1fcd2911a6a5-app --label dev.viralabs.mudarro=1fcd2911a6a5/app example:test]]
+    --- FAIL: TestDockerfileOwnershipUsesExecutor/docker/foreign (0.02s)
+        solid_regression_test.go:45: foreign container accepted: <nil> [[docker run -d --name mudarro-9f0c83e9fa10-app --label dev.viralabs.mudarro=9f0c83e9fa10/app example:test]]
+    --- FAIL: TestDockerfileOwnershipUsesExecutor/docker/absent (0.03s)
+        solid_regression_test.go:50: missing injected inspect: <nil> [[docker run -d --name mudarro-e1ff75cc75c9-app --label dev.viralabs.mudarro=e1ff75cc75c9/app example:test]]
+    --- FAIL: TestDockerfileOwnershipUsesExecutor/podman/owned (0.00s)
+        solid_regression_test.go:50: missing injected inspect: <nil> [[podman run -d --name mudarro-27cbc48ae713-app --label dev.viralabs.mudarro=27cbc48ae713/app example:test]]
+    --- FAIL: TestDockerfileOwnershipUsesExecutor/podman/foreign (0.00s)
+        solid_regression_test.go:45: foreign container accepted: <nil> [[podman run -d --name mudarro-f6f0840e519e-app --label dev.viralabs.mudarro=f6f0840e519e/app example:test]]
+    --- FAIL: TestDockerfileOwnershipUsesExecutor/podman/absent (0.00s)
+        solid_regression_test.go:50: missing injected inspect: <nil> [[podman run -d --name mudarro-2ede0c229ab2-app --label dev.viralabs.mudarro=2ede0c229ab2/app example:test]]
+--- FAIL: TestOSExecutorRejectsEmptyCommand (0.00s)
+    solid_regression_test.go:71: command validation panicked: runtime error: slice bounds out of range [1:0]
+    solid_regression_test.go:71: command validation panicked: runtime error: slice bounds out of range [1:0]
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/internal/mudarro	0.091s
+FAIL

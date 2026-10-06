@@ -1,0 +1,70 @@
+{
+  "config": {
+    "version": 1,
+    "name": "offline-demo",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "npm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "npm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "npm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          }
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "start",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "start"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    }
+  ],
+  "warnings": null
+}
+Projeto: offline-demo
+- app-javascript (.): javascript / npm / local
+  sugestão: app-javascript:start [package.json]
+Criado mudarro.yaml. Revise as pendências e execute mudarro generate.
+gerar: .mudarro/scripts/app-javascript/down.sh
+gerar: .mudarro/scripts/app-javascript/install.sh
+gerar: .mudarro/scripts/app-javascript/logs.sh
+gerar: .mudarro/scripts/app-javascript/restart.sh
+gerar: .mudarro/scripts/app-javascript/start.sh
+gerar: .mudarro/scripts/app-javascript/status.sh
+gerar: .mudarro/scripts/app-javascript/up.sh
+gerar: menu.sh
+Detecção e geração com rede desabilitada: OK

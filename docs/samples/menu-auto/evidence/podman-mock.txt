@@ -1,0 +1,10 @@
+=== RUN   TestDockerfileOwnershipUsesExecutor
+=== RUN   TestDockerfileOwnershipUsesExecutor/podman/owned
+=== RUN   TestDockerfileOwnershipUsesExecutor/podman/foreign
+=== RUN   TestDockerfileOwnershipUsesExecutor/podman/absent
+--- PASS: TestDockerfileOwnershipUsesExecutor (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/podman/owned (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/podman/foreign (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/podman/absent (0.00s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/internal/mudarro	0.004s

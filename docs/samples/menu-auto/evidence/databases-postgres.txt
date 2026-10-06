@@ -1,0 +1,112 @@
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: menu.sh
+gerar: migrations/.gitkeep
+gerar: seeds/seed.sh
+2026/10/06 00:33:59 Created new file: migrations/20261006033359_probe.sql
+2026/10/06 00:33:59 OK   20261006033359_probe.sql (6.71ms)
+2026/10/06 00:33:59 goose: successfully migrated database to version: 20261006033359
+goose seed hook invoked
+2026/10/06 00:33:59 goose: no migrations to run. current version: 20261006033359
+PASS postgresql/goose: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: alembic.ini
+gerar: menu.sh
+gerar: migrations/env.py
+gerar: migrations/script.py.mako
+gerar: migrations/versions/.gitkeep
+gerar: seeds/seed.py
+Generating /tmp/mudarro-agent-db/postgres-network/postgresql-alembic/migrations/versions/2696e6afb637_probe.py ...  done
+PASS postgresql/alembic: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: DATABASE-SETUP.md
+gerar: menu.sh
+gerar: mudarro_database.py
+gerar: seeds/initial.json
+Migrations for 'probe':
+  probe/migrations/0001_probe.py
+    + Create model Record
+Operations to perform:
+  Apply all migrations: probe
+Running migrations:
+  Applying probe.0001_probe... OK
+Installed 1 object(s) from 1 fixture(s)
+Installed 1 object(s) from 1 fixture(s)
+Operations to perform:
+  Apply all migrations: probe
+Running migrations:
+  No migrations to apply.
+PASS postgresql/django: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: menu.sh
+gerar: prisma.config.ts
+gerar: prisma/schema.prisma
+gerar: prisma/seed.cjs
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "mudarro", schema "mudarro_prisma" at "127.0.0.1:32771"
+
+Prisma Migrate created the following migration without applying it 20261006033404_probe
+
+You can now edit it and apply it by running prisma migrate dev.
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "mudarro", schema "mudarro_prisma" at "127.0.0.1:32771"
+
+1 migration found in prisma/migrations
+
+Applying migration `20261006033404_probe`
+
+┌─────────────────────────────────────────────────────────┐
+│  Update available 7.10.0 -> 8.0.0-rc.20                 │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261006033404_probe/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+Loaded Prisma config from prisma.config.ts.
+
+Running seed command `node prisma/seed.cjs` ...
+prisma seed hook invoked
+
+🌱  The seed command has been executed.
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "mudarro", schema "mudarro_prisma" at "127.0.0.1:32771"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+PASS postgresql/prisma: migration + seed + repeated migrate

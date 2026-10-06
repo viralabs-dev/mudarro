@@ -1,0 +1,3 @@
+# Preserve genuine terminal/command captures, including CR and trailing spaces.
+# Source code and prose retain the normal whitespace checks.
+docs/samples/menu-auto/evidence/** whitespace=-trailing-space,-blank-at-eof

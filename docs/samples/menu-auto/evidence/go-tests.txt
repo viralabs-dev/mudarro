@@ -1,0 +1,94 @@
+	github.com/viralabs-dev/mudarro/cmd/mudarro		coverage: 0.0% of statements
+=== RUN   TestScanLanguagesAndSuggestions
+--- PASS: TestScanLanguagesAndSuggestions (0.00s)
+=== RUN   TestAmbiguityExclusionsAndMalformed
+--- PASS: TestAmbiguityExclusionsAndMalformed (0.00s)
+=== RUN   TestScanDoesNotFollowSymlinks
+--- PASS: TestScanDoesNotFollowSymlinks (0.00s)
+=== RUN   TestConfigValidation
+=== RUN   TestConfigValidation/unknown
+=== RUN   TestConfigValidation/duplicate
+=== RUN   TestConfigValidation/multiple
+=== RUN   TestConfigValidation/escape
+=== RUN   TestConfigValidation/commands
+--- PASS: TestConfigValidation (0.00s)
+    --- PASS: TestConfigValidation/unknown (0.00s)
+    --- PASS: TestConfigValidation/duplicate (0.00s)
+    --- PASS: TestConfigValidation/multiple (0.00s)
+    --- PASS: TestConfigValidation/escape (0.00s)
+    --- PASS: TestConfigValidation/commands (0.00s)
+=== RUN   TestGenerateIdempotenceAndProtection
+--- PASS: TestGenerateIdempotenceAndProtection (0.00s)
+=== RUN   TestGeneratePreservesExistingAndRejectsSymlink
+--- PASS: TestGeneratePreservesExistingAndRejectsSymlink (0.00s)
+=== RUN   TestExplicitCommandsOverrideAdapters
+--- PASS: TestExplicitCommandsOverrideAdapters (0.00s)
+=== RUN   TestStructuredArgumentsAndExitCode
+--- PASS: TestStructuredArgumentsAndExitCode (0.00s)
+=== RUN   TestDestructiveConfirmation
+--- PASS: TestDestructiveConfirmation (0.00s)
+=== RUN   TestMenuAndCLI
+--- PASS: TestMenuAndCLI (0.00s)
+=== RUN   TestDatabaseAndInfrastructurePlans
+--- PASS: TestDatabaseAndInfrastructurePlans (0.00s)
+=== RUN   TestScaffoldsParseAndDoNotInventModels
+--- PASS: TestScaffoldsParseAndDoNotInventModels (0.00s)
+=== RUN   TestInvalidMigrationNameAndEnvironment
+--- PASS: TestInvalidMigrationNameAndEnvironment (0.00s)
+=== RUN   TestKubernetesStopOnlyScalesWorkloads
+--- PASS: TestKubernetesStopOnlyScalesWorkloads (0.00s)
+=== RUN   TestDryRunDoesNotExposeEnvironment
+--- PASS: TestDryRunDoesNotExposeEnvironment (0.00s)
+=== RUN   TestGeneratePreflightProtectsAllDestinations
+=== RUN   TestGeneratePreflightProtectsAllDestinations/edited-launcher
+=== RUN   TestGeneratePreflightProtectsAllDestinations/invalid-manifest
+--- PASS: TestGeneratePreflightProtectsAllDestinations (0.00s)
+    --- PASS: TestGeneratePreflightProtectsAllDestinations/edited-launcher (0.00s)
+    --- PASS: TestGeneratePreflightProtectsAllDestinations/invalid-manifest (0.00s)
+=== RUN   TestInitSelectionFailureDoesNotSave
+=== RUN   TestInitSelectionFailureDoesNotSave/unknown-selection
+=== RUN   TestInitSelectionFailureDoesNotSave/interactive-eof
+--- PASS: TestInitSelectionFailureDoesNotSave (0.00s)
+    --- PASS: TestInitSelectionFailureDoesNotSave/unknown-selection (0.00s)
+    --- PASS: TestInitSelectionFailureDoesNotSave/interactive-eof (0.00s)
+=== RUN   TestDockerfileOwnershipUsesExecutor
+=== RUN   TestDockerfileOwnershipUsesExecutor/docker/owned
+=== RUN   TestDockerfileOwnershipUsesExecutor/docker/foreign
+=== RUN   TestDockerfileOwnershipUsesExecutor/docker/absent
+=== RUN   TestDockerfileOwnershipUsesExecutor/podman/owned
+=== RUN   TestDockerfileOwnershipUsesExecutor/podman/foreign
+=== RUN   TestDockerfileOwnershipUsesExecutor/podman/absent
+--- PASS: TestDockerfileOwnershipUsesExecutor (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/docker/owned (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/docker/foreign (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/docker/absent (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/podman/owned (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/podman/foreign (0.00s)
+    --- PASS: TestDockerfileOwnershipUsesExecutor/podman/absent (0.00s)
+=== RUN   TestOSExecutorRejectsEmptyCommand
+--- PASS: TestOSExecutorRejectsEmptyCommand (0.00s)
+=== RUN   TestPlainMenuHasNoANSIEscapes
+--- PASS: TestPlainMenuHasNoANSIEscapes (0.00s)
+=== RUN   TestTerminalStyleResetsAndPlainFallback
+--- PASS: TestTerminalStyleResetsAndPlainFallback (0.00s)
+=== RUN   TestBannerNarrowWidthAndControlSanitization
+--- PASS: TestBannerNarrowWidthAndControlSanitization (0.00s)
+=== RUN   TestColorPolicy
+=== RUN   TestColorPolicy/tty
+=== RUN   TestColorPolicy/pipe
+=== RUN   TestColorPolicy/dumb
+=== RUN   TestColorPolicy/unset-term
+=== RUN   TestColorPolicy/no-color
+=== RUN   TestColorPolicy/zero-no-color
+--- PASS: TestColorPolicy (0.00s)
+    --- PASS: TestColorPolicy/tty (0.00s)
+    --- PASS: TestColorPolicy/pipe (0.00s)
+    --- PASS: TestColorPolicy/dumb (0.00s)
+    --- PASS: TestColorPolicy/unset-term (0.00s)
+    --- PASS: TestColorPolicy/no-color (0.00s)
+    --- PASS: TestColorPolicy/zero-no-color (0.00s)
+=== RUN   TestDevNullIsNotTerminal
+--- PASS: TestDevNullIsNotTerminal (0.00s)
+PASS
+coverage: 61.6% of statements
+ok  	github.com/viralabs-dev/mudarro/internal/mudarro	1.052s	coverage: 61.6% of statements

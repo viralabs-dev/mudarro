@@ -1,0 +1,228 @@
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-init.sh
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: menu.sh
+gerar: migrations/.gitkeep
+gerar: seeds/seed.sh
+2026/10/06 00:54:05 Created new file: migrations/20261006035405_probe.sql
+2026/10/06 00:54:05 OK   20261006035405_probe.sql (25.87ms)
+2026/10/06 00:54:05 goose: successfully migrated database to version: 20261006035405
+goose seed hook invoked
+2026/10/06 00:54:05 goose: no migrations to run. current version: 20261006035405
+PASS sqlite/goose: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-init.sh
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: alembic.ini
+gerar: menu.sh
+gerar: migrations/env.py
+gerar: migrations/script.py.mako
+gerar: migrations/versions/.gitkeep
+gerar: seeds/seed.py
+Generating /tmp/mudarro-databases-s8nf3ypm/sqlite-alembic/migrations/versions/6254eb249d57_probe.py ...  done
+PASS sqlite/alembic: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-init.sh
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: DATABASE-SETUP.md
+gerar: menu.sh
+gerar: mudarro_database.py
+gerar: seeds/initial.json
+Migrations for 'probe':
+  probe/migrations/0001_probe.py
+    + Create model Record
+Operations to perform:
+  Apply all migrations: probe
+Running migrations:
+  Applying probe.0001_probe... OK
+Installed 1 object(s) from 1 fixture(s)
+Installed 1 object(s) from 1 fixture(s)
+Operations to perform:
+  Apply all migrations: probe
+Running migrations:
+  No migrations to apply.
+PASS sqlite/django: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-init.sh
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: menu.sh
+gerar: prisma.config.ts
+gerar: prisma/schema.prisma
+gerar: prisma/seed.cjs
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": SQLite database "app.db" at "file:./app.db"
+
+Prisma Migrate created the following migration without applying it 20261006035410_probe
+
+You can now edit it and apply it by running prisma migrate dev.
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": SQLite database "app.db" at "file:./app.db"
+
+1 migration found in prisma/migrations
+
+Applying migration `20261006035410_probe`
+
+┌─────────────────────────────────────────────────────────┐
+│  Update available 7.10.0 -> 8.0.0-rc.20                 │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261006035410_probe/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+Loaded Prisma config from prisma.config.ts.
+
+Running seed command `node prisma/seed.cjs` ...
+prisma seed hook invoked
+
+🌱  The seed command has been executed.
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": SQLite database "app.db" at "file:./app.db"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+PASS sqlite/prisma: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: menu.sh
+gerar: migrations/.gitkeep
+gerar: seeds/seed.sh
+2026/10/06 00:54:12 Created new file: migrations/20261006035412_probe.sql
+2026/10/06 00:54:12 OK   20261006035412_probe.sql (3.76ms)
+2026/10/06 00:54:12 goose: successfully migrated database to version: 20261006035412
+goose seed hook invoked
+2026/10/06 00:54:12 goose: no migrations to run. current version: 20261006035412
+PASS postgresql/goose: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: alembic.ini
+gerar: menu.sh
+gerar: migrations/env.py
+gerar: migrations/script.py.mako
+gerar: migrations/versions/.gitkeep
+gerar: seeds/seed.py
+Generating /tmp/mudarro-databases-s8nf3ypm/postgresql-alembic/migrations/versions/178cb7725a6a_probe.py ...  done
+PASS postgresql/alembic: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: DATABASE-SETUP.md
+gerar: menu.sh
+gerar: mudarro_database.py
+gerar: seeds/initial.json
+Migrations for 'probe':
+  probe/migrations/0001_probe.py
+    + Create model Record
+Operations to perform:
+  Apply all migrations: probe
+Running migrations:
+  Applying probe.0001_probe... OK
+Installed 1 object(s) from 1 fixture(s)
+Installed 1 object(s) from 1 fixture(s)
+Operations to perform:
+  Apply all migrations: probe
+Running migrations:
+  No migrations to apply.
+PASS postgresql/django: migration + seed + repeated migrate
+gerar: .env.example
+gerar: .mudarro/scripts/app/db-install.sh
+gerar: .mudarro/scripts/app/db-migrate.sh
+gerar: .mudarro/scripts/app/db-migration-new.sh
+gerar: .mudarro/scripts/app/db-reset.sh
+gerar: .mudarro/scripts/app/db-seed.sh
+gerar: menu.sh
+gerar: prisma.config.ts
+gerar: prisma/schema.prisma
+gerar: prisma/seed.cjs
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "mudarro_test", schema "mudarro_prisma" at "127.0.0.1:32772"
+
+Prisma Migrate created the following migration without applying it 20261006035419_probe
+
+You can now edit it and apply it by running prisma migrate dev.
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "mudarro_test", schema "mudarro_prisma" at "127.0.0.1:32772"
+
+1 migration found in prisma/migrations
+
+Applying migration `20261006035419_probe`
+
+┌─────────────────────────────────────────────────────────┐
+│  Update available 7.10.0 -> 8.0.0-rc.20                 │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261006035419_probe/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+Loaded Prisma config from prisma.config.ts.
+
+Running seed command `node prisma/seed.cjs` ...
+prisma seed hook invoked
+
+🌱  The seed command has been executed.
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+Datasource "db": PostgreSQL database "mudarro_test", schema "mudarro_prisma" at "127.0.0.1:32772"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+PASS postgresql/prisma: migration + seed + repeated migrate

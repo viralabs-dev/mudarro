@@ -1,0 +1,253 @@
+
+>>> /tmp/mudarro-validation-bin/mudarro scan --root /tmp/mudarro menu.KnuYuz --json
+{
+  "config": {
+    "version": 1,
+    "name": "mudarro-menu-sample",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "npm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "npm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "npm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "hello",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "hello"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "start",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "start"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    }
+  ],
+  "warnings": null
+}
+
+>>> /tmp/mudarro-validation-bin/mudarro init --root /tmp/mudarro menu.KnuYuz --select app-javascript:hello
+Projeto: mudarro-menu-sample
+- app-javascript (.): javascript / npm / local
+  sugestão: app-javascript:hello [package.json]
+  sugestão: app-javascript:start [package.json]
+  sugestão: app-javascript:test [package.json]
+Criado mudarro.yaml. Revise as pendências e execute mudarro generate.
+mudarro: mudarro.yaml já existe; edite a configuração preservada
+
+>>> /tmp/mudarro-validation-bin/mudarro generate --root /tmp/mudarro menu.KnuYuz --dry-run
+gerar: .mudarro/scripts/app-javascript/down.sh
+gerar: .mudarro/scripts/app-javascript/hello.sh
+gerar: .mudarro/scripts/app-javascript/install.sh
+gerar: .mudarro/scripts/app-javascript/logs.sh
+gerar: .mudarro/scripts/app-javascript/restart.sh
+gerar: .mudarro/scripts/app-javascript/start.sh
+gerar: .mudarro/scripts/app-javascript/status.sh
+gerar: .mudarro/scripts/app-javascript/test.sh
+gerar: .mudarro/scripts/app-javascript/up.sh
+gerar: menu.sh
+
+>>> /tmp/mudarro-validation-bin/mudarro generate --root /tmp/mudarro menu.KnuYuz
+gerar: .mudarro/scripts/app-javascript/down.sh
+gerar: .mudarro/scripts/app-javascript/hello.sh
+gerar: .mudarro/scripts/app-javascript/install.sh
+gerar: .mudarro/scripts/app-javascript/logs.sh
+gerar: .mudarro/scripts/app-javascript/restart.sh
+gerar: .mudarro/scripts/app-javascript/start.sh
+gerar: .mudarro/scripts/app-javascript/status.sh
+gerar: .mudarro/scripts/app-javascript/test.sh
+gerar: .mudarro/scripts/app-javascript/up.sh
+gerar: menu.sh
+
+>>> /tmp/mudarro-validation-bin/mudarro generate --root /tmp/mudarro menu.KnuYuz
+
+>>> /tmp/mudarro-validation-bin/mudarro doctor --root /tmp/mudarro menu.KnuYuz
+OK app-javascript: npm
+OK app-javascript: ps
+Nenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.
+# # # # ##   #  ##  ##   #      # # ### # # # #      ##  #  # # 
+### # # # # # # # # # # # #     ### #   ### # #     #   # # ### 
+### # # # # ### ##  ##  # # ### ### ##  ### # # ###  #  ### ### 
+# # # # # # # # # # # # # #     # # #   ### # #       # # # # # 
+# # ### ##  # # # # # #  #      # # ### # # ###     ##  # # # # 
+##  #   ### 
+# # #   #   
+##  #   ##  
+#   #   #   
+#   ### ### 
+mudarro-menu-sample
+
+
+  Escolha uma área / Serviços
+
+   1.  app-javascript — .
+
+   0.  Voltar / sair
+  >   Opção inválida. Escolha um número da lista.
+  > 
+  Escolha uma área / app-javascript
+
+   1.  aplicacao
+   2.  dependencias
+   3.  infraestrutura
+   4.  qualidade
+   5.  scripts
+
+   0.  Voltar / sair
+  > 
+  Escolha uma área / Serviços
+
+   1.  app-javascript — .
+
+   0.  Voltar / sair
+  > # # # # ##   #  ##  ##   #      # # ### # # # #      ##  #  # # 
+### # # # # # # # # # # # #     ### #   ### # #     #   # # ### 
+### # # # # ### ##  ##  # # ### ### ##  ### # # ###  #  ### ### 
+# # # # # # # # # # # # # #     # # #   ### # #       # # # # # 
+# # ### ##  # # # # # #  #      # # ### # # ###     ##  # # # # 
+##  #   ### 
+# # #   #   
+##  #   ##  
+#   #   #   
+#   ### ### 
+mudarro-menu-sample
+
+
+  Escolha uma área / Serviços
+
+   1.  app-javascript — .
+
+   0.  Voltar / sair
+  > 
+  Escolha uma área / app-javascript
+
+   1.  aplicacao
+   2.  dependencias
+   3.  infraestrutura
+   4.  qualidade
+   5.  scripts
+
+   0.  Voltar / sair
+  > 
+  Escolha uma área / qualidade
+
+   1.  test
+
+   0.  Voltar / sair
+  > 
+> test
+> node -e "console.log('sample quality OK')"
+
+sample quality OK
+
+  Escolha uma área / qualidade
+
+   1.  test
+
+   0.  Voltar / sair
+  > 
+>>> bash /tmp/mudarro menu.KnuYuz/.mudarro/scripts/app-javascript/test.sh
+
+> test
+> node -e "console.log('sample quality OK')"
+
+sample quality OK
+
+>>> bash /tmp/mudarro menu.KnuYuz/.mudarro/scripts/app-javascript/hello.sh
+
+> hello
+> node -e "console.log('sample custom OK')"
+
+sample custom OK
+
+>>> /tmp/mudarro-validation-bin/mudarro run app-javascript:up --root /tmp/mudarro menu.KnuYuz
+app-javascript: iniciado (PID 511842)
+
+>>> /tmp/mudarro-validation-bin/mudarro run app-javascript:up --root /tmp/mudarro menu.KnuYuz
+app-javascript: já está em execução
+
+>>> /tmp/mudarro-validation-bin/mudarro run app-javascript:status --root /tmp/mudarro menu.KnuYuz
+app-javascript: em execução (PID 511842)
+
+>>> /tmp/mudarro-validation-bin/mudarro run app-javascript:logs --root /tmp/mudarro menu.KnuYuz
+
+> start
+> node app.js
+
+sample ready
+
+>>> /tmp/mudarro-validation-bin/mudarro run app-javascript:restart --root /tmp/mudarro menu.KnuYuz
+app-javascript: iniciado (PID 511924)
+
+>>> /tmp/mudarro-validation-bin/mudarro run app-javascript:down --root /tmp/mudarro menu.KnuYuz
+app-javascript: parado
+app-javascript: parado
+mudarro: ação inexistente: app-javascript:nonexistent
+mudarro: arquivo gerado alterado manualmente: menu.sh; preserve sua versão ou restaure antes de gerar
+Automatic menu end-to-end: OK

@@ -1,0 +1,1 @@
+ok  	github.com/viralabs-dev/mudarro/internal/mudarro	1.017s

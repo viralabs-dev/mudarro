@@ -2,6 +2,8 @@
 set -euo pipefail
 bin="${1:?binário}"
 context="${2:?contexto do cluster de teste}"
+mode="${MUDARRO_K8S_MODE:-manifests}"
+case "$mode" in manifests|kustomize) ;; *) echo "Unsupported fixture mode: $mode" >&2; exit 1;; esac
 namespace="mudarro-test-$(date +%s)-$$"
 root="$(mktemp -d)"
 trap 'kubectl --context "$context" delete namespace "$namespace" --wait=false || true; rm -rf -- "$root"' EXIT
@@ -24,6 +26,13 @@ spec:
         - name: web
           image: alpine:3.21
           command: [sh, -c, 'echo ready; sleep 300']
+          volumeMounts:
+          - name: data
+            mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: keep-data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -34,6 +43,9 @@ spec:
   resources:
     requests: {storage: 1Mi}
 YAML
+if [[ "$mode" = kustomize ]]; then
+  printf 'apiVersion: kustomize.config.k8s.io/v1beta1\nkind: Kustomization\nresources: [app.yaml]\n' > "$root/k8s/kustomization.yaml"
+fi
 cat > "$root/mudarro.yaml" <<YAML
 version: 1
 name: Kubernetes smoke
@@ -42,7 +54,7 @@ services:
     dir: .
     infrastructure:
       kind: kubernetes
-      mode: manifests
+      mode: $mode
       file: k8s
       context: $context
       namespace: $namespace
@@ -55,4 +67,4 @@ kubectl --context "$context" -n "$namespace" rollout status deployment/web --tim
 "$bin" run web:down --root "$root"
 test "$(kubectl --context "$context" -n "$namespace" get deployment/web -o jsonpath='{.spec.replicas}')" = 0
 kubectl --context "$context" -n "$namespace" get pvc keep-data
-echo 'Kubernetes: OK; PVC preservado'
+bash "$(dirname "${BASH_SOURCE[0]}")/verify-pvc-persistence.sh" "$bin" "$root" "$context" "$namespace"

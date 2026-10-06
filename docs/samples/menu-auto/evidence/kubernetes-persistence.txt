@@ -1,0 +1,62 @@
+Creating cluster "mudarro-validation-493068" ...
+ • Ensuring node image (kindest/node:v1.32.2) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.32.2) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 2m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 2m0s for control-plane = Ready ⏳
+ • Ready after 17s 💚
+Set kubectl context to "kind-mudarro-validation-493068"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-mudarro-validation-493068
+
+Have a nice day! 👋
+namespace/mudarro-test-1791257724-504501 created
+deployment.apps/web created
+persistentvolumeclaim/keep-data created
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/web   1/1     1            1           10s
+
+NAME                              STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/keep-data   Bound    pvc-c4fac425-312f-458a-a742-57f131631d2a   1Mi        RWO            standard       <unset>                 10s
+ready
+deployment.apps/web restarted
+deployment.apps/web scaled
+NAME        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+keep-data   Bound    pvc-c4fac425-312f-458a-a742-57f131631d2a   1Mi        RWO            standard       <unset>                 11s
+persistentvolumeclaim/keep-data condition met
+pod/web-766787787b-gfv4p condition met
+pod/web-7ffd56d5dc-nhb9n condition met
+deployment.apps/web configured
+persistentvolumeclaim/keep-data unchanged
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+mudarro-owned-fixture-505852
+deployment.apps/web scaled
+pod/web-766787787b-6j46p condition met
+deployment.apps/web configured
+persistentvolumeclaim/keep-data unchanged
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+deployment.apps/web restarted
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+deployment "web" successfully rolled out
+deployment.apps/web scaled
+PVC persistence: OK; Bound, same UID, content survived down/up/restart (mudarro-test-1791257724-504501)
+namespace "mudarro-test-1791257724-504501" deleted
+Deleting cluster "mudarro-validation-493068" ...
+Deleted nodes: ["mudarro-validation-493068-control-plane"]

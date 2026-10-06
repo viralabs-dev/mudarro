@@ -1,0 +1,9 @@
+?   	github.com/viralabs-dev/mudarro/cmd/mudarro	[no test files]
+?   	github.com/viralabs-dev/mudarro/internal/mudarro	[no test files]
+?   	github.com/viralabs-dev/mudarro/internal/mudarro/adapters	[no test files]
+?   	github.com/viralabs-dev/mudarro/internal/mudarro/executor	[no test files]
+?   	github.com/viralabs-dev/mudarro/internal/mudarro/model	[no test files]
+?   	github.com/viralabs-dev/mudarro/internal/mudarro/projectfs	[no test files]
+?   	github.com/viralabs-dev/mudarro/internal/mudarro/terminal	[no test files]
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.058s
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal	0.008s

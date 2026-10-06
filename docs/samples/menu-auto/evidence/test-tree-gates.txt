@@ -1,0 +1,12 @@
+$ /home/danielsouza/sdk/go1.27.1/bin/go vet ./...
+
+vet: exit 0
+$ /home/danielsouza/sdk/go1.27.1/bin/go build -o /tmp/mudarro-test-tree-bin/mudarro ./cmd/mudarro
+
+build-linux: exit 0
+$ /home/danielsouza/sdk/go1.27.1/bin/go test -c -o /tmp/mudarro-test-tree-bin/terminal-darwin.test ./test/internal/mudarro/terminal
+
+compile-terminal-darwin: exit 0
+$ git diff --check
+
+diff-check: exit 0

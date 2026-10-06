@@ -1,0 +1,63 @@
+Creating cluster "mudarro-validation-562098" ...
+ • Ensuring node image (kindest/node:v1.32.2) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.32.2) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 2m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 2m0s for control-plane = Ready ⏳
+ • Ready after 17s 💚
+Set kubectl context to "kind-mudarro-validation-562098"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-mudarro-validation-562098
+
+Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
+namespace/mudarro-test-1791258888-586012 created
+persistentvolumeclaim/keep-data created
+deployment.apps/web created
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+NAME                              STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/keep-data   Bound    pvc-08db01f0-85e5-4811-9db2-a505ee5d5e3d   1Mi        RWO            standard       <unset>                 11s
+
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/web   1/1     1            1           11s
+ready
+deployment.apps/web restarted
+deployment.apps/web scaled
+NAME        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+keep-data   Bound    pvc-08db01f0-85e5-4811-9db2-a505ee5d5e3d   1Mi        RWO            standard       <unset>                 11s
+persistentvolumeclaim/keep-data condition met
+pod/web-556b4cd7f5-95gtf condition met
+pod/web-7ffd56d5dc-v4ppm condition met
+persistentvolumeclaim/keep-data unchanged
+deployment.apps/web configured
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+mudarro-owned-fixture-588782
+deployment.apps/web scaled
+pod/web-556b4cd7f5-4tl6k condition met
+persistentvolumeclaim/keep-data unchanged
+deployment.apps/web configured
+Waiting for deployment "web" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "web" rollout to finish: 0 of 1 updated replicas are available...
+deployment "web" successfully rolled out
+deployment.apps/web restarted
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "web" rollout to finish: 1 old replicas are pending termination...
+deployment "web" successfully rolled out
+deployment.apps/web scaled
+PVC persistence: OK; Bound, same UID, content survived down/up/restart (mudarro-test-1791258888-586012)
+namespace "mudarro-test-1791258888-586012" deleted
+Deleting cluster "mudarro-validation-562098" ...
+Deleted nodes: ["mudarro-validation-562098-control-plane"]

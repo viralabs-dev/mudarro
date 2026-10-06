@@ -1,0 +1,7 @@
+Package	Covered statements	Total statements	Percent
+/	589	935	62.99%
+/adapters	279	304	91.78%
+/executor	10	13	76.92%
+/projectfs	19	23	82.61%
+/terminal	131	152	86.18%
+TOTAL	1028	1427	72.04%

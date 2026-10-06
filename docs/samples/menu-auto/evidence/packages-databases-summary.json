@@ -1,0 +1,33 @@
+{
+  "binary": "/tmp/mudarro-packages-bin/mudarro",
+  "sha256": "b21c91f5ba5f10afd6263819c2551a5b391235dbfce3cefd86f9c9502fd006e6",
+  "exit_code": 0,
+  "passed": 8,
+  "matrix": [
+    "sqlite",
+    "postgresql"
+  ],
+  "tools": {
+    "goose": "3.24.1",
+    "alembic": "1.20.0",
+    "sqlalchemy": "2.1.3",
+    "django": "6.1.1",
+    "psycopg": "3.3.6",
+    "prisma": "7.10.0"
+  },
+  "checks": [
+    "generate menu/scripts",
+    "migration-new",
+    "migrate",
+    "seed",
+    "repeated migrate",
+    "alembic/django repeated seed"
+  ],
+  "seed_limit": "goose/prisma seed hooks log only; no persisted data assertion on final disposable fixtures",
+  "prior_data_evidence": [
+    "sqlite-data-validation.log",
+    "postgres-data-validation.log"
+  ],
+  "installations": false,
+  "log": "packages-matrix.log"
+}

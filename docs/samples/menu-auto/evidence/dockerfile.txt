@@ -1,0 +1,45 @@
+gerar: .mudarro/scripts/app/down.sh
+gerar: .mudarro/scripts/app/image-build.sh
+gerar: .mudarro/scripts/app/logs.sh
+gerar: .mudarro/scripts/app/restart.sh
+gerar: .mudarro/scripts/app/status.sh
+gerar: .mudarro/scripts/app/up.sh
+gerar: menu.sh
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 107B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/alpine:3.21
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/1] FROM docker.io/library/alpine:3.21@sha256:ce64758a109eb420d874a118f87920e625e12d3634e03b4a5573fd9f6e5d3507
+#4 resolve docker.io/library/alpine:3.21@sha256:ce64758a109eb420d874a118f87920e625e12d3634e03b4a5573fd9f6e5d3507 0.0s done
+#4 DONE 0.1s
+
+#5 exporting to image
+#5 exporting layers
+#5 exporting layers done
+#5 exporting manifest sha256:30db386e01b95a3256e9a61764509495a6f44ec28196d42b769783ed7ab58fde 0.0s done
+#5 exporting config sha256:9f6dd08390d898d499e9fdda0bf91f566b113fce14496e91ff7e9b0fe18dde09 0.0s done
+#5 exporting attestation manifest sha256:bee3e2a3feca41b65a07ae328e6889ee388bbb3ed5d75cdc79e134224e35e518 0.0s done
+#5 exporting manifest list sha256:7b2e2dd2bb8095f0f4674b2f9722898ee83d8e2b23097127a001578b753cc36d
+#5 exporting manifest list sha256:7b2e2dd2bb8095f0f4674b2f9722898ee83d8e2b23097127a001578b753cc36d 0.0s done
+#5 naming to docker.io/library/mudarro-dockerfile-test:def19fb0966e done
+#5 unpacking to docker.io/library/mudarro-dockerfile-test:def19fb0966e done
+#5 DONE 0.2s
+1dbcc2e25e1504e07d43d76faca36e1df8679f1abbac9a789ae945c96bc32439
+mudarro-def19fb0966e-app
+dockerfile-ready
+mudarro-def19fb0966e-app
+mudarro-def19fb0966e-app
+mudarro-def19fb0966e-app
+mudarro-def19fb0966e-app
+mudarro: container mudarro-def19fb0966e-app não pertence a este serviço
+Dockerfile: OK; repeat/resume and ownership refusal verified
