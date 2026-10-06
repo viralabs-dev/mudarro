@@ -1,0 +1,202 @@
+[
+  {
+    "profile": "turbo",
+    "args": [
+      "scan",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"javascript_workspaces\": [\n    {\n      \"path\": \"package.json\",\n      \"root\": \".\",\n      \"members\": [\n        \"packages/app\",\n        \"packages/lib\"\n      ],\n      \"manager\": \"npm\"\n    }\n  ],\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"mudarro-turbo-sample\",\n    \"services\": [\n      {\n        \"id\": \"app-javascript\",\n        \"dir\": \".\",\n        \"language\": \"javascript\",\n        \"manager\": \"npm\",\n        \"workspace_root\": \".\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"build\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"install\": {\n            \"args\": [\n              \"npm\",\n              \"install\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"test\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"test\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start para execu\u00e7\u00e3o local\"\n        ]\n      },\n      {\n        \"id\": \"packages-app-javascript\",\n        \"dir\": \"packages/app\",\n        \"language\": \"javascript\",\n        \"manager\": \"npm\",\n        \"workspace_root\": \".\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"build\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"test\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start para execu\u00e7\u00e3o local\"\n        ]\n      },\n      {\n        \"id\": \"packages-lib-javascript\",\n        \"dir\": \"packages/lib\",\n        \"language\": \"javascript\",\n        \"manager\": \"npm\",\n        \"workspace_root\": \".\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"build\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"test\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start para execu\u00e7\u00e3o local\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \"package.json\",\n      \"kind\": \"javascript-workspace\"\n    },\n    {\n      \"path\": \".\",\n      \"kind\": \"javascript\"\n    },\n    {\n      \"path\": \"packages/app\",\n      \"kind\": \"javascript\"\n    },\n    {\n      \"path\": \"packages/lib\",\n      \"kind\": \"javascript\"\n    },\n    {\n      \"path\": \"turbo.json\",\n      \"kind\": \"turborepo\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"turbo-build\",\n      \"command\": {\n        \"args\": [\n          \"turbo\",\n          \"run\",\n          \"build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"turbo.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"turbo-fail\",\n      \"command\": {\n        \"args\": [\n          \"turbo\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"turbo.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"turbo-test\",\n      \"command\": {\n        \"args\": [\n          \"turbo\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"turbo.json\"\n    },\n    {\n      \"service\": \"packages-app-javascript\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"packages/app/package.json\"\n    },\n    {\n      \"service\": \"packages-app-javascript\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"packages/app/package.json\"\n    },\n    {\n      \"service\": \"packages-app-javascript\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"packages/app/package.json\"\n    },\n    {\n      \"service\": \"packages-lib-javascript\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"packages/lib/package.json\"\n    },\n    {\n      \"service\": \"packages-lib-javascript\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"packages/lib/package.json\"\n    },\n    {\n      \"service\": \"packages-lib-javascript\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"packages/lib/package.json\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "profile": "turbo",
+    "args": [
+      "init",
+      "--select",
+      "app-javascript:turbo-build,app-javascript:turbo-fail,app-javascript:turbo-test"
+    ],
+    "exit": 0,
+    "stdout": "Project: mudarro-turbo-sample\n- app-javascript (.): javascript / npm / local\n  pending: Declare commands.start for local execution\n- packages-app-javascript (packages/app): javascript / npm / local\n  pending: Declare commands.start for local execution\n- packages-lib-javascript (packages/lib): javascript / npm / local\n  pending: Declare commands.start for local execution\n  suggestion: app-javascript:build [package.json]\n  suggestion: app-javascript:fail [package.json]\n  suggestion: app-javascript:test [package.json]\n  suggestion: app-javascript:turbo-build [turbo.json]\n  suggestion: app-javascript:turbo-fail [turbo.json]\n  suggestion: app-javascript:turbo-test [turbo.json]\n  suggestion: packages-app-javascript:build [packages/app/package.json]\n  suggestion: packages-app-javascript:fail [packages/app/package.json]\n  suggestion: packages-app-javascript:test [packages/app/package.json]\n  suggestion: packages-lib-javascript:build [packages/lib/package.json]\n  suggestion: packages-lib-javascript:fail [packages/lib/package.json]\n  suggestion: packages-lib-javascript:test [packages/lib/package.json]\nCreated mudarro.yaml. Review pending choices, then run mudarro generate.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "turbo",
+    "args": [
+      "init"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": "mudarro: configuration already exists; edit the preserved file\n"
+  },
+  {
+    "profile": "turbo",
+    "args": [
+      "generate"
+    ],
+    "exit": 0,
+    "stdout": "gerar: .mudarro/scripts/app-javascript/build.sh\ngerar: .mudarro/scripts/app-javascript/down.sh\ngerar: .mudarro/scripts/app-javascript/install.sh\ngerar: .mudarro/scripts/app-javascript/logs.sh\ngerar: .mudarro/scripts/app-javascript/restart.sh\ngerar: .mudarro/scripts/app-javascript/status.sh\ngerar: .mudarro/scripts/app-javascript/test.sh\ngerar: .mudarro/scripts/app-javascript/turbo-build.sh\ngerar: .mudarro/scripts/app-javascript/turbo-fail.sh\ngerar: .mudarro/scripts/app-javascript/turbo-test.sh\ngerar: .mudarro/scripts/app-javascript/up.sh\ngerar: .mudarro/scripts/packages-app-javascript/build.sh\ngerar: .mudarro/scripts/packages-app-javascript/down.sh\ngerar: .mudarro/scripts/packages-app-javascript/logs.sh\ngerar: .mudarro/scripts/packages-app-javascript/restart.sh\ngerar: .mudarro/scripts/packages-app-javascript/status.sh\ngerar: .mudarro/scripts/packages-app-javascript/test.sh\ngerar: .mudarro/scripts/packages-app-javascript/up.sh\ngerar: .mudarro/scripts/packages-lib-javascript/build.sh\ngerar: .mudarro/scripts/packages-lib-javascript/down.sh\ngerar: .mudarro/scripts/packages-lib-javascript/logs.sh\ngerar: .mudarro/scripts/packages-lib-javascript/restart.sh\ngerar: .mudarro/scripts/packages-lib-javascript/status.sh\ngerar: .mudarro/scripts/packages-lib-javascript/test.sh\ngerar: .mudarro/scripts/packages-lib-javascript/up.sh\ngerar: menu.sh\n",
+    "stderr": ""
+  },
+  {
+    "profile": "turbo",
+    "args": [
+      "generate"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "profile": "turbo",
+    "args": [
+      "preview",
+      "app-javascript:turbo-build"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:turbo-build\nDirectory: .\nargv (not shell evaluation):\n  [0] \"turbo\"\n  [1] \"run\"\n  [2] \"build\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "turbo",
+    "args": [
+      "preview",
+      "app-javascript:turbo-fail"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:turbo-fail\nDirectory: .\nargv (not shell evaluation):\n  [0] \"turbo\"\n  [1] \"run\"\n  [2] \"fail\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "turbo",
+    "args": [
+      "preview",
+      "app-javascript:turbo-test"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:turbo-test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"turbo\"\n  [1] \"run\"\n  [2] \"test\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "turbo",
+    "manualConfigPreserved": true,
+    "generateIdempotent": true,
+    "orchestrationSuggestions": 3,
+    "runtimeExecuted": false
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "scan",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"javascript_workspaces\": [\n    {\n      \"path\": \"package.json\",\n      \"root\": \".\",\n      \"members\": [\n        \"packages/app\",\n        \"packages/lib\"\n      ],\n      \"manager\": \"npm\"\n    }\n  ],\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"mudarro-nx-sample\",\n    \"services\": [\n      {\n        \"id\": \"app-javascript\",\n        \"dir\": \".\",\n        \"language\": \"javascript\",\n        \"manager\": \"npm\",\n        \"workspace_root\": \".\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"build\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"install\": {\n            \"args\": [\n              \"npm\",\n              \"install\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"test\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"test\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start para execu\u00e7\u00e3o local\"\n        ]\n      },\n      {\n        \"id\": \"packages-app-javascript\",\n        \"dir\": \"packages/app\",\n        \"language\": \"javascript\",\n        \"manager\": \"npm\",\n        \"workspace_root\": \".\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"build\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"test\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start para execu\u00e7\u00e3o local\"\n        ]\n      },\n      {\n        \"id\": \"packages-lib-javascript\",\n        \"dir\": \"packages/lib\",\n        \"language\": \"javascript\",\n        \"manager\": \"npm\",\n        \"workspace_root\": \".\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"build\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"npm\",\n              \"run\",\n              \"test\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start para execu\u00e7\u00e3o local\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \"package.json\",\n      \"kind\": \"javascript-workspace\"\n    },\n    {\n      \"path\": \".\",\n      \"kind\": \"javascript\"\n    },\n    {\n      \"path\": \"packages/app\",\n      \"kind\": \"javascript\"\n    },\n    {\n      \"path\": \"packages/lib\",\n      \"kind\": \"javascript\"\n    },\n    {\n      \"path\": \"nx.json\",\n      \"kind\": \"nx\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"nx-app-build\",\n      \"command\": {\n        \"args\": [\n          \"nx\",\n          \"run\",\n          \"app:build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"packages/app/project.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"nx-app-fail\",\n      \"command\": {\n        \"args\": [\n          \"nx\",\n          \"run\",\n          \"app:fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"packages/app/project.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"nx-app-test\",\n      \"command\": {\n        \"args\": [\n          \"nx\",\n          \"run\",\n          \"app:test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"packages/app/project.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"nx-lib-build\",\n      \"command\": {\n        \"args\": [\n          \"nx\",\n          \"run\",\n          \"lib:build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"packages/lib/project.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"nx-lib-fail\",\n      \"command\": {\n        \"args\": [\n          \"nx\",\n          \"run\",\n          \"lib:fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"packages/lib/project.json\"\n    },\n    {\n      \"purpose\": \"orchestration\",\n      \"service\": \"app-javascript\",\n      \"name\": \"nx-lib-test\",\n      \"command\": {\n        \"args\": [\n          \"nx\",\n          \"run\",\n          \"lib:test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"packages/lib/project.json\"\n    },\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"service\": \"packages-app-javascript\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"packages/app/package.json\"\n    },\n    {\n      \"service\": \"packages-app-javascript\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"packages/app/package.json\"\n    },\n    {\n      \"service\": \"packages-app-javascript\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"packages/app/package.json\"\n    },\n    {\n      \"service\": \"packages-lib-javascript\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"build\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"packages/lib/package.json\"\n    },\n    {\n      \"service\": \"packages-lib-javascript\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"packages/lib/package.json\"\n    },\n    {\n      \"service\": \"packages-lib-javascript\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"packages/lib/package.json\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "init",
+      "--select",
+      "app-javascript:nx-app-build,app-javascript:nx-app-fail,app-javascript:nx-app-test,app-javascript:nx-lib-build,app-javascript:nx-lib-fail,app-javascript:nx-lib-test"
+    ],
+    "exit": 0,
+    "stdout": "Project: mudarro-nx-sample\n- app-javascript (.): javascript / npm / local\n  pending: Declare commands.start for local execution\n- packages-app-javascript (packages/app): javascript / npm / local\n  pending: Declare commands.start for local execution\n- packages-lib-javascript (packages/lib): javascript / npm / local\n  pending: Declare commands.start for local execution\n  suggestion: app-javascript:build [package.json]\n  suggestion: app-javascript:fail [package.json]\n  suggestion: app-javascript:nx-app-build [packages/app/project.json]\n  suggestion: app-javascript:nx-app-fail [packages/app/project.json]\n  suggestion: app-javascript:nx-app-test [packages/app/project.json]\n  suggestion: app-javascript:nx-lib-build [packages/lib/project.json]\n  suggestion: app-javascript:nx-lib-fail [packages/lib/project.json]\n  suggestion: app-javascript:nx-lib-test [packages/lib/project.json]\n  suggestion: app-javascript:test [package.json]\n  suggestion: packages-app-javascript:build [packages/app/package.json]\n  suggestion: packages-app-javascript:fail [packages/app/package.json]\n  suggestion: packages-app-javascript:test [packages/app/package.json]\n  suggestion: packages-lib-javascript:build [packages/lib/package.json]\n  suggestion: packages-lib-javascript:fail [packages/lib/package.json]\n  suggestion: packages-lib-javascript:test [packages/lib/package.json]\nCreated mudarro.yaml. Review pending choices, then run mudarro generate.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "init"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": "mudarro: configuration already exists; edit the preserved file\n"
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "generate"
+    ],
+    "exit": 0,
+    "stdout": "gerar: .mudarro/scripts/app-javascript/build.sh\ngerar: .mudarro/scripts/app-javascript/down.sh\ngerar: .mudarro/scripts/app-javascript/install.sh\ngerar: .mudarro/scripts/app-javascript/logs.sh\ngerar: .mudarro/scripts/app-javascript/nx-app-build.sh\ngerar: .mudarro/scripts/app-javascript/nx-app-fail.sh\ngerar: .mudarro/scripts/app-javascript/nx-app-test.sh\ngerar: .mudarro/scripts/app-javascript/nx-lib-build.sh\ngerar: .mudarro/scripts/app-javascript/nx-lib-fail.sh\ngerar: .mudarro/scripts/app-javascript/nx-lib-test.sh\ngerar: .mudarro/scripts/app-javascript/restart.sh\ngerar: .mudarro/scripts/app-javascript/status.sh\ngerar: .mudarro/scripts/app-javascript/test.sh\ngerar: .mudarro/scripts/app-javascript/up.sh\ngerar: .mudarro/scripts/packages-app-javascript/build.sh\ngerar: .mudarro/scripts/packages-app-javascript/down.sh\ngerar: .mudarro/scripts/packages-app-javascript/logs.sh\ngerar: .mudarro/scripts/packages-app-javascript/restart.sh\ngerar: .mudarro/scripts/packages-app-javascript/status.sh\ngerar: .mudarro/scripts/packages-app-javascript/test.sh\ngerar: .mudarro/scripts/packages-app-javascript/up.sh\ngerar: .mudarro/scripts/packages-lib-javascript/build.sh\ngerar: .mudarro/scripts/packages-lib-javascript/down.sh\ngerar: .mudarro/scripts/packages-lib-javascript/logs.sh\ngerar: .mudarro/scripts/packages-lib-javascript/restart.sh\ngerar: .mudarro/scripts/packages-lib-javascript/status.sh\ngerar: .mudarro/scripts/packages-lib-javascript/test.sh\ngerar: .mudarro/scripts/packages-lib-javascript/up.sh\ngerar: menu.sh\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "generate"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "preview",
+      "app-javascript:nx-app-build"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:nx-app-build\nDirectory: .\nargv (not shell evaluation):\n  [0] \"nx\"\n  [1] \"run\"\n  [2] \"app:build\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "preview",
+      "app-javascript:nx-app-fail"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:nx-app-fail\nDirectory: .\nargv (not shell evaluation):\n  [0] \"nx\"\n  [1] \"run\"\n  [2] \"app:fail\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "preview",
+      "app-javascript:nx-app-test"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:nx-app-test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"nx\"\n  [1] \"run\"\n  [2] \"app:test\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "preview",
+      "app-javascript:nx-lib-build"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:nx-lib-build\nDirectory: .\nargv (not shell evaluation):\n  [0] \"nx\"\n  [1] \"run\"\n  [2] \"lib:build\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "preview",
+      "app-javascript:nx-lib-fail"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:nx-lib-fail\nDirectory: .\nargv (not shell evaluation):\n  [0] \"nx\"\n  [1] \"run\"\n  [2] \"lib:fail\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "args": [
+      "preview",
+      "app-javascript:nx-lib-test"
+    ],
+    "exit": 0,
+    "stdout": "Action: app-javascript:nx-lib-test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"nx\"\n  [1] \"run\"\n  [2] \"lib:test\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "nx",
+    "manualConfigPreserved": true,
+    "generateIdempotent": true,
+    "orchestrationSuggestions": 6,
+    "runtimeExecuted": false
+  }
+]

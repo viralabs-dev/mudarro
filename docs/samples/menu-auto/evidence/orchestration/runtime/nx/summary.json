@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "version",
+      "exit_code": 0
+    },
+    {
+      "case": "final-scan",
+      "exit_code": 0
+    },
+    {
+      "case": "lock",
+      "exit_code": 0
+    },
+    {
+      "case": "build-order",
+      "exit_code": 0
+    },
+    {
+      "case": "test-real",
+      "exit_code": 0
+    },
+    {
+      "case": "cache-first",
+      "exit_code": 0
+    },
+    {
+      "case": "cache-repeat",
+      "exit_code": 0
+    },
+    {
+      "case": "cache-input-change",
+      "exit_code": 0
+    },
+    {
+      "case": "failure",
+      "exit_code": 1
+    },
+    {
+      "case": "missing-target",
+      "exit_code": 1
+    },
+    {
+      "case": "generate",
+      "exit_code": 0
+    },
+    {
+      "case": "generate-repeat",
+      "exit_code": 0
+    },
+    {
+      "case": "preview",
+      "exit_code": 0
+    },
+    {
+      "case": "mudarro-build",
+      "exit_code": 0
+    },
+    {
+      "case": "mudarro-test",
+      "exit_code": 0
+    },
+    {
+      "case": "wrapper",
+      "exit_code": 0
+    },
+    {
+      "case": "mudarro-failure",
+      "exit_code": 1
+    }
+  ],
+  "configuration_preserved": true,
+  "generation_idempotent": true,
+  "tool": "/tmp/mudarro-orchestrators.c6vPF6/nx/node_modules/nx/dist/bin/nx.js",
+  "allowlisted_environment": {
+    "PATH": "/tmp/mudarro-mud037-runtime/nx-private-bin:/tmp/mudarro-mud037-root:/home/danielsouza/.nvm/versions/node/v24.15.0/bin:/usr/bin:/bin",
+    "HOME": "/home/danielsouza",
+    "LANG": "C.UTF-8",
+    "NX_SOCKET_DIR": "/tmp/mudarro-mud037-runtime/nx-sockets",
+    "NX_DAEMON": "false",
+    "NX_NO_CLOUD": "true",
+    "NX_SKIP_REMOTE_CACHE": "true",
+    "NX_INTERACTIVE": "false",
+    "NX_TUI": "false",
+    "NX_LOAD_DOT_ENV_FILES": "false",
+    "NX_CACHE_DIRECTORY": "/tmp/mudarro-mud037-runtime/nx-cache",
+    "NX_WORKSPACE_DATA_DIRECTORY": "/tmp/mudarro-mud037-runtime/nx-data",
+    "NX_NATIVE_FILE_CACHE_DIRECTORY": "/tmp/mudarro-mud037-runtime/nx-native",
+    "NPM_CONFIG_USERCONFIG": "/tmp/mudarro-orchestrators.c6vPF6/config/npm-user.rc",
+    "NPM_CONFIG_GLOBALCONFIG": "/tmp/mudarro-orchestrators.c6vPF6/config/npm-global.rc",
+    "NPM_CONFIG_CACHE": "/tmp/mudarro-mud037-runtime/nx-npm-cache"
+  },
+  "binary": "/tmp/mudarro-mud037-root/mudarro-final",
+  "binary_sha256": "00927bb14ab3bdacaa07dd1292e949249efa230bdd1b7bd9c6dcd6cff699c331",
+  "tool_version": "23.2.1",
+  "cache_repeat_verified": "2/2 hit",
+  "input_change_verified": "0/2 hit real rebuild",
+  "initial_init_passed_prior_run": true,
+  "initial_cache_case": "Explicit Nx targets initially lacked cache:true: repeat0/2hits, corrected only private fixture and now2/2hits",
+  "runtime_builtin_plugins": [
+    "js",
+    "package-json",
+    "project-json"
+  ],
+  "private_symlink_required": true,
+  "unix_socket_escalation_required": true
+}

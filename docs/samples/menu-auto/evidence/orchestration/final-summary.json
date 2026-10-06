@@ -1,0 +1,41 @@
+{
+  "topLevelTestsPassed": 186,
+  "failures": 0,
+  "testSkips": 0,
+  "includesOptionalInteractivePTY": true,
+  "coverageUniqueBlocks": {
+    "coveredStatements": 2530,
+    "totalStatements": 3109,
+    "percent": 81.37664844001287
+  },
+  "race": "PASS",
+  "vet": "PASS",
+  "linuxBuild": "PASS",
+  "darwinArm64CrossBuild": "PASS; no native execution",
+  "smoke": "PASS",
+  "menu": "PASS",
+  "resizePTY": "PASS",
+  "turboRecordedCommands": 33,
+  "nxFinalChecks": 17,
+  "runtimeExecuted": true,
+  "binarySHA256": "00927bb14ab3bdacaa07dd1292e949249efa230bdd1b7bd9c6dcd6cff699c331",
+  "media": {
+    "turbo": {
+      "frames": 11,
+      "pngFrame": 10
+    },
+    "nx": {
+      "frames": 7,
+      "pngFrame": 6
+    },
+    "both": {
+      "width": 944,
+      "height": 647,
+      "allFramesDecoded": true,
+      "visuallyInspected": true,
+      "actualPTY": true,
+      "noBrowser": true
+    }
+  },
+  "publication": "local uncommitted on 05702cc"
+}

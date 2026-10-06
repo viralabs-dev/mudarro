@@ -1,0 +1,6 @@
+{
+  "defaultBase": "main",
+  "enableCloud": false,
+  "useDaemonProcess": false,
+  "analytics": false
+}

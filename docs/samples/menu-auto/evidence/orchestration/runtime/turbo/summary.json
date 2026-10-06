@@ -1,0 +1,49 @@
+{
+  "tool": "turbo",
+  "version": "2.11.7",
+  "node": "24.15.0",
+  "npm": "11.12.1",
+  "runtimeRoot": "/tmp/mudarro-orchestrators.c6vPF6",
+  "fixture": "/tmp/mudarro-mud037-turbo-runtime/fixture",
+  "env": "env.json",
+  "commands": 33,
+  "buildValues": {
+    "lib": 21,
+    "app": 42
+  },
+  "dependencyOrder": "lib.endTime <= app.startTime",
+  "cache": {
+    "cold": "MISS both",
+    "repeat": "local HIT both; remote false",
+    "inputChange": "MISS both; hashes changed"
+  },
+  "negatives": {
+    "childTaskExit": 7,
+    "turboExit": 7,
+    "mudarroAndWrapperExit": 1,
+    "missingTaskExit": 1
+  },
+  "mudarro": [
+    "scan",
+    "init --select",
+    "init preserves existing",
+    "generate twice identical",
+    "preview all",
+    "run build/test/fail",
+    "generated wrappers build/test/fail"
+  ],
+  "initialLimitations": [
+    "--cache and --force mutually exclusive in 2.11.7; corrected to initially empty local cache",
+    "No Git default inputs included output/log files; corrected fixture to explicit task inputs + globalDependencies scripts/**"
+  ],
+  "cacheProofLogs": [
+    "build-explicit-inputs-cold.summary.json",
+    "build-explicit-inputs-repeat.summary.json",
+    "build-explicit-inputs-change.summary.json"
+  ],
+  "noPersistentAppStarted": true,
+  "finalBinary": "/tmp/mudarro-mud037-root/mudarro-final",
+  "finalBinarySHA256": "00927bb14ab3bdacaa07dd1292e949249efa230bdd1b7bd9c6dcd6cff699c331",
+  "finalRecheck": "scan/build/test/run+wrappers PASS",
+  "recordAction": "app-javascript:turbo-test"
+}

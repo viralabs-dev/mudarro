@@ -1,0 +1,36 @@
+ WARNING  No locally installed `turbo` found in your repository. Using globally installed version (2.11.7). Using a specified version in your repository will result in more predictable behavior.
+
+   • turbo 2.11.7
+   • Packages in scope: mudarro-turbo-app, mudarro-turbo-lib
+   • Running test in 2 packages
+   • Remote caching disabled
+
+mudarro-turbo-lib:build: cache hit, replaying logs c73ef25c6a72f4f0
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: > build
+mudarro-turbo-lib:build: > node ../../scripts/build.cjs lib
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: REAL_BUILD_lib
+mudarro-turbo-lib:test: cache miss, executing e4b0aedb1c8d384a
+mudarro-turbo-app:build: cache hit, replaying logs 11df9adf7ecfe672
+mudarro-turbo-app:build: 
+mudarro-turbo-app:build: > build
+mudarro-turbo-app:build: > node ../../scripts/build.cjs app
+mudarro-turbo-app:build: 
+mudarro-turbo-app:build: REAL_BUILD_app
+mudarro-turbo-app:test: cache miss, executing fb7707bdf0215903
+mudarro-turbo-lib:test: 
+mudarro-turbo-lib:test: > test
+mudarro-turbo-lib:test: > node ../../scripts/test.cjs lib
+mudarro-turbo-lib:test: 
+mudarro-turbo-app:test: 
+mudarro-turbo-app:test: > test
+mudarro-turbo-app:test: > node ../../scripts/test.cjs app
+mudarro-turbo-app:test: 
+mudarro-turbo-app:test: REAL_TEST_app
+mudarro-turbo-lib:test: REAL_TEST_lib
+
+ Tasks:    4 successful, 4 total
+Cached:    2 cached, 4 total
+  Time:    153ms 
+

@@ -1,0 +1,69 @@
+{
+  "os": [
+    "android",
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "bugs": {
+    "url": "https://github.com/vercel/turborepo/issues"
+  },
+  "dist": {
+    "shasum": "98a92bd3cba5eab1fb762cefc93a9330c3749b53",
+    "tarball": "https://registry.npmjs.org/@turbo/linux-64/-/linux-64-2.11.7.tgz",
+    "fileCount": 6,
+    "integrity": "sha512-rAqRp3blQKk1+ylMGlZHAW0eJjVNuuGUm4ZrC6RU1Im8tLryvaO4a2zLQ/FQi1TRlmKqKV9YXBki2YeytlLbXA==",
+    "signatures": [
+      {
+        "sig": "MEUCIQDMvOe9xf/mUx6LwylX0qNVEuP90pmXK7+LMVLSQz4UlQIgTM9a0HS7ucczLpo2uCj9CQoSQ9ehqPPynZHE7q6Aw14=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEUCIQCVJwWqNI6IzHO54TjXgOD8OM4LwGIpA7fE0HPnexT1OQIgG/5djPtoWtDzkc9ss1euU4GE64UnZCERuf8vuyMVseM=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/@turbo%2flinux-64@2.11.7",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 41104199
+  },
+  "name": "@turbo/linux-64",
+  "_from": "file:/home/runner/work/turborepo/turborepo/release-artifacts/dist/turbo-linux-x64-2.11.7.tar.gz",
+  "license": "MIT",
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "66396a00-0c7b-4a91-9019-5439423601bb"
+    }
+  },
+  "homepage": "https://turborepo.dev",
+  "_resolved": "/home/runner/work/turborepo/turborepo/release-artifacts/dist/turbo-linux-x64-2.11.7.tar.gz",
+  "_integrity": "sha512-rAqRp3blQKk1+ylMGlZHAW0eJjVNuuGUm4ZrC6RU1Im8tLryvaO4a2zLQ/FQi1TRlmKqKV9YXBki2YeytlLbXA==",
+  "repository": {
+    "url": "git+https://github.com/vercel/turborepo.git",
+    "type": "git"
+  },
+  "_npmVersion": "11.5.1",
+  "description": "The linux-x64 binary for turbo, a monorepo build system.",
+  "directories": {},
+  "maintainers": [],
+  "_nodeVersion": "24.21.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_hasShrinkwrap": false,
+  "preferUnplugged": true,
+  "_npmOperationalInternal": {
+    "tmp": "tmp/linux-64_2.11.7_1790952998607_0.3679243786402475",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "@turbo/linux-64@2.11.7",
+  "version": "2.11.7"
+}

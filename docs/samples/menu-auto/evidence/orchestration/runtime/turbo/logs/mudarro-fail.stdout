@@ -1,0 +1,42 @@
+ WARNING  No locally installed `turbo` found in your repository. Using globally installed version (2.11.7). Using a specified version in your repository will result in more predictable behavior.
+
+   • turbo 2.11.7
+   • Packages in scope: mudarro-turbo-app, mudarro-turbo-lib
+   • Running fail in 2 packages
+   • Remote caching disabled
+
+mudarro-turbo-app:fail: cache bypass, force executing cbc9fb223feca873
+mudarro-turbo-lib:fail: cache bypass, force executing 472377617f2c5e19
+mudarro-turbo-app:fail: 
+mudarro-turbo-app:fail: > fail
+mudarro-turbo-app:fail: > node ../../scripts/fail.cjs
+mudarro-turbo-app:fail: 
+mudarro-turbo-lib:fail: 
+mudarro-turbo-lib:fail: > fail
+mudarro-turbo-lib:fail: > node ../../scripts/fail.cjs
+mudarro-turbo-lib:fail: 
+mudarro-turbo-lib:fail: OWNED_TASK_FAILURE
+mudarro-turbo-app:fail: OWNED_TASK_FAILURE
+mudarro-turbo-lib:fail: npm error Lifecycle script `fail` failed with error:
+mudarro-turbo-lib:fail: npm error code 7
+mudarro-turbo-lib:fail: npm error path /tmp/mudarro-mud037-turbo-runtime/fixture/packages/lib
+mudarro-turbo-app:fail: npm error Lifecycle script `fail` failed with error:
+mudarro-turbo-app:fail: npm error code 7
+mudarro-turbo-lib:fail: npm error workspace mudarro-turbo-lib
+mudarro-turbo-app:fail: npm error path /tmp/mudarro-mud037-turbo-runtime/fixture/packages/app
+mudarro-turbo-lib:fail: npm error location /tmp/mudarro-mud037-turbo-runtime/fixture/packages/lib
+mudarro-turbo-lib:fail: npm error command failed
+mudarro-turbo-app:fail: npm error workspace mudarro-turbo-app
+mudarro-turbo-lib:fail: npm error command sh -c node ../../scripts/fail.cjs
+mudarro-turbo-app:fail: npm error location /tmp/mudarro-mud037-turbo-runtime/fixture/packages/app
+mudarro-turbo-app:fail: npm error command failed
+mudarro-turbo-app:fail: npm error command sh -c node ../../scripts/fail.cjs
+mudarro-turbo-lib#fail:  ERROR  command (/tmp/mudarro-mud037-turbo-runtime/fixture/packages/lib) /home/danielsouza/.nvm/versions/node/v24.15.0/bin/npm run fail exited (7)
+mudarro-turbo-app#fail:  ERROR  command (/tmp/mudarro-mud037-turbo-runtime/fixture/packages/app) /home/danielsouza/.nvm/versions/node/v24.15.0/bin/npm run fail exited (7)
+
+ Tasks:    0 successful, 2 total
+Cached:    0 cached, 2 total
+  Time:    135ms 
+Failed:    mudarro-turbo-app#fail, mudarro-turbo-lib#fail
+
+ ERROR  run failed: command  exited (7)

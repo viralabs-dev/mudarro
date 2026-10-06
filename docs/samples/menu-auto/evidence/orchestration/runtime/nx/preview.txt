@@ -1,0 +1,7 @@
+Action: app-javascript:nx-app-build
+Directory: .
+argv (not shell evaluation):
+  [0] "nx"
+  [1] "run"
+  [2] "app:build"
+Environment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.

@@ -1,0 +1,32 @@
+{
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "inputs": [
+        "package.json",
+        "input.txt"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [],
+      "inputs": [
+        "package.json",
+        "input.txt"
+      ]
+    },
+    "fail": {
+      "cache": false
+    }
+  },
+  "globalDependencies": [
+    "scripts/**"
+  ]
+}

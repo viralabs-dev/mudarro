@@ -1,0 +1,73 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "--version"
+    ],
+    "exit": 0,
+    "elapsed": 0.055,
+    "stdout": "version.stdout",
+    "stderr": "version.stderr"
+  },
+  {
+    "name": "lock",
+    "argv": [
+      "/home/danielsouza/.nvm/versions/node/v24.15.0/bin/npm",
+      "--userconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/user.rc",
+      "--globalconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/global.rc",
+      "--cache",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/npm",
+      "install",
+      "--package-lock-only",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--offline"
+    ],
+    "exit": 0,
+    "elapsed": 0.284,
+    "stdout": "lock.stdout",
+    "stderr": "lock.stderr"
+  },
+  {
+    "name": "workspace-install",
+    "argv": [
+      "/home/danielsouza/.nvm/versions/node/v24.15.0/bin/npm",
+      "--userconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/user.rc",
+      "--globalconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/global.rc",
+      "--cache",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/npm",
+      "ci",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--offline"
+    ],
+    "exit": 0,
+    "elapsed": 0.183,
+    "stdout": "workspace-install.stdout",
+    "stderr": "workspace-install.stderr"
+  },
+  {
+    "name": "build-force",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "build",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize",
+      "--force"
+    ],
+    "exit": 1,
+    "elapsed": 0.028,
+    "stdout": "build-force.stdout",
+    "stderr": "build-force.stderr"
+  }
+]

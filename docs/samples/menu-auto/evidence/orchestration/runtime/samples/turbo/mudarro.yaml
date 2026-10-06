@@ -1,0 +1,92 @@
+version: 1
+name: mudarro-turbo-sample
+services:
+    - id: app-javascript
+      dir: .
+      language: javascript
+      manager: npm
+      workspace_root: .
+      infrastructure:
+        kind: local
+      commands:
+        build:
+            args:
+                - npm
+                - run
+                - build
+            group: aplicacao
+        install:
+            args:
+                - npm
+                - install
+            group: dependencias
+        test:
+            args:
+                - npm
+                - run
+                - test
+            group: qualidade
+        turbo-build:
+            args:
+                - turbo
+                - run
+                - build
+            group: aplicacao
+        turbo-fail:
+            args:
+                - turbo
+                - run
+                - fail
+            group: scripts
+        turbo-test:
+            args:
+                - turbo
+                - run
+                - test
+            group: qualidade
+      pending:
+        - Declare commands.start para execução local
+    - id: packages-app-javascript
+      dir: packages/app
+      language: javascript
+      manager: npm
+      workspace_root: .
+      infrastructure:
+        kind: local
+      commands:
+        build:
+            args:
+                - npm
+                - run
+                - build
+            group: aplicacao
+        test:
+            args:
+                - npm
+                - run
+                - test
+            group: qualidade
+      pending:
+        - Declare commands.start para execução local
+    - id: packages-lib-javascript
+      dir: packages/lib
+      language: javascript
+      manager: npm
+      workspace_root: .
+      infrastructure:
+        kind: local
+      commands:
+        build:
+            args:
+                - npm
+                - run
+                - build
+            group: aplicacao
+        test:
+            args:
+                - npm
+                - run
+                - test
+            group: qualidade
+      pending:
+        - Declare commands.start para execução local

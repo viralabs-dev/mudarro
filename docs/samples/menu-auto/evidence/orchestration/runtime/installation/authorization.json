@@ -1,0 +1,16 @@
+{
+  "message": "Sentinel_263b75502cd081919333014f85f54c86",
+  "response": "Pode sim",
+  "packages": [
+    "turbo@2.11.7",
+    "@turbo/linux-64@2.11.7",
+    "nx@23.2.1",
+    "@nx/nx-linux-x64-gnu@23.2.1"
+  ],
+  "registry": "https://registry.npmjs.org",
+  "ignoreScripts": true,
+  "privateRuntimeRoot": "/tmp/mudarro-orchestrators.c6vPF6",
+  "node": "24.15.0",
+  "npm": "11.12.1",
+  "noPublicationAuthorized": true
+}

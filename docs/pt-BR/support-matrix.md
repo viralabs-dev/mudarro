@@ -148,3 +148,8 @@ Evidências: [test-tree-tests.txt](../samples/menu-auto/evidence/test-tree-tests
 GIF final genuíno: 983×739, 8 frames, 15,04 s. Frame composto inspecionado: lettering AURORA e PROJETO / Aurora. É frame da gravação PTY real, não screenshot gráfica ainda pendente. Aceite do desenho recebido. SHA-256 binário: `ef36e6c1142bd7294e543208895cea21e125c6898d14ec168e40c1c7eb327890`.
 
 Evidências: [project-name-tests.txt](../samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](../samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](../samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](../samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](../samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](../samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
+
+
+## MUD-037 — checkpoint local
+
+Tarefas explícitas selecionáveis Turbo/Nx e ownership da raiz implementados localmente. Build/test/ordenação/cache local/repetição/mudança de entrada/falhas e wrappers reais passaram com Turbo2.11.7/Nx23.2.1 e samples internos.186racePASS/81,38%, nenhum teste pulado. JSON estrito; scan não infere grafos/plugins/defaults. macOS/WSL/Podman nativos e aceite físico continuam pendentes. Novo lote não publicado. [Evidências e limites](../samples/menu-auto/evidence/orchestration/README.md).

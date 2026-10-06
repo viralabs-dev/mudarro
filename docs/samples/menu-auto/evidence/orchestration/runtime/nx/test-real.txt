@@ -1,0 +1,37 @@
+
+ NX   Running target test for project app and 2 tasks it depends on:
+
+
+
+> nx run lib:build
+
+> node scripts/build.cjs lib
+
+REAL_BUILD_lib
+
+> nx run app:build
+
+> node scripts/build.cjs app
+
+REAL_BUILD_app
+
+> nx run app:test
+
+> node scripts/test.cjs app
+
+REAL_TEST_app
+
+
+
+ NX   Successfully ran target test for project app and 2 tasks it depends on
+
+
+  Run duration:      154ms
+  Cache:             Skipped (--skip-nx-cache)
+  Critical path:     134ms (3 tasks)
+  Recoverable time:  <1ms
+
+ NX   Remote Cache Disabled
+
+Nx will continue running, but nothing will be written or read from the remote cache.
+

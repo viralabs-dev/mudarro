@@ -117,3 +117,8 @@ Evidence: [test-tree-tests.txt](samples/menu-auto/evidence/test-tree-tests.txt),
 Real final GIF: 983×739, 8 frames, 15.04 s. Composed frame inspected: AURORA lettering and PROJETO / Aurora. This is a real PTY recording frame, not the still-pending graphical screenshot. User design approval received. Binary SHA-256: `ef36e6c1142bd7294e543208895cea21e125c6898d14ec168e40c1c7eb327890`.
 
 Evidence: [project-name-tests.txt](samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
+
+
+## MUD-037 — local checkpoint
+
+Explicit opt-in Turbo/Nx tasks and root ownership are implemented locally. Real pinned Turbo2.11.7/Nx23.2.1 build/test/dependency ordering/local cache/repeat/input-change/failure and Mudarro wrappers passed using internal samples.186racePASS/81.38%, no test skips. Strict JSON only; no scanner graph/plugin/default inference. Native macOS/WSL/Podman and physical acceptance remain pending. New batch not published. [Evidence and limits](samples/menu-auto/evidence/orchestration/README.md).

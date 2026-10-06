@@ -1,0 +1,5 @@
+--- FAIL: TestOrchestrationNxTargetKeysAreCaseSensitive (0.00s)
+    orchestration_keys_test.go:16: unexpected targets: [{Purpose:orchestration Service:app-javascript Name:nx-app-mixed Command:{Args:[nx run app:mixed] Shell: Group:scripts Destructive:false Requires:[]} Evidence:project.json} {Purpose:orchestration Service:app-javascript Name:nx-app-upper Command:{Args:[nx run app:upper] Shell: Group:scripts Destructive:false Requires:[]} Evidence:project.json} {Purpose:orchestration Service:app-javascript Name:nx-app-valid Command:{Args:[nx run app:valid] Shell: Group:scripts Destructive:false Requires:[]} Evidence:project.json}]
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.011s
+FAIL

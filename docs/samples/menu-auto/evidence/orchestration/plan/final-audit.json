@@ -1,0 +1,40 @@
+{
+  "scope": "Read-only source/tests/evidence audit; no orchestrator execution, installations, repo/Vault/Git edits",
+  "findings": [
+    {
+      "priority": "P2",
+      "file": "internal/mudarro/orchestration.go",
+      "issue": "Nx target parsing via encoding/json struct matches Executor/Command case-insensitively; uppercase-only EXECUTOR/COMMAND can yield a suggestion while Nx exact lowercase configuration is absent.",
+      "status": "Reported to root; static finding, no orchestrator runtime reproduction",
+      "recommendation": "Decode exact executor/command RawMessage keys and require string values; add uppercase-only negative cases."
+    }
+  ],
+  "confirmedContracts": [
+    "Scan reads declarations only; no manager/plugin execution in scanOrchestration",
+    "Opt-in suggestions, no startup inference",
+    "Nearest invalid Nx boundary blocks borrowing outer owner",
+    "Unsafe tokens, normalized collisions, duplicate project names diagnosed",
+    "read helper used for guarded sources; exclusions handled by scan inventory",
+    "Suggestion argv uses literal runtime/task and root owner, never manifest command shell expansion"
+  ],
+  "evidenceAudit": {
+    "relativeMarkdownMissingLinks": 0,
+    "sourceSamplesPackageManager": "npm@11.12.1",
+    "checkpointTests": 184,
+    "runtimeEvidenceStatus": "Existing README/summary describe pre-install checkpoint; independent real runtime fronts pending. Do not count runtime checks as new Go tests."
+  },
+  "recommendedFinalMatrix": [
+    "Static declaration/ownership/negative tests: checkpoint 184 tests historical; retain current later suite separately",
+    "Direct task bodies: 12 Node checks, distinct from scheduling",
+    "Per runtime: pinned version/direct SRI/transitive lock match, dependency scheduling, repeat cache hit, changed-input invalidation, nonzero propagation, unknown task",
+    "Mudarro per runtime: scan noexec, explicit adoption, root cwd/argv, genuine selected command, generate idempotence, manual config preservation",
+    "Media: actual orchestrated execution capture if delivered; existing 2-frame menu is menu-only"
+  ],
+  "limits": [
+    "Strict JSON subset, no JSONC/comments",
+    "No graph/plugins/inferred/targetDefaults/extends evaluation during scan",
+    "No runtime success claimed before independent front logs arrive",
+    "No native macOS/WSL or production project validation",
+    "No standalone installed tool/library in archived samples; reproduction must provide private pinned runtime and real lockfile"
+  ]
+}

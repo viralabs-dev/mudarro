@@ -1,0 +1,29 @@
+{
+  "topLevelTestsPassed": 184,
+  "optionalInteractiveSeparatePass": true,
+  "failures": 0,
+  "coverageUniqueBlocks": {
+    "coveredStatements": 2523,
+    "totalStatements": 3105,
+    "percent": 81.256038647343
+  },
+  "race": true,
+  "vet": "PASS",
+  "linuxBuild": "PASS",
+  "darwinArm64CrossBuild": "PASS; native not executed",
+  "smoke": "PASS",
+  "menu": "PASS",
+  "resizePTY": "PASS",
+  "directNodeTaskChecks": 12,
+  "orchestratorRuntimeExecuted": false,
+  "binarySHA256": "65671d5870ce80c8b366f52eef30a7f12a9912046f7d3cf1e8a56f9ce8f0de98",
+  "media": {
+    "allFramesDecoded": true,
+    "frames": 2,
+    "width": 860,
+    "height": 647,
+    "pngFrame": 0,
+    "visuallyInspected": true,
+    "source": "actual PTY menu, injected q; no browser or desktop capture"
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "javascript_workspaces": [
+    {
+      "path": "package.json",
+      "root": ".",
+      "members": [
+        "packages/app",
+        "packages/lib"
+      ],
+      "manager": "npm"
+    }
+  ],
+  "config": {
+    "version": 1,
+    "name": "mudarro-turbo-sample",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "npm",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "npm",
+              "run",
+              "build"
+            ],
+            "group": "aplicacao"
+          },
+          "install": {
+            "args": [
+              "npm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "packages-app-javascript",
+        "dir": "packages/app",
+        "language": "javascript",
+        "manager": "npm",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "npm",
+              "run",
+              "build"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "packages-lib-javascript",
+        "dir": "packages/lib",
+        "language": "javascript",
+        "manager": "npm",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "npm",
+              "run",
+              "build"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "package.json",
+      "kind": "javascript-workspace"
+    },
+    {
+      "path": ".",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/app",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/lib",
+      "kind": "javascript"
+    },
+    {
+      "path": "turbo.json",
+      "kind": "turborepo"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "build",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "fail",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "turbo-build",
+      "command": {
+        "args": [
+          "turbo",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "turbo.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "turbo-fail",
+      "command": {
+        "args": [
+          "turbo",
+          "run",
+          "fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "turbo.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "turbo-test",
+      "command": {
+        "args": [
+          "turbo",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "turbo.json"
+    },
+    {
+      "service": "packages-app-javascript",
+      "name": "build",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/app/package.json"
+    },
+    {
+      "service": "packages-app-javascript",
+      "name": "fail",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/app/package.json"
+    },
+    {
+      "service": "packages-app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/app/package.json"
+    },
+    {
+      "service": "packages-lib-javascript",
+      "name": "build",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/lib/package.json"
+    },
+    {
+      "service": "packages-lib-javascript",
+      "name": "fail",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/lib/package.json"
+    },
+    {
+      "service": "packages-lib-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/lib/package.json"
+    }
+  ],
+  "warnings": null
+}

@@ -1,0 +1,9 @@
+{
+  "name": "mudarro-turbo-lib",
+  "private": true,
+  "scripts": {
+    "build": "node ../../scripts/build.cjs lib",
+    "test": "node ../../scripts/test.cjs lib",
+    "fail": "node ../../scripts/fail.cjs"
+  }
+}

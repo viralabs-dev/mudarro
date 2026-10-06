@@ -1,0 +1,7 @@
+Action: app-javascript:turbo-build
+Directory: .
+argv (not shell evaluation):
+  [0] "turbo"
+  [1] "run"
+  [2] "build"
+Environment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.

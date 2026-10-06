@@ -1,0 +1,26 @@
+
+ NX   Remote Cache Disabled
+
+Nx will continue running, but nothing will be written or read from the remote cache.
+
+
+> nx run lib:fail
+
+> node scripts/fail.cjs
+
+OWNED_TASK_FAILURE
+Warning: command "node scripts/fail.cjs" exited with non-zero status code
+
+
+ NX   Running target fail for project lib failed
+
+Failed tasks:
+
+- lib:fail
+
+Hint: run the command with --verbose for more details.
+
+  Run duration:      70ms
+  Critical path:     68ms (1 task)
+  Recoverable time:  <1ms
+mudarro: exit status 1

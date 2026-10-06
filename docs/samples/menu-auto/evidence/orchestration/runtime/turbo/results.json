@@ -1,0 +1,460 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "--version"
+    ],
+    "exit": 0,
+    "elapsed": 0.035,
+    "stdout": "version.stdout",
+    "stderr": "version.stderr"
+  },
+  {
+    "name": "lock",
+    "argv": [
+      "/home/danielsouza/.nvm/versions/node/v24.15.0/bin/npm",
+      "--userconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/user.rc",
+      "--globalconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/global.rc",
+      "--cache",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/npm",
+      "install",
+      "--package-lock-only",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--offline"
+    ],
+    "exit": 0,
+    "elapsed": 0.176,
+    "stdout": "lock.stdout",
+    "stderr": "lock.stderr"
+  },
+  {
+    "name": "workspace-install",
+    "argv": [
+      "/home/danielsouza/.nvm/versions/node/v24.15.0/bin/npm",
+      "--userconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/user.rc",
+      "--globalconfig",
+      "/tmp/mudarro-mud037-turbo-runtime/config/global.rc",
+      "--cache",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/npm",
+      "ci",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--offline"
+    ],
+    "exit": 0,
+    "elapsed": 0.201,
+    "stdout": "workspace-install.stdout",
+    "stderr": "workspace-install.stderr"
+  },
+  {
+    "name": "build-cold",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "build",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.328,
+    "stdout": "build-cold.stdout",
+    "stderr": "build-cold.stderr"
+  },
+  {
+    "name": "test-real",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "test",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.389,
+    "stdout": "test-real.stdout",
+    "stderr": "test-real.stderr"
+  },
+  {
+    "name": "build-repeat-cache",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "build",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.316,
+    "stdout": "build-repeat-cache.stdout",
+    "stderr": "build-repeat-cache.stderr"
+  },
+  {
+    "name": "build-input-change",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "build",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.293,
+    "stdout": "build-input-change.stdout",
+    "stderr": "build-input-change.stderr"
+  },
+  {
+    "name": "failure",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "fail",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 7,
+    "elapsed": 0.335,
+    "stdout": "failure.stdout",
+    "stderr": "failure.stderr"
+  },
+  {
+    "name": "missing-task",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "absent-task",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 1,
+    "elapsed": 0.067,
+    "stdout": "missing-task.stdout",
+    "stderr": "missing-task.stderr"
+  },
+  {
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.006,
+    "stdout": "scan.stdout",
+    "stderr": "scan.stderr"
+  },
+  {
+    "name": "init",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "--select",
+      "app-javascript:turbo-build,app-javascript:turbo-fail,app-javascript:turbo-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.007,
+    "stdout": "init.stdout",
+    "stderr": "init.stderr"
+  },
+  {
+    "name": "init-preservation",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture"
+    ],
+    "exit": 1,
+    "elapsed": 0.007,
+    "stdout": "init-preservation.stdout",
+    "stderr": "init-preservation.stderr"
+  },
+  {
+    "name": "generate-1",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture"
+    ],
+    "exit": 0,
+    "elapsed": 0.008,
+    "stdout": "generate-1.stdout",
+    "stderr": "generate-1.stderr"
+  },
+  {
+    "name": "generate-2",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture"
+    ],
+    "exit": 0,
+    "elapsed": 0.005,
+    "stdout": "generate-2.stdout",
+    "stderr": "generate-2.stderr"
+  },
+  {
+    "name": "preview-turbo-build",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.004,
+    "stdout": "preview-turbo-build.stdout",
+    "stderr": "preview-turbo-build.stderr"
+  },
+  {
+    "name": "preview-turbo-fail",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-fail"
+    ],
+    "exit": 0,
+    "elapsed": 0.003,
+    "stdout": "preview-turbo-fail.stdout",
+    "stderr": "preview-turbo-fail.stderr"
+  },
+  {
+    "name": "preview-turbo-test",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.005,
+    "stdout": "preview-turbo-test.stdout",
+    "stderr": "preview-turbo-test.stderr"
+  },
+  {
+    "name": "mudarro-build",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.339,
+    "stdout": "mudarro-build.stdout",
+    "stderr": "mudarro-build.stderr"
+  },
+  {
+    "name": "wrapper-build",
+    "argv": [
+      "/tmp/mudarro-mud037-turbo-runtime/fixture/.mudarro/scripts/app-javascript/turbo-build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.074,
+    "stdout": "wrapper-build.stdout",
+    "stderr": "wrapper-build.stderr"
+  },
+  {
+    "name": "mudarro-test",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.2,
+    "stdout": "mudarro-test.stdout",
+    "stderr": "mudarro-test.stderr"
+  },
+  {
+    "name": "wrapper-test",
+    "argv": [
+      "/tmp/mudarro-mud037-turbo-runtime/fixture/.mudarro/scripts/app-javascript/turbo-test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.087,
+    "stdout": "wrapper-test.stdout",
+    "stderr": "wrapper-test.stderr"
+  },
+  {
+    "name": "mudarro-fail",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-fail"
+    ],
+    "exit": 1,
+    "elapsed": 0.203,
+    "stdout": "mudarro-fail.stdout",
+    "stderr": "mudarro-fail.stderr"
+  },
+  {
+    "name": "wrapper-fail",
+    "argv": [
+      "/tmp/mudarro-mud037-turbo-runtime/fixture/.mudarro/scripts/app-javascript/turbo-fail.sh"
+    ],
+    "exit": 1,
+    "elapsed": 0.347,
+    "stdout": "wrapper-fail.stdout",
+    "stderr": "wrapper-fail.stderr"
+  },
+  {
+    "name": "build-explicit-inputs-cold",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "build",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.373,
+    "stdout": "build-explicit-inputs-cold.stdout",
+    "stderr": "build-explicit-inputs-cold.stderr"
+  },
+  {
+    "name": "build-explicit-inputs-repeat",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "build",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.092,
+    "stdout": "build-explicit-inputs-repeat.stdout",
+    "stderr": "build-explicit-inputs-repeat.stderr"
+  },
+  {
+    "name": "build-explicit-inputs-change",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "build",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.313,
+    "stdout": "build-explicit-inputs-change.stdout",
+    "stderr": "build-explicit-inputs-change.stderr"
+  },
+  {
+    "name": "test-explicit-inputs-real",
+    "argv": [
+      "/tmp/mudarro-orchestrators.c6vPF6/turbo/node_modules/.bin/turbo",
+      "run",
+      "test",
+      "--cache=local:rw",
+      "--cache-dir",
+      "/tmp/mudarro-mud037-turbo-runtime/cache/turbo",
+      "--summarize"
+    ],
+    "exit": 0,
+    "elapsed": 0.224,
+    "stdout": "test-explicit-inputs-real.stdout",
+    "stderr": "test-explicit-inputs-real.stderr"
+  },
+  {
+    "name": "wrapper-test-final",
+    "argv": [
+      "/tmp/mudarro-mud037-turbo-runtime/fixture/.mudarro/scripts/app-javascript/turbo-test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.446,
+    "stdout": "wrapper-test-final.stdout",
+    "stderr": "wrapper-test-final.stderr"
+  },
+  {
+    "name": "final-scan",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro-final",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "final-run-build",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro-final",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.126
+  },
+  {
+    "name": "final-wrapper-build",
+    "argv": [
+      "/tmp/mudarro-mud037-turbo-runtime/fixture/.mudarro/scripts/app-javascript/turbo-build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.127
+  },
+  {
+    "name": "final-run-test",
+    "argv": [
+      "/tmp/mudarro-mud037-root/mudarro-final",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud037-turbo-runtime/fixture",
+      "app-javascript:turbo-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.113
+  },
+  {
+    "name": "final-wrapper-test",
+    "argv": [
+      "/tmp/mudarro-mud037-turbo-runtime/fixture/.mudarro/scripts/app-javascript/turbo-test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.149
+  }
+]

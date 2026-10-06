@@ -1,0 +1,24 @@
+
+   • turbo 2.11.7
+   • Packages in scope: mudarro-turbo-app, mudarro-turbo-lib
+   • Running build in 2 packages
+   • Remote caching disabled
+
+mudarro-turbo-lib:build: cache miss, executing de7c82e22a0e895a
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: > build
+mudarro-turbo-lib:build: > node ../../scripts/build.cjs lib
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: REAL_BUILD_lib
+mudarro-turbo-app:build: cache miss, executing cc1cc414b74f24f0
+mudarro-turbo-app:build: 
+mudarro-turbo-app:build: > build
+mudarro-turbo-app:build: > node ../../scripts/build.cjs app
+mudarro-turbo-app:build: 
+mudarro-turbo-app:build: REAL_BUILD_app
+
+  Tasks:    2 successful, 2 total
+ Cached:    0 cached, 2 total
+   Time:    258ms 
+Summary:    /tmp/mudarro-mud037-turbo-runtime/fixture/.turbo/runs/3KKbCc0jrN4yRX65vRjXzO0mAvg.json
+

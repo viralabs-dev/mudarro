@@ -32,3 +32,8 @@ Current Go workspace parser, explicit entry selection and inherited/off policy a
 
 
 Declared JavaScript workspace manager-only inheritance and root installation are delivered locally; dependency graph/Turbo/Nx and full glob-language equivalence remain separate. [Evidence](samples/menu-auto/evidence/javascript-workspaces/README.md).
+
+
+## MUD-037 — local checkpoint
+
+Explicit opt-in Turbo/Nx tasks and root ownership are implemented locally. Real pinned Turbo2.11.7/Nx23.2.1 build/test/dependency ordering/local cache/repeat/input-change/failure and Mudarro wrappers passed using internal samples.186racePASS/81.38%, no test skips. Strict JSON only; no scanner graph/plugin/default inference. Native macOS/WSL/Podman and physical acceptance remain pending. New batch not published. [Evidence and limits](samples/menu-auto/evidence/orchestration/README.md).

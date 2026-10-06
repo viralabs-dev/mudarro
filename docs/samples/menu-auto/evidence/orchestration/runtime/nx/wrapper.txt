@@ -1,0 +1,35 @@
+
+ NX   Running target test for project app and 2 tasks it depends on:
+
+
+
+ NX   Remote Cache Disabled
+
+Nx will continue running, but nothing will be written or read from the remote cache.
+
+✔  nx run lib:build  [local cache]
+
+> nx run app:build  [local cache]
+
+> node scripts/build.cjs app
+
+REAL_BUILD_app
+
+> nx run app:test  [local cache]
+
+> node scripts/test.cjs app
+
+REAL_TEST_app
+
+
+
+ NX   Successfully ran target test for project app and 2 tasks it depends on
+
+Nx read the output from the cache instead of running the command for 3 out of 3 tasks.
+
+Output of 1 successful task was not shown. Run with --verbose or --output-style=static to see it.
+
+  Run duration:      4ms
+  Cache:             3/3 hit (100%)
+  Critical path:     <1ms (1 task)
+  Recoverable time:  <1ms

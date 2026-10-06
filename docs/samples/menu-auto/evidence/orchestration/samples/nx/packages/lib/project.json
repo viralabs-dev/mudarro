@@ -1,0 +1,56 @@
+{
+  "name": "lib",
+  "root": "packages/lib",
+  "sourceRoot": "packages/lib",
+  "projectType": "library",
+  "implicitDependencies": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/build.cjs lib",
+        "cwd": ".",
+        "parallel": false
+      },
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*",
+        "!{projectRoot}/dist/**/*",
+        "{workspaceRoot}/scripts/**/*"
+      ]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/test.cjs lib",
+        "cwd": ".",
+        "parallel": false
+      },
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "dependsOn": [
+        "build"
+      ],
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*",
+        "!{projectRoot}/dist/**/*",
+        "{workspaceRoot}/scripts/**/*"
+      ]
+    },
+    "fail": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/fail.cjs",
+        "cwd": "."
+      }
+    }
+  }
+}

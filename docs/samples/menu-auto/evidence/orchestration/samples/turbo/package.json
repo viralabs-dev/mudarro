@@ -1,0 +1,13 @@
+{
+  "name": "mudarro-turbo-sample",
+  "private": true,
+  "packageManager": "npm@11.12.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "fail": "turbo run fail"
+  }
+}

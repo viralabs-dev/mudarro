@@ -1,0 +1,13 @@
+{
+  "name": "mudarro-nx-sample",
+  "private": true,
+  "packageManager": "npm@11.12.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "nx run-many --target=build --all",
+    "test": "nx run-many --target=test --all",
+    "fail": "nx run lib:fail"
+  }
+}

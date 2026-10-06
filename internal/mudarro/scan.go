@@ -128,6 +128,7 @@ func Scan(root string, excludes []string) (Report, error) {
 		s.Pending = append(s.Pending, "Declare comandos da aplicação")
 		r.Config.Services = append(r.Config.Services, *s)
 	}
+	scanOrchestration(root, paths, dirs, &r)
 	for _, dir := range paths {
 		for file := range dirs[dir] {
 			if file != "Makefile" && !strings.HasSuffix(file, ".sh") {

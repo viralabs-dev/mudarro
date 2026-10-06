@@ -1,0 +1,18 @@
+[
+  {
+    "profile": "turbo",
+    "packagesInLock": 7,
+    "officialOriginsOnly": true,
+    "allIntegrityPresent": true,
+    "directPinsSRIMatch": true,
+    "lockSHA256": "1bff65d7dafbab0e700015032fe04e9f209d29b61613da71a7321de18a2f454e"
+  },
+  {
+    "profile": "nx",
+    "packagesInLock": 135,
+    "officialOriginsOnly": true,
+    "allIntegrityPresent": true,
+    "directPinsSRIMatch": true,
+    "lockSHA256": "8e4d05ad5a26ea0dcfabf8f29af53fa4a760ec2866788badb1de5910d85b4970"
+  }
+]

@@ -127,3 +127,8 @@ GIF final genuíno: 983×739, 8 frames, 15,04 s. Frame composto inspecionado: le
 Evidências: [project-name-tests.txt](../samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](../samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](../samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](../samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](../samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](../samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
 
 Terminal atual: 164/176 statements (93,18%). Funções: cleanText100%, fitText94,1%, runeColumns80%, wordmark95,7%, HasColor100%, terminalSize81,8%. Limites de largura/grafemas/redimensionamento permanecem.
+
+
+## MUD-037 — checkpoint local
+
+Tarefas explícitas selecionáveis Turbo/Nx e ownership da raiz implementados localmente. Build/test/ordenação/cache local/repetição/mudança de entrada/falhas e wrappers reais passaram com Turbo2.11.7/Nx23.2.1 e samples internos.186racePASS/81,38%, nenhum teste pulado. JSON estrito; scan não infere grafos/plugins/defaults. macOS/WSL/Podman nativos e aceite físico continuam pendentes. Novo lote não publicado. [Evidências e limites](../samples/menu-auto/evidence/orchestration/README.md).

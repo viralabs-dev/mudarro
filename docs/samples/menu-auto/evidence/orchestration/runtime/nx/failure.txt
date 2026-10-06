@@ -1,0 +1,26 @@
+
+> nx run lib:fail
+
+> node scripts/fail.cjs
+
+OWNED_TASK_FAILURE
+Warning: command "node scripts/fail.cjs" exited with non-zero status code
+
+  Run duration:      80ms
+  Cache:             Skipped (--skip-nx-cache)
+  Critical path:     78ms (1 task)
+  Recoverable time:  <1ms
+
+ NX   Remote Cache Disabled
+
+Nx will continue running, but nothing will be written or read from the remote cache.
+
+
+ NX   Running target fail for project lib failed
+
+Failed tasks:
+
+- lib:fail
+
+Hint: run the command with --verbose for more details.
+

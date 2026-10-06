@@ -1,0 +1,23 @@
+Project: mudarro-nx-sample
+- app-javascript (.): javascript / npm / local
+  pending: Declare commands.start for local execution
+- packages-app-javascript (packages/app): javascript / npm / local
+  pending: Declare commands.start for local execution
+- packages-lib-javascript (packages/lib): javascript / npm / local
+  pending: Declare commands.start for local execution
+  suggestion: app-javascript:build [package.json]
+  suggestion: app-javascript:fail [package.json]
+  suggestion: app-javascript:nx-app-build [packages/app/project.json]
+  suggestion: app-javascript:nx-app-fail [packages/app/project.json]
+  suggestion: app-javascript:nx-app-test [packages/app/project.json]
+  suggestion: app-javascript:nx-lib-build [packages/lib/project.json]
+  suggestion: app-javascript:nx-lib-fail [packages/lib/project.json]
+  suggestion: app-javascript:nx-lib-test [packages/lib/project.json]
+  suggestion: app-javascript:test [package.json]
+  suggestion: packages-app-javascript:build [packages/app/package.json]
+  suggestion: packages-app-javascript:fail [packages/app/package.json]
+  suggestion: packages-app-javascript:test [packages/app/package.json]
+  suggestion: packages-lib-javascript:build [packages/lib/package.json]
+  suggestion: packages-lib-javascript:fail [packages/lib/package.json]
+  suggestion: packages-lib-javascript:test [packages/lib/package.json]
+Created mudarro.json. Review pending choices, then run mudarro generate.

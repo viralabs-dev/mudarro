@@ -1,0 +1,160 @@
+{
+  "files": [
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/package.json",
+      "relative": "package.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/nx.json",
+      "relative": "nx.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/menu.sh",
+      "relative": "menu.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/package-lock.json",
+      "relative": "package-lock.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/mudarro.json",
+      "relative": "mudarro.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/scripts/test.cjs",
+      "relative": "scripts/test.cjs"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/scripts/fail.cjs",
+      "relative": "scripts/fail.cjs"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/scripts/build.cjs",
+      "relative": "scripts/build.cjs"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/packages/lib/package.json",
+      "relative": "packages/lib/package.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/packages/lib/project.json",
+      "relative": "packages/lib/project.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/packages/app/package.json",
+      "relative": "packages/app/package.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/packages/app/project.json",
+      "relative": "packages/app/project.json"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-app-javascript/status.sh",
+      "relative": ".mudarro/scripts/packages-app-javascript/status.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-app-javascript/up.sh",
+      "relative": ".mudarro/scripts/packages-app-javascript/up.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-app-javascript/logs.sh",
+      "relative": ".mudarro/scripts/packages-app-javascript/logs.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-app-javascript/restart.sh",
+      "relative": ".mudarro/scripts/packages-app-javascript/restart.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-app-javascript/build.sh",
+      "relative": ".mudarro/scripts/packages-app-javascript/build.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-app-javascript/test.sh",
+      "relative": ".mudarro/scripts/packages-app-javascript/test.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-app-javascript/down.sh",
+      "relative": ".mudarro/scripts/packages-app-javascript/down.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-lib-javascript/status.sh",
+      "relative": ".mudarro/scripts/packages-lib-javascript/status.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-lib-javascript/up.sh",
+      "relative": ".mudarro/scripts/packages-lib-javascript/up.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-lib-javascript/logs.sh",
+      "relative": ".mudarro/scripts/packages-lib-javascript/logs.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-lib-javascript/restart.sh",
+      "relative": ".mudarro/scripts/packages-lib-javascript/restart.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-lib-javascript/build.sh",
+      "relative": ".mudarro/scripts/packages-lib-javascript/build.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-lib-javascript/test.sh",
+      "relative": ".mudarro/scripts/packages-lib-javascript/test.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/packages-lib-javascript/down.sh",
+      "relative": ".mudarro/scripts/packages-lib-javascript/down.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/install.sh",
+      "relative": ".mudarro/scripts/app-javascript/install.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/status.sh",
+      "relative": ".mudarro/scripts/app-javascript/status.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/up.sh",
+      "relative": ".mudarro/scripts/app-javascript/up.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/logs.sh",
+      "relative": ".mudarro/scripts/app-javascript/logs.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/restart.sh",
+      "relative": ".mudarro/scripts/app-javascript/restart.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/nx-lib-fail.sh",
+      "relative": ".mudarro/scripts/app-javascript/nx-lib-fail.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/build.sh",
+      "relative": ".mudarro/scripts/app-javascript/build.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/test.sh",
+      "relative": ".mudarro/scripts/app-javascript/test.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/nx-app-test.sh",
+      "relative": ".mudarro/scripts/app-javascript/nx-app-test.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/nx-app-build.sh",
+      "relative": ".mudarro/scripts/app-javascript/nx-app-build.sh"
+    },
+    {
+      "source": "/tmp/mudarro-mud037-runtime/nx-final/.mudarro/scripts/app-javascript/down.sh",
+      "relative": ".mudarro/scripts/app-javascript/down.sh"
+    }
+  ],
+  "excluded": [
+    "node_modules",
+    "dist",
+    ".nx",
+    ".mudarro/run",
+    "cache/state/native",
+    "environment.json"
+  ]
+}

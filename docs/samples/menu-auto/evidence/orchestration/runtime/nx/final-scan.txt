@@ -1,0 +1,348 @@
+{
+  "javascript_workspaces": [
+    {
+      "path": "package.json",
+      "root": ".",
+      "members": [
+        "packages/app",
+        "packages/lib"
+      ],
+      "manager": "npm"
+    }
+  ],
+  "config": {
+    "version": 1,
+    "name": "mudarro-nx-sample",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "npm",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "npm",
+              "run",
+              "build"
+            ],
+            "group": "aplicacao"
+          },
+          "install": {
+            "args": [
+              "npm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "packages-app-javascript",
+        "dir": "packages/app",
+        "language": "javascript",
+        "manager": "npm",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "npm",
+              "run",
+              "build"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "packages-lib-javascript",
+        "dir": "packages/lib",
+        "language": "javascript",
+        "manager": "npm",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "npm",
+              "run",
+              "build"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "package.json",
+      "kind": "javascript-workspace"
+    },
+    {
+      "path": ".",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/app",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/lib",
+      "kind": "javascript"
+    },
+    {
+      "path": "nx.json",
+      "kind": "nx"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "build",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "fail",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-app-build",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "app:build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/app/project.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-app-fail",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "app:fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/app/project.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-app-test",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "app:test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/app/project.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-lib-build",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "lib:build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/lib/project.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-lib-fail",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "lib:fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/lib/project.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-lib-test",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "lib:test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/lib/project.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "packages-app-javascript",
+      "name": "build",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/app/package.json"
+    },
+    {
+      "service": "packages-app-javascript",
+      "name": "fail",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/app/package.json"
+    },
+    {
+      "service": "packages-app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/app/package.json"
+    },
+    {
+      "service": "packages-lib-javascript",
+      "name": "build",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/lib/package.json"
+    },
+    {
+      "service": "packages-lib-javascript",
+      "name": "fail",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "fail"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/lib/package.json"
+    },
+    {
+      "service": "packages-lib-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/lib/package.json"
+    }
+  ],
+  "warnings": null
+}

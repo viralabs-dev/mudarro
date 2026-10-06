@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "name": "mudarro-nx-sample",
+  "services": [
+    {
+      "id": "app-javascript",
+      "dir": ".",
+      "language": "javascript",
+      "manager": "npm",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "group": "aplicacao"
+        },
+        "install": {
+          "args": [
+            "npm",
+            "install"
+          ],
+          "group": "dependencias"
+        },
+        "nx-app-build": {
+          "args": [
+            "nx",
+            "run",
+            "app:build"
+          ],
+          "group": "aplicacao"
+        },
+        "nx-app-test": {
+          "args": [
+            "nx",
+            "run",
+            "app:test"
+          ],
+          "group": "qualidade"
+        },
+        "nx-lib-fail": {
+          "args": [
+            "nx",
+            "run",
+            "lib:fail"
+          ],
+          "group": "scripts"
+        },
+        "test": {
+          "args": [
+            "npm",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start para execução local"
+      ]
+    },
+    {
+      "id": "packages-app-javascript",
+      "dir": "packages/app",
+      "language": "javascript",
+      "manager": "npm",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "npm",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start para execução local"
+      ]
+    },
+    {
+      "id": "packages-lib-javascript",
+      "dir": "packages/lib",
+      "language": "javascript",
+      "manager": "npm",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "npm",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start para execução local"
+      ]
+    }
+  ]
+}

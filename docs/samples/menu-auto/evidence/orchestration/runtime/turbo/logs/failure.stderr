@@ -1,0 +1,3 @@
+ WARNING  No locally installed `turbo` found in your repository. Using globally installed version (2.11.7). Using a specified version in your repository will result in more predictable behavior.
+mudarro-turbo-lib#fail:  ERROR  command (/tmp/mudarro-mud037-turbo-runtime/fixture/packages/lib) /home/danielsouza/.nvm/versions/node/v24.15.0/bin/npm run fail exited (7)
+ ERROR  run failed: command  exited (7)

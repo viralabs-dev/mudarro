@@ -1,0 +1,24 @@
+ WARNING  No locally installed `turbo` found in your repository. Using globally installed version (2.11.7). Using a specified version in your repository will result in more predictable behavior.
+
+   • turbo 2.11.7
+   • Packages in scope: mudarro-turbo-app, mudarro-turbo-lib
+   • Running build in 2 packages
+   • Remote caching disabled
+
+mudarro-turbo-lib:build: cache hit, replaying logs c73ef25c6a72f4f0
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: > build
+mudarro-turbo-lib:build: > node ../../scripts/build.cjs lib
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: REAL_BUILD_lib
+mudarro-turbo-app:build: cache hit, replaying logs 11df9adf7ecfe672
+mudarro-turbo-app:build: 
+mudarro-turbo-app:build: > build
+mudarro-turbo-app:build: > node ../../scripts/build.cjs app
+mudarro-turbo-app:build: 
+mudarro-turbo-app:build: REAL_BUILD_app
+
+ Tasks:    2 successful, 2 total
+Cached:    2 cached, 2 total
+  Time:    12ms >>> FULL TURBO
+

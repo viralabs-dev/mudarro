@@ -1,0 +1,36 @@
+
+   • turbo 2.11.7
+   • Packages in scope: mudarro-turbo-app, mudarro-turbo-lib
+   • Running test in 2 packages
+   • Remote caching disabled
+
+mudarro-turbo-lib:build: cache miss, executing dd1d0f1be9ced20f
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: > build
+mudarro-turbo-lib:build: > node ../../scripts/build.cjs lib
+mudarro-turbo-lib:build: 
+mudarro-turbo-lib:build: REAL_BUILD_lib
+mudarro-turbo-lib:test: cache miss, executing 970bff39ea76c3d0
+mudarro-turbo-app:build: cache miss, executing 5a7647270261968a
+mudarro-turbo-lib:test: 
+mudarro-turbo-lib:test: > test
+mudarro-turbo-lib:test: > node ../../scripts/test.cjs lib
+mudarro-turbo-lib:test: 
+mudarro-turbo-app:build: 
+mudarro-turbo-app:build: > build
+mudarro-turbo-app:build: > node ../../scripts/build.cjs app
+mudarro-turbo-app:build: 
+mudarro-turbo-lib:test: REAL_TEST_lib
+mudarro-turbo-app:build: REAL_BUILD_app
+mudarro-turbo-app:test: cache miss, executing 825df785ae3b9257
+mudarro-turbo-app:test: 
+mudarro-turbo-app:test: > test
+mudarro-turbo-app:test: > node ../../scripts/test.cjs app
+mudarro-turbo-app:test: 
+mudarro-turbo-app:test: REAL_TEST_app
+
+  Tasks:    4 successful, 4 total
+ Cached:    0 cached, 4 total
+   Time:    351ms 
+Summary:    /tmp/mudarro-mud037-turbo-runtime/fixture/.turbo/runs/3KKbCk7HNvjUgccWKc2wTOzcCQL.json
+

@@ -1,0 +1,79 @@
+{
+  "groups": 9,
+  "subcases": 11,
+  "race": "PASS",
+  "failures": 0,
+  "log": "after-final.jsonl",
+  "baseline": "before-frozen.jsonl (7 initial groups; new normalized-collision group added after implementation)",
+  "cli": {
+    "exit": 0,
+    "sha256": "65671d5870ce80c8b366f52eef30a7f12a9912046f7d3cf1e8a56f9ce8f0de98",
+    "suggestions": [
+      {
+        "purpose": "orchestration",
+        "service": "app-javascript",
+        "name": "nx-web-build",
+        "command": {
+          "args": [
+            "nx",
+            "run",
+            "web:build"
+          ],
+          "group": "aplicacao"
+        },
+        "evidence": "apps/web/project.json"
+      },
+      {
+        "purpose": "orchestration",
+        "service": "app-javascript",
+        "name": "nx-web-test",
+        "command": {
+          "args": [
+            "nx",
+            "run",
+            "web:test"
+          ],
+          "group": "qualidade"
+        },
+        "evidence": "apps/web/project.json"
+      },
+      {
+        "purpose": "orchestration",
+        "service": "app-javascript",
+        "name": "turbo-build",
+        "command": {
+          "args": [
+            "turbo",
+            "run",
+            "build"
+          ],
+          "group": "aplicacao"
+        },
+        "evidence": "turbo.json"
+      },
+      {
+        "purpose": "orchestration",
+        "service": "app-javascript",
+        "name": "turbo-test",
+        "command": {
+          "args": [
+            "turbo",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        },
+        "evidence": "turbo.json"
+      }
+    ],
+    "fixtureHashesPreserved": true,
+    "before": "cli-before.stdout",
+    "after": "cli-after.stdout"
+  },
+  "limits": [
+    "No runtime execution/install in this test front",
+    "No graph/plugin/default/JSONC resolution claimed",
+    "No production/Git/Vault changes"
+  ],
+  "invalidTurboIndependentNx": "PASS"
+}

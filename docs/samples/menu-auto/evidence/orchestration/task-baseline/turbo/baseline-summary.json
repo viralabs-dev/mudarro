@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "execution": "direct Node; orchestrator NOT executed",
+  "checks": [
+    {
+      "case": "app-before-lib",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "case": "build-lib",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "build-app",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "test-lib",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "test-app",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "task-failure",
+      "exit_code": 7,
+      "expected_success": false
+    }
+  ],
+  "node": "/home/danielsouza/.nvm/versions/node/v24.15.0/bin/node"
+}

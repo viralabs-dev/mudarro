@@ -1,0 +1,18 @@
+{
+  "PATH": "/tmp/mudarro-mud037-runtime/nx-private-bin:/tmp/mudarro-mud037-root:/home/danielsouza/.nvm/versions/node/v24.15.0/bin:/usr/bin:/bin",
+  "HOME": "/home/danielsouza",
+  "LANG": "C.UTF-8",
+  "NX_SOCKET_DIR": "/tmp/mudarro-mud037-runtime/nx-sockets",
+  "NX_DAEMON": "false",
+  "NX_NO_CLOUD": "true",
+  "NX_SKIP_REMOTE_CACHE": "true",
+  "NX_INTERACTIVE": "false",
+  "NX_TUI": "false",
+  "NX_LOAD_DOT_ENV_FILES": "false",
+  "NX_CACHE_DIRECTORY": "/tmp/mudarro-mud037-runtime/nx-cache",
+  "NX_WORKSPACE_DATA_DIRECTORY": "/tmp/mudarro-mud037-runtime/nx-data",
+  "NX_NATIVE_FILE_CACHE_DIRECTORY": "/tmp/mudarro-mud037-runtime/nx-native",
+  "NPM_CONFIG_USERCONFIG": "/tmp/mudarro-orchestrators.c6vPF6/config/npm-user.rc",
+  "NPM_CONFIG_GLOBALCONFIG": "/tmp/mudarro-orchestrators.c6vPF6/config/npm-global.rc",
+  "NPM_CONFIG_CACHE": "/tmp/mudarro-mud037-runtime/nx-npm-cache"
+}

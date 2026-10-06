@@ -1,0 +1,30 @@
+[
+  {
+    "tool": "turbo",
+    "exit": 0,
+    "stdout": "2.11.7\n",
+    "stderr": ""
+  },
+  {
+    "tool": "nx",
+    "exit": 0,
+    "stdout": "Nx Version:\n- Local: Not found\n- Global: v23.2.1\n",
+    "stderr": ""
+  },
+  {
+    "installedPackage": "turbo",
+    "version": "2.11.7"
+  },
+  {
+    "installedPackage": "@turbo/linux-64",
+    "version": "2.11.7"
+  },
+  {
+    "installedPackage": "nx",
+    "version": "23.2.1"
+  },
+  {
+    "installedPackage": "@nx/nx-linux-x64-gnu",
+    "version": "23.2.1"
+  }
+]

@@ -121,3 +121,8 @@ Real final GIF: 983×739, 8 frames, 15.04 s. Composed frame inspected: AURORA le
 Evidence: [project-name-tests.txt](samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
 
 Current terminal package totals: 164/176 statements (93.18%). Function profile: cleanText100%, fitText94.1%, runeColumns80%, wordmark95.7%, HasColor100%, terminalSize81.8%. Remaining width/grapheme/resize limits still apply.
+
+
+## MUD-037 — local checkpoint
+
+Explicit opt-in Turbo/Nx tasks and root ownership are implemented locally. Real pinned Turbo2.11.7/Nx23.2.1 build/test/dependency ordering/local cache/repeat/input-change/failure and Mudarro wrappers passed using internal samples.186racePASS/81.38%, no test skips. Strict JSON only; no scanner graph/plugin/default inference. Native macOS/WSL/Podman and physical acceptance remain pending. New batch not published. [Evidence and limits](samples/menu-auto/evidence/orchestration/README.md).

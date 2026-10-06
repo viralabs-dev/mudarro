@@ -1,0 +1,84 @@
+{
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "dist": {
+    "shasum": "e1f72d24ae7f7a44ef29bc2201350bab9a0c3990",
+    "tarball": "https://registry.npmjs.org/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-23.2.1.tgz",
+    "fileCount": 3,
+    "integrity": "sha512-D1mSU/kdC1N8aeo7RpmuXWOl77GR4QIbam4dpUmezAwdNkIHlIq7hwqec+4HDWum9nlNmQX/dZn0nZaBem0rRA==",
+    "signatures": [
+      {
+        "sig": "MEUCIQCG/oG420GyiuGKoL7yRVzjcsq+JFlpfIh7r0CE4z8O6wIgEIkCFPN94FYgSD8YATI4fD/qbpVhtF3anfDtNFZ+jVs=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEQCIFJ6R/ZNtxeYiinGvuR7Z5btmdzIDrjnZaeBA5yHeNaMAiAp+mK5dO1nEtEVhqVQPZTE8dpSe/ufWRKUI+MQO8+ygg==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/@nx%2fnx-linux-x64-gnu@23.2.1",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 23810556
+  },
+  "libc": [
+    "glibc"
+  ],
+  "main": "nx.linux-x64-gnu.node",
+  "name": "@nx/nx-linux-x64-gnu",
+  "license": "MIT",
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "oidc:b9a7f5eb-9b4b-424c-8933-c491162c63ca"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/nrwl/nx.git",
+    "type": "git",
+    "directory": "packages/nx/native-packages/linux-x64-gnu"
+  },
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "nrwlowner",
+      "email": "victor@nrwl.io"
+    },
+    {
+      "name": "nrwl-jason",
+      "email": "jason@nrwl.io"
+    },
+    {
+      "name": "jack-nrwl",
+      "email": "jack@nrwl.io"
+    },
+    {
+      "name": "maxk-nrwl",
+      "email": "maxk@nrwl.io"
+    },
+    {
+      "name": "jameshenry",
+      "email": "james@henry.sc"
+    }
+  ],
+  "_nodeVersion": "26.7.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_hasShrinkwrap": false,
+  "_npmOperationalInternal": {
+    "tmp": "tmp/nx-linux-x64-gnu_23.2.1_1788986860327_0.8130913648356606",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "@nx/nx-linux-x64-gnu@23.2.1",
+  "version": "23.2.1"
+}

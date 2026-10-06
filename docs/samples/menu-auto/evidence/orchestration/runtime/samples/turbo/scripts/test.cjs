@@ -1,0 +1,1 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');const name=process.argv[2];const result=JSON.parse(fs.readFileSync(path.join(__dirname,'..','packages',name,'dist/result.json'),'utf8'));assert.equal(result.value,name==='lib'?21:42);console.log('REAL_TEST_'+name);

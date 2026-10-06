@@ -1,0 +1,82 @@
+{
+  "bin": {
+    "turbo": "bin/turbo"
+  },
+  "bugs": {
+    "url": "https://github.com/vercel/turborepo/issues"
+  },
+  "dist": {
+    "shasum": "48d9a9b8ef8175ebe00ca17318188340ef863243",
+    "tarball": "https://registry.npmjs.org/turbo/-/turbo-2.11.7.tgz",
+    "fileCount": 119,
+    "integrity": "sha512-RhXHbqfvY6o3xt/zSHCwSNwLrZlXiqHzewi4eAj9PtZ1T1CqgMJ2yIDb7SKPTG9IikTm925mfzL6hldQVdyNWw==",
+    "signatures": [
+      {
+        "sig": "MEYCIQCkb8inVCL2rTlhwL4r25KCZH7XQNeEbWKAIZGxSOJs1wIhAIqTuivvAgnTu/0E8h+Dbs+9hgiiTPp7LQLGYmWd2ISi",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEQCIFFCnniEePNNOfZ5ACWaFmx+IolYrF3ntCPByDaNEmVoAiAfueUPZob15lwudariT6n4vUMLu2y5E9nMezAwYQyJEA==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/turbo@2.11.7",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 747857
+  },
+  "main": "./bin/turbo",
+  "name": "turbo",
+  "_from": "file:/home/runner/work/turborepo/turborepo/turbo-2.11.7.tgz",
+  "license": "MIT",
+  "scripts": {
+    "postversion": "node bump-version.js"
+  },
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "f34d5acc-a66e-460f-b342-176391c1f350"
+    }
+  },
+  "homepage": "https://turborepo.dev",
+  "_resolved": "/home/runner/work/turborepo/turborepo/turbo-2.11.7.tgz",
+  "_integrity": "sha512-RhXHbqfvY6o3xt/zSHCwSNwLrZlXiqHzewi4eAj9PtZ1T1CqgMJ2yIDb7SKPTG9IikTm925mfzL6hldQVdyNWw==",
+  "repository": {
+    "url": "git+https://github.com/vercel/turborepo.git",
+    "type": "git"
+  },
+  "_npmVersion": "11.5.1",
+  "description": "Turborepo is the build system for coding agents.",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "vercel-release-bot",
+      "email": "infra+release@vercel.com"
+    },
+    {
+      "name": "turbobot",
+      "email": "turbobot@vercel.com"
+    }
+  ],
+  "_nodeVersion": "24.21.0",
+  "_hasShrinkwrap": false,
+  "optionalDependencies": {
+    "@turbo/linux-64": "2.11.7",
+    "@turbo/darwin-64": "2.11.7",
+    "@turbo/windows-64": "2.11.7",
+    "@turbo/linux-arm64": "2.11.7",
+    "@turbo/darwin-arm64": "2.11.7",
+    "@turbo/windows-arm64": "2.11.7"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/turbo_2.11.7_1790953104515_0.8439580736573138",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "turbo@2.11.7",
+  "version": "2.11.7"
+}

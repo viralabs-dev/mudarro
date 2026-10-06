@@ -1,0 +1,32 @@
+
+ NX   Running target build for project app and 1 task it depends on:
+
+
+
+> nx run lib:build  [local cache]
+
+> node scripts/build.cjs lib
+
+REAL_BUILD_lib
+
+> nx run app:build  [local cache]
+
+> node scripts/build.cjs app
+
+REAL_BUILD_app
+
+
+
+ NX   Successfully ran target build for project app and 1 task it depends on
+
+Nx read the output from the cache instead of running the command for 2 out of 2 tasks.
+
+  Run duration:      13ms
+  Cache:             2/2 hit (100%)
+  Critical path:     3ms (2 tasks)
+  Recoverable time:  <1ms
+
+ NX   Remote Cache Disabled
+
+Nx will continue running, but nothing will be written or read from the remote cache.
+

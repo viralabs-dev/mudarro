@@ -1,0 +1,103 @@
+{
+  "config": {
+    "version": 1,
+    "name": "cli-fixture",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "npm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "npm",
+              "install"
+            ],
+            "group": "dependencias"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "javascript"
+    },
+    {
+      "path": "turbo.json",
+      "kind": "turborepo"
+    },
+    {
+      "path": "nx.json",
+      "kind": "nx"
+    }
+  ],
+  "suggestions": [
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-web-build",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "web:build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "apps/web/project.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "nx-web-test",
+      "command": {
+        "args": [
+          "nx",
+          "run",
+          "web:test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "apps/web/project.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "turbo-build",
+      "command": {
+        "args": [
+          "turbo",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "turbo.json"
+    },
+    {
+      "purpose": "orchestration",
+      "service": "app-javascript",
+      "name": "turbo-test",
+      "command": {
+        "args": [
+          "turbo",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "turbo.json"
+    }
+  ],
+  "warnings": null
+}

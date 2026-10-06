@@ -1,0 +1,20 @@
+Project: mudarro-turbo-sample
+- app-javascript (.): javascript / npm / local
+  pending: Declare commands.start for local execution
+- packages-app-javascript (packages/app): javascript / npm / local
+  pending: Declare commands.start for local execution
+- packages-lib-javascript (packages/lib): javascript / npm / local
+  pending: Declare commands.start for local execution
+  suggestion: app-javascript:build [package.json]
+  suggestion: app-javascript:fail [package.json]
+  suggestion: app-javascript:test [package.json]
+  suggestion: app-javascript:turbo-build [turbo.json]
+  suggestion: app-javascript:turbo-fail [turbo.json]
+  suggestion: app-javascript:turbo-test [turbo.json]
+  suggestion: packages-app-javascript:build [packages/app/package.json]
+  suggestion: packages-app-javascript:fail [packages/app/package.json]
+  suggestion: packages-app-javascript:test [packages/app/package.json]
+  suggestion: packages-lib-javascript:build [packages/lib/package.json]
+  suggestion: packages-lib-javascript:fail [packages/lib/package.json]
+  suggestion: packages-lib-javascript:test [packages/lib/package.json]
+Created mudarro.yaml. Review pending choices, then run mudarro generate.

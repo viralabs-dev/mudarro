@@ -1,0 +1,3 @@
+Nx Version:
+- Local: v23.2.1
+- Global: Not found

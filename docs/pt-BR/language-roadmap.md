@@ -34,3 +34,8 @@ Parser Go workspace, seleção explícita de entrada e política herdado/off ent
 
 
 Ownership/herança somente manager e instalação raiz dos workspaces JavaScript declarados entregues localmente; grafo/Turbo/Nx e equivalência completa da linguagem de globs permanecem separados. [Evidências](../samples/menu-auto/evidence/javascript-workspaces/README.md).
+
+
+## MUD-037 — checkpoint local
+
+Tarefas explícitas selecionáveis Turbo/Nx e ownership da raiz implementados localmente. Build/test/ordenação/cache local/repetição/mudança de entrada/falhas e wrappers reais passaram com Turbo2.11.7/Nx23.2.1 e samples internos.186racePASS/81,38%, nenhum teste pulado. JSON estrito; scan não infere grafos/plugins/defaults. macOS/WSL/Podman nativos e aceite físico continuam pendentes. Novo lote não publicado. [Evidências e limites](../samples/menu-auto/evidence/orchestration/README.md).
