@@ -1,0 +1,26 @@
+=== RUN   TestInteractiveSignalCleanup
+=== RUN   TestInteractiveSignalCleanup/interrupt
+=== RUN   TestInteractiveSignalCleanup/terminated
+--- PASS: TestInteractiveSignalCleanup (2.23s)
+    --- PASS: TestInteractiveSignalCleanup/interrupt (1.12s)
+    --- PASS: TestInteractiveSignalCleanup/terminated (1.11s)
+=== RUN   TestInteractiveSignalHelper
+--- PASS: TestInteractiveSignalHelper (0.00s)
+=== RUN   TestInteractiveSignalCleanup
+=== RUN   TestInteractiveSignalCleanup/interrupt
+=== RUN   TestInteractiveSignalCleanup/terminated
+--- PASS: TestInteractiveSignalCleanup (2.24s)
+    --- PASS: TestInteractiveSignalCleanup/interrupt (1.12s)
+    --- PASS: TestInteractiveSignalCleanup/terminated (1.12s)
+=== RUN   TestInteractiveSignalHelper
+--- PASS: TestInteractiveSignalHelper (0.00s)
+=== RUN   TestInteractiveSignalCleanup
+=== RUN   TestInteractiveSignalCleanup/interrupt
+=== RUN   TestInteractiveSignalCleanup/terminated
+--- PASS: TestInteractiveSignalCleanup (2.24s)
+    --- PASS: TestInteractiveSignalCleanup/interrupt (1.12s)
+    --- PASS: TestInteractiveSignalCleanup/terminated (1.12s)
+=== RUN   TestInteractiveSignalHelper
+--- PASS: TestInteractiveSignalHelper (0.00s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal	7.727s

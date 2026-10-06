@@ -1,0 +1,94 @@
+test (macos-latest)	Run go test -race ./...	﻿2026-10-06T04:56:52.0423690Z ##[group]Run go test -race ./...
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:52.0424090Z ^[[36;1mgo test -race ./...^[[0m
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:52.0626660Z shell: /bin/bash -e {0}
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:52.0627080Z ##[endgroup]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:53.3808850Z ?   	github.com/viralabs-dev/mudarro/cmd/mudarro	[no test files]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:53.3809560Z ?   	github.com/viralabs-dev/mudarro/internal/mudarro	[no test files]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:53.3810190Z ?   	github.com/viralabs-dev/mudarro/internal/mudarro/adapters	[no test files]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:53.3811670Z ?   	github.com/viralabs-dev/mudarro/internal/mudarro/executor	[no test files]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:53.3812320Z ?   	github.com/viralabs-dev/mudarro/internal/mudarro/model	[no test files]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:53.3812940Z ?   	github.com/viralabs-dev/mudarro/internal/mudarro/projectfs	[no test files]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:53.3813620Z ?   	github.com/viralabs-dev/mudarro/internal/mudarro/terminal	[no test files]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:56.3852170Z ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	2.349s
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5068750Z --- FAIL: TestInteractiveMasterEOFReturns (1.06s)
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5170970Z     interactive_lifecycle_test.go:117: EOF loop
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5251490Z ==================
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5352740Z WARNING: DATA RACE
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5454210Z Read at 0x00c0000aa5b0 by goroutine 15:
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5495860Z   os.(*File).Fd()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5526240Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/os/file_unix.go:94 +0x1ac
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5552850Z   github.com/viralabs-dev/mudarro/internal/mudarro/terminal.interactiveRead()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5561880Z       /Users/runner/work/mudarro/mudarro/internal/mudarro/terminal/interactive.go:294 +0x148
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5620890Z   github.com/viralabs-dev/mudarro/internal/mudarro/terminal.(*Menu).ChooseInteractive()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5631260Z       /Users/runner/work/mudarro/mudarro/internal/mudarro/terminal/interactive.go:175 +0xbdc
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5635380Z   github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal_test.TestInteractiveMasterEOFReturns.func1()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5679960Z       /Users/runner/work/mudarro/mudarro/test/internal/mudarro/terminal/interactive_lifecycle_test.go:106 +0x170
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5690410Z 
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5694940Z Previous write at 0x00c0000aa5b0 by goroutine 14:
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5697990Z   internal/poll.(*FD).destroy()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5743530Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/internal/poll/fd_unix.go:84 +0xb4
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5757220Z   internal/poll.(*FD).decref()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5763110Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/internal/poll/fd_mutex.go:213 +0x38
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5794910Z   internal/poll.(*FD).Close()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5799720Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/internal/poll/fd_unix.go:105 +0x6c
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5901080Z   os.(*file).close()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5920950Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/os/file_unix.go:333 +0x84
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5923910Z   os.(*File).Close()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5965730Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/os/file_posix.go:23 +0x44
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5972760Z   github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal_test.TestInteractiveMasterEOFReturns.deferwrap1()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5985620Z       /Users/runner/work/mudarro/mudarro/test/internal/mudarro/terminal/interactive_lifecycle_test.go:103 +0x20
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5987360Z   runtime.Goexit()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5988950Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/runtime/panic.go:629 +0x5c
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5993650Z   testing.(*common).Fatal()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5995650Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1083 +0x78
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.5997770Z   github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal_test.TestInteractiveMasterEOFReturns()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6000360Z       /Users/runner/work/mudarro/mudarro/test/internal/mudarro/terminal/interactive_lifecycle_test.go:117 +0x2e4
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6003450Z   testing.tRunner()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6004890Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1690 +0x184
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6006080Z   testing.(*T).Run.gowrap1()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6007630Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1743 +0x40
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6008450Z 
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6008810Z Goroutine 15 (running) created at:
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6010320Z   github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal_test.TestInteractiveMasterEOFReturns()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6012580Z       /Users/runner/work/mudarro/mudarro/test/internal/mudarro/terminal/interactive_lifecycle_test.go:105 +0x1ac
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6014230Z   testing.tRunner()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6016140Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1690 +0x184
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6016850Z   testing.(*T).Run.gowrap1()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6017450Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1743 +0x40
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6017860Z 
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6018000Z Goroutine 14 (finished) created at:
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6018300Z   testing.(*T).Run()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6019010Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1743 +0x5e0
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6019690Z   testing.runTests.func1()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6020310Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:2168 +0x80
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6020800Z   testing.tRunner()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6021490Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1690 +0x184
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6021940Z   testing.runTests()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6022650Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:2166 +0x6e0
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6023250Z   testing.(*M).Run()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6023810Z       /Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:2034 +0xb74
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6024400Z   main.main()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6025990Z       _testmain.go:81 +0x110
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6026830Z ==================
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6027640Z --- FAIL: TestInteractiveRealPTYNavigationAndRestore (0.06s)
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6028890Z     testing.go:1399: race detected during execution of test
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6029920Z --- FAIL: TestInteractiveKeepsChildInputQueued (0.05s)
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6030940Z panic: runtime error: slice bounds out of range [:-1] [recovered]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6032060Z 	panic: runtime error: slice bounds out of range [:-1]
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6032650Z 
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6032960Z goroutine 36 [running]:
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6033680Z testing.tRunner.func1.2({0x104fddb40, 0xc0000a5b30})
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6034970Z 	/Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1632 +0x2c4
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6036040Z testing.tRunner.func1()
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6037490Z 	/Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1635 +0x47c
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6038550Z panic({0x104fddb40?, 0xc0000a5b30?})
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6039610Z 	/Users/runner/hostedtoolcache/go/1.23.0/arm64/src/runtime/panic.go:785 +0x124
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6041240Z github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal_test.TestInteractiveKeepsChildInputQueued(0xc000342000)
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6043120Z 	/Users/runner/work/mudarro/mudarro/test/internal/mudarro/terminal/interactive_test.go:136 +0x7a0
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6044300Z testing.tRunner(0xc000342000, 0x104fee510)
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6045310Z 	/Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1690 +0x188
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6046300Z created by testing.(*T).Run in goroutine 1
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6047380Z 	/Users/runner/hostedtoolcache/go/1.23.0/arm64/src/testing/testing.go:1743 +0x5e4
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6048610Z FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal	3.645s
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6049460Z FAIL
+test (macos-latest)	Run go test -race ./...	2026-10-06T04:56:57.6062600Z ##[error]Process completed with exit code 1.

@@ -4,6 +4,7 @@ package terminal
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"os/signal"
 	"strconv"
@@ -290,16 +291,27 @@ func interactiveRead(in *os.File, pending []byte) (string, []byte, error) {
 		if len(pending) > 64 {
 			return "", nil, nil
 		}
-		buf := make([]byte, 1)
-		n, e := syscall.Read(int(in.Fd()), buf)
+		fd := int(in.Fd())
+		ready, e := interactiveReady(fd)
+		if e == syscall.EINTR {
+			return "", pending, nil
+		}
 		if e != nil {
-			if e == syscall.EINTR {
+			return "", nil, e
+		}
+		if !ready {
+			return "", pending, nil
+		}
+		buf := make([]byte, 1)
+		n, e := syscall.Read(fd, buf)
+		if e != nil {
+			if e == syscall.EINTR || e == syscall.EAGAIN {
 				return "", pending, nil
 			}
 			return "", nil, e
 		}
 		if n == 0 {
-			return "", nil, nil
+			return "", nil, io.EOF
 		}
 		pending = append(pending, buf[:n]...)
 	}

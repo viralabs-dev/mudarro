@@ -1,5 +1,11 @@
 English · [Português (Brasil)](pt-BR/validation.md)
 
+## Current CI correction — MUD-030
+
+Verified [push CI run37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: completed **failure**. Ubuntu, database and container jobs succeeded; macOS executed and failed in EOF-loop/race-cleanup handling, including panic with index n=-1. Therefore macOS is no longer globally “not executed”: local Darwin cross-compilation passed, but the actual CI runtime failed. Local Podman remains unavailable; container CI passed, distinct from local execution.
+
+Authenticated Actions permissions read returned enabled=true/allowed_actions=all; this does not identify who changed settings. No workflow/config settings, enable action, dispatch or rerun was performed. This corrective commit uses the official [skip ci] marker for the authorized main-only push, honoring the requested no-Actions execution without changing settings. Earlier raw gates/evidence are preserved as historical and superseded for current CI status. Local Linux74-test/76.38% results remain valid for their recorded checkpoint. The portability fix passed 75 local Linux tests with race, vet and Linux/Darwin arm64 compilation. Corrected macOS runtime remains unvalidated; skipping CI does not mean it passed.
+
 ## Current configurable-UI gate
 
 **74 Test functions passed with race; 1,552/2,032 executed statements = 76.38% (Go displays76.4%)**, 480 unexecuted. Terminal package:379/422=89.81%. Vet, Linux build and whole-binary Darwin arm64 cross-build passed; compilation does not validate macOS runtime. Genuine UI E2E passed custom-config wrapper/supervisor propagation, localized scan, read-only preview and secret redaction, plus smoke/menu execution. Final Python/Go language and pnpm real E2Es passed; Dockerfile and eight database combinations with existing dependencies also passed. Previous stage counts/coverage below remain historical with different denominators. Font integration and actual-emulator mouse acceptance remain pending.
@@ -15,11 +21,11 @@ Go/race/vet, Linux build, Darwin arm64 cross-build, shell syntax, installer simu
 
 Docker Compose/Dockerfile, offline --network none, kind manifests/kustomize and Helm passed isolated runtime tests. Eight PostgreSQL/SQLite combinations with Goose/Alembic/Django/Prisma were rerun using existing dependencies and passed. Django/Alembic tested inserted/idempotent data; Goose/Prisma tested configured seed hooks. Initial PVC fixture Pending proved object preservation only; expanded mounted Bound fixture proved same UID/content after down/up/restart. This is fixture-cycle persistence, not backup/disaster recovery or retention after deleting a cluster.
 
-Native host PostgreSQL, Podman, macOS and WSL runtime were not exercised: unavailable binaries/platforms. Yarn/uv/poetry runtime also unavailable; contract tests remain separate. Doctor is executable/provider checking, not application/database health. Prisma7 SQLite requires initial file creation, covered by db-init. Models remain project-owned; container migrations require explicit commands when tools are not on host.
+Native host PostgreSQL, Podman, macOS and WSL runtime were not exercised locally: unavailable binaries/platforms. Current CI macOS executed and failed; container CI passed. Yarn/uv/poetry runtime also unavailable; contract tests remain separate. Doctor is executable/provider checking, not application/database health. Prisma7 SQLite requires initial file creation, covered by db-init. Models remain project-owned; container migrations require explicit commands when tools are not on host.
 
 Tools previously exercised locally: Go1.27.1, Node26.7.0, Python3.14.7, Prisma7.10.0, Alembic1.20.0, Django6.1.1, Goose3.24.1, PostgreSQL17. CI versions may differ.
 
-Historical CI [37405606285](https://github.com/viralabs-dev/mudarro/actions/runs/37405606285) succeeded at f62ce9d and does not validate new local changes. Existing public [v0.1.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.1.0) was previously published with four binaries/checksums and installation verified. This round made no commit/push/publication.
+Historical CI [37405606285](https://github.com/viralabs-dev/mudarro/actions/runs/37405606285) succeeded at f62ce9d and does not validate new local changes. Existing public [v0.1.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.1.0) was previously published with four binaries/checksums and installation verified. This historical local round made no commit/push/publication; the subsequent published checkpoint and its failing CI are recorded above.
 
 Final recorded v4 snapshot: /tmp/mudarro-checkpoint-v4/bin/mudarro, SHA25676ccc665970c48a7f7c95f9a9052599cd23aee4580060b11a265a5b1bd91d942. Genuine terminal GIF/composed frames validated in [sample](samples/menu-auto/README.md); graphical screenshot pending; user visual design acceptance received, existing workspace4/notebook confirmation preserved.
 
@@ -51,7 +57,7 @@ Plain go test also passed: [test-tree-plain-tests.txt](samples/menu-auto/evidenc
 
 ## Current consumer-name validation — MUD-022
 
-43 Test functions passed with race, including 24 consumer-name/mode cases. Vet, Linux build, Darwin arm64 terminal-test cross-compilation and Bash syntax passed. Coverage: **1,063/1,451 statements = 73.26% (Go displays 73.3%)**, 388 unexecuted. Prior MUD-017 1,035/1,427=72.53% is historical; changed code and denominator preclude interpreting the difference as equivalent requirement coverage. macOS runtime remains unexecuted.
+43 Test functions passed with race, including 24 consumer-name/mode cases. Vet, Linux build, Darwin arm64 terminal-test cross-compilation and Bash syntax passed. Coverage: **1,063/1,451 statements = 73.26% (Go displays 73.3%)**, 388 unexecuted. Prior MUD-017 1,035/1,427=72.53% is historical; changed code and denominator preclude interpreting the difference as equivalent requirement coverage. macOS runtime was not exercised in this historical local stage; current CI runtime failed as recorded above.
 
 Real final GIF: 983×739, 8 frames, 15.04 s. Composed frame inspected: AURORA lettering and PROJETO / Aurora. This is a real PTY recording frame, not the still-pending graphical screenshot. User design approval received. Binary SHA-256: `ef36e6c1142bd7294e543208895cea21e125c6898d14ec168e40c1c7eb327890`.
 

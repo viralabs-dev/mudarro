@@ -19,8 +19,8 @@ func interactiveRaw(f *os.File) (func() error, error) {
 	raw.Cflag &^= syscall.CSIZE | syscall.PARENB
 	raw.Cflag |= syscall.CS8
 	raw.Lflag &^= syscall.ECHO | syscall.ICANON | syscall.IEXTEN | syscall.ISIG
-	raw.Cc[syscall.VMIN] = 0
-	raw.Cc[syscall.VTIME] = 1
+	raw.Cc[syscall.VMIN] = 1
+	raw.Cc[syscall.VTIME] = 0
 	apply := func(t *syscall.Termios) error {
 		_, _, e := syscall.Syscall(syscall.SYS_IOCTL, f.Fd(), syscall.TCSETS, uintptr(unsafe.Pointer(t)))
 		if e != 0 {

@@ -5,6 +5,7 @@ package terminal_test
 import (
 	"bufio"
 	"bytes"
+	"context"
 	"fmt"
 	. "github.com/viralabs-dev/mudarro/internal/mudarro/terminal"
 	"os"
@@ -75,14 +76,28 @@ func TestInteractiveSignalHelper(t *testing.T) {
 			}
 		}
 	}()
+	probeStop := make(chan struct{})
+	probeDone := make(chan struct{})
+	// Join the termios observer before deferred slave.Close on every return path.
+	defer func() { close(probeStop); <-probeDone }()
 	go func() {
+		defer close(probeDone)
 		for i := 0; i < 300; i++ {
-			now, e := interactiveTermios(slave)
-			if e == nil && now.Lflag&syscall.ICANON == 0 {
+			select {
+			case <-probeStop:
+				return
+			default:
+			}
+			now, err := interactiveTermios(slave)
+			if err == nil && now.Lflag&syscall.ICANON == 0 {
 				fmt.Println("RAW_READY")
 				return
 			}
-			time.Sleep(10 * time.Millisecond)
+			select {
+			case <-probeStop:
+				return
+			case <-time.After(10 * time.Millisecond):
+			}
 		}
 	}()
 	_, _, e = NewMenu(slave, "Mudarro", "").ChooseInteractive(slave, "Actions", []string{"one"}, nil)
@@ -95,25 +110,33 @@ func TestInteractiveSignalHelper(t *testing.T) {
 	}
 }
 func TestInteractiveMasterEOFReturns(t *testing.T) {
+	if os.Getenv("MUDARRO_EOF_HELPER") != "1" {
+		// A broken EOF loop is killed and joined as a separate process. Never close a
+		// slave concurrently with a still-running ChooseInteractive goroutine.
+		ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+		defer cancel()
+		cmd := exec.CommandContext(ctx, os.Args[0], "-test.run=^TestInteractiveMasterEOFReturns$")
+		cmd.Env = append(os.Environ(), "MUDARRO_EOF_HELPER=1", "TERM=xterm-256color")
+		output, e := cmd.CombinedOutput()
+		if ctx.Err() != nil {
+			t.Fatalf("EOF loop: %v; helper killed and joined: %s", ctx.Err(), output)
+		}
+		if e != nil {
+			t.Fatalf("EOF helper: %v %s", e, output)
+		}
+		return
+	}
 	t.Setenv("TERM", "xterm-256color")
 	master, slave, e := openPTY()
 	if e != nil {
 		t.Fatal(e)
 	}
 	defer slave.Close()
-	done := make(chan error, 1)
-	go func() {
-		_, _, e := NewMenu(slave, "Mudarro", "").ChooseInteractive(slave, "Actions", []string{"one"}, nil)
-		done <- e
-	}()
-	time.Sleep(50 * time.Millisecond)
-	master.Close()
-	select {
-	case e := <-done:
-		if e == nil {
-			t.Fatal("EOF no error")
-		}
-	case <-time.After(time.Second):
-		t.Fatal("EOF loop")
+	closed := make(chan struct{})
+	go func() { time.Sleep(50 * time.Millisecond); master.Close(); close(closed) }()
+	_, _, e = NewMenu(slave, "Mudarro", "").ChooseInteractive(slave, "Actions", []string{"one"}, nil)
+	<-closed
+	if e == nil {
+		t.Fatal("EOF no error")
 	}
 }

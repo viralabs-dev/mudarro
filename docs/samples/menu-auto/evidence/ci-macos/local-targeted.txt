@@ -1,0 +1,1 @@
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal	6.371s

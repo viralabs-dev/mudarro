@@ -1,0 +1,5 @@
+--- FAIL: TestInteractivePreservesPartialEscapeAcrossIdle (0.66s)
+    interactive_poll_test.go:57: partial Down sequence was lost across idle polling
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal	0.672s
+FAIL

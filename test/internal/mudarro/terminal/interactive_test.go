@@ -118,7 +118,7 @@ func TestInteractiveKeepsChildInputQueued(t *testing.T) {
 		}
 	}()
 	time.Sleep(50 * time.Millisecond)
-	master.Write([]byte("10\rchild-input\n"))
+	master.Write([]byte("10\rchild-input"))
 	select {
 	case e := <-done:
 		if e != nil {
@@ -127,14 +127,39 @@ func TestInteractiveKeepsChildInputQueued(t *testing.T) {
 	case <-time.After(3 * time.Second):
 		t.Fatal("timeout")
 	}
-	fd := int(slave.Fd())
-	syscall.SetNonblock(fd, true)
-	defer syscall.SetNonblock(fd, false)
-	buf := make([]byte, 128)
-	n, e := syscall.Read(fd, buf)
-	if e != nil || string(buf[:n]) != "child-input\n" {
-		t.Fatalf("child stdin lost: %q %v", buf[:n], e)
+	// Complete the canonical line after raw restoration. BSD terminals need a
+	// newline delivered in canonical mode to release previously queued bytes.
+	if _, e = master.Write([]byte("\n")); e != nil {
+		t.Fatal(e)
 	}
+	fd := int(slave.Fd())
+	if e = syscall.SetNonblock(fd, true); e != nil {
+		t.Fatal(e)
+	}
+	defer syscall.SetNonblock(fd, false)
+	deadline := time.Now().Add(time.Second)
+	var got []byte
+	buf := make([]byte, 128)
+	for time.Now().Before(deadline) {
+		n, readErr := syscall.Read(fd, buf)
+		if n > 0 {
+			got = append(got, buf[:n]...)
+			if strings.Contains(string(got), "\n") {
+				break
+			}
+		}
+		if readErr != nil && readErr != syscall.EINTR && readErr != syscall.EAGAIN && readErr != syscall.EWOULDBLOCK {
+			t.Fatalf("child stdin read: %v", readErr)
+		}
+		if readErr == syscall.EINTR {
+			continue
+		}
+		time.Sleep(2 * time.Millisecond)
+	}
+	if string(got) != "child-input\n" {
+		t.Fatalf("child stdin lost: %q", got)
+	}
+
 }
 func TestInteractiveCtrlCRestoresTerminal(t *testing.T) {
 	t.Setenv("TERM", "xterm-256color")
