@@ -1,8 +1,9 @@
-package mudarro
+package mudarro_test
 
 import (
 	"bytes"
 	"encoding/json"
+	. "github.com/viralabs-dev/mudarro/internal/mudarro"
 	"os"
 	"path/filepath"
 	"strings"
@@ -24,7 +25,7 @@ func fixture(t *testing.T, files map[string]string) string {
 	return root
 }
 func sample() Config {
-	return Config{Version: 1, Name: "Minha app", Services: []Service{{ID: "app", Dir: ".", Language: "go", Manager: "go", Infrastructure: Infrastructure{Kind: "local"}, Commands: map[string]Command{"start": cmd("aplicacao", "sleep", "30"), "test": cmd("qualidade", "go", "test", "./...")}}}}
+	return Config{Version: 1, Name: "Minha app", UI: &UIConfig{Locale: "pt-BR"}, Services: []Service{{ID: "app", Dir: ".", Language: "go", Manager: "go", Infrastructure: Infrastructure{Kind: "local"}, Commands: map[string]Command{"start": cmd("aplicacao", "sleep", "30"), "test": cmd("qualidade", "go", "test", "./...")}}}}
 }
 func TestScanLanguagesAndSuggestions(t *testing.T) {
 	root := fixture(t, map[string]string{"web/package.json": `{"name":"web","scripts":{"dev":"vite","test":"vitest","custom":"echo yes"},"devDependencies":{"typescript":"5"}}`, "web/pnpm-lock.yaml": "", "api/pyproject.toml": "[project]\nname='api'\n[project.scripts]\nhello='app:main'\n", "api/uv.lock": "", "worker/go.mod": "module worker\n\ngo 1.23\n", "worker/main.go": "package main\nfunc main(){}\n", "scripts/check.sh": "touch NEVER_EXECUTE", "Makefile": "check: deps\n\techo ok\n", "node_modules/bad/package.json": "bad", "dist/package.json": "bad"})
@@ -235,7 +236,7 @@ func TestScaffoldsParseAndDoNotInventModels(t *testing.T) {
 		s := sample().Services[0]
 		s.Database = Database{Kind: "postgresql", Tool: tool, Generate: true}
 		s.Infrastructure = Infrastructure{Kind: "docker", Mode: "compose", File: "compose.yaml", Generate: true}
-		f, e := scaffoldFiles(s)
+		f, e := generatedScaffolds(t, s)
 		if e != nil {
 			t.Fatal(e)
 		}
@@ -249,7 +250,7 @@ func TestScaffoldsParseAndDoNotInventModels(t *testing.T) {
 	s := sample().Services[0]
 	s.Infrastructure = Infrastructure{Kind: "kubernetes", Mode: "kustomize", File: "k8s", Generate: true, Image: "example:v1", Port: 8000, Context: "test", Namespace: "example"}
 	s.Database = Database{Kind: "postgresql", Tool: "goose", Generate: true}
-	f, e := scaffoldFiles(s)
+	f, e := generatedScaffolds(t, s)
 	if e != nil {
 		t.Fatal(e)
 	}
@@ -258,10 +259,14 @@ func TestScaffoldsParseAndDoNotInventModels(t *testing.T) {
 	}
 }
 func TestInvalidMigrationNameAndEnvironment(t *testing.T) {
-	if _, e := expandArgs([]string{"{name}"}, "a; touch x"); e == nil {
+	root := t.TempDir()
+	s := sample().Services[0]
+	var out bytes.Buffer
+	if err := (Runner{Out: &out, Name: "a; touch x"}).Run(root, s, action("migration", "banco", "echo", "{name}")); err == nil {
 		t.Fatal("invalid name")
 	}
-	if _, e := expandArgs([]string{"${MUDARRO_TEST_ABSENT}"}, ""); e == nil {
+	t.Setenv("MUDARRO_TEST_ABSENT", "")
+	if err := (Runner{Out: &out}).Run(root, s, action("migration", "banco", "echo", "${MUDARRO_TEST_ABSENT}")); err == nil {
 		t.Fatal("missing env")
 	}
 }

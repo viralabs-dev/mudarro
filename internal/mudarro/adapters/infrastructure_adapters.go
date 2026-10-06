@@ -1,11 +1,13 @@
-package mudarro
+package adapters
+
+import "github.com/viralabs-dev/mudarro/internal/mudarro/model"
 
 import "fmt"
 
-func (localAdapter) Actions(s Service) []Action {
-	a := []Action{}
+func (Local) Actions(s model.Service) []model.Action {
+	a := []model.Action{}
 	for _, n := range []string{"up", "down", "restart", "status", "logs"} {
-		v := Action{Name: n, Group: "infraestrutura", Special: "local-" + n}
+		v := model.Action{Name: n, Group: "infraestrutura", Special: "local-" + n}
 		if (n == "up" || n == "restart") && len(s.Commands["start"].Args) == 0 && s.Commands["start"].Shell == "" {
 			v.Blocked = "declare commands.start"
 		}
@@ -13,13 +15,13 @@ func (localAdapter) Actions(s Service) []Action {
 	}
 	return a
 }
-func (containerAdapter) Actions(s Service) []Action {
+func (Container) Actions(s model.Service) []model.Action {
 	i := s.Infrastructure
 	engine := i.Kind
-	var a []Action
+	var a []model.Action
 	if i.Mode == "compose" {
 		if i.File == "" {
-			return []Action{blocked("up", "infraestrutura", "declare infrastructure.file")}
+			return []model.Action{blocked("up", "infraestrutura", "declare infrastructure.file")}
 		}
 		prefix := []string{engine, "compose", "-f", i.File}
 		if engine == "podman" {
@@ -36,7 +38,7 @@ func (containerAdapter) Actions(s Service) []Action {
 		}
 	} else if i.Mode == "dockerfile" {
 		if i.Image == "" {
-			return []Action{blocked("up", "infraestrutura", "declare infrastructure.image para Dockerfile")}
+			return []model.Action{blocked("up", "infraestrutura", "declare infrastructure.image para Dockerfile")}
 		}
 		file := i.File
 		if file == "" {
@@ -57,13 +59,13 @@ func (containerAdapter) Actions(s Service) []Action {
 	}
 	return a
 }
-func (kubernetesAdapter) Actions(s Service) []Action {
+func (Kubernetes) Actions(s model.Service) []model.Action {
 	i := s.Infrastructure
 	if i.Context == "" || i.Namespace == "" || i.File == "" {
-		return []Action{blocked("up", "infraestrutura", "declare context, namespace e file Kubernetes")}
+		return []model.Action{blocked("up", "infraestrutura", "declare context, namespace e file Kubernetes")}
 	}
 	base := []string{"kubectl", "--context", i.Context, "--namespace", i.Namespace}
-	var a []Action
+	var a []model.Action
 	if i.Mode == "helm" {
 		a = append(a, action("up", "infraestrutura", "helm", "upgrade", "--install", s.ID, i.File, "--kube-context", i.Context, "--namespace", i.Namespace))
 		// Helm uninstall can delete PVCs; stopping is deliberately a workload scale operation.
@@ -76,11 +78,15 @@ func (kubernetesAdapter) Actions(s Service) []Action {
 		}
 		a = append(a, action("up", "infraestrutura", append(base, "apply", flag, i.File)...))
 		// Only scale named workloads selected from the declared resources. Never delete PVCs.
-		a = append(a, Action{Name: "down", Group: "infraestrutura", Special: "k8s-down"})
+		a = append(a, model.Action{Name: "down", Group: "infraestrutura", Special: "k8s-down"})
 		a = append(a, action("status", "infraestrutura", append(base, "get", flag, i.File)...))
 	} else {
-		return []Action{blocked("up", "infraestrutura", "mode Kubernetes deve ser manifests, kustomize ou helm")}
+		return []model.Action{blocked("up", "infraestrutura", "mode Kubernetes deve ser manifests, kustomize ou helm")}
 	}
-	a = append(a, Action{Name: "restart", Group: "infraestrutura", Special: "k8s-restart"}, Action{Name: "logs", Group: "infraestrutura", Special: "k8s-logs"})
+	a = append(a, model.Action{Name: "restart", Group: "infraestrutura", Special: "k8s-restart"}, model.Action{Name: "logs", Group: "infraestrutura", Special: "k8s-logs"})
 	return a
 }
+
+type Local struct{}
+type Container struct{}
+type Kubernetes struct{}

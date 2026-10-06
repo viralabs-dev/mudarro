@@ -2,7 +2,8 @@ package mudarro
 
 import (
 	"encoding/json"
-	"fmt"
+	"github.com/viralabs-dev/mudarro/internal/mudarro/adapters"
+	"github.com/viralabs-dev/mudarro/internal/mudarro/projectfs"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -15,12 +16,6 @@ type Evidence struct {
 	Path string `json:"path"`
 	Kind string `json:"kind"`
 }
-type Suggestion struct {
-	Service  string  `json:"service"`
-	Name     string  `json:"name"`
-	Command  Command `json:"command"`
-	Evidence string  `json:"evidence"`
-}
 type Report struct {
 	Config      Config       `json:"config"`
 	Evidence    []Evidence   `json:"evidence"`
@@ -30,42 +25,12 @@ type Report struct {
 type LanguageAdapter interface {
 	Detect(root, dir string, files map[string]bool, excludes []string) (*Service, []Suggestion, error)
 }
-type javascriptAdapter struct{}
-type pythonAdapter struct{}
-type goAdapter struct{}
 
-var languageAdapters = []LanguageAdapter{javascriptAdapter{}, pythonAdapter{}, goAdapter{}}
+var languageAdapters = []LanguageAdapter{adapters.JavaScript{}, adapters.Python{}, adapters.Go{}}
 
-func read(root, dir, file string) ([]byte, error) {
-	p, e := safePath(root, filepath.Join(dir, file))
-	if e != nil {
-		return nil, e
-	}
-	st, e := os.Stat(p)
-	if e != nil {
-		return nil, e
-	}
-	if st.Size() > 4<<20 {
-		return nil, fmt.Errorf("manifest grande demais: %s", p)
-	}
-	return os.ReadFile(p)
-}
-func serviceID(dir, lang string) string {
-	v := regexp.MustCompile(`[^a-zA-Z0-9_-]+`).ReplaceAllString(dir, "-")
-	v = strings.Trim(v, "-")
-	if v == "" {
-		v = "app"
-	}
-	return v + "-" + lang
-}
-func baseService(dir, lang string) *Service {
-	return &Service{ID: serviceID(dir, lang), Dir: dir, Language: lang, Commands: map[string]Command{}}
-}
-func cmd(group string, args ...string) Command { return Command{Args: args, Group: group} }
-
-var ignored = map[string]bool{".git": true, "node_modules": true, "vendor": true, ".venv": true, "venv": true, "dist": true, "build": true, ".mudarro": true, "__pycache__": true, ".next": true, ".tox": true, ".cache": true}
-
-func exists(p string) bool { st, e := os.Lstat(p); return e == nil && st.Mode()&os.ModeSymlink == 0 }
+func read(root, dir, file string) ([]byte, error) { return projectfs.ReadManifest(root, dir, file) }
+func cmd(group string, args ...string) Command    { return Command{Args: args, Group: group} }
+func exists(p string) bool                        { st, e := os.Lstat(p); return e == nil && st.Mode()&os.ModeSymlink == 0 }
 
 func Scan(root string, excludes []string) (Report, error) {
 	r := Report{Config: Config{Version: 1, Name: filepath.Base(root), Exclude: excludes}}
@@ -85,7 +50,7 @@ func Scan(root string, excludes []string) (Report, error) {
 			}
 		}
 		if d.IsDir() {
-			if rel != "." && ignored[d.Name()] {
+			if rel != "." && adapters.IgnoredDirectory(d.Name()) {
 				return filepath.SkipDir
 			}
 			return nil
@@ -140,7 +105,7 @@ func Scan(root string, excludes []string) (Report, error) {
 		}
 	}
 	if len(r.Config.Services) == 0 {
-		s := baseService(".", "custom")
+		s := adapters.BaseService(".", "custom")
 		detectInfrastructure(root, s, &r)
 		s.Pending = append(s.Pending, "Declare comandos da aplicação")
 		r.Config.Services = append(r.Config.Services, *s)
@@ -173,12 +138,12 @@ func Scan(root string, excludes []string) (Report, error) {
 				}
 				re := regexp.MustCompile(`(?m)^([A-Za-z0-9][A-Za-z0-9_-]*):[^=]`)
 				for _, m := range re.FindAllStringSubmatch(string(b), -1) {
-					r.Suggestions = append(r.Suggestions, Suggestion{s.ID, "make-" + m[1], cmd("scripts", "make", "-C", filepath.Dir(rel), m[1]), filepath.Join(dir, file)})
+					r.Suggestions = append(r.Suggestions, Suggestion{Service: s.ID, Name: "make-" + m[1], Command: cmd("scripts", "make", "-C", filepath.Dir(rel), m[1]), Evidence: filepath.Join(dir, file)})
 				}
 			} else {
 				n := strings.TrimSuffix(strings.ReplaceAll(filepath.ToSlash(rel), "/", "-"), ".sh")
 				if identifier.MatchString(n) {
-					r.Suggestions = append(r.Suggestions, Suggestion{s.ID, "script-" + n, cmd("scripts", "bash", rel), filepath.Join(dir, file)})
+					r.Suggestions = append(r.Suggestions, Suggestion{Service: s.ID, Name: "script-" + n, Command: cmd("scripts", "bash", rel), Evidence: filepath.Join(dir, file)})
 				}
 			}
 		}

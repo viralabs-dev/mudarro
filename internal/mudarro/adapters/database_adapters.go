@@ -1,7 +1,9 @@
-package mudarro
+package adapters
 
-func (prismaAdapter) Actions(s Service) []Action {
-	var a []Action
+import "github.com/viralabs-dev/mudarro/internal/mudarro/model"
+
+func (Prisma) Actions(s model.Service) []model.Action {
+	var a []model.Action
 
 	a = append(a, action("db-migrate", "banco", "npx", "--no-install", "prisma", "migrate", "deploy"), action("db-migration-new", "banco", "npx", "--no-install", "prisma", "migrate", "dev", "--create-only", "--name", "{name}"), action("db-seed", "banco", "npx", "--no-install", "prisma", "db", "seed"), action("db-reset", "banco", "npx", "--no-install", "prisma", "migrate", "reset", "--force"))
 
@@ -12,8 +14,8 @@ func (prismaAdapter) Actions(s Service) []Action {
 	}
 	return a
 }
-func (djangoAdapter) Actions(s Service) []Action {
-	var a []Action
+func (Django) Actions(s model.Service) []model.Action {
+	var a []model.Action
 
 	for _, v := range []struct {
 		n    string
@@ -29,8 +31,8 @@ func (djangoAdapter) Actions(s Service) []Action {
 	}
 	return a
 }
-func (alembicAdapter) Actions(s Service) []Action {
-	var a []Action
+func (Alembic) Actions(s model.Service) []model.Action {
+	var a []model.Action
 
 	a = append(a, action("db-migrate", "banco", pythonArgs(s.Manager, "-m", "alembic", "upgrade", "head")...), action("db-migration-new", "banco", pythonArgs(s.Manager, "-m", "alembic", "revision", "-m", "{name}")...), action("db-seed", "banco", pythonArgs(s.Manager, "seeds/seed.py")...))
 
@@ -41,8 +43,8 @@ func (alembicAdapter) Actions(s Service) []Action {
 	}
 	return a
 }
-func (gooseAdapter) Actions(s Service) []Action {
-	var a []Action
+func (Goose) Actions(s model.Service) []model.Action {
+	var a []model.Action
 	d := s.Database
 
 	driver := "postgres"
@@ -69,3 +71,9 @@ func (gooseAdapter) Actions(s Service) []Action {
 	}
 	return a
 }
+
+type Prisma struct{}
+type Alembic struct{}
+type Goose struct{}
+
+type Django struct{}

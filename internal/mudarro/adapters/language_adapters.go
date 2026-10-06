@@ -1,9 +1,10 @@
-package mudarro
+package adapters
 
 import (
 	"encoding/json"
 	"fmt"
 	"github.com/pelletier/go-toml/v2"
+	"github.com/viralabs-dev/mudarro/internal/mudarro/model"
 	"go/parser"
 	"go/token"
 	"io/fs"
@@ -13,7 +14,7 @@ import (
 	"strings"
 )
 
-func (javascriptAdapter) Detect(root, dir string, f map[string]bool, excludes []string) (*Service, []Suggestion, error) {
+func (JavaScript) Detect(root, dir string, f map[string]bool, excludes []string) (*model.Service, []model.Suggestion, error) {
 	if !f["package.json"] {
 		return nil, nil, nil
 	}
@@ -31,7 +32,7 @@ func (javascriptAdapter) Detect(root, dir string, f map[string]bool, excludes []
 	if e = json.Unmarshal(b, &p); e != nil {
 		return nil, nil, fmt.Errorf("%s/package.json: %w", dir, e)
 	}
-	s := baseService(dir, "javascript")
+	s := BaseService(dir, "javascript")
 	if f["tsconfig.json"] || p.DevDependencies["typescript"] != "" || p.Dependencies["typescript"] != "" {
 		s.Language = "typescript"
 	}
@@ -57,15 +58,28 @@ func (javascriptAdapter) Detect(root, dir string, f map[string]bool, excludes []
 			break
 		}
 	}
-	suggestions := []Suggestion{}
+	suggestions := []model.Suggestion{}
 	keys := []string{}
 	for k := range p.Scripts {
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)
+	names := map[string][]string{}
+	for _, k := range keys {
+		n := strings.NewReplacer(":", "-", ".", "-").Replace(k)
+		names[n] = append(names[n], k)
+	}
+	reported := map[string]bool{}
 	for _, k := range keys {
 		name := strings.NewReplacer(":", "-", ".", "-").Replace(k)
 		if !identifier.MatchString(name) {
+			continue
+		}
+		if len(names[name]) > 1 {
+			if !reported[name] {
+				s.Pending = append(s.Pending, fmt.Sprintf("Scripts %s colidem no nome %s: declare comando explícito", strings.Join(names[name], ", "), name))
+				reported[name] = true
+			}
 			continue
 		}
 		group := "scripts"
@@ -76,7 +90,7 @@ func (javascriptAdapter) Detect(root, dir string, f map[string]bool, excludes []
 			group = "aplicacao"
 		}
 		c := cmd(group, s.Manager, "run", k)
-		suggestions = append(suggestions, Suggestion{Name: name, Command: c, Evidence: filepath.Join(dir, "package.json")})
+		suggestions = append(suggestions, model.Suggestion{Name: name, Command: c, Evidence: filepath.Join(dir, "package.json")})
 		if s.Manager != "" && group != "scripts" {
 			s.Commands[name] = c
 		}
@@ -93,13 +107,13 @@ func (javascriptAdapter) Detect(root, dir string, f map[string]bool, excludes []
 	}
 	return s, suggestions, nil
 }
-func (pythonAdapter) Detect(root, dir string, f map[string]bool, excludes []string) (*Service, []Suggestion, error) {
+func (Python) Detect(root, dir string, f map[string]bool, excludes []string) (*model.Service, []model.Suggestion, error) {
 	if !f["pyproject.toml"] && !f["requirements.txt"] && !f["manage.py"] && !f["Pipfile"] {
 		return nil, nil, nil
 	}
-	s := baseService(dir, "python")
+	s := BaseService(dir, "python")
 	s.Manager = "pip"
-	var suggestions []Suggestion
+	var suggestions []model.Suggestion
 	if f["poetry.lock"] && f["uv.lock"] {
 		s.Manager = ""
 		s.Pending = append(s.Pending, "Múltiplos lockfiles: declare manager")
@@ -129,10 +143,10 @@ func (pythonAdapter) Detect(root, dir string, f map[string]bool, excludes []stri
 			return nil, nil, fmt.Errorf("%s/pyproject.toml: %w", dir, e)
 		}
 		for k := range p.Project.Scripts {
-			suggestions = append(suggestions, Suggestion{Name: k, Command: cmd("scripts", ".venv/bin/"+k), Evidence: filepath.Join(dir, "pyproject.toml")})
+			suggestions = append(suggestions, model.Suggestion{Name: k, Command: cmd("scripts", ".venv/bin/"+k), Evidence: filepath.Join(dir, "pyproject.toml")})
 		}
 		for k := range p.Tool.Poetry.Scripts {
-			suggestions = append(suggestions, Suggestion{Name: k, Command: cmd("scripts", "poetry", "run", k), Evidence: filepath.Join(dir, "pyproject.toml")})
+			suggestions = append(suggestions, model.Suggestion{Name: k, Command: cmd("scripts", "poetry", "run", k), Evidence: filepath.Join(dir, "pyproject.toml")})
 		}
 	}
 	switch s.Manager {
@@ -167,11 +181,11 @@ func pythonArgs(manager string, args ...string) []string {
 	}
 	return append(prefix, args...)
 }
-func (goAdapter) Detect(root, dir string, f map[string]bool, excludes []string) (*Service, []Suggestion, error) {
+func (Go) Detect(root, dir string, f map[string]bool, excludes []string) (*model.Service, []model.Suggestion, error) {
 	if !f["go.mod"] {
 		return nil, nil, nil
 	}
-	s := baseService(dir, "go")
+	s := BaseService(dir, "go")
 	s.Manager = "go"
 	s.Commands["build"] = cmd("aplicacao", "go", "build", "./...")
 	s.Commands["test"] = cmd("qualidade", "go", "test", "./...")
@@ -220,3 +234,7 @@ func (goAdapter) Detect(root, dir string, f map[string]bool, excludes []string) 
 	}
 	return s, nil, nil
 }
+
+type JavaScript struct{}
+type Python struct{}
+type Go struct{}

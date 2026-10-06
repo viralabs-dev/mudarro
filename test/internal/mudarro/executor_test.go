@@ -1,7 +1,8 @@
-package mudarro
+package mudarro_test
 
 import (
 	"bytes"
+	. "github.com/viralabs-dev/mudarro/internal/mudarro"
 	"io"
 	"strings"
 	"testing"

@@ -4,20 +4,20 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"github.com/viralabs-dev/mudarro/internal/mudarro/terminal"
 	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"sort"
-	"strconv"
 	"strings"
 )
 
 type options struct {
-	root, name, selectScripts   string
-	json, dry, all, interactive bool
-	exclude                     []string
-	pos                         []string
+	root, name, selectScripts, config, format, locale, theme string
+	json, dry, all, interactive                              bool
+	exclude                                                  []string
+	pos                                                      []string
 }
 
 func parseOptions(args []string) (options, error) {
@@ -33,7 +33,7 @@ func parseOptions(args []string) (options, error) {
 			o.all = true
 		case "--interactive":
 			o.interactive = true
-		case "--root", "--name", "--select", "--exclude":
+		case "--root", "--name", "--select", "--exclude", "--config", "--format", "--locale", "--theme":
 			if i+1 >= len(args) {
 				return o, fmt.Errorf("valor ausente: %s", a)
 			}
@@ -45,6 +45,14 @@ func parseOptions(args []string) (options, error) {
 				o.name = args[i]
 			case "--select":
 				o.selectScripts = args[i]
+			case "--config":
+				o.config = args[i]
+			case "--format":
+				o.format = args[i]
+			case "--locale":
+				o.locale = args[i]
+			case "--theme":
+				o.theme = args[i]
 			case "--exclude":
 				o.exclude = append(o.exclude, args[i])
 			}
@@ -62,7 +70,18 @@ func parseOptions(args []string) (options, error) {
 	o.root, e = filepath.EvalSymlinks(root)
 	return o, e
 }
-func Main(args []string, version string, in io.Reader, out io.Writer) error {
+func Main(args []string, version string, in io.Reader, out io.Writer) (result error) {
+	locale := "en"
+	for i := 0; i+1 < len(args); i++ {
+		if args[i] == "--locale" {
+			locale = args[i+1]
+		}
+	}
+	defer func() {
+		if result != nil {
+			result = localizedError{result, localizedMessage(result.Error(), locale)}
+		}
+	}()
 	if len(args) == 0 {
 		args = []string{"help"}
 	}
@@ -74,25 +93,48 @@ func Main(args []string, version string, in io.Reader, out io.Writer) error {
 		return nil
 	}
 	if args[0] == "help" || args[0] == "--help" {
-		fmt.Fprint(out, "Mudarro — menus operacionais sem IA\n\n  scan [--json] [--exclude caminho]\n  init [--interactive | --select serviço:script,... | --all-scripts]\n  generate [--dry-run]\n  menu\n  run serviço:ação [--name nome] [--dry-run]\n  doctor\n  version\n\nTodos os comandos aceitam --root diretório. Configure mudarro.yaml antes de gerar.\n")
+		text := "Mudarro — operational menus without AI\n\n  scan [--json] [--exclude path]\n  init [--interactive | --select service:script,... | --all-scripts] [--format yaml|json]\n  generate [--dry-run]\n  menu\n  preview service:action\n  run service:action [--name name] [--dry-run]\n  doctor\n  version\n\nAll commands accept --root directory and --config file. Configure mudarro.yaml or mudarro.json before generating. UI flags: --locale en|pt-BR --theme auto|light|dark.\n"
+		if locale == "pt-BR" {
+			text = "Mudarro — menus operacionais sem IA\n\n  scan [--json] [--exclude caminho]\n  init [--interactive | --select serviço:script,... | --all-scripts] [--format yaml|json]\n  generate [--dry-run]\n  menu\n  preview serviço:ação\n  run serviço:ação [--name nome] [--dry-run]\n  doctor\n  version\n\nTodos os comandos aceitam --root diretório e --config arquivo. Configure mudarro.yaml ou mudarro.json antes de gerar. UI: --locale en|pt-BR --theme auto|light|dark.\n"
+		}
+		fmt.Fprint(out, text)
 		return nil
 	}
+
 	o, e := parseOptions(args[1:])
 	if e != nil {
 		return e
 	}
 	switch args[0] {
 	case "scan", "init":
-		if args[0] == "scan" && exists(filepath.Join(o.root, "mudarro.yaml")) {
-			c, e := Load(o.root)
+		var scanUI *UIConfig
+		if args[0] == "scan" && (o.config != "" || exists(filepath.Join(o.root, "mudarro.yaml")) || exists(filepath.Join(o.root, "mudarro.json"))) {
+			c, e := loadOptions(o)
 			if e != nil {
 				return e
 			}
 			o.exclude = append(o.exclude, c.Exclude...)
+			locale = c.UIOptions().Locale
+			scanUI = c.UI
 		}
 		report, e := Scan(o.root, o.exclude)
 		if e != nil {
 			return e
+		}
+		report.Config.UI = scanUI
+		if o.locale != "" || o.theme != "" {
+			if report.Config.UI == nil {
+				report.Config.UI = &UIConfig{}
+			}
+			if o.locale != "" {
+				report.Config.UI.Locale = o.locale
+			}
+			if o.theme != "" {
+				report.Config.UI.Theme = o.theme
+			}
+			if err := report.Config.validateUI(); err != nil {
+				return err
+			}
 		}
 		if o.name != "" {
 			report.Config.Name = o.name
@@ -106,8 +148,32 @@ func Main(args []string, version string, in io.Reader, out io.Writer) error {
 			printReport(out, report)
 			return nil
 		}
-		if exists(filepath.Join(o.root, "mudarro.yaml")) {
-			return fmt.Errorf("mudarro.yaml já existe; edite a configuração preservada")
+		configName := o.config
+		if configName == "" {
+			configName = "mudarro.yaml"
+			if o.format == "json" {
+				configName = "mudarro.json"
+			}
+		}
+		if o.format != "" && o.format != "yaml" && o.format != "json" {
+			return fmt.Errorf("invalid --format: %s", o.format)
+		}
+		ext := strings.ToLower(filepath.Ext(configName))
+		if ext != ".yaml" && ext != ".yml" && ext != ".json" {
+			return fmt.Errorf("unsupported configuration format: %s", ext)
+		}
+		if o.format == "json" && ext != ".json" || o.format == "yaml" && ext == ".json" {
+			return fmt.Errorf("--format conflicts with --config extension")
+		}
+		target, err := safePath(o.root, configName)
+		if err != nil {
+			return err
+		}
+		if exists(target) || exists(filepath.Join(o.root, "mudarro.yaml")) || exists(filepath.Join(o.root, "mudarro.json")) {
+			return fmt.Errorf("configuration already exists; edit the preserved file")
+		}
+		if o.locale != "" || o.theme != "" {
+			report.Config.UI = &UIConfig{Locale: o.locale, Theme: o.theme}
 		}
 		selected := map[string]bool{}
 		for _, v := range strings.Split(o.selectScripts, ",") {
@@ -122,12 +188,13 @@ func Main(args []string, version string, in io.Reader, out io.Writer) error {
 			available[key] = true
 			include := o.all || selected[key]
 			if o.interactive {
-				fmt.Fprintf(out, "Incluir %s (%s)? [s/N] ", key, su.Evidence)
+				fmt.Fprintf(out, uiText(report.Config, "Include %s (%s)? [y/N] ", "Incluir %s (%s)? [s/N] "), key, su.Evidence)
 				line, err := reader.ReadString('\n')
 				if err != nil {
 					return fmt.Errorf("entrada encerrada antes de salvar configuração")
 				}
-				include = strings.EqualFold(strings.TrimSpace(line), "s")
+				answer := strings.TrimSpace(line)
+				include = strings.EqualFold(answer, uiText(report.Config, "y", "s"))
 			}
 			if include {
 				for j := range report.Config.Services {
@@ -145,17 +212,18 @@ func Main(args []string, version string, in io.Reader, out io.Writer) error {
 				return fmt.Errorf("script sugerido inexistente: %s", key)
 			}
 		}
-		if e = saveConfig(filepath.Join(o.root, "mudarro.yaml"), report.Config); e != nil {
+		if e = saveSelectedConfig(o.root, target, report.Config); e != nil {
 			return e
 		}
 		printReport(out, report)
-		fmt.Fprintln(out, "Criado mudarro.yaml. Revise as pendências e execute mudarro generate.")
+		fmt.Fprintf(out, "Created %s. Review pending choices, then run mudarro generate.\n", configName)
 		return nil
-	case "generate", "menu", "run", "doctor":
-		c, e := Load(o.root)
+	case "generate", "menu", "run", "doctor", "preview":
+		c, e := loadOptions(o)
 		if e != nil {
 			return e
 		}
+		locale = c.UIOptions().Locale
 		switch args[0] {
 		case "generate":
 			return Generate(o.root, c, o.dry, out)
@@ -163,7 +231,7 @@ func Main(args []string, version string, in io.Reader, out io.Writer) error {
 			return menu(o.root, c, in, out)
 		case "doctor":
 			return doctor(o.root, c, out)
-		case "run":
+		case "run", "preview":
 			if len(o.pos) != 1 {
 				return fmt.Errorf("uso: mudarro run serviço:ação")
 			}
@@ -171,24 +239,28 @@ func Main(args []string, version string, in io.Reader, out io.Writer) error {
 			if e != nil {
 				return e
 			}
-			return (Runner{In: in, Out: out, Dry: o.dry, Name: o.name}).Run(o.root, s, a)
+			if args[0] == "preview" {
+				fmt.Fprint(out, actionPreview(o.root, s, a, c.UIOptions().Locale))
+				return nil
+			}
+			return (Runner{In: in, Out: out, Dry: o.dry, Name: o.name, Locale: c.UIOptions().Locale, ConfigPath: c.configPath}).Run(o.root, s, a)
 		}
 	}
 	return fmt.Errorf("comando desconhecido: %s", args[0])
 }
 func printReport(w io.Writer, r Report) {
-	fmt.Fprintln(w, "Projeto:", r.Config.Name)
+	fmt.Fprintln(w, uiText(r.Config, "Project:", "Projeto:"), r.Config.Name)
 	for _, s := range r.Config.Services {
 		fmt.Fprintf(w, "- %s (%s): %s / %s / %s\n", s.ID, s.Dir, s.Language, s.Manager, s.Infrastructure.Kind)
 		for _, p := range s.Pending {
-			fmt.Fprintln(w, "  pendência:", p)
+			fmt.Fprintln(w, uiText(r.Config, "  pending:", "  pendente:"), localizedMessage(p, r.Config.UIOptions().Locale))
 		}
 	}
 	for _, su := range r.Suggestions {
-		fmt.Fprintf(w, "  sugestão: %s:%s [%s]\n", su.Service, su.Name, su.Evidence)
+		fmt.Fprintf(w, uiText(r.Config, "  suggestion: %s:%s [%s]\n", "  sugestão: %s:%s [%s]\n"), su.Service, su.Name, su.Evidence)
 	}
 	for _, warning := range r.Warnings {
-		fmt.Fprintln(w, "aviso:", warning)
+		fmt.Fprintln(w, uiText(r.Config, "warning:", "aviso:"), localizedMessage(warning, r.Config.UIOptions().Locale))
 	}
 }
 func findAction(c Config, key string) (Service, Action, error) {
@@ -213,34 +285,19 @@ func findAction(c Config, key string) (Service, Action, error) {
 	}
 	return Service{}, Action{}, fmt.Errorf("ação inexistente: %s", key)
 }
-func choose(r *bufio.Reader, w io.Writer, title string, labels []string) (int, error) {
-	fmt.Fprintln(w, "\n"+title)
-	for i, l := range labels {
-		fmt.Fprintf(w, "%d) %s\n", i+1, l)
-	}
-	fmt.Fprintln(w, "0) Voltar / sair")
-	for {
-		fmt.Fprint(w, "> ")
-		line, e := r.ReadString('\n')
-		if e != nil {
-			return 0, e
-		}
-		n, e := strconv.Atoi(strings.TrimSpace(line))
-		if e == nil && n >= 0 && n <= len(labels) {
-			return n, nil
-		}
-		fmt.Fprintln(w, "Opção inválida.")
-	}
-}
 func menu(root string, c Config, in io.Reader, out io.Writer) error {
 	reader := bufio.NewReader(in)
-	fmt.Fprintln(out, ascii(c.Name))
+	u := c.UIOptions()
+	view := terminal.NewMenu(out, c.Name, fmt.Sprintf(uiText(c, "%d service(s) · offline detection · no AI", "%d serviço(s) · detecção offline · sem IA"), len(c.Services)))
+	view.Configure(terminal.Presentation{Locale: u.Locale, Theme: u.Theme, Density: u.Density, Lettering: u.Lettering, Mouse: u.Preview.Mouse})
+	style := view.Style()
 	for {
 		labels := []string{}
 		for _, s := range c.Services {
 			labels = append(labels, s.ID+" — "+s.Dir)
 		}
-		n, e := choose(reader, out, "Serviços", labels)
+		view.SetContext(fmt.Sprintf(uiText(c, "%d service(s) / offline detection", "%d serviço(s) / detecção offline"), len(c.Services)))
+		n, e := view.Choose(reader, uiText(c, "Services", "Serviços"), labels)
 		if e == io.EOF || n == 0 {
 			return nil
 		}
@@ -248,6 +305,7 @@ func menu(root string, c Config, in io.Reader, out io.Writer) error {
 			return e
 		}
 		s := c.Services[n-1]
+		view.SetContext(s.ID + " / " + s.Language + " / " + s.Infrastructure.Kind)
 		for {
 			actions := Actions(s)
 			groups := []string{}
@@ -259,7 +317,7 @@ func menu(root string, c Config, in io.Reader, out io.Writer) error {
 				byGroup[a.Group] = append(byGroup[a.Group], a)
 			}
 			sort.Strings(groups)
-			n, e = choose(reader, out, s.ID, groups)
+			n, e = view.Choose(reader, s.ID, groupLabels(c, groups))
 			if e == io.EOF {
 				return nil
 			}
@@ -276,11 +334,11 @@ func menu(root string, c Config, in io.Reader, out io.Writer) error {
 				for _, a := range list {
 					label := a.Name
 					if a.Blocked != "" {
-						label += " [pendente: " + a.Blocked + "]"
+						label += " [" + uiText(c, "pending: ", "pendente: ") + a.Blocked + "]"
 					}
 					labels = append(labels, label)
 				}
-				n, e = choose(reader, out, group, labels)
+				n, e = chooseActions(view, reader, in, root, c, s, group, list, labels)
 				if e == io.EOF {
 					return nil
 				}
@@ -293,15 +351,21 @@ func menu(root string, c Config, in io.Reader, out io.Writer) error {
 				a := list[n-1]
 				name := ""
 				if strings.Contains(strings.Join(a.Command.Args, " "), "{name}") {
-					fmt.Fprint(out, "Nome da migration: ")
+					fmt.Fprint(out, uiText(c, "Migration name: ", "Nome da migration: "))
 					line, e := reader.ReadString('\n')
 					if e != nil {
 						return nil
 					}
 					name = strings.TrimSpace(line)
 				}
-				if e = (Runner{In: reader, Out: out, Name: name}).Run(root, s, a); e != nil {
-					fmt.Fprintln(out, "Erro:", e)
+				if e = (Runner{In: reader, Out: out, Name: name, Locale: c.UIOptions().Locale, ConfigPath: c.configPath}).Run(root, s, a); e != nil {
+					fmt.Fprintln(out, style.Paint("1;31", uiText(c, "Error:", "Erro:")), e)
+				}
+				if style.HasColor() {
+					fmt.Fprint(out, style.Hint(uiText(c, "\n  Enter to return to the menu...", "\n  Enter para voltar ao menu...")))
+					if _, err := reader.ReadString('\n'); err != nil {
+						return nil
+					}
 				}
 			}
 		}

@@ -33,14 +33,18 @@ func Generate(root string, c Config, dry bool, w io.Writer) error {
 		files[path] = GeneratedFile{[]byte(data), mode}
 		return nil
 	}
-	launcher := "#!/usr/bin/env bash\nset -euo pipefail\nROOT=\"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")\" && pwd)\"\nexec mudarro menu --root \"$ROOT\" \"$@\"\n"
+	configFlag := ""
+	if c.configPath != "" && c.configPath != "mudarro.yaml" {
+		configFlag = " --config " + shellQuote(c.configPath)
+	}
+	launcher := "#!/usr/bin/env bash\nset -euo pipefail\nROOT=\"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")\" && pwd)\"\nexec mudarro menu" + configFlag + " --root \"$ROOT\" \"$@\"\n"
 	if e := put("menu.sh", launcher, 0755); e != nil {
 		return e
 	}
 	for _, s := range c.Services {
 		for _, a := range Actions(s) {
 			p := filepath.Join(".mudarro", "scripts", s.ID, a.Name+".sh")
-			body := "#!/usr/bin/env bash\nset -euo pipefail\nROOT=\"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")/../../..\" && pwd)\"\nexec mudarro run " + shellQuote(s.ID+":"+a.Name) + " --root \"$ROOT\" \"$@\"\n"
+			body := "#!/usr/bin/env bash\nset -euo pipefail\nROOT=\"$(cd -- \"$(dirname -- \"${BASH_SOURCE[0]}\")/../../..\" && pwd)\"\nexec mudarro run " + shellQuote(s.ID+":"+a.Name) + configFlag + " --root \"$ROOT\" \"$@\"\n"
 			if e := put(p, body, 0755); e != nil {
 				return e
 			}

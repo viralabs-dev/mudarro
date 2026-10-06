@@ -2,36 +2,23 @@ package mudarro
 
 import (
 	"fmt"
+	"github.com/viralabs-dev/mudarro/internal/mudarro/adapters"
 	"os"
 	"path/filepath"
 	"sort"
 	"strings"
 )
 
-type Action struct {
-	Name, Group, Blocked, Special string
-	Command                       Command
-}
 type InfrastructureAdapter interface{ Actions(Service) []Action }
-type localAdapter struct{}
-type containerAdapter struct{}
-type kubernetesAdapter struct{}
 type DatabaseAdapter interface{ Actions(Service) []Action }
-type prismaAdapter struct{}
-type djangoAdapter struct{}
-type alembicAdapter struct{}
-type gooseAdapter struct{}
 
 var infrastructureAdapters = map[string]InfrastructureAdapter{
-	"local": localAdapter{}, "docker": containerAdapter{}, "podman": containerAdapter{}, "kubernetes": kubernetesAdapter{},
+	"local": adapters.Local{}, "docker": adapters.Container{}, "podman": adapters.Container{}, "kubernetes": adapters.Kubernetes{},
 }
 var databaseAdapters = map[string]DatabaseAdapter{
-	"prisma": prismaAdapter{}, "django": djangoAdapter{}, "alembic": alembicAdapter{}, "goose": gooseAdapter{},
+	"prisma": adapters.Prisma{}, "django": adapters.Django{}, "alembic": adapters.Alembic{}, "goose": adapters.Goose{},
 }
 
-func action(name, group string, args ...string) Action {
-	return Action{Name: name, Group: group, Command: cmd(group, args...)}
-}
 func blocked(name, group, reason string) Action {
 	return Action{Name: name, Group: group, Blocked: reason}
 }
@@ -51,7 +38,7 @@ func Actions(s Service) []Action {
 			a = append(a, blocked("db-migrate", "banco", "ferramenta de migration não suportada"))
 		}
 	}
-	a = append(a, databaseSetupActions(s)...)
+	a = append(a, adapters.SetupActions(s)...)
 	byName := map[string]Action{}
 	for _, v := range a {
 		byName[v.Name] = v
@@ -104,4 +91,8 @@ func expandArgs(args []string, name string) ([]string, error) {
 }
 func serviceDirectory(root string, s Service) (string, error) {
 	return safePath(root, filepath.Clean(s.Dir))
+}
+
+func action(name, group string, args ...string) Action {
+	return Action{Name: name, Group: group, Command: cmd(group, args...)}
 }
