@@ -1,0 +1,17 @@
+[English](../documentation.md) · Português (Brasil)
+
+# Idiomas e manutenção da documentação
+
+Inglês é padrão do repositório: README.md e docs/**/*.md. Português brasileiro fica em docs/pt-BR; README.md nesta pasta é a entrada traduzida. O Vault permanece somente em português e tem manutenção separada.
+
+Assets, samples gerados e evidências mantêm uma única cópia fora de docs/pt-BR. Documentos traduzidos referenciam essa cópia. Não traduzir comandos, flags, chaves/grupos de configuração, token de confirmação destrutiva, logs, IDs, hashes, caminhos de fixtures, licenças ou valores fornecidos pelo usuário. Exemplos originais preservam comentários em português deliberadamente.
+
+Mudanças de comportamento atualizam inglês e pt-BR na mesma alteração. Conciliar tabelas, estados, limites e links sem transportar resultados antigos. Ambas versões apontam uma à outra. Nova localização de testes/build exige novos resultados reais; tradução não transforma contrato em runtime nem frame composto em screenshot.
+
+Se tradução ficar pendente, marcar no início `Tradução pendente: <origem, seção alterada e data>` e registrar ação exata na atividade. Revisão confere números/comandos/restrições, navegação e links relativos. Não exige serviço de tradução nem publicação.
+
+A localização inicial preserva documentos portugueses completos e fornece orientação operacional equivalente em inglês. Narrativas históricas podem ter mais detalhes em português; evidências e limites de execução compartilhados são referência. Buscar equivalência semântica, não contagem idêntica de frases.
+
+- [Plano aprovado de configuração UI](ui-configuration-plan.md)
+
+Implementação atual: [configuração UI](ui-configuration.md). Config/i18n/tema/preview implementados; fonte/aceite mouse em emulador real continuam pendentes separados. Gates finais:74 testes,76,38% statements agregados; ver [cobertura](coverage.md).

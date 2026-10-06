@@ -1,39 +1,39 @@
+English · [Português (Brasil)](docs/pt-BR/README.md)
+
 # Mudarro
 
-Detecta a stack de um projeto e gera um menu Bash com ASCII art, submenus e scripts de operação. **Sem IA**: a detecção e a geração funcionam sem rede. Downloads só acontecem em ações de instalação ou nas ferramentas acionadas pelo usuário.
+Detect a project's stack and generate a Bash menu with ASCII lettering, submenus and operational scripts. **No AI:** scanning and generation work offline. Downloads occur only through installation actions or tools explicitly invoked by the user.
 
-## Instalação
+## Installation
 
-Linux, macOS e WSL; amd64 e arm64. Não exige Go na máquina do usuário.
+Linux, macOS and WSL; amd64 and arm64. Users do not need Go installed.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh | bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-O instalador baixa a release e verifica SHA-256 antes de instalar. Para fixar uma versão:
+The installer verifies SHA-256 before installing. Pin a version:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh |
   MUDARRO_VERSION=v0.1.0 bash
 ```
 
-Atualize repetindo a instalação. Desinstale com `rm "$HOME/.local/bin/mudarro"`; os arquivos dos projetos são preservados. A disponibilidade e os testes da versão estão em [Validação](docs/validation.md).
+Repeat installation to update. Uninstall with `rm "$HOME/.local/bin/mudarro"`; project files remain. See [validation](docs/validation.md) for measured availability and platform limits.
 
-## Uso
+## Usage
 
-Na pasta da aplicação:
+From the application directory:
 
 ```bash
 mudarro scan
-mudarro init --interactive       # seleciona scripts existentes para os menus
-# Revise mudarro.yaml e resolva as escolhas pendentes.
+mudarro init --interactive       # select existing scripts
+# Review mudarro.yaml and resolve pending choices.
 mudarro generate --dry-run
 mudarro generate
 ./menu.sh
 ```
-
-Também é possível executar ações diretamente:
 
 ```bash
 mudarro doctor
@@ -42,13 +42,11 @@ mudarro run app:logs
 mudarro run app:down
 ```
 
-Os IDs reais aparecem em `scan` e em `mudarro.yaml`. Os menus gerados dependem do binário `mudarro` no `PATH`.
-
-## Configuração mínima
+Actual service IDs appear in scan output and `mudarro.yaml`. Generated menus require `mudarro` on PATH.
 
 ```yaml
 version: 1
-name: Minha aplicação
+name: My application
 services:
   - id: app
     dir: .
@@ -62,21 +60,19 @@ services:
         group: aplicacao
 ```
 
-| Área | Suporte inicial |
-|---|---|
-| Linguagens | JavaScript/TypeScript, Python e Go; projetos com múltiplos serviços |
-| Infraestrutura | Local, Docker/Compose, Podman/Compose, Kubernetes existente e comandos personalizados |
-| Banco | PostgreSQL e SQLite; Prisma, Django, Alembic e Goose |
-| Menus | Aplicação, infraestrutura, banco, qualidade, dependências e scripts personalizados |
+Automatic language families: JavaScript/TypeScript, Python and Go, including multiple services. Infrastructure: local, Docker/Podman Compose and Dockerfile, existing Kubernetes and custom commands. Databases: PostgreSQL/SQLite with Prisma, Django, Alembic and Goose. Menu groups retain their configuration identifiers (`aplicacao`, `infraestrutura`, `banco`, `qualidade`, `dependencias`, `scripts`).
 
-Infraestrutura ambígua exige configuração explícita. A geração preserva arquivos existentes e detecta mudanças manuais nos arquivos que criou. Migrations e seeds são ações separadas; o Mudarro não inventa o modelo de dados.
+Ambiguous infrastructure requires explicit configuration. Generation preserves existing files and detects manual changes to generated files. Migrations and seeds are separate; Mudarro does not invent business models.
 
-- [Configuração e exemplos](docs/configuration.md)
-- [Arquitetura, SOLID e novos adaptadores](docs/architecture.md)
-- [Operação e limitações](docs/operations.md)
-- [Matriz de validação](docs/validation.md)
+- [Configuration](docs/configuration.md)
+- [Architecture and SOLID](docs/architecture.md)
+- [Support matrix](docs/support-matrix.md) and [language roadmap](docs/language-roadmap.md)
+- [Operations](docs/operations.md)
+- [Validation](docs/validation.md), [coverage](docs/coverage.md) and [real menu sample](docs/samples/menu-auto/README.md)
+- [Terminal visuals](docs/terminal-visual.md) and [Go decision](docs/language-decision.md)
+- [Documentation languages and maintenance](docs/documentation.md)
 
-## Desenvolvimento
+## Development
 
 ```bash
 go test -race ./...
@@ -84,3 +80,9 @@ go vet ./...
 go build -o bin/mudarro ./cmd/mudarro
 bash scripts/smoke.sh "$PWD/bin/mudarro"
 ```
+
+- [Approved configurable UI implementation plan](docs/ui-configuration-plan.md)
+
+- [UI configuration and read-only previews](docs/ui-configuration.md)
+
+Current configurable-UI gate: **74 tests,76.38% statement coverage**, race/vet/Linux build/Darwin cross-build passed. [Scope and limits](docs/coverage.md).

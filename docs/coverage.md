@@ -1,4 +1,4 @@
-English · [Português (Brasil)](pt-BR/validation.md)
+English · [Português (Brasil)](pt-BR/coverage.md)
 
 ## Current configurable-UI gate
 
@@ -7,47 +7,52 @@ English · [Português (Brasil)](pt-BR/validation.md)
 Evidence: [tests-race.txt](samples/menu-auto/evidence/ui-configuration/tests-race.txt), [coverage.out](samples/menu-auto/evidence/ui-configuration/coverage.out), [coverage-functions.txt](samples/menu-auto/evidence/ui-configuration/coverage-functions.txt), [coverage-summary.tsv](samples/menu-auto/evidence/ui-configuration/coverage-summary.tsv), [vet.txt](samples/menu-auto/evidence/ui-configuration/vet.txt), [smoke.txt](samples/menu-auto/evidence/ui-configuration/smoke.txt), [menu-real.txt](samples/menu-auto/evidence/ui-configuration/menu-real.txt), [ui-real.txt](samples/menu-auto/evidence/ui-configuration/ui-real.txt).
 
 
-# Validation
+# Interpreting measured coverage
 
-Historical initial measurements were recorded for 2026-10-05; expanded local round on 2026-10-06 used main base 049a405 with uncommitted changes. Results distinguish automated contracts, genuine runtime execution and unavailable platforms.
+Current measurement after test migration, 2026-10-06: **1,035/1,427 executed statements = 72.53%**, displayed as 72.5%; 392 statements unexecuted. All 41 tests passed.
 
-Go/race/vet, Linux build, Darwin arm64 cross-build, shell syntax, installer simulation, Node/npm/pnpm/Python/Go menu/wrappers/local lifecycle passed. Aggregate recorded package coverage: 1,028/1,427 statements (72.04%, Go displays72.0%). Earlier root62.8% has a different denominator. See [coverage](coverage.md) and [support matrix](support-matrix.md). The separate final migration gate is recorded below.
-
-Docker Compose/Dockerfile, offline --network none, kind manifests/kustomize and Helm passed isolated runtime tests. Eight PostgreSQL/SQLite combinations with Goose/Alembic/Django/Prisma were rerun using existing dependencies and passed. Django/Alembic tested inserted/idempotent data; Goose/Prisma tested configured seed hooks. Initial PVC fixture Pending proved object preservation only; expanded mounted Bound fixture proved same UID/content after down/up/restart. This is fixture-cycle persistence, not backup/disaster recovery or retention after deleting a cluster.
-
-Native host PostgreSQL, Podman, macOS and WSL runtime were not exercised: unavailable binaries/platforms. Yarn/uv/poetry runtime also unavailable; contract tests remain separate. Doctor is executable/provider checking, not application/database health. Prisma7 SQLite requires initial file creation, covered by db-init. Models remain project-owned; container migrations require explicit commands when tools are not on host.
-
-Tools previously exercised locally: Go1.27.1, Node26.7.0, Python3.14.7, Prisma7.10.0, Alembic1.20.0, Django6.1.1, Goose3.24.1, PostgreSQL17. CI versions may differ.
-
-Historical CI [37405606285](https://github.com/viralabs-dev/mudarro/actions/runs/37405606285) succeeded at f62ce9d and does not validate new local changes. Existing public [v0.1.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.1.0) was previously published with four binaries/checksums and installation verified. This round made no commit/push/publication.
-
-Final recorded v4 snapshot: /tmp/mudarro-checkpoint-v4/bin/mudarro, SHA25676ccc665970c48a7f7c95f9a9052599cd23aee4580060b11a265a5b1bd91d942. Genuine terminal GIF/composed frames validated in [sample](samples/menu-auto/README.md); graphical screenshot pending; user visual design acceptance received, existing workspace4/notebook confirmation preserved.
-
-## Existing reproduction examples
-
-Commands and configuration identifiers are preserved verbatim; Portuguese comments and user-supplied example values are intentionally retained.
+Historical package measurement recorded on 2026-10-06: **1,028/1,427 executed statements = 72.04%**, displayed as 72.0%; 399 statements unexecuted. The earlier 71.8% checkpoint was superseded after the JS collision regression/fix. This measures statements, not lines, branches, requirements or platforms. The final test-tree gate below supersedes this historical measurement.
 
 ```bash
-go test -race ./...
-go vet ./...
-go build -o bin/mudarro ./cmd/mudarro
-bash scripts/smoke.sh "$PWD/bin/mudarro"
-bash scripts/test-installer.sh
-bash scripts/integration-containers.sh "$PWD/bin/mudarro" docker
-bash scripts/integration-containers.sh "$PWD/bin/mudarro" podman
-bash scripts/integration-offline.sh "$PWD/bin/mudarro"
-bash scripts/validate-kind.sh "$PWD/bin/mudarro"
-go install github.com/pressly/goose/v3/cmd/goose@v3.24.1
-bash scripts/validate-databases.sh "$PWD/bin/mudarro"
+GOCACHE=/tmp/mudarro-go-cache /home/danielsouza/sdk/go1.27.1/bin/go test -race \
+  -coverpkg=./internal/mudarro/... \
+  -coverprofile=docs/samples/menu-auto/evidence/project-name-coverage.out -v ./...
+/home/danielsouza/sdk/go1.27.1/bin/go tool cover \
+  -func=docs/samples/menu-auto/evidence/project-name-coverage.out
 ```
+
+Internal packages are instrumented; cmd/mudarro is outside coverpkg. Model has no executable statements. Atomic profile totals count NumStmt once per block, covered when Count>0; do not average package or test-binary percentages.
+
+Historical MUD-017 package totals:
+
+| Package | Covered / total | Percentage |
+|---|---:|---:|
+| Root | 589/935 | 62.99% |
+| adapters | 279/304 | 91.78% |
+| executor | 10/13 | 76.92% |
+| projectfs | 19/23 | 82.61% |
+| terminal | 138/152 | 90.79% |
+| model | No executable statements | N/A |
+
+Go tests include detection, contracts, fake execution, config/generation/preservation, in-process CLI and terminal. Race detects races only in exercised runs. External scripts execute ordinary uninstrumented binaries: Node/npm/pnpm/Python/Go, supervisor, containers/Kubernetes and database E2Es are independent evidence. OSExecutor tests cover parent code, not subprocess applications. A 0% local supervisor profile therefore does not negate its real E2E. Previous 62.8% described the old root package; the denominator changed after extraction and new tests.
+
+## Priorities by risk
+
+- Supervisor/identity/signals: stale/corrupt state, foreign PID/token/project refusal, startup failure, process trees and concurrency; supervisor functions were 0% in this profile despite passing E2Es.
+- Doctor: absent/nonexecutable tools, blocked config, symlinks and exit status; doctor was 0% but exercised in available E2E environments.
+- IO/execution failures: atomicWrite 53.3%, Output 40%, SafePath 85.7%, ReadManifest 77.8%; preserve files and errors under create/rename/read failures.
+- TTY: final terminalSize 81.8%, Choose 97.3%, HasColor 100%; real isolated PTYs cover the rich path. Resize, wide Unicode and cancellation still require explicit acceptance. Legacy unused ascii/terminalColumns remain 0%.
+- Templates/config: djangoDatabase 33.3%, scaffoldFiles 74.8%, Validate 71.0%; cover meaningful variants without inventing models.
+
+No automatic 100% target. Coverage does not prove security or all managers/platforms. Yarn/uv/poetry/Podman and macOS/WSL runtime remain untested.
+
+Evidence: [profile](samples/menu-auto/evidence/test-tree-coverage.out), [functions](samples/menu-auto/evidence/test-tree-coverage-functions.txt), [totals](samples/menu-auto/evidence/test-tree-coverage-summary.tsv), [matrix](support-matrix.md).
 
 ## Final test-tree gate — 2026-10-06
 
 All 41 tests passed with race and explicit internal coverpkg instrumentation after relocation. Deduplicated coverage: **1,035/1,427 statements = 72.53% (Go displays 72.5%)**; previous 1,028/1,427=72.04% remains historical. Vet, Linux build, Darwin arm64 terminal-test cross-compilation and diff check passed. Darwin compilation is not macOS runtime. Test tree contains 16 files (nine orchestration test files plus one helper; two terminal test files plus four PTY helpers). No test hooks or overlays added to production.
 
 Evidence: [test-tree-tests.txt](samples/menu-auto/evidence/test-tree-tests.txt), [test-tree-coverage.out](samples/menu-auto/evidence/test-tree-coverage.out), [test-tree-coverage-functions.txt](samples/menu-auto/evidence/test-tree-coverage-functions.txt), [test-tree-coverage-summary.tsv](samples/menu-auto/evidence/test-tree-coverage-summary.tsv), [test-tree-gates.txt](samples/menu-auto/evidence/test-tree-gates.txt).
-
-Plain go test also passed: [test-tree-plain-tests.txt](samples/menu-auto/evidence/test-tree-plain-tests.txt).
 
 ## Current consumer-name validation — MUD-022
 
@@ -56,3 +61,5 @@ Plain go test also passed: [test-tree-plain-tests.txt](samples/menu-auto/evidenc
 Real final GIF: 983×739, 8 frames, 15.04 s. Composed frame inspected: AURORA lettering and PROJETO / Aurora. This is a real PTY recording frame, not the still-pending graphical screenshot. User design approval received. Binary SHA-256: `ef36e6c1142bd7294e543208895cea21e125c6898d14ec168e40c1c7eb327890`.
 
 Evidence: [project-name-tests.txt](samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
+
+Current terminal package totals: 164/176 statements (93.18%). Function profile: cleanText100%, fitText94.1%, runeColumns80%, wordmark95.7%, HasColor100%, terminalSize81.8%. Remaining width/grapheme/resize limits still apply.

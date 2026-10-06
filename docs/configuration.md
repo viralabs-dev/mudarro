@@ -1,27 +1,37 @@
-# Configuração
+English · [Português (Brasil)](pt-BR/configuration.md)
 
-`mudarro init` cria `mudarro.yaml` sem sobrescrever configuração existente. `--interactive` seleciona sugestões; `--select serviço:script,...` permite seleção não interativa, e `--all-scripts` inclui todas. Scripts padrão de start/dev/build/test/lint detectados entram como operações conhecidas; scripts adicionais são sugestões. O scanner nunca os executa.
+# Configuration
 
-## Contrato v1
+Init creates mudarro.yaml without overwriting existing config. --interactive selects suggestions, --select service:script,... selects noninteractively and --all-scripts selects all. Detected start/dev/build/test/lint scripts become known actions; other scripts are suggestions. Scanning never executes them.
 
-| Campo | Uso |
+## Version 1 contract
+
+| Field | Meaning |
 |---|---|
-| `version` | Obrigatoriamente `1` |
-| `name` | Nome exibido no banner; init usa manifest raiz ou nome da pasta |
-| `exclude` | Lista de caminhos relativos ou padrões `filepath.Match`; `**` não é recursivo |
-| `services[].id` | Identificador único: letras, números, `_`, `-` |
-| `dir` | Diretório relativo dentro do projeto |
-| `language`, `manager`, `framework` | Tecnologia, gerenciador e framework; escolhas explícitas prevalecem |
-| `infrastructure` | `kind`, `mode`, `file`, `context`, `namespace`, `image`, `port`, `generate` |
-| `database` | `kind`, `tool`, `url_env`, `path`, `generate` |
-| `commands` | Mapa de ações: `args` **ou** `shell`, `group`, `requires`, `destructive` |
-| `pending` | Observações produzidas pelo scan; histórico editável, sem bloquear outras operações |
+| version | Must be 1 |
+| name | Banner name; init uses root manifest or directory name |
+| exclude | Relative paths/filepath.Match patterns; ** is not recursive |
+| services[].id | Unique letters/digits/_/- identifier |
+| dir | Relative project directory |
+| language, manager, framework | Explicit technology choices |
+| infrastructure | kind, mode, file, context, namespace, image, port, generate |
+| database | kind, tool, url_env, path, generate |
+| commands | Actions with args OR shell, group, requires, destructive |
+| pending | Editable scan observations; other actions remain usable |
 
-`file` e `database.path` são relativos ao diretório do serviço. Ações declaradas em `commands` substituem ações de mesmo nome dos adaptadores. Nomes de scripts npm com `:` ou `.` são normalizados para `-` no identificador do menu, preservando o nome original nos argumentos executados.
+File/database.path are service-relative. Explicit commands override adapter actions. npm script identifiers normalize :/. to -, keeping original argv; collisions require an explicit command. Args do not use shell expansion; ${VAR} requires an environment variable and {name} uses --name for migration creation. No automatic .env loading. Explicit shell runs Bash; avoid versioned secrets.
 
-`args` executa diretamente o programa, sem expansão de shell. `${VAR}` referencia uma variável de ambiente obrigatória e `{name}` recebe `--name`, usado na criação de migrations. O Mudarro não carrega `.env` automaticamente. Um `shell` explícito é executado com Bash; não coloque segredos em comandos versionados.
+Generate creates missing Dockerfile/Compose/environment/Prisma scaffolds. db-install explicitly installs Prisma 7; review existing versions. Existing manifests/ORM versions are not automatically migrated. Configure POSTGRES_DB/USER/PASSWORD and DATABASE_URL. Compose DB host is db; host-side migrations use localhost/POSTGRES_PORT. Python container servers need explicit 0.0.0.0 binding. Database actions run in the service directory; override db-migrate for container execution.
 
-## Compose com PostgreSQL e Prisma
+Kubernetes context/namespace must exist and images must be available. Generation provides Deployment/Service, optional PostgreSQL PVC and references to an existing Secret without values. Down scales declared workloads to zero; DaemonSets require custom stop.
+
+SQLite uses database.path (default app.db); db-init preserves an existing file. Prisma/Alembic URL must match. Local PostgreSQL with database.generate:true offers db-init/up/status/create/down, requires installed PostgreSQL tools and POSTGRES_* variables, and stores data in service .mudarro/postgres.
+
+Prisma/Django use existing schema/models; Alembic revisions/target_metadata and Goose SQL remain project responsibilities. No business entities invented. Import mudarro_database.py explicitly into Django settings. Implement Prisma/Alembic/Goose seeds; initial Django fixture is empty. Destructive actions require the literal `APAGAR <service-id>`; db-reset always requires confirmation, even overridden.
+
+## Existing reproduction examples
+
+Commands and configuration identifiers are preserved verbatim; Portuguese comments and user-supplied example values are intentionally retained.
 
 ```yaml
 version: 1
@@ -48,20 +58,12 @@ services:
         group: aplicacao
 ```
 
-`generate` cria Dockerfile, Compose, exemplos de ambiente e estrutura Prisma quando os destinos não existem. Use `db-install` explicitamente para instalar Prisma 7; revise a estrutura caso o projeto existente use uma versão anterior. A geração nunca migra versões de ORM nem altera automaticamente seus manifests existentes.
-
-Configure `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD` e `DATABASE_URL`. Dentro do Compose, o host de banco é `db`; para comandos de migrations executados no host, use `localhost` e `POSTGRES_PORT`. Uma aplicação Python deve expor seu servidor em `0.0.0.0` dentro do container por comando explícito; o Mudarro não altera as flags escolhidas pelo projeto.
-
-As ações de banco executam no diretório local do serviço. Para rodar migrations dentro do container, substitua a ação:
-
 ```yaml
 commands:
   db-migrate:
     args: [docker, compose, -f, compose.yaml, exec, -T, api, npx, --no-install, prisma, migrate, deploy]
     group: banco
 ```
-
-## Kubernetes
 
 ```yaml
 infrastructure:
@@ -74,18 +76,6 @@ infrastructure:
   port: 3000
   generate: true
 ```
-
-O cluster e o namespace devem existir; a imagem deve estar disponível no cluster. A geração cria Deployment/Service e, se solicitado, PostgreSQL com PVC e referências a um Secret existente. O arquivo de instruções descreve as chaves necessárias, sem valores. `down` escala os workloads declarados a zero, preservando PVCs. DaemonSets exigem uma ação de parada personalizada.
-
-## Banco local
-
-`kind: sqlite` utiliza o arquivo definido em `database.path` (padrão `app.db`). Execute `db-init` para criar o arquivo, preservando-o se já existir. Para Prisma e Alembic, declare o mesmo caminho na URL específica do ORM. SQLite não exige provisionar um servidor.
-
-PostgreSQL com infraestrutura local e `database.generate: true` oferece `db-init`, `db-up`, `db-status`, `db-create` e `db-down`. Requer binários PostgreSQL instalados e variáveis `POSTGRES_*`. Os dados ficam no serviço em `.mudarro/postgres`; a aplicação continua com ações independentes.
-
-Prisma usa modelos do schema; Django usa models existentes; Alembic cria revisões editáveis e permite ligar `target_metadata`; Goose cria migrations SQL. Os templates não criam entidades de negócio. O fragmento `mudarro_database.py` deve ser importado explicitamente no settings Django existente. Seeds Prisma/Alembic/Goose precisam ser implementados; a fixture inicial Django é vazia.
-
-## Comandos próprios
 
 ```yaml
 infrastructure:
@@ -101,4 +91,20 @@ commands:
     destructive: true
 ```
 
-Uma ação destrutiva exige digitar `APAGAR <id-do-serviço>`. `db-reset` sempre exige confirmação, mesmo quando sobrescrito.
+## Consumer project identity — MUD-022
+
+The menu title is the consumer project `Config.Name`, not the Mudarro tool name. The controlled sample now uses Aurora (package/config); demo and recording default explicitly to Aurora, overridable with `MUDARRO_SAMPLE_NAME`. The existing CLI already used Config.Name; demonstration inputs were corrected. User visual design acceptance has been received; only the genuine graphical screenshot remains pending.
+
+Text sanitization strips controls and Unicode Cf formatting characters. Conservative terminal-cell estimation counts CJK/fullwidth/emoji as two cells and combining marks as zero; it is not a complete grapheme/terminal-width guarantee. Unsupported bitmap glyphs or an excessively long wordmark fall back to readable text instead of presenting an incorrect identity.
+
+The current name stage has 43 Test functions and 24 rich/narrow/plain/NO_COLOR name-mode cases, covering AtlasAPI, Aurora, Café, 漢字😀, long names and control injection, plus explicit consumer-name CLI integration. Race passed; the final coverage and build gates passed as recorded below. Previous stage coverage remains historical. Genuine latest media belongs in `evidence/project-name-visual/` under the canonical sample; `evidence/packages-visual/` remains historical.
+
+## Current consumer-name validation — MUD-022
+
+43 Test functions passed with race, including 24 consumer-name/mode cases. Vet, Linux build, Darwin arm64 terminal-test cross-compilation and Bash syntax passed. Coverage: **1,063/1,451 statements = 73.26% (Go displays 73.3%)**, 388 unexecuted. Prior MUD-017 1,035/1,427=72.53% is historical; changed code and denominator preclude interpreting the difference as equivalent requirement coverage. macOS runtime remains unexecuted.
+
+Real final GIF: 983×739, 8 frames, 15.04 s. Composed frame inspected: AURORA lettering and PROJETO / Aurora. This is a real PTY recording frame, not the still-pending graphical screenshot. User design approval received. Binary SHA-256: `ef36e6c1142bd7294e543208895cea21e125c6898d14ec168e40c1c7eb327890`.
+
+Evidence: [project-name-tests.txt](samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
+
+Current implementation: [UI configuration](ui-configuration.md). Core configuration/i18n/theme/action-preview implemented; fonts and actual-emulator mouse acceptance remain separate pending work. Final gates:74 tests,76.38% aggregate statements; see [coverage](coverage.md).
