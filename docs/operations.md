@@ -25,7 +25,7 @@ Os logs ficam em `.mudarro/run/<serviço>/output.log`. `down` sinaliza o grupo d
 
 ## Containers e Kubernetes
 
-Compose usa o arquivo explicitamente selecionado; a descida nunca solicita exclusão de volumes. Dockerfile isolado oferece build da imagem e criação/retomada do container. Configure imagem e portas explicitamente. Para stacks compartilhadas no monorepo, mantenha um único serviço proprietário da operação Compose.
+Compose usa o arquivo explicitamente selecionado; Docker usa `docker compose` e Podman usa `podman-compose`, evitando que o wrapper Podman selecione Docker Compose por acidente. A descida nunca solicita exclusão de volumes. Dockerfile isolado oferece build da imagem e criação/retomada do container. Configure imagem e portas explicitamente. Para stacks compartilhadas no monorepo, mantenha um único serviço proprietário da operação Compose.
 
 Kubernetes sempre recebe contexto e namespace configurados. O caminho de manifests deve conter os recursos desta aplicação. A parada opera sobre Deployments e StatefulSets; não exclui recursos de armazenamento. Helm depende dos labels convencionais de release para selecionar workloads na parada/reinício/logs. Não há provisionamento de cluster nem operação de produção nesta versão.
 

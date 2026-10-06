@@ -21,11 +21,17 @@ func (containerAdapter) Actions(s Service) []Action {
 		if i.File == "" {
 			return []Action{blocked("up", "infraestrutura", "declare infrastructure.file")}
 		}
+		prefix := []string{engine, "compose", "-f", i.File}
+		if engine == "podman" {
+			// Podman's bundled `compose` delegates to any provider it finds. Using
+			// podman-compose directly avoids silently selecting Docker Compose.
+			prefix = []string{"podman-compose", "-f", i.File}
+		}
 		for _, v := range []struct {
 			n    string
 			args []string
 		}{{"up", []string{"up", "-d"}}, {"down", []string{"down"}}, {"restart", []string{"restart"}}, {"status", []string{"ps"}}, {"logs", []string{"logs", "--tail", "100"}}, {"image-build", []string{"build"}}} {
-			args := append([]string{engine, "compose", "-f", i.File}, v.args...)
+			args := append(append([]string{}, prefix...), v.args...)
 			a = append(a, action(v.n, "infraestrutura", args...))
 		}
 	} else if i.Mode == "dockerfile" {

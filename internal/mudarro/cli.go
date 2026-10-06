@@ -359,7 +359,13 @@ func doctor(root string, c Config, w io.Writer) error {
 			}
 		}
 		if s.Infrastructure.Mode == "compose" && (s.Infrastructure.Kind == "docker" || s.Infrastructure.Kind == "podman") {
-			check := exec.Command(s.Infrastructure.Kind, "compose", "version")
+			provider := s.Infrastructure.Kind
+			args := []string{"compose", "version"}
+			if provider == "podman" {
+				provider = "podman-compose"
+				args = []string{"--version"}
+			}
+			check := exec.Command(provider, args...)
 			check.Dir = dir
 			if e := check.Run(); e != nil {
 				fmt.Fprintf(w, "AUSENTE %s: provedor Compose\n", s.ID)
