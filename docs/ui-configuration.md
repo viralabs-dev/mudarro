@@ -1,5 +1,7 @@
 English · [Português (Brasil)](pt-BR/ui-configuration.md)
 
+[Jump to recorded screens](#recorded-screens).
+
 ## Current CI correction — MUD-030
 
 Verified [push CI run37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: completed **failure**. Ubuntu, database and container jobs succeeded; macOS executed and failed in EOF-loop/race-cleanup handling, including panic with index n=-1. Therefore macOS is no longer globally “not executed”: local Darwin cross-compilation passed, but the actual CI runtime failed. Local Podman remains unavailable; container CI passed, distinct from local execution.
@@ -14,6 +16,34 @@ Evidence: [tests-race.txt](samples/menu-auto/evidence/ui-configuration/tests-rac
 
 
 # UI configuration
+
+## Recorded screens
+
+Real CLI execution in a PTY with controlled input. PNGs are rendered recording frames, not desktop screenshots. The banner and footer remain fixed while the center shows menus, preview and execution.
+
+**Recorded revision:** these real screens accompany the persistent shell added by MUD-032. Previous recordings are preserved; validation below was performed locally, independently of CI.
+
+### Dark · English
+
+![Frame of real long output with the banner and footer preserved.](samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+
+Frame of real long output with the banner and footer preserved.
+
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+
+Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
+
+### Light · Portuguese
+
+![Frame of real long output with the banner and footer preserved.](samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png)
+
+Frame of real long output with the banner and footer preserved.
+
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif)
+
+Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
+
+
 
 Implemented: one internal Config model and common validation for YAML/JSON, optional version1 ui settings, translated Mudarro-owned messages, semantic themes and read-only action previews. Font integration and real-emulator mouse acceptance remain unimplemented/unverified respectively. Historical evidence is retained; final consolidated coverage is recorded below.
 
@@ -56,3 +86,11 @@ Raw interaction is restricted to action views, leaving service/group selection i
 Preview shows cwd, argv/shell/source and labeled planned special-action sequences. It never executes commands, inspects processes/containers, sources scripts, loads .env or expands environment values. Environment references remain placeholders; recognized secret flags/URL credentials are redacted. Arbitrary embedded free-form shell secrets cannot be inferred reliably; recordings use nonsecret fixtures. File previews are guarded and bounded.
 
 Raw mode requires supported input/output TTYs; restoration covers normal exit/EOF/errors/interruption and occurs before handing stdin to a child, then reacquires after completion. SIGKILL cannot run cleanup. Pipes/dumb terminals remain plain without mouse/cursor modes. Conservative Unicode cell estimation is not perfect grapheme handling. Mouse protocol events were exercised through isolated PTYs, not accepted in an actual emulator; graphical screenshot remains pending. See [plan and limits](ui-configuration-plan.md), [configuration](configuration.md), [visuals](terminal-visual.md).
+
+## Earlier recorded preview
+
+Checkpoint before the persistent shell, retained as history.
+
+![Earlier recorded preview — PNG](samples/menu-auto/evidence/ui-configuration/frame-dark-en.png)
+
+![Earlier recorded preview — GIF](samples/menu-auto/evidence/ui-configuration/aurora-dark-en.gif)

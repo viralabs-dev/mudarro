@@ -1,5 +1,7 @@
 English · [Português (Brasil)](../../pt-BR/samples/menu-auto/README.md)
 
+[Jump to recorded screens](#recorded-screens).
+
 ## Current CI correction — MUD-030
 
 Verified [push CI run37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: completed **failure**. Ubuntu, database and container jobs succeeded; macOS executed and failed in EOF-loop/race-cleanup handling, including panic with index n=-1. Therefore macOS is no longer globally “not executed”: local Darwin cross-compilation passed, but the actual CI runtime failed. Local Podman remains unavailable; container CI passed, distinct from local execution.
@@ -7,6 +9,34 @@ Verified [push CI run37416072569](https://github.com/viralabs-dev/mudarro/action
 Authenticated Actions permissions read returned enabled=true/allowed_actions=all; this does not identify who changed settings. No workflow/config settings, enable action, dispatch or rerun was performed. This corrective commit uses the official [skip ci] marker for the authorized main-only push, honoring the requested no-Actions execution without changing settings. Earlier raw gates/evidence are preserved as historical and superseded for current CI status. Local Linux74-test/76.38% results remain valid for their recorded checkpoint. The portability fix passed 75 local Linux tests with race, vet and Linux/Darwin arm64 compilation. Corrected macOS runtime remains unvalidated; skipping CI does not mean it passed.
 
 # Automatic menu sample
+
+## Recorded screens
+
+Real CLI execution in a PTY with controlled input. PNGs are rendered recording frames, not desktop screenshots. The banner and footer remain fixed while the center shows menus, preview and execution.
+
+**Recorded revision:** these real screens accompany the persistent shell added by MUD-032. Previous recordings are preserved; validation below was performed locally, independently of CI.
+
+### Dark · English
+
+![Frame of real long output with the banner and footer preserved.](evidence/ui-shell/aurora-shell-dark-en.png)
+
+Frame of real long output with the banner and footer preserved.
+
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](evidence/ui-shell/aurora-shell-dark-en.gif)
+
+Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
+
+### Light · Portuguese
+
+![Frame of real long output with the banner and footer preserved.](evidence/ui-shell/aurora-shell-light-ptbr.png)
+
+Frame of real long output with the banner and footer preserved.
+
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](evidence/ui-shell/aurora-shell-light-ptbr.gif)
+
+Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
+
+
 
 Real outputs from init --select app-javascript:hello and generate, measured 2026-10-06 on personal Pop!_OS24.04, main base049a405a3c19369e92bebfad468e7f36d5ae0db4 with local uncommitted changes. GitHub identity daneiel. Dependency-free Node app.js prints sample ready and stays alive; configuration/menu/wrappers/manifest are actual generated files. Tests copy inputs into a temporary path containing spaces; no install action is invoked.
 

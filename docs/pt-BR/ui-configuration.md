@@ -1,5 +1,7 @@
 [English](../ui-configuration.md) · Português (Brasil)
 
+[Ir para as telas gravadas](#telas-gravadas).
+
 ## Correção atual da CI — MUD-030
 
 Verificada [CI de push37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: concluída com **falha**. Jobs Ubuntu/bancos/containers passaram; macOS executou e falhou no tratamento EOF/cleanup com race, incluindo panic com índice n=-1. macOS não é mais globalmente “não executado”: cross-compile Darwin local passou, runtime real da CI falhou. Podman local continua indisponível; CI containers passou, distinta da execução local.
@@ -14,6 +16,34 @@ Evidências: [tests-race.txt](../samples/menu-auto/evidence/ui-configuration/tes
 
 
 # Configuração da UI
+
+## Telas gravadas
+
+Execução real do CLI em PTY, com entrada controlada. PNGs são frames renderizados da gravação; não são screenshots do desktop. O banner e o rodapé permanecem fixos enquanto o centro mostra menus, prévia e execução.
+
+**Revisão gravada:** estas telas reais acompanham o shell permanente de MUD-032. As gravações anteriores foram preservadas; a validação abaixo foi executada localmente, independente da CI.
+
+### Escuro · inglês
+
+![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+
+Frame da saída real longa, com banner e rodapé preservados.
+
+![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+
+GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.
+
+### Claro · português
+
+![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png)
+
+Frame da saída real longa, com banner e rodapé preservados.
+
+![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif)
+
+GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.
+
+
 
 Implementados: Config interno único/validação comum YAML/JSON, ui opcional em versão1, mensagens próprias traduzidas, temas semânticos e preview de ações somente leitura. Integração de fonte não implementada; aceite mouse em emulador real não verificado. Evidências históricas preservadas; cobertura consolidada final registrada abaixo.
 
@@ -56,3 +86,11 @@ Raw restrito à visão de ações; seleção serviço/grupo permanece modo linha
 Preview mostra cwd, argv/shell/origem/sequências especiais planejadas rotuladas. Nunca executa, inspeciona processos/containers, source scripts, carrega .env ou expande valores env. Referências env permanecem placeholders; flags secretas/credenciais URL reconhecidas redigidas. Segredos arbitrários em shell não são inferíveis; gravações sem segredos. Leitura guardada/limitada.
 
 Raw exige TTY entrada/saída suportados; restaura saída/EOF/erro/interrupção e antes de passar stdin ao filho, retomando depois. SIGKILL não permite cleanup. Pipes/TERM dumb plain sem modos mouse/cursor. Estimativa conservadora de células Unicode não garante grafemas perfeitos. Eventos mouse exercitados em PTYs isolados, sem aceite em emulador real; screenshot gráfica pendente. Ver [plano/limites](ui-configuration-plan.md), [configuração](configuration.md), [visual](terminal-visual.md).
+
+## Prévia gravada anteriormente
+
+Checkpoint anterior à moldura permanente; preservado como histórico.
+
+![Prévia gravada anteriormente — PNG](../samples/menu-auto/evidence/ui-configuration/frame-dark-en.png)
+
+![Prévia gravada anteriormente — GIF](../samples/menu-auto/evidence/ui-configuration/aurora-dark-en.gif)

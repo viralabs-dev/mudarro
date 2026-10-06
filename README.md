@@ -1,14 +1,34 @@
 English · [Português (Brasil)](docs/pt-BR/README.md)
 
+# Mudarro
+
+Detect a project's stack and generate a Bash menu with ASCII lettering, submenus and operational scripts. **No AI:** scanning and generation work offline. Downloads occur only through installation actions or tools explicitly invoked by the user.
+
+
+## Recorded screens
+
+Real CLI execution in a PTY with controlled input. PNGs are rendered recording frames, not desktop screenshots. The banner and footer remain fixed while the center shows menus, preview and execution.
+
+**Recorded revision:** these real screens accompany the persistent shell added by MUD-032. Previous recordings are preserved; validation below was performed locally, independently of CI.
+
+### Dark · English
+
+![Frame of real long output with the banner and footer preserved.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+
+Frame of real long output with the banner and footer preserved.
+
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+
+Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
+
+[See the light theme, details and reproduction](docs/ui-shell.md#recorded-screens).
+
 ## Current CI correction — MUD-030
 
 Verified [push CI run37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: completed **failure**. Ubuntu, database and container jobs succeeded; macOS executed and failed in EOF-loop/race-cleanup handling, including panic with index n=-1. Therefore macOS is no longer globally “not executed”: local Darwin cross-compilation passed, but the actual CI runtime failed. Local Podman remains unavailable; container CI passed, distinct from local execution.
 
 Authenticated Actions permissions read returned enabled=true/allowed_actions=all; this does not identify who changed settings. No workflow/config settings, enable action, dispatch or rerun was performed. This corrective commit uses the official [skip ci] marker for the authorized main-only push, honoring the requested no-Actions execution without changing settings. Earlier raw gates/evidence are preserved as historical and superseded for current CI status. Local Linux74-test/76.38% results remain valid for their recorded checkpoint. The portability fix passed 75 local Linux tests with race, vet and Linux/Darwin arm64 compilation. Corrected macOS runtime remains unvalidated; skipping CI does not mean it passed.
 
-# Mudarro
-
-Detect a project's stack and generate a Bash menu with ASCII lettering, submenus and operational scripts. **No AI:** scanning and generation work offline. Downloads occur only through installation actions or tools explicitly invoked by the user.
 
 ## Installation
 
@@ -91,4 +111,6 @@ bash scripts/smoke.sh "$PWD/bin/mudarro"
 
 - [UI configuration and read-only previews](docs/ui-configuration.md)
 
-Current configurable-UI gate: **74 tests,76.38% statement coverage**, race/vet/Linux build/Darwin cross-build passed. [Scope and limits](docs/coverage.md).
+Earlier configurable-UI checkpoint: **74 tests,76.38% statement coverage**, race/vet/Linux build/Darwin cross-build passed. [Scope and limits](docs/coverage.md).
+
+- [Persistent terminal shell](docs/ui-shell.md)
