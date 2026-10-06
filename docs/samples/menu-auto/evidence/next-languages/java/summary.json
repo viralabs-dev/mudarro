@@ -1,0 +1,25 @@
+{
+  "scope": "static detection and configuration/generation only",
+  "passedGroups": 6,
+  "passed": [
+    "TestMavenStaticContract",
+    "TestMavenInvalidEvidence",
+    "TestMavenModulesAndExclusions",
+    "TestGradleUnevaluatedEvidence",
+    "TestMavenManifestExcludedBeforeRead",
+    "TestMavenScanSelectionGeneratePreservesManual"
+  ],
+  "failed": 0,
+  "skipped": 0,
+  "race": true,
+  "nativeToolchainExecuted": false,
+  "installed": false,
+  "runtimeAcceptance": "pending separately authorized toolchain and dependencies",
+  "sampleHashes": {
+    "samples/aggregator/child/pom.xml": "1955ecd0bc01f026142a4cfd90910c524d017d9f448e17508b08377db199fa63",
+    "samples/aggregator/pom.xml": "bac23b3390281c33ad2977f0ce276c5408e527fc319f1da8eae232c4cd46d7d0",
+    "samples/gradle-evidence/build.gradle.kts": "339506130e254ed92d702f350df5ba311a33fc25599f569d01ea75f833e718b8",
+    "samples/single/pom.xml": "802e7edcca7aca3208a0c4f3a2449ad5d233ec071b8d7fb1c62c204f6117cb73",
+    "samples/single/src/main/java/Main.java": "ce420e44c8b30852a010f3b9463dca57c09520fcaefd84e0c692d7b4c2ab0e0f"
+  }
+}

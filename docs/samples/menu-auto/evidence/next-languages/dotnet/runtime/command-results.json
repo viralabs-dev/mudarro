@@ -1,0 +1,514 @@
+[
+  {
+    "profile": "toolchain",
+    "name": "sdk-version",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/dotnet",
+      "--version"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.079,
+    "stdout": "10.0.401\n",
+    "stderr": ""
+  },
+  {
+    "profile": "toolchain",
+    "name": "sdk-info",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/dotnet",
+      "--info"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.125,
+    "stdout": ".NET SDK:\n Version:           10.0.401\n Commit:            e34a38d2ae\n Workload version:  10.0.400-manifests.63b36e85\n MSBuild version:   18.9.11+e34a38d2a\n\nRuntime Environment:\n OS Name:     pop\n OS Version:  24.04\n OS Platform: Linux\n RID:         linux-x64\n Base Path:   /tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/sdk/10.0.401/\n\n.NET workloads installed:\nThere are no installed workloads to display.\nConfigured to use workload sets when installing new manifests.\nNo workload sets are installed. Run \"dotnet workload restore\" to install a workload set.\n\nHost:\n  Version:      10.0.12\n  Architecture: x64\n  Commit:       95017c711e\n\n.NET SDKs installed:\n  10.0.401 [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/sdk]\n\n.NET runtimes installed:\n  Microsoft.AspNetCore.App 10.0.12 [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/shared/Microsoft.AspNetCore.App]\n  Microsoft.NETCore.App 10.0.12 [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/shared/Microsoft.NETCore.App]\n\nOther architectures found:\n  None\n\nEnvironment variables:\n  DOTNET_ADD_GLOBAL_TOOLS_TO_PATH          [0]\n  DOTNET_CLI_DO_NOT_USE_MSBUILD_SERVER     [1]\n  DOTNET_CLI_HOME                          [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/cache/dotnet-home]\n  DOTNET_CLI_TELEMETRY_OPTOUT              [1]\n  DOTNET_CLI_USE_MSBUILD_SERVER            [0]\n  DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE [1]\n  DOTNET_GENERATE_ASPNET_CERTIFICATE       [false]\n  DOTNET_MULTILEVEL_LOOKUP                 [0]\n  DOTNET_NOLOGO                            [1]\n  DOTNET_ROOT                              [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401]\n  DOTNET_SKIP_FIRST_TIME_EXPERIENCE        [1]\n\nglobal.json file:\n  Not found\n\nLearn more:\n  https://aka.ms/dotnet/info\n\nDownload .NET:\n  https://aka.ms/dotnet/download\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "--json"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"console\",\n    \"services\": [\n      {\n        \"id\": \"app-csharp\",\n        \"dir\": \".\",\n        \"language\": \"csharp\",\n        \"manager\": \"dotnet\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"pending\": [\n          \"MSBuild properties, imports and targets were not evaluated; declare run/start explicitly\",\n          \"Solution project graphs were not resolved; select contained independently detected projects explicitly\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"csharp\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"build\",\n          \"./Sample.csproj\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"Sample.csproj\"\n    },\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"test\",\n          \"./Sample.csproj\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"Sample.csproj\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "scan-repeat",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "--json"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"console\",\n    \"services\": [\n      {\n        \"id\": \"app-csharp\",\n        \"dir\": \".\",\n        \"language\": \"csharp\",\n        \"manager\": \"dotnet\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"pending\": [\n          \"MSBuild properties, imports and targets were not evaluated; declare run/start explicitly\",\n          \"Solution project graphs were not resolved; select contained independently detected projects explicitly\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"csharp\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"build\",\n          \"./Sample.csproj\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"Sample.csproj\"\n    },\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"test\",\n          \"./Sample.csproj\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"Sample.csproj\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "init-select-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "--format",
+      "json",
+      "--select",
+      "app-csharp:build"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "Project: console\n- app-csharp (.): csharp / dotnet / local\n  pending: MSBuild properties, imports and targets were not evaluated; declare run/start explicitly\n  pending: Solution project graphs were not resolved; select contained independently detected projects explicitly\n  suggestion: app-csharp:build [Sample.csproj]\n  suggestion: app-csharp:test [Sample.csproj]\nCreated mudarro.json. Review pending choices, then run mudarro generate.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "restore-clear-feeds",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/dotnet",
+      "restore",
+      "./Sample.csproj",
+      "--configfile",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/NuGet.Config",
+      "--disable-parallel",
+      "--verbosity",
+      "minimal",
+      "-p:NuGetAudit=false"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.728,
+    "stdout": "  Determining projects to restore...\n  Restored /tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Sample.csproj (in 52 ms).\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "generate-1",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.006,
+    "stdout": "gerar: .mudarro/scripts/app-csharp/build.sh\ngerar: .mudarro/scripts/app-csharp/console.sh\ngerar: .mudarro/scripts/app-csharp/controlled-failure.sh\ngerar: .mudarro/scripts/app-csharp/down.sh\ngerar: .mudarro/scripts/app-csharp/logs.sh\ngerar: .mudarro/scripts/app-csharp/restart.sh\ngerar: .mudarro/scripts/app-csharp/self-test.sh\ngerar: .mudarro/scripts/app-csharp/status.sh\ngerar: .mudarro/scripts/app-csharp/up.sh\ngerar: menu.sh\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "generate-2",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.005,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "init-existing-preserve",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 1,
+    "expectedExit": 1,
+    "elapsedSeconds": 0.004,
+    "stdout": "",
+    "stderr": "mudarro: configuration already exists; edit the preserved file\n"
+  },
+  {
+    "profile": "console",
+    "name": "preview-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:build"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.004,
+    "stdout": "Action: app-csharp:build\nDirectory: .\nargv (not shell evaluation):\n  [0] \"dotnet\"\n  [1] \"build\"\n  [2] \"./Sample.csproj\"\n  [3] \"--no-restore\"\n  [4] \"--disable-build-servers\"\n  [5] \"-p:UseSharedCompilation=false\"\n  [6] \"-nodeReuse:false\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "mudarro-run-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:build"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 1.509,
+    "stdout": "  Sample -> /tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/bin/Debug/net10.0/Sample.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:01.31\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "wrapper-build",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/.mudarro/scripts/app-csharp/build.sh"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.556,
+    "stdout": "  Sample -> /tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/bin/Debug/net10.0/Sample.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.35\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "preview-console",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:console"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "Action: app-csharp:console\nDirectory: .\nargv (not shell evaluation):\n  [0] \"dotnet\"\n  [1] \"bin/Debug/net10.0/Sample.dll\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "mudarro-run-console",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:console"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.032,
+    "stdout": "DOTNET_REAL_CONSOLE_OUTPUT: 42\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "wrapper-console",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/.mudarro/scripts/app-csharp/console.sh"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.046,
+    "stdout": "DOTNET_REAL_CONSOLE_OUTPUT: 42\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "preview-self-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:self-test"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "Action: app-csharp:self-test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"dotnet\"\n  [1] \"bin/Debug/net10.0/Sample.dll\"\n  [2] \"--self-test\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "mudarro-run-self-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:self-test"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.045,
+    "stdout": "DOTNET_REAL_STDLIB_SELF_TEST_PASS: 21 * 2 = 42\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "wrapper-self-test",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/.mudarro/scripts/app-csharp/self-test.sh"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.045,
+    "stdout": "DOTNET_REAL_STDLIB_SELF_TEST_PASS: 21 * 2 = 42\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "preview-controlled-failure",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:controlled-failure"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "Action: app-csharp:controlled-failure\nDirectory: .\nargv (not shell evaluation):\n  [0] \"dotnet\"\n  [1] \"bin/Debug/net10.0/Sample.dll\"\n  [2] \"--controlled-failure\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "mudarro-run-controlled-failure",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:controlled-failure"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 1,
+    "expectedExit": 1,
+    "elapsedSeconds": 0.04,
+    "stdout": "DOTNET_CONTROLLED_FAILURE_EXPECTED_EXIT_7\n",
+    "stderr": "mudarro: exit status 7\n"
+  },
+  {
+    "profile": "console",
+    "name": "wrapper-controlled-failure",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/.mudarro/scripts/app-csharp/controlled-failure.sh"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 1,
+    "expectedExit": 1,
+    "elapsedSeconds": 0.042,
+    "stdout": "DOTNET_CONTROLLED_FAILURE_EXPECTED_EXIT_7\n",
+    "stderr": "mudarro: exit status 7\n"
+  },
+  {
+    "profile": "console",
+    "name": "direct-controlled-failure",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401/dotnet",
+      "bin/Debug/net10.0/Sample.dll",
+      "--controlled-failure"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+    "exit": 7,
+    "expectedExit": 7,
+    "elapsedSeconds": 0.034,
+    "stdout": "DOTNET_CONTROLLED_FAILURE_EXPECTED_EXIT_7\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "repeat-selected-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:build"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.54,
+    "stdout": "  Sample -> /tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/bin/Debug/net10.0/Sample.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:00.35\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "repeat-selected-self-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:self-test"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.032,
+    "stdout": "DOTNET_REAL_STDLIB_SELF_TEST_PASS: 21 * 2 = 42\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "controlled-compile-failure",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:build"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 1,
+    "expectedExit": 1,
+    "elapsedSeconds": 0.746,
+    "stdout": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Program.cs(11,1): error CS8803: Top-level statements must precede namespace and type declarations. [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Sample.csproj]\n/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Program.cs(11,35): error CS1001: Identifier expected [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Sample.csproj]\n/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Program.cs(11,35): error CS1002: ; expected [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Sample.csproj]\n\nBuild FAILED.\n\n/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Program.cs(11,1): error CS8803: Top-level statements must precede namespace and type declarations. [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Sample.csproj]\n/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Program.cs(11,35): error CS1001: Identifier expected [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Sample.csproj]\n/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Program.cs(11,35): error CS1002: ; expected [/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/Sample.csproj]\n    0 Warning(s)\n    3 Error(s)\n\nTime Elapsed 00:00:00.55\n",
+    "stderr": "mudarro: exit status 1\n"
+  },
+  {
+    "profile": "console",
+    "name": "recovery-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:build"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 1.516,
+    "stdout": "  Sample -> /tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console/bin/Debug/net10.0/Sample.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:01.32\n",
+    "stderr": ""
+  },
+  {
+    "profile": "console",
+    "name": "recovery-self-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+      "app-csharp:self-test"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.025,
+    "stdout": "DOTNET_REAL_STDLIB_SELF_TEST_PASS: 21 * 2 = 42\n",
+    "stderr": ""
+  },
+  {
+    "profile": "multiple",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/multiple",
+      "--json"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"multiple\",\n    \"services\": [\n      {\n        \"id\": \"app-csharp\",\n        \"dir\": \".\",\n        \"language\": \"csharp\",\n        \"manager\": \"dotnet\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"pending\": [\n          \"MSBuild properties, imports and targets were not evaluated; declare run/start explicitly\",\n          \"Solution project graphs were not resolved; select contained independently detected projects explicitly\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"csharp\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"build-project-1\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"build\",\n          \"./-flag.csproj\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"-flag.csproj\"\n    },\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"build-project-2\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"build\",\n          \"./space +.csproj\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"space +.csproj\"\n    },\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"test-project-1\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"test\",\n          \"./-flag.csproj\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"-flag.csproj\"\n    },\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"test-project-2\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"test\",\n          \"./space +.csproj\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"space +.csproj\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "profile": "multiple",
+    "name": "explicit-selection",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/multiple",
+      "--format",
+      "json",
+      "--select",
+      "app-csharp:build-project-1"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "Project: multiple\n- app-csharp (.): csharp / dotnet / local\n  pending: MSBuild properties, imports and targets were not evaluated; declare run/start explicitly\n  pending: Solution project graphs were not resolved; select contained independently detected projects explicitly\n  suggestion: app-csharp:build-project-1 [-flag.csproj]\n  suggestion: app-csharp:build-project-2 [space +.csproj]\n  suggestion: app-csharp:test-project-1 [-flag.csproj]\n  suggestion: app-csharp:test-project-2 [space +.csproj]\nCreated mudarro.json. Review pending choices, then run mudarro generate.\n",
+    "stderr": ""
+  },
+  {
+    "profile": "invalid",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/invalid",
+      "--json"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"invalid\",\n    \"services\": [\n      {\n        \"id\": \"app-custom\",\n        \"dir\": \".\",\n        \"language\": \"custom\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"pending\": [\n          \"Declare comandos da aplica\u00e7\u00e3o\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": null,\n  \"suggestions\": null,\n  \"warnings\": [\n    \"XML directives/DTD are not supported\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "profile": "excluded",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/excluded",
+      "--json",
+      "--exclude",
+      "ignored"
+    ],
+    "cwd": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet",
+    "exit": 0,
+    "expectedExit": 0,
+    "elapsedSeconds": 0.003,
+    "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"excluded\",\n    \"exclude\": [\n      \"ignored\"\n    ],\n    \"services\": [\n      {\n        \"id\": \"app-csharp\",\n        \"dir\": \".\",\n        \"language\": \"csharp\",\n        \"manager\": \"dotnet\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"pending\": [\n          \"MSBuild properties, imports and targets were not evaluated; declare run/start explicitly\",\n          \"Solution project graphs were not resolved; select contained independently detected projects explicitly\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"csharp\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"build\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"build\",\n          \"./Sample.csproj\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"Sample.csproj\"\n    },\n    {\n      \"purpose\": \"dotnet\",\n      \"service\": \"app-csharp\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"dotnet\",\n          \"test\",\n          \"./Sample.csproj\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"Sample.csproj\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  }
+]

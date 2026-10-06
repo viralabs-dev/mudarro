@@ -1,0 +1,1 @@
+public class Main { public static void main(String[] args) { if(args.length > 0 && args[0].equals("--fail")){System.err.println("OWNED_JDK_FAILURE");System.exit(7);} if(21*2 != 42) throw new AssertionError("value"); System.out.println("REAL_JDK_SELFTEST_42"); }}

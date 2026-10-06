@@ -1,0 +1,21 @@
+HTTP/2 200 
+x-amz-request-id: NDMST31M0H9X9XZR
+x-amz-id-2: 5UYmkmh7n4KJChcd0/XPtmtMgegCt398nCUb73DDsNw4cNJqLPObi9rKa3xFEmPLq5yBd/0rPIRKMc+kkgpbVWZl0ES8vpT3
+server: AmazonS3
+last-modified: Thu, 01 Oct 2026 12:21:08 GMT
+etag: "d78c827d800db87e884c87d85cf8e3d1-26"
+x-amz-version-id: DXc8KaAXSsiOzmGBGsHYoDGgTbDhVCKh
+cache-control: public
+content-type: application/x-tar
+x-amz-server-side-encryption: AES256
+x-amz-storage-class: INTELLIGENT_TIERING
+accept-ranges: bytes
+age: 27830
+date: Tue, 06 Oct 2026 20:37:35 GMT
+via: 1.1 varnish
+x-served-by: cache-gru-sbgr1930031-GRU
+x-cache: HIT
+x-cache-hits: 0
+x-timer: S1791319055.318468,VS0,VE1
+content-length: 210462232
+

@@ -1,0 +1,1 @@
+{"scripts":{"test":["php one.php","php two.php"],"wrong":7}}

@@ -1,0 +1,8 @@
+{
+  "HOME": "/home/danielsouza",
+  "JAVA_HOME": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1",
+  "PATH": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin:/tmp/mudarro-next-languages-root:/usr/bin:/bin",
+  "LANG": "C.UTF-8",
+  "MAVEN_OPTS": "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home -Djava.io.tmpdir=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/tmp",
+  "TMPDIR": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/tmp"
+}

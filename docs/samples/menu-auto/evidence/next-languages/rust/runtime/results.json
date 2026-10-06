@@ -1,0 +1,523 @@
+[
+  {
+    "name": "rustc-version",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/rustc",
+      "--version",
+      "--verbose"
+    ],
+    "exit": 0,
+    "elapsed": 0.01
+  },
+  {
+    "name": "cargo-version",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "--version",
+      "--verbose"
+    ],
+    "exit": 0,
+    "elapsed": 0.02
+  },
+  {
+    "name": "generate-lockfile",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "generate-lockfile",
+      "--offline"
+    ],
+    "exit": 0,
+    "elapsed": 0.056
+  },
+  {
+    "name": "build-workspace",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "build",
+      "--workspace",
+      "--offline",
+      "--locked"
+    ],
+    "exit": 0,
+    "elapsed": 0.287
+  },
+  {
+    "name": "test-workspace",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "test",
+      "--workspace",
+      "--offline",
+      "--locked"
+    ],
+    "exit": 0,
+    "elapsed": 0.12
+  },
+  {
+    "name": "build-repeat",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "build",
+      "--workspace",
+      "--offline",
+      "--locked"
+    ],
+    "exit": 0,
+    "elapsed": 0.026
+  },
+  {
+    "name": "test-repeat",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "test",
+      "--workspace",
+      "--offline",
+      "--locked"
+    ],
+    "exit": 0,
+    "elapsed": 0.04
+  },
+  {
+    "name": "explicit-bin-output",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "run",
+      "--offline",
+      "--locked",
+      "--bin",
+      "owned-app"
+    ],
+    "exit": 0,
+    "elapsed": 0.01
+  },
+  {
+    "name": "explicit-bin-failure",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "run",
+      "--offline",
+      "--locked",
+      "--bin",
+      "owned-fail"
+    ],
+    "exit": 7,
+    "elapsed": 0.011
+  },
+  {
+    "name": "missing-bin",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "run",
+      "--offline",
+      "--locked",
+      "--bin",
+      "owned-missing"
+    ],
+    "exit": 101,
+    "elapsed": 0.013
+  },
+  {
+    "name": "compile-failure",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/bin/cargo",
+      "build",
+      "--offline"
+    ],
+    "exit": 101,
+    "elapsed": 0.029
+  },
+  {
+    "name": "mudarro-scan",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "mudarro-init",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "--format",
+      "json",
+      "--select",
+      "app-rust-workspace:build,app-rust-workspace:test,app-rust:build,app-rust:test,library-rust:build,library-rust:test"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "mudarro-init-preservation",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "--format",
+      "json"
+    ],
+    "exit": 1,
+    "elapsed": 0.005
+  },
+  {
+    "name": "generate-1",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace"
+    ],
+    "exit": 0,
+    "elapsed": 0.007
+  },
+  {
+    "name": "generate-2",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "name": "preview-app-rust-workspace-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust-workspace:build"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "name": "selected-app-rust-workspace-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust-workspace:build"
+    ],
+    "exit": 0,
+    "elapsed": 0.015
+  },
+  {
+    "name": "wrapper-app-rust-workspace-build",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/.mudarro/scripts/app-rust-workspace/build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.017
+  },
+  {
+    "name": "preview-app-rust-workspace-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust-workspace:test"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "name": "selected-app-rust-workspace-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust-workspace:test"
+    ],
+    "exit": 0,
+    "elapsed": 0.043
+  },
+  {
+    "name": "wrapper-app-rust-workspace-test",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/.mudarro/scripts/app-rust-workspace/test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.028
+  },
+  {
+    "name": "preview-app-rust-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:build"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "selected-app-rust-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:build"
+    ],
+    "exit": 0,
+    "elapsed": 0.023
+  },
+  {
+    "name": "wrapper-app-rust-build",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/.mudarro/scripts/app-rust/build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.026
+  },
+  {
+    "name": "preview-app-rust-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:test"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "selected-app-rust-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:test"
+    ],
+    "exit": 0,
+    "elapsed": 0.018
+  },
+  {
+    "name": "wrapper-app-rust-test",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/.mudarro/scripts/app-rust/test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.021
+  },
+  {
+    "name": "preview-library-rust-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "library-rust:build"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "name": "selected-library-rust-build",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "library-rust:build"
+    ],
+    "exit": 0,
+    "elapsed": 0.014
+  },
+  {
+    "name": "wrapper-library-rust-build",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/.mudarro/scripts/library-rust/build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.018
+  },
+  {
+    "name": "preview-library-rust-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "library-rust:test"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "selected-library-rust-test",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "library-rust:test"
+    ],
+    "exit": 0,
+    "elapsed": 0.032
+  },
+  {
+    "name": "wrapper-library-rust-test",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/.mudarro/scripts/library-rust/test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.035
+  },
+  {
+    "name": "manual-init-preservation",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "--format",
+      "json"
+    ],
+    "exit": 1,
+    "elapsed": 0.005
+  },
+  {
+    "name": "manual-generate",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace"
+    ],
+    "exit": 0,
+    "elapsed": 0.006
+  },
+  {
+    "name": "manual-preview-start",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:start"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "manual-controlled-failure",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:controlled-failure"
+    ],
+    "exit": 1,
+    "elapsed": 0.022
+  },
+  {
+    "name": "manual-failure-wrapper",
+    "argv": [
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/.mudarro/scripts/app-rust/controlled-failure.sh"
+    ],
+    "exit": 1,
+    "elapsed": 0.019
+  },
+  {
+    "name": "owned-up",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:up"
+    ],
+    "exit": 0,
+    "elapsed": 0.155
+  },
+  {
+    "name": "owned-status",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:status"
+    ],
+    "exit": 0,
+    "elapsed": 0.005
+  },
+  {
+    "name": "owned-logs",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:logs"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "name": "owned-restart",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:restart"
+    ],
+    "exit": 0,
+    "elapsed": 0.21
+  },
+  {
+    "name": "owned-status-restarted",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:status"
+    ],
+    "exit": 0,
+    "elapsed": 0.006
+  },
+  {
+    "name": "owned-down",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:down"
+    ],
+    "exit": 0,
+    "elapsed": 0.056
+  },
+  {
+    "name": "owned-status-stopped",
+    "argv": [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+      "app-rust:status"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  }
+]

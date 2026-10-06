@@ -1,0 +1,8 @@
+Action: app-java:test
+Directory: .
+argv (not shell evaluation):
+  [0] "mvn"
+  [1] "-f"
+  [2] "pom.xml"
+  [3] "test"
+Environment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.

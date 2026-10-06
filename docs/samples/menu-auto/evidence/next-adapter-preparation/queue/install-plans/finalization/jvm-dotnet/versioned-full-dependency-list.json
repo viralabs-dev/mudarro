@@ -1,0 +1,1257 @@
+{
+  "compiler-dependencies.html": [
+    {
+      "GroupId": "org.apache.maven.shared",
+      "ArtifactId": "maven-shared-incremental",
+      "Version": "1.1",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.shared",
+      "ArtifactId": "maven-shared-utils",
+      "Version": "3.4.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-compiler-api",
+      "Version": "2.16.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-compiler-manager",
+      "Version": "2.16.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-java",
+      "Version": "1.5.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-utils",
+      "Version": "4.0.2",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.ow2.asm",
+      "ArtifactId": "asm",
+      "Version": "9.9.1",
+      "Type": "jar",
+      "Licenses": "BSD-3-Clause",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-compiler-javac",
+      "Version": "2.16.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "runtime",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.plugin-testing",
+      "ArtifactId": "maven-plugin-testing-harness",
+      "Version": "3.5.0",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-xml",
+      "Version": "3.0.1",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.junit.jupiter",
+      "ArtifactId": "junit-jupiter-api",
+      "Version": "5.14.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License v2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.junit.jupiter",
+      "ArtifactId": "junit-jupiter-params",
+      "Version": "5.14.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License v2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.mockito",
+      "ArtifactId": "mockito-core",
+      "Version": "4.11.0",
+      "Type": "jar",
+      "Licenses": "The MIT License",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-artifact",
+      "Version": "3.9.12",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-core",
+      "Version": "3.9.12",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-plugin-api",
+      "Version": "3.9.12",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.plugin-tools",
+      "ArtifactId": "maven-plugin-annotations",
+      "Version": "3.15.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "com.thoughtworks.qdox",
+      "ArtifactId": "qdox",
+      "Version": "2.2.0",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "commons-io",
+      "ArtifactId": "commons-io",
+      "Version": "2.11.0",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "javax.inject",
+      "ArtifactId": "javax.inject",
+      "Version": "1",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.slf4j",
+      "ArtifactId": "slf4j-api",
+      "Version": "1.7.36",
+      "Type": "jar",
+      "Licenses": "MIT License",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "net.bytebuddy",
+      "ArtifactId": "byte-buddy",
+      "Version": "1.12.19",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "net.bytebuddy",
+      "ArtifactId": "byte-buddy-agent",
+      "Version": "1.12.19",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apiguardian",
+      "ArtifactId": "apiguardian-api",
+      "Version": "1.1.2",
+      "Type": "jar",
+      "Licenses": "The Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-testing",
+      "Version": "2.1.0",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.junit.platform",
+      "ArtifactId": "junit-platform-commons",
+      "Version": "1.14.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License v2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.objenesis",
+      "ArtifactId": "objenesis",
+      "Version": "3.3",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.opentest4j",
+      "ArtifactId": "opentest4j",
+      "Version": "1.3.0",
+      "Type": "jar",
+      "Licenses": "The Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "aopalliance",
+      "ArtifactId": "aopalliance",
+      "Version": "1.0",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Public Domain",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "com.google.guava",
+      "ArtifactId": "failureaccess",
+      "Version": "1.0.3",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "com.google.guava",
+      "ArtifactId": "guava",
+      "Version": "33.5.0-jre",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "com.google.inject",
+      "ArtifactId": "guice",
+      "Version": "5.1.0",
+      "Classifier": "classes",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-builder-support",
+      "Version": "3.9.12",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-model",
+      "Version": "3.9.12",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-model-builder",
+      "Version": "3.9.12",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-repository-metadata",
+      "Version": "3.9.12",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-resolver-provider",
+      "Version": "3.9.12",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-settings",
+      "Version": "3.9.12",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-settings-builder",
+      "Version": "3.9.12",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-api",
+      "Version": "1.9.25",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-impl",
+      "Version": "1.9.25",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-named-locks",
+      "Version": "1.9.25",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-spi",
+      "Version": "1.9.25",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-util",
+      "Version": "1.9.25",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-cipher",
+      "Version": "2.0",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-classworlds",
+      "Version": "2.9.0",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-component-annotations",
+      "Version": "2.2.0",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-interpolation",
+      "Version": "1.29",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-sec-dispatcher",
+      "Version": "2.0",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.sisu",
+      "ArtifactId": "org.eclipse.sisu.inject",
+      "Version": "0.9.0.M4",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.sisu",
+      "ArtifactId": "org.eclipse.sisu.plexus",
+      "Version": "0.9.0.M4",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.jspecify",
+      "ArtifactId": "jspecify",
+      "Version": "1.0.0",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "The Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    }
+  ],
+  "surefire-dependencies.html": [
+    {
+      "GroupId": "org.apache.maven.surefire",
+      "ArtifactId": "maven-surefire-common",
+      "Version": "3.5.5",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.surefire",
+      "ArtifactId": "surefire-api",
+      "Version": "3.5.5",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.surefire",
+      "ArtifactId": "surefire-extensions-api",
+      "Version": "3.5.5",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "junit",
+      "ArtifactId": "junit",
+      "Version": "4.13.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License 1.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.assertj",
+      "ArtifactId": "assertj-core",
+      "Version": "3.27.7",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.junit.vintage",
+      "ArtifactId": "junit-vintage-engine",
+      "Version": "5.12.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License v2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.slf4j",
+      "ArtifactId": "slf4j-simple",
+      "Version": "1.7.36",
+      "Type": "jar",
+      "Licenses": "MIT License",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-plugin-api",
+      "Version": "3.6.3",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.plugin-tools",
+      "ArtifactId": "maven-plugin-annotations",
+      "Version": "3.15.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "com.thoughtworks.qdox",
+      "ArtifactId": "qdox",
+      "Version": "2.2.0",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-api",
+      "Version": "1.4.1",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-util",
+      "Version": "1.4.1",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.shared",
+      "ArtifactId": "maven-common-artifact-filters",
+      "Version": "3.4.0",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.surefire",
+      "ArtifactId": "surefire-booter",
+      "Version": "3.5.5",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.surefire",
+      "ArtifactId": "surefire-extensions-spi",
+      "Version": "3.5.5",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.surefire",
+      "ArtifactId": "surefire-logger-api",
+      "Version": "3.5.5",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.surefire",
+      "ArtifactId": "surefire-shared-utils",
+      "Version": "3.5.5",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-java",
+      "Version": "1.5.2",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.ow2.asm",
+      "ArtifactId": "asm",
+      "Version": "9.9.1",
+      "Type": "jar",
+      "Licenses": "BSD-3-Clause",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.slf4j",
+      "ArtifactId": "slf4j-api",
+      "Version": "1.7.36",
+      "Type": "jar",
+      "Licenses": "MIT License",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "commons-codec",
+      "ArtifactId": "commons-codec",
+      "Version": "1.19.0",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "runtime",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "commons-io",
+      "ArtifactId": "commons-io",
+      "Version": "2.21.0",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "runtime",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.commons",
+      "ArtifactId": "commons-compress",
+      "Version": "1.28.0",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "runtime",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.commons",
+      "ArtifactId": "commons-lang3",
+      "Version": "3.20.0",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "runtime",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.shared",
+      "ArtifactId": "maven-shared-utils",
+      "Version": "3.3.4",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "runtime",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "net.bytebuddy",
+      "ArtifactId": "byte-buddy",
+      "Version": "1.18.3",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apiguardian",
+      "ArtifactId": "apiguardian-api",
+      "Version": "1.1.2",
+      "Type": "jar",
+      "Licenses": "The Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.hamcrest",
+      "ArtifactId": "hamcrest",
+      "Version": "3.0",
+      "Type": "jar",
+      "Licenses": "BSD-3-Clause",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.hamcrest",
+      "ArtifactId": "hamcrest-core",
+      "Version": "3.0",
+      "Type": "jar",
+      "Licenses": "BSD-3-Clause",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.junit.platform",
+      "ArtifactId": "junit-platform-commons",
+      "Version": "1.12.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License v2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.junit.platform",
+      "ArtifactId": "junit-platform-engine",
+      "Version": "1.12.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License v2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.opentest4j",
+      "ArtifactId": "opentest4j",
+      "Version": "1.3.0",
+      "Type": "jar",
+      "Licenses": "The Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-artifact",
+      "Version": "3.6.3",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-model",
+      "Version": "3.6.3",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-classworlds",
+      "Version": "2.6.0",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-component-annotations",
+      "Version": "2.1.0",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-utils",
+      "Version": "4.0.2",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.sisu",
+      "ArtifactId": "org.eclipse.sisu.inject",
+      "Version": "0.9.0.M4",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.sisu",
+      "ArtifactId": "org.eclipse.sisu.plexus",
+      "Version": "0.9.0.M4",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    }
+  ],
+  "resources-dependencies.html": [
+    {
+      "GroupId": "commons-io",
+      "ArtifactId": "commons-io",
+      "Version": "2.11.0",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.commons",
+      "ArtifactId": "commons-lang3",
+      "Version": "3.12.0",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.shared",
+      "ArtifactId": "maven-filtering",
+      "Version": "3.3.1",
+      "Type": "jar",
+      "Licenses": "Apache-2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-utils",
+      "Version": "3.5.1",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-interpolation",
+      "Version": "1.26",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "runtime",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "junit",
+      "ArtifactId": "junit",
+      "Version": "4.13.2",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License 1.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-compat",
+      "Version": "3.2.5",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.plugin-testing",
+      "ArtifactId": "maven-plugin-testing-harness",
+      "Version": "3.3.0",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.resolver",
+      "ArtifactId": "maven-resolver-api",
+      "Version": "1.6.3",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-core",
+      "Version": "3.2.5",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-model",
+      "Version": "3.2.5",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-plugin-api",
+      "Version": "3.2.5",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-settings",
+      "Version": "3.2.5",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.plugin-tools",
+      "ArtifactId": "maven-plugin-annotations",
+      "Version": "3.7.0",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.sisu",
+      "ArtifactId": "org.eclipse.sisu.plexus",
+      "Version": "0.3.5",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 1.0",
+      "scope": "provided",
+      "section": "Project Dependencies"
+    },
+    {
+      "GroupId": "javax.inject",
+      "ArtifactId": "javax.inject",
+      "Version": "1",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.slf4j",
+      "ArtifactId": "slf4j-api",
+      "Version": "1.7.36",
+      "Type": "jar",
+      "Licenses": "MIT License",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.sonatype.plexus",
+      "ArtifactId": "plexus-build-api",
+      "Version": "0.0.7",
+      "Type": "jar",
+      "Licenses": "Apache Public License 2.0",
+      "scope": "compile",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "classworlds",
+      "ArtifactId": "classworlds",
+      "Version": "1.1-alpha-2",
+      "Type": "jar",
+      "Licenses": "-",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven.wagon",
+      "ArtifactId": "wagon-provider-api",
+      "Version": "2.8",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-archiver",
+      "Version": "2.2",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-container-default",
+      "Version": "1.0-alpha-9-stable-1",
+      "Type": "jar",
+      "Licenses": "-",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-io",
+      "Version": "2.0.4",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.hamcrest",
+      "ArtifactId": "hamcrest-core",
+      "Version": "1.3",
+      "Type": "jar",
+      "Licenses": "New BSD License",
+      "scope": "test",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "aopalliance",
+      "ArtifactId": "aopalliance",
+      "Version": "1.0",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Public Domain",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "com.google.guava",
+      "ArtifactId": "guava",
+      "Version": "16.0.1",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "javax.annotation",
+      "ArtifactId": "javax.annotation-api",
+      "Version": "1.2",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "CDDL + GPLv2 with classpath exception",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "javax.enterprise",
+      "ArtifactId": "cdi-api",
+      "Version": "1.2",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-aether-provider",
+      "Version": "3.2.5",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-artifact",
+      "Version": "3.2.5",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-model-builder",
+      "Version": "3.2.5",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-repository-metadata",
+      "Version": "3.2.5",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.apache.maven",
+      "ArtifactId": "maven-settings-builder",
+      "Version": "3.2.5",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-classworlds",
+      "Version": "2.5.2",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.codehaus.plexus",
+      "ArtifactId": "plexus-component-annotations",
+      "Version": "1.5.5",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.aether",
+      "ArtifactId": "aether-api",
+      "Version": "1.0.0.v20140518",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 1.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.aether",
+      "ArtifactId": "aether-impl",
+      "Version": "1.0.0.v20140518",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 1.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.aether",
+      "ArtifactId": "aether-spi",
+      "Version": "1.0.0.v20140518",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 1.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.aether",
+      "ArtifactId": "aether-util",
+      "Version": "1.0.0.v20140518",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 1.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.eclipse.sisu",
+      "ArtifactId": "org.eclipse.sisu.inject",
+      "Version": "0.3.5",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Eclipse Public License, Version 1.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.sonatype.plexus",
+      "ArtifactId": "plexus-cipher",
+      "Version": "1.4",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache Public License 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.sonatype.plexus",
+      "ArtifactId": "plexus-sec-dispatcher",
+      "Version": "1.3",
+      "Classifier": "-",
+      "Type": "jar",
+      "Licenses": "Apache Public License 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    },
+    {
+      "GroupId": "org.sonatype.sisu",
+      "ArtifactId": "sisu-guice",
+      "Version": "3.2.3",
+      "Classifier": "no_aop",
+      "Type": "jar",
+      "Licenses": "The Apache Software License, Version 2.0",
+      "scope": "provided",
+      "section": "Project Transitive Dependencies"
+    }
+  ]
+}

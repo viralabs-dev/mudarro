@@ -1,0 +1,11 @@
+gerar: .mudarro/scripts/app-java/compile.sh
+gerar: .mudarro/scripts/app-java/down.sh
+gerar: .mudarro/scripts/app-java/jdkcompile.sh
+gerar: .mudarro/scripts/app-java/jdkfail.sh
+gerar: .mudarro/scripts/app-java/jdkselftest.sh
+gerar: .mudarro/scripts/app-java/logs.sh
+gerar: .mudarro/scripts/app-java/restart.sh
+gerar: .mudarro/scripts/app-java/status.sh
+gerar: .mudarro/scripts/app-java/test.sh
+gerar: .mudarro/scripts/app-java/up.sh
+gerar: menu.sh

@@ -1,0 +1,4 @@
+[package]
+name='never-execute-build-script'
+version='0.1.0'
+build='build.rs'

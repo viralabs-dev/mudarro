@@ -1,0 +1,6 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/main.rs (/tmp/mudarro-approved-runtimes.6AsmDd/rust/cache/target/debug/deps/owned_app-b484b3450e5e9cf9)
+     Running unittests src/fail.rs (/tmp/mudarro-approved-runtimes.6AsmDd/rust/cache/target/debug/deps/owned_fail-a386077c41f1e8fb)
+     Running unittests src/server.rs (/tmp/mudarro-approved-runtimes.6AsmDd/rust/cache/target/debug/deps/owned_server-6e97fe9405bb4a94)
+     Running unittests src/lib.rs (/tmp/mudarro-approved-runtimes.6AsmDd/rust/cache/target/debug/deps/owned_library-9f761730dee5cc5b)
+   Doc-tests owned_library

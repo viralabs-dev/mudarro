@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "name": "console",
+  "services": [
+    {
+      "id": "app-csharp",
+      "dir": ".",
+      "language": "csharp",
+      "manager": "dotnet",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "dotnet",
+            "build",
+            "./Sample.csproj",
+            "--no-restore",
+            "--disable-build-servers",
+            "-p:UseSharedCompilation=false",
+            "-nodeReuse:false"
+          ],
+          "group": "aplicacao"
+        },
+        "console": {
+          "args": [
+            "dotnet",
+            "bin/Debug/net10.0/Sample.dll"
+          ],
+          "group": "aplicacao"
+        },
+        "self-test": {
+          "args": [
+            "dotnet",
+            "bin/Debug/net10.0/Sample.dll",
+            "--self-test"
+          ],
+          "group": "qualidade"
+        },
+        "controlled-failure": {
+          "args": [
+            "dotnet",
+            "bin/Debug/net10.0/Sample.dll",
+            "--controlled-failure"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "MSBuild properties, imports and targets were not evaluated; declare run/start explicitly",
+        "Solution project graphs were not resolved; select contained independently detected projects explicitly"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "execution": "real existing Mix; no Mudarro adapter claim",
+  "checks": [
+    {
+      "fixture": "root",
+      "case": "compile",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "root",
+      "case": "test",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "root",
+      "case": "compile-repeat",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "root",
+      "case": "test-repeat",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "umbrella",
+      "case": "compile",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "umbrella",
+      "case": "test",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "umbrella",
+      "case": "compile-repeat",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "umbrella",
+      "case": "test-repeat",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "fixture": "failure",
+      "case": "failure-test",
+      "exit_code": 2,
+      "expected_success": false
+    },
+    {
+      "fixture": "invalid",
+      "case": "invalid-compile",
+      "exit_code": 1,
+      "expected_success": false
+    }
+  ],
+  "dependency_download_commands_executed": false,
+  "mix": "/home/linuxbrew/.linuxbrew/opt/elixir/bin/mix"
+}

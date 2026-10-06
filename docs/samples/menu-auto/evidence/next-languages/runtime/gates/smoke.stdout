@@ -1,0 +1,18 @@
+gerar: .mudarro/scripts/app/check.sh
+gerar: .mudarro/scripts/app/down.sh
+gerar: .mudarro/scripts/app/logs.sh
+gerar: .mudarro/scripts/app/restart.sh
+gerar: .mudarro/scripts/app/start.sh
+gerar: .mudarro/scripts/app/status.sh
+gerar: .mudarro/scripts/app/up.sh
+gerar: menu.sh
+app: started (PID 2413095)
+app: already running
+app: running (PID 2413095)
+ready
+literal $(touch injected)
+app: started (PID 2413136)
+app: stopped
+app: stopped
+   2.  infrastructure
+Smoke local: OK

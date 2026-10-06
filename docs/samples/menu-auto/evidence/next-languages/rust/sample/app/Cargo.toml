@@ -1,0 +1,12 @@
+[package]
+name = 'owned-app'
+version = '0.1.0'
+edition = '2021'
+[dependencies]
+owned-library = { path = '../library' }
+[[bin]]
+name = 'owned-app'
+path = 'src/main.rs'
+[[bin]]
+name = 'owned-fail'
+path = 'src/fail.rs'

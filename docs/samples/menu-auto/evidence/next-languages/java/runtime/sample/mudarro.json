@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "name": "fixture",
+  "services": [
+    {
+      "id": "app-java",
+      "dir": ".",
+      "language": "java",
+      "manager": "maven",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "compile": {
+          "args": [
+            "mvn",
+            "-f",
+            "pom.xml",
+            "compile"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "mvn",
+            "-f",
+            "pom.xml",
+            "test"
+          ],
+          "group": "qualidade"
+        },
+        "jdkcompile": {
+          "args": [
+            "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/javac",
+            "-d",
+            "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+            "Main.java"
+          ],
+          "group": "aplicacao"
+        },
+        "jdkselftest": {
+          "args": [
+            "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+            "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+            "-cp",
+            "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+            "Main"
+          ],
+          "group": "qualidade"
+        },
+        "jdkfail": {
+          "args": [
+            "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+            "-cp",
+            "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+            "Main",
+            "--fail"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Maven profiles, plugins, dependencies and properties were not evaluated; declare main/start explicitly"
+      ]
+    }
+  ]
+}

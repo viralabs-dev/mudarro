@@ -1,0 +1,14 @@
+{
+  "javaVersion": {
+    "exit": 0,
+    "output": "openjdk version \"1.8.0_502\"\nOpenJDK Runtime Environment (build 1.8.0_502-8u502-ga~us1-0ubuntu1~24.04-b07)\nOpenJDK 64-Bit Server VM (build 25.502-b07, mixed mode)\n"
+  },
+  "pythonExecutable": "/home/linuxbrew/.linuxbrew/bin/python3",
+  "distributionMetadataOnly": {
+    "Flask": null,
+    "fastapi": null,
+    "pytest": null,
+    "uvicorn": null
+  },
+  "scope": "No module import, server, installation or personal-project scan"
+}

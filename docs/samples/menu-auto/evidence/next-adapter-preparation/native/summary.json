@@ -1,0 +1,30 @@
+{
+  "families": [
+    "C",
+    "C++"
+  ],
+  "commands": 40,
+  "result": "PASS",
+  "tools": {
+    "make": "4.3",
+    "gcc": "13.3.0",
+    "g++": "13.3.0"
+  },
+  "binary": "/tmp/mudarro-mud037-root/mudarro-final",
+  "binarySHA256": "00927bb14ab3bdacaa07dd1292e949249efa230bdd1b7bd9c6dcd6cff699c331",
+  "productionAdapterImplemented": false,
+  "processesPersistent": false,
+  "sourceAllowlist": [
+    "main.c",
+    "main.cpp",
+    "Makefile",
+    "mudarro.yaml"
+  ],
+  "excluded": [
+    "build/",
+    ".mudarro/",
+    "outputs",
+    "cache",
+    "installed binaries"
+  ]
+}

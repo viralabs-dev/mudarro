@@ -1,0 +1,68 @@
+{
+  "exit": 0,
+  "events": 40,
+  "termiosRestored": true,
+  "keyboardInjected": [
+    "q after1.5s"
+  ],
+  "binarySHA256": "86210bde93100944d280caa3dbd2394a88cea6f0287c2041573328d86e634d91",
+  "commands": [
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "menu",
+      "--root",
+      "/tmp/mudarro-next-languages-root/media-fixture-final"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "java-java:compile",
+      "--root",
+      "/tmp/mudarro-next-languages-root/media-fixture-final"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "php-php:fail",
+      "--root",
+      "/tmp/mudarro-next-languages-root/media-fixture-final"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "php-php:test",
+      "--root",
+      "/tmp/mudarro-next-languages-root/media-fixture-final"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "rust-app-rust:build",
+      "--root",
+      "/tmp/mudarro-next-languages-root/media-fixture-final"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "preview",
+      "rust-library-rust:build",
+      "--root",
+      "/tmp/mudarro-next-languages-root/media-fixture-final"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "node-javascript:check",
+      "--root",
+      "/tmp/mudarro-next-languages-root/media-fixture-final"
+    ]
+  ],
+  "noBrowser": true,
+  "absentToolchainExecution": false,
+  "executedRuntime": "existingNode stdlib sample only",
+  "allFramesDecoded": true,
+  "decodedFrames": 4,
+  "width": 944,
+  "height": 686,
+  "menuPNGFrame": 0,
+  "resultPNGFrame": 3
+}

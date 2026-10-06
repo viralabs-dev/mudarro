@@ -1,0 +1,12 @@
+{
+  "Cargo.toml": "4a79ae25446b242c2cdcde7004626cad5bd7975e40e1d08985dc770682bb318c",
+  "Cargo.lock": "591130ebad5bfe00a265c1e45cc0987b999ac676543ce4ae33822fb0731dd2ec",
+  "library/Cargo.toml": "c57101b99707da85c645bc38eea0da1d0b2f21efec3a2cd5f180b4ed787943e1",
+  "library/src/lib.rs": "00ede92b421a5066c2645a58ed63cb039b6a46259f4dc4a6c16fe77aae56452e",
+  "app/Cargo.toml": "e6f3b3598c8e9f389d41e1ac274c400eac2817a5e3dddab602b2aaa820e15c3f",
+  "app/src/main.rs": "dbf5e375f8801a927357b75f61a1790dcbc124893ba3e2645a87ba10be3daea6",
+  "app/src/fail.rs": "2b11c4a3b0a7065f9db8e4c68ab36298928239f87ca6845d80646e62a58aef56",
+  "app/src/server.rs": "5818a3ac39f44c9abdf8ae0697140c3e5969b7aba888635585e53a910ddc2351",
+  "mudarro.json": "c97560c343faba77010bf3eb6ff6e882cfa8089eae3af3147c82a73face0624f",
+  "manual-start.example.yaml": "85a58a4a91321ff353529564631a84ffda59e7f3dd86c4713c5df63dc7fbc18a"
+}

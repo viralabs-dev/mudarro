@@ -28,7 +28,7 @@ type LanguageAdapter interface {
 	Detect(root, dir string, files map[string]bool, excludes []string) (*Service, []Suggestion, error)
 }
 
-var languageAdapters = []LanguageAdapter{adapters.JavaScript{}, adapters.Python{}, adapters.Go{}, adapters.Elixir{}}
+var languageAdapters = []LanguageAdapter{adapters.JavaScript{}, adapters.Python{}, adapters.Go{}, adapters.Elixir{}, adapters.Rust{}, adapters.Java{}, adapters.Composer{}, adapters.DotNet{}, adapters.Ruby{}}
 
 func read(root, dir, file string) ([]byte, error) { return projectfs.ReadManifest(root, dir, file) }
 func cmd(group string, args ...string) Command    { return Command{Args: args, Group: group} }
@@ -123,6 +123,17 @@ func Scan(root string, excludes []string) (Report, error) {
 			if s == nil {
 				continue
 			}
+			collision := false
+			for _, prior := range r.Config.Services {
+				if prior.ID == s.ID {
+					r.Warnings = append(r.Warnings, "service ID collision: "+s.ID+" at "+dir+" conflicts with "+prior.Dir+"; configure services explicitly")
+					collision = true
+					break
+				}
+			}
+			if collision {
+				continue
+			}
 			detectInfrastructure(root, s, &r)
 			detectDatabase(root, s)
 			r.Config.Services = append(r.Config.Services, *s)
@@ -140,6 +151,7 @@ func Scan(root string, excludes []string) (Report, error) {
 			}
 		}
 	}
+	scanFrameworkMetadata(root, &r)
 	scanNativeSources(root, paths, dirs, &r)
 	if len(r.Config.Services) == 0 {
 		s := adapters.BaseService(".", "custom")

@@ -1,0 +1,13 @@
+version: 1
+name: owned-node-metadata
+services:
+  - id: owned-node
+    dir: .
+    language: javascript
+    manager: npm
+    framework: express
+    infrastructure: {kind: local}
+    commands:
+      check:
+        args: [node, owned_check.cjs]
+        group: qualidade

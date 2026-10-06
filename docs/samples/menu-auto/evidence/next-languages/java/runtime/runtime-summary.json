@@ -1,0 +1,225 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "java-version",
+      "argv": [
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+        "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+        "-version"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "javac-version",
+      "argv": [
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/javac",
+        "-version"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "maven-version-only",
+      "argv": [
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/maven/apache-maven-3.10.0/bin/mvn",
+        "-Dmaven.repo.local=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/maven-repository",
+        "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+        "-version"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "javac-compile",
+      "argv": [
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/javac",
+        "-d",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+        "Main.java"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "java-selftest",
+      "argv": [
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+        "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+        "-cp",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+        "Main"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "java-selftest-repeat",
+      "argv": [
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+        "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+        "-cp",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+        "Main"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "java-failure",
+      "argv": [
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+        "-cp",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+        "Main",
+        "--fail"
+      ],
+      "exit_code": 7,
+      "expected_success": false
+    },
+    {
+      "case": "scan-static",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "scan",
+        "--json",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "init-maven-optin-static",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "init",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture",
+        "--format",
+        "json",
+        "--select",
+        "app-java:compile,app-java:test"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "maven-preview-only-compile",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "preview",
+        "app-java:compile",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "maven-preview-only-test",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "preview",
+        "app-java:test",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "generate",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "generate-repeat",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "mudarro-jdkcompile",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "run",
+        "app-java:jdkcompile",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "mudarro-jdkselftest",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "run",
+        "app-java:jdkselftest",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "mudarro-jdkfail",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "run",
+        "app-java:jdkfail",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "case": "wrapper-jdkselftest",
+      "argv": [
+        "bash",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/jdkselftest.sh"
+      ],
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "existing-init-preserved",
+      "argv": [
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "init",
+        "--root",
+        "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+      ],
+      "exit_code": 1,
+      "expected_success": false
+    }
+  ],
+  "maven_plugins_executed": false,
+  "maven_lifecycle_executed": false,
+  "jdk_custom_selftest_not_maven_test": true,
+  "maven_repository_empty": true,
+  "configuration_preserved": true,
+  "binary_sha256": "86210bde93100944d280caa3dbd2394a88cea6f0287c2041573328d86e634d91",
+  "environment": {
+    "HOME": "/home/danielsouza",
+    "JAVA_HOME": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1",
+    "PATH": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin:/tmp/mudarro-next-languages-root:/usr/bin:/bin",
+    "LANG": "C.UTF-8",
+    "MAVEN_OPTS": "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home -Djava.io.tmpdir=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/tmp",
+    "TMPDIR": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/tmp"
+  }
+}

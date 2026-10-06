@@ -1,0 +1,10 @@
+{
+  "name": "owned-node-metadata",
+  "private": true,
+  "dependencies": {
+    "express": "^5"
+  },
+  "scripts": {
+    "check": "node owned_check.cjs"
+  }
+}

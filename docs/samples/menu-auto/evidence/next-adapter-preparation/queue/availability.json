@@ -1,0 +1,97 @@
+{
+  "nonExhaustive": true,
+  "platform": "Linux-7.1.5-76070105-generic-x86_64-with-glibc2.39",
+  "kernel": "7.1.5-76070105-generic",
+  "toolChecks": [
+    {
+      "tool": "cargo",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "rustc",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "java",
+      "PATH": "/usr/bin/java",
+      "knownCandidates": []
+    },
+    {
+      "tool": "javac",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "mvn",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "gradle",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "php",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "composer",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "dotnet",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "ruby",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "bundle",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "initdb",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "pg_ctl",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "postgres",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "psql",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "podman",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "podman-compose",
+      "PATH": null,
+      "knownCandidates": []
+    },
+    {
+      "tool": "wsl.exe",
+      "PATH": null,
+      "knownCandidates": []
+    }
+  ]
+}

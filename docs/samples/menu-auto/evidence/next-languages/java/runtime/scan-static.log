@@ -1,0 +1,60 @@
+{
+  "config": {
+    "version": 1,
+    "name": "fixture",
+    "services": [
+      {
+        "id": "app-java",
+        "dir": ".",
+        "language": "java",
+        "manager": "maven",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Maven profiles, plugins, dependencies and properties were not evaluated; declare main/start explicitly"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "java"
+    }
+  ],
+  "suggestions": [
+    {
+      "purpose": "maven",
+      "service": "app-java",
+      "name": "compile",
+      "command": {
+        "args": [
+          "mvn",
+          "-f",
+          "pom.xml",
+          "compile"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "pom.xml"
+    },
+    {
+      "purpose": "maven",
+      "service": "app-java",
+      "name": "test",
+      "command": {
+        "args": [
+          "mvn",
+          "-f",
+          "pom.xml",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "pom.xml"
+    }
+  ],
+  "warnings": null
+}

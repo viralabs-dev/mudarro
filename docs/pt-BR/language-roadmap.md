@@ -1,11 +1,34 @@
 [English](../language-roadmap.md) · Português (Brasil)
 
-## Checkpoint vigente — MUD-044/MUD-045
+## Checkpoint vigente de runtimes autorizados
+
+Toolchains privados aprovados em `/tmp/mudarro-approved-runtimes.6AsmDd` agora possuem validação local genuína: **Rust1.99.0: 46 checks** (build/test offline, binário escolhido42, falha controlada7, startup/restart/down); **JDK25.0.4.1+1/Maven3.10.0: 18 checks** (self-test Java real com biblioteca padrão42/falha7; Maven somente versão); **.NET10.0.401: 31 checks** (console self-test42/falha7, falha/recovery de build, zero pacotes NuGet; HOME preservado na execução final). [Evidências e reprodução runtime](../samples/menu-auto/evidence/next-languages/runtime/README.md).
+
+Lifecycle/plugins Maven e Gradle continuam bloqueados por aprovação separada; compile/test Maven runtime não afirmados. Validação console .NET não comprova dotnet test/framework. PHP/Composer e Ruby/Bundler continuam não executados. Metadados framework e checks stdlib Node/Python não comprovam runtime Flask/FastAPI/Express. Os sete gates de produção passaram novamente com **235 grupos/83,06%**, sem fix de produção ou nova publicação. Conclusão Rust/.NET vale somente para subsets aprovados; não implica suporte completo de linguagem/framework.
+
+## Checkpoint estático histórico — MUD-039/040/041/042/043/005
+
+Adapters estáticos e verificações de metadados de frameworks implementados localmente. Gates finais: **235 grupos principais PASS, zero falhas/skips de testes**, quatro pacotes sem testes; cobertura canônica **3050/3672 = 83,06%**. Race, vet, build Linux, cross-build Darwin arm64, smoke, menu e resize terminaram com exit0. [Evidências finais](../samples/menu-auto/evidence/next-languages/README.md). Cross-build não comprova runtime macOS. Nenhum runtime Rust/Cargo, JDK/Maven, PHP/Composer, .NET ou Ruby/Bundler foi executado. Checks com bibliotecas padrão Node/Python existentes não comprovam runtime Flask/FastAPI/Express. Planos de instalação são somente pesquisa, sem autorização para instalar. [Evidências da preparação](../samples/menu-auto/evidence/next-adapter-preparation/README.md) · [Planos de instalação revisados](../samples/menu-auto/evidence/next-adapter-preparation/queue/install-plans/README.md).
+
+| Capacidade | Contrato estático implementado | Limites restantes |
+| --- | --- | --- |
+| Rust/Cargo | TOML limitado, diagnósticos de workspace/membros/targets explícitos e contidos; build/test opt-in | Sem avaliar dependências/build scripts, resolver grafo/globs ou inventar startup; runtime pendente |
+| Java/Maven; Gradle/Kotlin | XML/módulos Maven limitados; sugestões compile/test para projetos elegíveis; Gradle DSL somente evidência | Sem avaliar plugins/profiles/propriedades ou Gradle; main/start não inferidos; runtime JVM pendente |
+| PHP/Composer | Metadados Composer limitados e sugestões de scripts explicitamente selecionados | Sem executar plugins/hooks no scan nem inferir startup de framework; runtime pendente |
+| C#/.NET | XML limitado, sugestões build/test por projeto explícito; solution como evidência | Sem avaliar MSBuild, resolver grafo de solution ou startup; runtime pendente |
+| Ruby/Bundler | Evidências limitadas Gemfile/gemspec/lock | Sem avaliar DSL Ruby/semântica lock, inferir Rake/Rails/start ou comandos automáticos; runtime pendente |
+| Metadados frameworks | Evidência de dependências framework/test declaradas e contrato de entrada explícita | Sem importar módulos da aplicação no scan ou afirmar runtime de framework |
+
+MUD-044/MUD-045 publicados em `c400f99`, autoria pessoal `daneiel`, 89 arquivos e `[skip ci]`; duas consultas autenticadas encontraram zero runs Actions dessa publicação. Seu checkpoint de199 testes/81,73% e samples reais Mix/nativos permanecem evidências históricas, não métricas deste lote estático. [Evidências publicadas Mix/nativos](../samples/menu-auto/evidence/mix-native/README.pt-BR.md).
+
+Checkpoints anteriores abaixo preservam resultados e limites de publicação/runtime da época registrada.
+
+## Checkpoint histórico — MUD-044/MUD-045
 
 199racePASS/zero falhas-pulados/81,73%; Mixestático compile-test opt-in/umbrella declarado e C-C++customMake targetsusuário validados em samples internos.26Mixchecks+8rechecks/63comandosnativos+rechecks; nenhuma instalação/startinventado/publicação deste lote. MUD037 publicado6c868c95[daneiel/skipci/0Actions]. [Evidências e limites](../samples/menu-auto/evidence/mix-native/README.pt-BR.md).
 
 
-## Estado local atual da implementação — 2026-10-06
+## Inventário anterior — antes deste lote estático
 
 Locks Bun e runtime genuíno Bun1.4.0 validados localmente. Detecção Pipfile/Pipenv, scripts e argv de banco implementados/testados; runtime Pipenv2026.8.0 passou fixture isolada sem dependências. Nomes packageManager conhecidos validados; versões informadas agora exigem SemVer exato (metadata somente sintática). Entradas Go do host e IO limitado corrigidos; seleção targets e isolamento explícito passaram; parser completo de membros workspace continua aberto. Yarn1.22.22/4.18.1, uv0.12.23 e Poetry2.5.1 passaram runtime isolado sem dependências. O roadmap abaixo fica restrito ao trabalho restante; nenhuma demanda/adapter de linguagem nova inferida. [Evidência mais recente](../samples/menu-auto/evidence/isolated-runtimes/README.md). Mudanças locais não commitadas sobre base publicada b887f64.
 
@@ -16,7 +39,7 @@ Verificada [CI de push37416072569](https://github.com/viralabs-dev/mudarro/actio
 
 Leitura autenticada de permissões Actions retornou enabled=true/allowed_actions=all; não identifica quem alterou settings. Nenhuma alteração de settings/workflow/config, habilitação, dispatch ou rerun ocorreu. Este commit corretivo usa o marcador oficial [skip ci] para o push autorizado somente de main, respeitando o pedido de não executar Actions sem mudar settings. Gates/evidências brutos anteriores preservados como históricos, superados quanto ao estado atual da CI. Linux local74 testes/76,38% permanece válido para checkpoint registrado. Fix de portabilidade passou 75 testes locais Linux com race, vet e compilação Linux/Darwin arm64. Runtime macOS corrigido permanece não validado; pular CI não significa aprovação.
 
-# Proposta de próximas capacidades
+# Proposta anterior de prioridades (superada pelos contratos estáticos aprovados)
 
 Não há demanda comprovada de linguagem nova no material consultado. Ordem abaixo é hipótese de valor/custo a validar com repositórios reais de Daniel; não ranking de popularidade. Nenhuma recomendação externa ou benchmark usado.
 

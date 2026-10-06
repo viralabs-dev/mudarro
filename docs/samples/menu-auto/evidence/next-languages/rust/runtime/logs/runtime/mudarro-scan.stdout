@@ -1,0 +1,145 @@
+{
+  "config": {
+    "version": 1,
+    "name": "workspace",
+    "services": [
+      {
+        "id": "app-rust-workspace",
+        "dir": ".",
+        "language": "rust",
+        "manager": "cargo",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated",
+          "Cargo workspace explicit members: app, library"
+        ]
+      },
+      {
+        "id": "app-rust",
+        "dir": "app",
+        "language": "rust",
+        "manager": "cargo",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated",
+          "Cargo explicit workspace owner: ."
+        ]
+      },
+      {
+        "id": "library-rust",
+        "dir": "library",
+        "language": "rust",
+        "manager": "cargo",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated",
+          "Cargo explicit workspace owner: ."
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "rust"
+    },
+    {
+      "path": "app",
+      "kind": "rust"
+    },
+    {
+      "path": "library",
+      "kind": "rust"
+    }
+  ],
+  "suggestions": [
+    {
+      "purpose": "cargo",
+      "service": "app-rust-workspace",
+      "name": "build",
+      "command": {
+        "args": [
+          "cargo",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "Cargo.toml"
+    },
+    {
+      "purpose": "cargo",
+      "service": "app-rust-workspace",
+      "name": "test",
+      "command": {
+        "args": [
+          "cargo",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "Cargo.toml"
+    },
+    {
+      "purpose": "cargo",
+      "service": "app-rust",
+      "name": "build",
+      "command": {
+        "args": [
+          "cargo",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "app/Cargo.toml"
+    },
+    {
+      "purpose": "cargo",
+      "service": "app-rust",
+      "name": "test",
+      "command": {
+        "args": [
+          "cargo",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "app/Cargo.toml"
+    },
+    {
+      "purpose": "cargo",
+      "service": "library-rust",
+      "name": "build",
+      "command": {
+        "args": [
+          "cargo",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "library/Cargo.toml"
+    },
+    {
+      "purpose": "cargo",
+      "service": "library-rust",
+      "name": "test",
+      "command": {
+        "args": [
+          "cargo",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "library/Cargo.toml"
+    }
+  ],
+  "warnings": null
+}

@@ -1,0 +1,2 @@
+warn 'OWNED_RUBY_FAILURE'
+exit 7

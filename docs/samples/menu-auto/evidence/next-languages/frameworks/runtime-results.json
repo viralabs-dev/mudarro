@@ -1,0 +1,169 @@
+{
+  "scope": "metadata + explicitly configured standard-library checks; NOT installed-framework runtime",
+  "records": [
+    {
+      "family": "python",
+      "case": "scan",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "scan",
+        "--json",
+        "--root",
+        "/tmp/mudarro-mud005/samples/python"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"python\",\n    \"services\": [\n      {\n        \"id\": \"app-python\",\n        \"dir\": \".\",\n        \"language\": \"python\",\n        \"manager\": \"pip\",\n        \"framework\": \"flask\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"install\": {\n            \"args\": [\n              \".venv/bin/python\",\n              \"-m\",\n              \"pip\",\n              \"install\",\n              \"-e\",\n              \".\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"venv\": {\n            \"args\": [\n              \"python3\",\n              \"-m\",\n              \"venv\",\n              \".venv\"\n            ],\n            \"group\": \"dependencias\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start; m\u00f3dulo Python n\u00e3o \u00e9 inferido\",\n          \"Framework declared in metadata only; installation and entrypoint are not validated\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"python\"\n    },\n    {\n      \"path\": \"pyproject.toml\",\n      \"kind\": \"declared-dependency:flask\"\n    },\n    {\n      \"path\": \"pyproject.toml\",\n      \"kind\": \"declared-dependency:pytest\"\n    }\n  ],\n  \"suggestions\": null,\n  \"warnings\": null\n}\n",
+      "stderr": ""
+    },
+    {
+      "family": "python",
+      "case": "generate-first",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-mud005/samples/python"
+      ],
+      "exit": 0,
+      "stdout": "gerar: .mudarro/scripts/owned-python/check.sh\ngerar: .mudarro/scripts/owned-python/down.sh\ngerar: .mudarro/scripts/owned-python/logs.sh\ngerar: .mudarro/scripts/owned-python/restart.sh\ngerar: .mudarro/scripts/owned-python/status.sh\ngerar: .mudarro/scripts/owned-python/up.sh\ngerar: menu.sh\n",
+      "stderr": ""
+    },
+    {
+      "family": "python",
+      "case": "generate-second",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-mud005/samples/python"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "family": "python",
+      "case": "preview",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "preview",
+        "owned-python:check",
+        "--root",
+        "/tmp/mudarro-mud005/samples/python"
+      ],
+      "exit": 0,
+      "stdout": "Action: owned-python:check\nDirectory: .\nargv (not shell evaluation):\n  [0] \"python3\"\n  [1] \"owned_check.py\"\nSource owned_check.py (read-only):\nimport unittest\nclass OwnedCheck(unittest.TestCase):\n    def test_owned(self):\n        self.assertEqual(21*2,42)\nif __name__ == \"__main__\":\n    unittest.main()\n\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+      "stderr": ""
+    },
+    {
+      "family": "python",
+      "case": "run",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "run",
+        "owned-python:check",
+        "--root",
+        "/tmp/mudarro-mud005/samples/python"
+      ],
+      "exit": 0,
+      "stdout": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "stderr": ""
+    },
+    {
+      "family": "node",
+      "case": "scan",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "scan",
+        "--json",
+        "--root",
+        "/tmp/mudarro-mud005/samples/node"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"owned-node-metadata\",\n    \"services\": [\n      {\n        \"id\": \"app-javascript\",\n        \"dir\": \".\",\n        \"language\": \"javascript\",\n        \"manager\": \"npm\",\n        \"framework\": \"express\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"install\": {\n            \"args\": [\n              \"npm\",\n              \"install\"\n            ],\n            \"group\": \"dependencias\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start para execu\u00e7\u00e3o local\",\n          \"Framework declared in metadata only; installation and entrypoint are not validated\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"javascript\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"kind\": \"declared-dependency:express\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"check\",\n      \"command\": {\n        \"args\": [\n          \"npm\",\n          \"run\",\n          \"check\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"package.json\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+      "stderr": ""
+    },
+    {
+      "family": "node",
+      "case": "generate-first",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-mud005/samples/node"
+      ],
+      "exit": 0,
+      "stdout": "gerar: .mudarro/scripts/owned-node/check.sh\ngerar: .mudarro/scripts/owned-node/down.sh\ngerar: .mudarro/scripts/owned-node/logs.sh\ngerar: .mudarro/scripts/owned-node/restart.sh\ngerar: .mudarro/scripts/owned-node/status.sh\ngerar: .mudarro/scripts/owned-node/up.sh\ngerar: menu.sh\n",
+      "stderr": ""
+    },
+    {
+      "family": "node",
+      "case": "generate-second",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-mud005/samples/node"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "family": "node",
+      "case": "preview",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "preview",
+        "owned-node:check",
+        "--root",
+        "/tmp/mudarro-mud005/samples/node"
+      ],
+      "exit": 0,
+      "stdout": "Action: owned-node:check\nDirectory: .\nargv (not shell evaluation):\n  [0] \"node\"\n  [1] \"owned_check.cjs\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n",
+      "stderr": ""
+    },
+    {
+      "family": "node",
+      "case": "run",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "run",
+        "owned-node:check",
+        "--root",
+        "/tmp/mudarro-mud005/samples/node"
+      ],
+      "exit": 0,
+      "stdout": "OWNED_NODE_STDLIB_PASS\n",
+      "stderr": ""
+    },
+    {
+      "family": "python",
+      "case": "controlled-stdlib-failure",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "run",
+        "owned-python:check",
+        "--root",
+        "/tmp/mudarro-mud005/samples/python"
+      ],
+      "exit": 1,
+      "stdout": "F\n======================================================================\nFAIL: test_owned (__main__.OwnedCheck.test_owned)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/mudarro-mud005/samples/python/owned_check.py\", line 4, in test_owned\n    self.assertEqual(21*2,99)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^\nAssertionError: 42 != 99\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n",
+      "stderr": "mudarro: exit status 1\n"
+    },
+    {
+      "family": "node",
+      "case": "controlled-stdlib-failure",
+      "argv": [
+        "/tmp/mudarro-mud005/mudarro",
+        "run",
+        "owned-node:check",
+        "--root",
+        "/tmp/mudarro-mud005/samples/node"
+      ],
+      "exit": 1,
+      "stdout": "node:internal/assert/utils:146\n  throw error;\n  ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n42 !== 99\n\n    at Object.<anonymous> (/tmp/mudarro-mud005/samples/node/owned_check.cjs:1:31)\n    at Module._compile (node:internal/modules/cjs/loader:1934:14)\n    at Object..js (node:internal/modules/cjs/loader:2074:10)\n    at Module.load (node:internal/modules/cjs/loader:1656:32)\n    at Module._load (node:internal/modules/cjs/loader:1448:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 42,\n  expected: 99,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v26.7.0\n",
+      "stderr": "mudarro: exit status 1\n"
+    }
+  ]
+}

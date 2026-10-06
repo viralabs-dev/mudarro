@@ -1,0 +1,6 @@
+{
+  "scope": "dotnet processes referencing owned private SDK/fixtures in current execution environment",
+  "matchingProcesses": [],
+  "persistentBuildServersRequested": false,
+  "buildServersDisabled": true
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "group": "org.apache.maven.surefire",
+    "artifact": "surefire-junit3",
+    "version": "3.5.5",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit3/3.5.5/surefire-junit3-3.5.5.jar",
+    "checksums": {
+      "sha512": {
+        "unavailable": "HTTP Error 404: Not Found"
+      },
+      "sha256": {
+        "unavailable": "HTTP Error 404: Not Found"
+      },
+      "sha1": "1abdaed598b9fbba07212e80ea286e53c0038a76"
+    }
+  },
+  {
+    "group": "org.apache.maven.surefire",
+    "artifact": "common-junit3",
+    "version": "3.5.5",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-junit3/3.5.5/common-junit3-3.5.5.jar",
+    "checksums": {
+      "sha512": {
+        "unavailable": "HTTP Error 404: Not Found"
+      },
+      "sha256": {
+        "unavailable": "HTTP Error 404: Not Found"
+      },
+      "sha1": "29f25e8d5e42f8dacf667e95a01a0d3d2a06ef51"
+    }
+  },
+  {
+    "group": "org.apache.maven.surefire",
+    "artifact": "common-java5",
+    "version": "3.5.5",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.5.5/common-java5-3.5.5.jar",
+    "checksums": {
+      "sha512": {
+        "unavailable": "HTTP Error 404: Not Found"
+      },
+      "sha256": {
+        "unavailable": "HTTP Error 404: Not Found"
+      },
+      "sha1": "082ac7ba576a079a06fb977b1d6cba95b51c421e"
+    }
+  }
+]

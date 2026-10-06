@@ -1,0 +1,18 @@
+[
+  {
+    "tool": "jdk",
+    "algorithm": "sha256",
+    "hash": "dbb698396d478e7fa2b1e50f4103324b2a99b90569ee27c33f2261f9215cf41e",
+    "members": 486,
+    "root": "jdk-25.0.4.1+1",
+    "member_paths_links_verified_before_extraction": true
+  },
+  {
+    "tool": "maven",
+    "algorithm": "sha512",
+    "hash": "908b1501bfb420bf7c8affb855534a9c407fd6099367bfb9f2f2dcb8e9799102bffb84518cde74c679bd76870247c6528683abdd620581bffa90f95d92d175aa",
+    "members": 121,
+    "root": "apache-maven-3.10.0",
+    "member_paths_links_verified_before_extraction": true
+  }
+]

@@ -1,0 +1,2 @@
+gerar: .mudarro/scripts/app-rust/controlled-failure.sh
+gerar: .mudarro/scripts/app-rust/start.sh

@@ -1,0 +1,1 @@
+File.write('SHOULD_NEVER_EXIST', 'do not evaluate during scan')

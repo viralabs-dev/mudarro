@@ -1,0 +1,6 @@
+[project]
+name="framework-metadata-sample"
+version="0.0.0"
+dependencies=["Flask>=3"]
+[project.optional-dependencies]
+quality=["pytest>=8"]

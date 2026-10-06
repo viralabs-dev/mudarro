@@ -1,0 +1,3 @@
+   Compiling owned-library v0.1.0 (/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/library)
+   Compiling owned-app v0.1.0 (/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/app)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.27s

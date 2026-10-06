@@ -1,0 +1,8 @@
+{
+  "name": "mudarro/php-sample",
+  "require": {},
+  "scripts": {
+    "test": "php tests/check.php",
+    "fail": "php tests/fail.php"
+  }
+}

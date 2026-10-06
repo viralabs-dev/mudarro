@@ -1,0 +1,73 @@
+{
+  "files": [
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/pom.xml",
+      "relative": "pom.xml"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/Main.java",
+      "relative": "Main.java"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/menu.sh",
+      "relative": "menu.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/mudarro.json",
+      "relative": "mudarro.json"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/generated.json",
+      "relative": ".mudarro/generated.json"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/status.sh",
+      "relative": ".mudarro/scripts/app-java/status.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/up.sh",
+      "relative": ".mudarro/scripts/app-java/up.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/logs.sh",
+      "relative": ".mudarro/scripts/app-java/logs.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/jdkfail.sh",
+      "relative": ".mudarro/scripts/app-java/jdkfail.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/restart.sh",
+      "relative": ".mudarro/scripts/app-java/restart.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/jdkcompile.sh",
+      "relative": ".mudarro/scripts/app-java/jdkcompile.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/jdkselftest.sh",
+      "relative": ".mudarro/scripts/app-java/jdkselftest.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/compile.sh",
+      "relative": ".mudarro/scripts/app-java/compile.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/test.sh",
+      "relative": ".mudarro/scripts/app-java/test.sh"
+    },
+    {
+      "source": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/down.sh",
+      "relative": ".mudarro/scripts/app-java/down.sh"
+    }
+  ],
+  "excluded": [
+    "classes",
+    "JDK/Mavenbinaries",
+    "downloads",
+    "java-home",
+    "tmp",
+    "maven-repository",
+    "runtimeenv"
+  ]
+}

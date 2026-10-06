@@ -1,0 +1,13 @@
+version: 1
+name: owned-python-metadata
+services:
+  - id: owned-python
+    dir: .
+    language: python
+    manager: pip
+    framework: flask
+    infrastructure: {kind: local}
+    commands:
+      check:
+        args: [python3, owned_check.py]
+        group: qualidade

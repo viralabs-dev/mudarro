@@ -1,0 +1,3 @@
+# Actual Java tool runtime
+
+18 checks met expectations with pinned private JDK25.0.4.1+1 and Maven3.10.0. Artifacts verified official hashes/contained paths before extraction. javac/java stdlib self-test outputs42, controlled direct exit7; Mudarro preserves propagated failure exit1. Scan, opt-in selection, repeated generation, wrapper and existing config preservation passed. Maven executed only -version; compile/test were previewed, no plugins downloaded, private repo empty. This does not approve Maven lifecycle or Gradle/Kotlin runtime. Source sample config records actual private absolute paths; reproduce by replacing only the private runtime root. No global installation. See runtime-summary.json and REPRODUCTION.md.

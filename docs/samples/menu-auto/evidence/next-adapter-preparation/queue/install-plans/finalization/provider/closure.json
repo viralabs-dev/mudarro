@@ -1,0 +1,38 @@
+[
+  {
+    "name": "podman-compose",
+    "version": "1.6.0",
+    "filename": "podman_compose-1.6.0-py3-none-any.whl",
+    "sha256": "98e48af25d44c10ecef948163bfcca002e32aa8bbb7e66593fbd4faff7270c30",
+    "url": "https://files.pythonhosted.org/packages/93/31/b38c2656bad6265168902793c60145b172788a79e4b15de212af9bd78728/podman_compose-1.6.0-py3-none-any.whl",
+    "metadata": "https://pypi.org/pypi/podman-compose/1.6.0/json",
+    "requires_dist": [
+      "python-dotenv",
+      "pyyaml",
+      "coverage; extra == \"devel\"",
+      "parameterized; extra == \"devel\"",
+      "pre-commit; extra == \"devel\"",
+      "ruff; extra == \"devel\""
+    ]
+  },
+  {
+    "name": "PyYAML",
+    "version": "6.0.3",
+    "filename": "pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+    "sha256": "c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5",
+    "url": "https://files.pythonhosted.org/packages/88/f9/16491d7ed2a919954993e48aa941b200f38040928474c9e85ea9e64222c3/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+    "metadata": "https://pypi.org/pypi/PyYAML/6.0.3/json",
+    "requires_dist": null
+  },
+  {
+    "name": "python-dotenv",
+    "version": "1.2.4",
+    "filename": "python_dotenv-1.2.4-py3-none-any.whl",
+    "sha256": "42269a8a5b3fd54ffa6f3d84b18abed50064717576b4ecf03dc4a55d8aa04fdc",
+    "url": "https://files.pythonhosted.org/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl",
+    "metadata": "https://pypi.org/pypi/python-dotenv/1.2.4/json",
+    "requires_dist": [
+      "click>=5.0; extra == \"cli\""
+    ]
+  }
+]

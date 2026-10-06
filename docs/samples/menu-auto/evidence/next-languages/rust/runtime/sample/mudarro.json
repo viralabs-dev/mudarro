@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "name": "workspace",
+  "services": [
+    {
+      "id": "app-rust-workspace",
+      "dir": ".",
+      "language": "rust",
+      "manager": "cargo",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "cargo",
+            "build"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "cargo",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated",
+        "Cargo workspace explicit members: app, library"
+      ]
+    },
+    {
+      "id": "app-rust",
+      "dir": "app",
+      "language": "rust",
+      "manager": "cargo",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "cargo",
+            "build"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "cargo",
+            "test"
+          ],
+          "group": "qualidade"
+        },
+        "start": {
+          "args": [
+            "cargo",
+            "run",
+            "--offline",
+            "--locked",
+            "--bin",
+            "owned-server"
+          ],
+          "group": "aplicacao"
+        },
+        "controlled-failure": {
+          "args": [
+            "cargo",
+            "run",
+            "--offline",
+            "--locked",
+            "--bin",
+            "owned-fail"
+          ],
+          "group": "scripts"
+        }
+      },
+      "pending": [
+        "Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated",
+        "Cargo explicit workspace owner: ."
+      ]
+    },
+    {
+      "id": "library-rust",
+      "dir": "library",
+      "language": "rust",
+      "manager": "cargo",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "cargo",
+            "build"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "cargo",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated",
+        "Cargo explicit workspace owner: ."
+      ]
+    }
+  ]
+}

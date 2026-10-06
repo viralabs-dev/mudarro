@@ -1,0 +1,19 @@
+version: 1
+name: owned-rust-manual
+services:
+  - id: owned-app-rust
+    dir: app
+    language: rust
+    manager: cargo
+    infrastructure:
+      kind: local
+    commands:
+      start:
+        args: [cargo, run, --bin, owned-app]
+        group: aplicacao
+      build:
+        args: [cargo, build]
+        group: aplicacao
+      test:
+        args: [cargo, test]
+        group: qualidade

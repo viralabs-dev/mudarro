@@ -1,0 +1,159 @@
+{
+  "groups": 10,
+  "subcases": 25,
+  "race": "PASS",
+  "testLog": "after-final-owner.jsonl",
+  "staticCLICommands": 17,
+  "staticCLI": [
+    {
+      "name": "cli-scan-after",
+      "args": [
+        "scan",
+        "--json"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-init",
+      "args": [
+        "init",
+        "--select",
+        "app-rust-workspace:build,app-rust-workspace:test,app-rust:build,app-rust:test,library-rust:build,library-rust:test"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-init-preservation",
+      "args": [
+        "init"
+      ],
+      "exit": 1
+    },
+    {
+      "name": "cli-generate-1",
+      "args": [
+        "generate"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-generate-2",
+      "args": [
+        "generate"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-preview-app-rust-workspace-build",
+      "args": [
+        "preview",
+        "app-rust-workspace:build"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-dry-app-rust-workspace-build",
+      "args": [
+        "run",
+        "app-rust-workspace:build",
+        "--dry-run"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-preview-app-rust-workspace-test",
+      "args": [
+        "preview",
+        "app-rust-workspace:test"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-dry-app-rust-workspace-test",
+      "args": [
+        "run",
+        "app-rust-workspace:test",
+        "--dry-run"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-preview-app-rust-build",
+      "args": [
+        "preview",
+        "app-rust:build"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-dry-app-rust-build",
+      "args": [
+        "run",
+        "app-rust:build",
+        "--dry-run"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-preview-app-rust-test",
+      "args": [
+        "preview",
+        "app-rust:test"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-dry-app-rust-test",
+      "args": [
+        "run",
+        "app-rust:test",
+        "--dry-run"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-preview-library-rust-build",
+      "args": [
+        "preview",
+        "library-rust:build"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-dry-library-rust-build",
+      "args": [
+        "run",
+        "library-rust:build",
+        "--dry-run"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-preview-library-rust-test",
+      "args": [
+        "preview",
+        "library-rust:test"
+      ],
+      "exit": 0
+    },
+    {
+      "name": "cli-dry-library-rust-test",
+      "args": [
+        "run",
+        "library-rust:test",
+        "--dry-run"
+      ],
+      "exit": 0
+    }
+  ],
+  "binarySHA256": "794b52384cf513814bd74b979a03340ca65abef03a296d2dfd9bf176cf9fb35b",
+  "cargoRuntimeExecuted": false,
+  "sentinelExecuted": false,
+  "workspaceOwnership": "Pending metadata; WorkspaceRoot JS-only schema left unchanged",
+  "limitations": [
+    "explicit literal members/default-members only; globs diagnosed",
+    "no Cargo metadata/plugin/build.rs/dependency graph execution",
+    "Rust toolchain absent; no compiled/runtime acceptance"
+  ],
+  "explicitPackageWorkspace": "pending/no suggestions; never reads owner path or infers ancestor"
+}

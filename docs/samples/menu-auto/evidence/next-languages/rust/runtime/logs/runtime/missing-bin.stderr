@@ -1,0 +1,5 @@
+error: no bin target named `owned-missing` in default-run packages
+help: available bin targets:
+    owned-app
+    owned-fail
+    owned-server

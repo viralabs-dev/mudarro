@@ -1,0 +1,75 @@
+[
+  {
+    "gate": "race",
+    "argv": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "test",
+      "-count=1",
+      "-race",
+      "-coverprofile=/tmp/mudarro-next-languages-root/final-coverage-raw.out",
+      "-coverpkg=./internal/mudarro/...",
+      "-json",
+      "./..."
+    ],
+    "exit": 0
+  },
+  {
+    "gate": "vet",
+    "argv": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "vet",
+      "./..."
+    ],
+    "exit": 0
+  },
+  {
+    "gate": "linux-build",
+    "argv": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "build",
+      "-o",
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "./cmd/mudarro"
+    ],
+    "exit": 0
+  },
+  {
+    "gate": "darwin-cross",
+    "argv": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "build",
+      "-o",
+      "/tmp/mudarro-next-languages-root/mudarro-darwin-arm64",
+      "./cmd/mudarro"
+    ],
+    "exit": 0
+  },
+  {
+    "gate": "smoke",
+    "argv": [
+      "bash",
+      "scripts/smoke.sh",
+      "/tmp/mudarro-next-languages-root/mudarro"
+    ],
+    "exit": 0
+  },
+  {
+    "gate": "menu",
+    "argv": [
+      "bash",
+      "scripts/validate-menu.sh",
+      "/tmp/mudarro-next-languages-root/mudarro"
+    ],
+    "exit": 0
+  },
+  {
+    "gate": "resize",
+    "argv": [
+      "python3",
+      "scripts/validate-ui-shell-resize.py",
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "/tmp/mudarro-next-languages-root/resize"
+    ],
+    "exit": 0
+  }
+]

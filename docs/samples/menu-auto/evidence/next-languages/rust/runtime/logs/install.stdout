@@ -1,0 +1,7 @@
+install: creating uninstall script at /tmp/mudarro-approved-runtimes.6AsmDd/rust/prefix/lib/rustlib/uninstall.sh
+install: installing component 'rustc'
+install: installing component 'cargo'
+install: installing component 'rust-std-x86_64-unknown-linux-gnu'
+
+    rust installed.
+

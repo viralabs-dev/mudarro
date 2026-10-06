@@ -1,0 +1,55 @@
+{
+  "exit": 0,
+  "events": 63,
+  "termiosRestored": true,
+  "keyboardInjected": [
+    "q after1.5s"
+  ],
+  "binarySHA256": "86210bde93100944d280caa3dbd2394a88cea6f0287c2041573328d86e634d91",
+  "commands": [
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "menu",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "app-rust:test",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "library-rust:test",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "app-java:jdkselftest",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+    ],
+    [
+      "/tmp/mudarro-next-languages-root/mudarro",
+      "run",
+      "app-csharp:self-test",
+      "--root",
+      "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-e1a48c96/fixtures/console"
+    ]
+  ],
+  "browserUsed": false,
+  "MavenLifecycleExecuted": false,
+  "additionalNuGet": false,
+  "homePreserved": true,
+  "allFramesDecoded": true,
+  "decodedFrames": 5,
+  "width": 944,
+  "height": 686,
+  "menuPNGFrame": 0,
+  "resultPNGFrame": 4
+}

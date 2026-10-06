@@ -1,0 +1,14 @@
+{
+  "applicationPackageReference": false,
+  "assetLibraries": {},
+  "resolvedSources": {},
+  "targetFramework": "net10.0",
+  "frameworkReferences": {
+    "Microsoft.NETCore.App": {
+      "privateAssets": "all"
+    }
+  },
+  "sdkPinned": "10.0.401",
+  "rollForward": "disable",
+  "nativeTestFrameworkExecuted": false
+}

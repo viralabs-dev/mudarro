@@ -1,0 +1,377 @@
+{
+  "Rust": {
+    "result": "PASS",
+    "commands": 46,
+    "rust": "1.99.0",
+    "cargo": "1.99.0",
+    "offline": true,
+    "fixture": "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+    "config": "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/mudarro.json",
+    "env": "/tmp/mudarro-approved-runtimes.6AsmDd/rust/env.json",
+    "recordTestAction": "app-rust:test",
+    "recordFailureAction": "app-rust:controlled-failure",
+    "recordStartAction": "app-rust:up",
+    "binary": "/tmp/mudarro-next-languages-root/mudarro",
+    "binarySHA256": "86210bde93100944d280caa3dbd2394a88cea6f0287c2041573328d86e634d91",
+    "binOutput": "42",
+    "failureBinExit": 7,
+    "mudarroFailureExit": 1,
+    "missingBinExit": 101,
+    "compileFailureExit": 101,
+    "buildScriptNegativeExecuted": false,
+    "manualStartDeclared": true,
+    "ownedServiceStopped": true
+  },
+  "JavaMaven": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "java-version",
+        "argv": [
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+          "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+          "-version"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "javac-version",
+        "argv": [
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/javac",
+          "-version"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "maven-version-only",
+        "argv": [
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/maven/apache-maven-3.10.0/bin/mvn",
+          "-Dmaven.repo.local=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/maven-repository",
+          "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+          "-version"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "javac-compile",
+        "argv": [
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/javac",
+          "-d",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+          "Main.java"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "java-selftest",
+        "argv": [
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+          "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+          "-cp",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+          "Main"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "java-selftest-repeat",
+        "argv": [
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+          "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home",
+          "-cp",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+          "Main"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "java-failure",
+        "argv": [
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin/java",
+          "-cp",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/classes",
+          "Main",
+          "--fail"
+        ],
+        "exit_code": 7,
+        "expected_success": false
+      },
+      {
+        "case": "scan-static",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "scan",
+          "--json",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "init-maven-optin-static",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "init",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture",
+          "--format",
+          "json",
+          "--select",
+          "app-java:compile,app-java:test"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "maven-preview-only-compile",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "preview",
+          "app-java:compile",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "maven-preview-only-test",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "preview",
+          "app-java:test",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "generate",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "generate",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "mudarro-jdkcompile",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "run",
+          "app-java:jdkcompile",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "mudarro-jdkselftest",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "run",
+          "app-java:jdkselftest",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "mudarro-jdkfail",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "run",
+          "app-java:jdkfail",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "wrapper-jdkselftest",
+        "argv": [
+          "bash",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture/.mudarro/scripts/app-java/jdkselftest.sh"
+        ],
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "existing-init-preserved",
+        "argv": [
+          "/tmp/mudarro-next-languages-root/mudarro",
+          "init",
+          "--root",
+          "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/fixture"
+        ],
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "maven_plugins_executed": false,
+    "maven_lifecycle_executed": false,
+    "jdk_custom_selftest_not_maven_test": true,
+    "maven_repository_empty": true,
+    "configuration_preserved": true,
+    "binary_sha256": "86210bde93100944d280caa3dbd2394a88cea6f0287c2041573328d86e634d91",
+    "environment": {
+      "HOME": "/home/danielsouza",
+      "JAVA_HOME": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1",
+      "PATH": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/jdk/jdk-25.0.4.1+1/bin:/tmp/mudarro-next-languages-root:/usr/bin:/bin",
+      "LANG": "C.UTF-8",
+      "MAVEN_OPTS": "-Duser.home=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/java-home -Djava.io.tmpdir=/tmp/mudarro-approved-runtimes.6AsmDd/jvm/tmp",
+      "TMPDIR": "/tmp/mudarro-approved-runtimes.6AsmDd/jvm/tmp"
+    }
+  },
+  "dotnet": {
+    "result": "PASS",
+    "commands": 31,
+    "sdk": "10.0.401",
+    "runtime": "net10.0 console compile and explicit stdlib self-test",
+    "mudarroBinary": "/tmp/mudarro-next-languages-root/mudarro",
+    "mudarroBinarySHA256": "86210bde93100944d280caa3dbd2394a88cea6f0287c2041573328d86e634d91",
+    "profiles": [
+      "console",
+      "multiple-static-choice",
+      "invalid-static",
+      "excluded-static"
+    ],
+    "feedsCleared": true,
+    "externalApplicationPackages": 0,
+    "nupkgFilesInPrivateCaches": 0,
+    "nativeTestFrameworkExecuted": false,
+    "dotnetTestExecuted": false,
+    "workloadsCertificatesGlobalToolsInstalled": false,
+    "persistentServicesStarted": false,
+    "generateIdempotent": true,
+    "manualConfigAndSourcesPreserved": true,
+    "sourceHashes": {
+      "global.json": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e",
+      "NuGet.Config": "a1dd01c246e1243e1f9712f8d84faa43cfa092ea1d49f453931f676ab9526278",
+      "Sample.csproj": "ba979323df2c0aa0d7c362cedc169be62aecfc3855afe7ed9adee03c9fa2acd6",
+      "Program.cs": "6f501773a8064924a874e024d16245dc8ed24c5cfcd7b52720a5c91599a0d146"
+    },
+    "generatedHashes": {
+      "menu.sh": "ee014a7b2ddd253088e9775c8f692a7374b729269cb4c67f5e8ea59f3b66c98f",
+      ".mudarro/scripts/app-csharp/status.sh": "c6febab101404197bf993b1b2b8885e8b490941a1768a5375957eec0f59b510d",
+      ".mudarro/scripts/app-csharp/up.sh": "7ab3fcb134894c8e8c2881d275f0e2bc41d78fc15235a9d1ed19aa8c1a73ccf8",
+      ".mudarro/scripts/app-csharp/controlled-failure.sh": "beef38c52fa40514dfcf60c24f7bd7d6825f1fc2e782407224fffcc83afcf893",
+      ".mudarro/scripts/app-csharp/logs.sh": "d6cc16ae280b58c6ab3bee23c08db6c4b6b8ebe42463843e6799c97dd914d400",
+      ".mudarro/scripts/app-csharp/restart.sh": "35c2051ff166720d45a38038c1c3cb8e068dc79b70ec0a904289864486b6dc44",
+      ".mudarro/scripts/app-csharp/self-test.sh": "153d954b11650fd08c613a93e503e26c9453cb5ffe788bf5146833b423ee98b2",
+      ".mudarro/scripts/app-csharp/build.sh": "38a348891d16a4d1a79536dadc0e75eda2f277e9d59f82ff51b5a98e7e877372",
+      ".mudarro/scripts/app-csharp/console.sh": "a621425c399877f7c8f825a1314ee1b105d0ec4bf4b9a8abca5244a41af7ad20",
+      ".mudarro/scripts/app-csharp/down.sh": "11f3f08d8fdec381b59014dbb91aff2ff6067379979a5e3954ef00e80e544aeb"
+    },
+    "controlledFailureExit": {
+      "directConsole": 7,
+      "mudarroRun": 1,
+      "wrapper": 1
+    },
+    "controlledCompileFailure": true,
+    "sourceRestoredAndRecoveryPassed": true,
+    "inheritedHomePreserved": true,
+    "fixture": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/runs/verified-74c16749/fixtures/console",
+    "collectorInitialExpectationCorrected": "Invalid XML yields warning plus generic custom fallback, no C# commands"
+  },
+  "gates": [
+    {
+      "gate": "race",
+      "argv": [
+        "/home/danielsouza/sdk/go1.27.1/bin/go",
+        "test",
+        "-count=1",
+        "-race",
+        "-coverprofile=/tmp/mudarro-next-languages-root/final-coverage-raw.out",
+        "-coverpkg=./internal/mudarro/...",
+        "-json",
+        "./..."
+      ],
+      "exit": 0
+    },
+    {
+      "gate": "vet",
+      "argv": [
+        "/home/danielsouza/sdk/go1.27.1/bin/go",
+        "vet",
+        "./..."
+      ],
+      "exit": 0
+    },
+    {
+      "gate": "linux-build",
+      "argv": [
+        "/home/danielsouza/sdk/go1.27.1/bin/go",
+        "build",
+        "-o",
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "./cmd/mudarro"
+      ],
+      "exit": 0
+    },
+    {
+      "gate": "darwin-cross",
+      "argv": [
+        "/home/danielsouza/sdk/go1.27.1/bin/go",
+        "build",
+        "-o",
+        "/tmp/mudarro-next-languages-root/mudarro-darwin-arm64",
+        "./cmd/mudarro"
+      ],
+      "exit": 0
+    },
+    {
+      "gate": "smoke",
+      "argv": [
+        "bash",
+        "scripts/smoke.sh",
+        "/tmp/mudarro-next-languages-root/mudarro"
+      ],
+      "exit": 0
+    },
+    {
+      "gate": "menu",
+      "argv": [
+        "bash",
+        "scripts/validate-menu.sh",
+        "/tmp/mudarro-next-languages-root/mudarro"
+      ],
+      "exit": 0
+    },
+    {
+      "gate": "resize",
+      "argv": [
+        "python3",
+        "scripts/validate-ui-shell-resize.py",
+        "/tmp/mudarro-next-languages-root/mudarro",
+        "/tmp/mudarro-next-languages-root/resize"
+      ],
+      "exit": 0
+    }
+  ],
+  "newPublication": false
+}

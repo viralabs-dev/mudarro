@@ -1,0 +1,17 @@
+Project: workspace
+- app-rust-workspace (.): rust / cargo / local
+  pending: Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated
+  pending: Cargo workspace explicit members: app, library
+- app-rust (app): rust / cargo / local
+  pending: Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated
+  pending: Cargo explicit workspace owner: .
+- library-rust (library): rust / cargo / local
+  pending: Cargo build/test are opt-in; declare startup/bin command explicitly; dependency graphs/build scripts are not evaluated
+  pending: Cargo explicit workspace owner: .
+  suggestion: app-rust-workspace:build [Cargo.toml]
+  suggestion: app-rust-workspace:test [Cargo.toml]
+  suggestion: app-rust:build [app/Cargo.toml]
+  suggestion: app-rust:test [app/Cargo.toml]
+  suggestion: library-rust:build [library/Cargo.toml]
+  suggestion: library-rust:test [library/Cargo.toml]
+Created mudarro.json. Review pending choices, then run mudarro generate.

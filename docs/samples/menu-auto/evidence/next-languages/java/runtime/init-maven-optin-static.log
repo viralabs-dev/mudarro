@@ -1,0 +1,6 @@
+Project: fixture
+- app-java (.): java / maven / local
+  pending: Maven profiles, plugins, dependencies and properties were not evaluated; declare main/start explicitly
+  suggestion: app-java:compile [pom.xml]
+  suggestion: app-java:test [pom.xml]
+Created mudarro.json. Review pending choices, then run mudarro generate.

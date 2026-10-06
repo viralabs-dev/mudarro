@@ -1,0 +1,23 @@
+{
+  "PATH": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401:/tmp/mudarro-next-languages-root:/usr/bin:/bin",
+  "LANG": "C.UTF-8",
+  "LC_ALL": "C.UTF-8",
+  "TERM": "dumb",
+  "DOTNET_ROOT": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/prefix/dotnet-10.0.401",
+  "DOTNET_CLI_HOME": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/cache/dotnet-home",
+  "NUGET_PACKAGES": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/cache/nuget-packages",
+  "NUGET_HTTP_CACHE_PATH": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/cache/nuget-http",
+  "NUGET_PLUGINS_CACHE_PATH": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/cache/nuget-plugins",
+  "DOTNET_CLI_TELEMETRY_OPTOUT": "1",
+  "DOTNET_SKIP_FIRST_TIME_EXPERIENCE": "1",
+  "DOTNET_ADD_GLOBAL_TOOLS_TO_PATH": "0",
+  "DOTNET_GENERATE_ASPNET_CERTIFICATE": "false",
+  "DOTNET_NOLOGO": "1",
+  "DOTNET_MULTILEVEL_LOOKUP": "0",
+  "DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE": "1",
+  "DOTNET_CLI_USE_MSBUILD_SERVER": "0",
+  "DOTNET_CLI_DO_NOT_USE_MSBUILD_SERVER": "1",
+  "MSBUILDDISABLENODEREUSE": "1",
+  "TMPDIR": "/tmp/mudarro-approved-runtimes.6AsmDd/dotnet/tmp",
+  "HOME": "/home/danielsouza"
+}

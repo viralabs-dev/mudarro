@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "commands": 46,
+  "rust": "1.99.0",
+  "cargo": "1.99.0",
+  "offline": true,
+  "fixture": "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace",
+  "config": "/tmp/mudarro-approved-runtimes.6AsmDd/rust/fixtures/workspace/mudarro.json",
+  "env": "/tmp/mudarro-approved-runtimes.6AsmDd/rust/env.json",
+  "recordTestAction": "app-rust:test",
+  "recordFailureAction": "app-rust:controlled-failure",
+  "recordStartAction": "app-rust:up",
+  "binary": "/tmp/mudarro-next-languages-root/mudarro",
+  "binarySHA256": "86210bde93100944d280caa3dbd2394a88cea6f0287c2041573328d86e634d91",
+  "binOutput": "42",
+  "failureBinExit": 7,
+  "mudarroFailureExit": 1,
+  "missingBinExit": 101,
+  "compileFailureExit": 101,
+  "buildScriptNegativeExecuted": false,
+  "manualStartDeclared": true,
+  "ownedServiceStopped": true
+}

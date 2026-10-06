@@ -1,0 +1,6 @@
+Action: app-rust-workspace:test
+Directory: .
+argv (not shell evaluation):
+  [0] "cargo"
+  [1] "test"
+Environment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.
