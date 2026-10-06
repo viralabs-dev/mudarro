@@ -39,7 +39,7 @@ Os testes de integração baixam imagens/pacotes e criam ambientes temporários.
 
 ## Distribuição
 
-Repositório público autorizado e configurado. A publicação da primeira release e a instalação pela URL real são etapas posteriores à validação inicial; consultar a [página de releases](https://github.com/viralabs-dev/mudarro/releases) e a CI para o estado publicado.
+O repositório é público. A release [v0.1.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.1.0) foi publicada em 2026-10-06, com binários Linux/macOS para amd64/arm64 e `checksums.txt`. A instalação pública real em diretório temporário verificou o checksum e retornou `v0.1.0`. Consulte a [página de releases](https://github.com/viralabs-dev/mudarro/releases) e a CI para versões futuras.
 
 ## Limites conhecidos
 
