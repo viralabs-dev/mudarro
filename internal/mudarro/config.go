@@ -45,6 +45,14 @@ func (c Config) Validate(root string) error {
 		if s.GoWorkspace != "" && (s.Language != "go" || (s.GoWorkspace != "inherit" && s.GoWorkspace != "off")) {
 			return fmt.Errorf("%s: go_workspace requires a Go service and inherit or off", s.ID)
 		}
+		if s.MixUmbrella {
+			if s.Language != "elixir" || s.Manager != "mix" {
+				return fmt.Errorf("%s: mix_umbrella requires an Elixir/Mix service", s.ID)
+			}
+			if _, err := read(root, s.Dir, "mix.exs"); err != nil {
+				return fmt.Errorf("%s: mix_umbrella requires a readable regular mix.exs: %w", s.ID, err)
+			}
+		}
 		if s.WorkspaceRoot != "" {
 			if s.Language != "javascript" && s.Language != "typescript" {
 				return fmt.Errorf("%s: workspace_root requires JavaScript/TypeScript", s.ID)

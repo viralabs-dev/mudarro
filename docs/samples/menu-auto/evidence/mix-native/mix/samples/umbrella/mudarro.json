@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "name": "umbrella",
+  "services": [
+    {
+      "id": "app-elixir",
+      "dir": ".",
+      "language": "elixir",
+      "manager": "mix",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "compile": {
+          "args": [
+            "mix",
+            "compile"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "mix",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Mix source is executable code: project syntax, aliases and dependencies were not evaluated",
+        "Declare commands.start explicitly; Mix startup was not inferred",
+        "Declare umbrella ownership explicitly when applicable; apps_path was not evaluated"
+      ],
+      "mix_umbrella": true
+    },
+    {
+      "id": "apps-member-elixir",
+      "dir": "apps/member",
+      "language": "elixir",
+      "manager": "mix",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "pending": [
+        "Mix source is executable code: project syntax, aliases and dependencies were not evaluated",
+        "Declare commands.start explicitly; Mix startup was not inferred",
+        "Declare umbrella ownership explicitly when applicable; apps_path was not evaluated"
+      ]
+    }
+  ]
+}

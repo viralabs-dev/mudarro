@@ -114,3 +114,26 @@ Real final GIF: 983×739, 8 frames, 15.04 s. Composed frame inspected: AURORA le
 Evidence: [project-name-tests.txt](samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
 
 Current implementation: [UI configuration](ui-configuration.md). Core configuration/i18n/theme/action-preview implemented; fonts and actual-emulator mouse acceptance remain separate pending work. Final gates:74 tests,76.38% aggregate statements; see [coverage](coverage.md).
+
+
+## Explicit Mix and Make
+
+language:elixir/manager:mix offers compile/test only by selection. mix_umbrella:true is a manual declaration requiring regular readable mix.exs; no member/graph inference. C/C++ stays custom with user-selected Make targets; without Make only pending evidence. [Sample e limites](samples/menu-auto/evidence/mix-native/README.md).
+
+```yaml
+version: 1
+name: Explicit Mix umbrella
+services:
+  - id: umbrella
+    dir: .
+    language: elixir
+    manager: mix
+    mix_umbrella: true
+    infrastructure:
+      kind: local
+    commands:
+      compile:
+        args: [mix, compile]
+      test:
+        args: [mix, test]
+```

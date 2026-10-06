@@ -1,5 +1,10 @@
 [English](../support-matrix.md) · Português (Brasil)
 
+## Checkpoint vigente — MUD-044/MUD-045
+
+199racePASS/zero falhas-pulados/81,73%; Mixestático compile-test opt-in/umbrella declarado e C-C++customMake targetsusuário validados em samples internos.26Mixchecks+8rechecks/63comandosnativos+rechecks; nenhuma instalação/startinventado/publicação deste lote. MUD037 publicado6c868c95[daneiel/skipci/0Actions]. [Evidências e limites](../samples/menu-auto/evidence/mix-native/README.pt-BR.md).
+
+
 A base publicada agora é `b887f64`, após reescrita autorizada da autoria pessoal de `56dadba`, com árvore idêntica. [Mapa de SHAs e provas de preservação](../samples/menu-auto/evidence/git-identity-repair/README.md). As novas mudanças de robustez/Unicode e esta referência permanecem locais.
 
 ## Checkpoint integrado mais recente — workspaces JavaScript
@@ -76,7 +81,8 @@ Escopo: checkout pessoal, inventário conciliado após extração de pacotes. Ne
 | JavaScript / TypeScript | package.json; TS por tsconfig.json ou dependência typescript | install; start/dev/build aplicação, test/lint qualidade; demais scripts selecionáveis | npm default; npm/pnpm/yarn/bun por locks únicos ou packageManager conhecido explícito; bun.lock/bun.lockb deduplicados; nomes inválidos diagnosticados, versões informadas exigem SemVer exato; metadata apenas sintática, sem verificar hash; frameworks são rótulos |
 | Python | pyproject.toml / requirements.txt / manage.py / Pipfile | pip venv/install, uv sync, poetry install; Pipenv install/sync e sugestões de scripts opt-in; Django runserver/test | Pipfile seleciona pipenv, conflitos pendentes; TOML/JSON inválidos diagnosticados, sem schema/hash completo; runtime Pipenv2026.8.0 sem dependências validado; não-Django exige start explícito; sem ações automáticas Flask/FastAPI/pytest |
 | Go | go.mod; constraints do host e parser de func main ativo | build ./..., test ./..., mod download; start para única entrada ativa | fontes regulares limitadas4MiB; múltiplas/nenhuma entrada ficam pendentes; não infere tags custom/imports/compilabilidade; parser oficial go.work/go.mod valida membros bounded dentro da raiz; conflitos/exclusões diagnosticados; seleção promove start, contexto herdado por padrão e off explícito disponível |
-| Outras / custom | fallback sem manifest reconhecido | comandos declarados; sugestões Makefile/*.sh | configuração manual pode orquestrar qualquer runtime, mas não é adapter automático |
+| Elixir/Mix | mix.exs regular/limitado sem avaliar código | compile/test opt-in; mix_umbrella declarado explicitamente | sem inferir aliases/membros/grafo/deps/start;26checksroot/umbrella+rechecksreais |
+| C/C++ / custom | evidências fontes/headers regulares, Make ancestral/owner explícito | targetsMake opt-in ou comandos usuário; source-only pending | sem parserfontes/flags/start, sem CMake/Meson;63comandosreais+rechecks |
 
 Manager é string de configuração, não registro fechado validado. Entry scripts Python vêm de maps e ordenação final ocorre por serviço/nome. Scripts JS normalizam : e . para -. Colisões agora geram pendência e não oferecem seleção ambígua; regressão demonstrou falha antes e aprovação após correção.
 

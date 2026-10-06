@@ -1,0 +1,9 @@
+{
+  "PATH": "/tmp/mudarro-mud044045-root:/home/linuxbrew/.linuxbrew/opt/elixir/bin:/home/linuxbrew/.linuxbrew/bin:/usr/bin:/bin",
+  "HOME": "/home/danielsouza",
+  "LANG": "C.UTF-8",
+  "MIX_HOME": "/tmp/mudarro-mud044-implementation/mix-home",
+  "HEX_HOME": "/tmp/mudarro-mud044-implementation/hex-home",
+  "MIX_DEPS_PATH": "/tmp/mudarro-mud044-implementation/deps-private",
+  "TMPDIR": "/tmp/mudarro-mud044-implementation/tmp"
+}

@@ -32,6 +32,7 @@ type Service struct {
 	Manager        string             `yaml:"manager,omitempty" json:"manager,omitempty"`
 	WorkspaceRoot  string             `yaml:"workspace_root,omitempty" json:"workspace_root,omitempty"`
 	GoWorkspace    string             `yaml:"go_workspace,omitempty" json:"go_workspace,omitempty"`
+	MixUmbrella    bool               `yaml:"mix_umbrella,omitempty" json:"mix_umbrella,omitempty"`
 	Framework      string             `yaml:"framework,omitempty" json:"framework,omitempty"`
 	Infrastructure Infrastructure     `yaml:"infrastructure" json:"infrastructure"`
 	Database       Database           `yaml:"database,omitempty" json:"database,omitempty"`

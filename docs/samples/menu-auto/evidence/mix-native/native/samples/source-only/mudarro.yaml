@@ -1,0 +1,10 @@
+version: 1
+name: source-only
+services:
+    - id: app-custom
+      dir: .
+      language: custom
+      infrastructure:
+        kind: local
+      pending:
+        - 'Native sources detected: declare commands explicitly; compiler flags and startup are not inferred'

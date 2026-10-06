@@ -1,0 +1,3270 @@
+{
+  "source": "verified-tests.jsonl retained locally; actual go test JSON terminal outcomes",
+  "results": [
+    {
+      "Package": "github.com/viralabs-dev/mudarro/cmd/mudarro",
+      "Action": "skip",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/docs/samples/menu-auto/evidence/isolated-runtimes",
+      "Action": "skip",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/docs/samples/menu-auto/evidence/isolated-runtimes/yarn/logs",
+      "Action": "skip",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/internal/mudarro/model",
+      "Action": "skip",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/internal/mudarro",
+      "Action": "pass",
+      "Elapsed": 0.09
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/internal/mudarro/projectfs",
+      "Action": "pass",
+      "Elapsed": 0.091
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/internal/mudarro/terminal",
+      "Action": "pass",
+      "Elapsed": 0.091
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/internal/mudarro/executor",
+      "Action": "pass",
+      "Elapsed": 0.092
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/internal/mudarro/adapters",
+      "Action": "pass",
+      "Elapsed": 0.095
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportLockDetection/bun.lock",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportLockDetection/bun.lockb",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportLockDetection/bun.lock+bun.lockb",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportLockDetection",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportConflictingManagersRemainExplicit/package-lock.json",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportConflictingManagersRemainExplicit/pnpm-lock.yaml",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportConflictingManagersRemainExplicit/yarn.lock",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportConflictingManagersRemainExplicit",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportExplicitPackageManagerOverridesLockConflict",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestBunSupportInitSelectedScriptAndGenerateIdempotent",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigFormatsLegacyDefaultsWithoutWrites/yaml",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigFormatsLegacyDefaultsWithoutWrites/json",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigFormatsLegacyDefaultsWithoutWrites",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIExplicitAndPartialDefaults/yaml",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIExplicitAndPartialDefaults/json",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIExplicitAndPartialDefaults",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIInvalidEnums/locale",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIInvalidEnums/theme",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIInvalidEnums/density",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIInvalidEnums/lettering",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIInvalidEnums/mouse",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigUIInvalidEnums",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-unknown",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-ui-unknown",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-duplicate",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-nested-duplicate",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-multiple",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-trailing",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-comment",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/yaml-unknown",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/yaml-duplicate",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/yaml-multiple",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/yaml-trailing-empty",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys/json-wrong-boolean",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigStrictDocumentsAndKeys",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigDiscoveryAndExplicitSelection",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigBoundedReadsAndGuardedPaths/0",
+      "Action": "pass",
+      "Elapsed": 0.15
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigBoundedReadsAndGuardedPaths/1",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigBoundedReadsAndGuardedPaths",
+      "Action": "pass",
+      "Elapsed": 0.17
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDestructiveConfirmationPreservesQueuedChildInput",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestScanLanguagesAndSuggestions",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestAmbiguityExclusionsAndMalformed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestScanDoesNotFollowSymlinks",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigValidation/unknown",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigValidation/duplicate",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigValidation/multiple",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigValidation/escape",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigValidation/commands",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestConfigValidation",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGenerateIdempotenceAndProtection",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGeneratePreservesExistingAndRejectsSymlink",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestExplicitCommandsOverrideAdapters",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestStructuredArgumentsAndExitCode",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDestructiveConfirmation",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestMenuAndCLI",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDatabaseAndInfrastructurePlans",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestScaffoldsParseAndDoNotInventModels",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInvalidMigrationNameAndEnvironment",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveSignalCleanup/interrupt",
+      "Action": "pass",
+      "Elapsed": 1.12
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveSignalCleanup/terminated",
+      "Action": "pass",
+      "Elapsed": 1.12
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveSignalCleanup",
+      "Action": "pass",
+      "Elapsed": 2.24
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveSignalHelper",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveMasterEOFReturns",
+      "Action": "pass",
+      "Elapsed": 1.08
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractivePreservesPartialEscapeAcrossIdle",
+      "Action": "pass",
+      "Elapsed": 0.65
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveRecording",
+      "Action": "pass",
+      "Elapsed": 1.91
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveNavigationDoesNotExecute",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveRequiresBothTTY",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveRealPTYNavigationAndRestore",
+      "Action": "pass",
+      "Elapsed": 0.07
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveKeepsChildInputQueued",
+      "Action": "pass",
+      "Elapsed": 0.06
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveCtrlCRestoresTerminal",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestInteractiveInvalidNumberDoesNotExecutePreviousFocus",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestRichMenuLayoutAndQuit",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestRichMenuFitsNarrowWindow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/dark/no-color=/en",
+      "Action": "pass",
+      "Elapsed": 0.06
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/dark/no-color=/pt-BR",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/dark/no-color=1/en",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/dark/no-color=1/pt-BR",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/light/no-color=/en",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/light/no-color=/pt-BR",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/light/no-color=1/en",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale/light/no-color=1/pt-BR",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationInteractiveReadablePaletteAndLocale",
+      "Action": "pass",
+      "Elapsed": 0.43
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestPresentationCompactTextBaseline",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas_API/rich",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas_API/narrow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas_API/plain",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas_API/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Aurora/rich",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Aurora/narrow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Aurora/plain",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Aurora/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/mudarro/rich",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/mudarro/narrow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/mudarro/plain",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/mudarro/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Caf\u00e9_Equipe/rich",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Caf\u00e9_Equipe/narrow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Caf\u00e9_Equipe/plain",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Caf\u00e9_Equipe/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/\u6f22\u5b57\ud83d\ude00/rich",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/\u6f22\u5b57\ud83d\ude00/narrow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/\u6f22\u5b57\ud83d\ude00/plain",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/\u6f22\u5b57\ud83d\ude00/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Equipe_com_um_nome_de_projeto_muito_longo/rich",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Equipe_com_um_nome_de_projeto_muito_longo/narrow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Equipe_com_um_nome_de_projeto_muito_longo/plain",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Equipe_com_um_nome_de_projeto_muito_longo/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas\\x1b]52;secret\\a_/rich",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas\\x1b]52;secret\\a_/narrow",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas\\x1b]52;secret\\a_/plain",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths/Atlas\\x1b]52;secret\\a_/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestConsumerProjectNamesAndWidths",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestShellInputCancelRestoreAndRepeat",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestTerminalStyleResetsAndPlainFallback",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestBannerNarrowWidthAndControlSanitization",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestColorPolicy/tty",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestColorPolicy/pipe",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestColorPolicy/dumb",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestColorPolicy/unset-term",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestColorPolicy/no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestColorPolicy/zero-no-color",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestColorPolicy",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestDevNullIsNotTerminal",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/cjk/NO_COLOR=",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/cjk/NO_COLOR=1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/fullwidth-letters/NO_COLOR=",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/fullwidth-letters/NO_COLOR=1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/combining/NO_COLOR=",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/combining/NO_COLOR=1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/emoji/NO_COLOR=",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/emoji/NO_COLOR=1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/joined-family-conservative/NO_COLOR=",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/joined-family-conservative/NO_COLOR=1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/regional-pair-conservative/NO_COLOR=",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/regional-pair-conservative/NO_COLOR=1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/ideographic-space/NO_COLOR=",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu/ideographic-space/NO_COLOR=1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeKnownCellsStayInsideNarrowMenu",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizePlainLetteringLongNameIsBounded",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeExecutionWriterStripsFormatAndPreservesSplitCombining",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeLivePreviewRestoresTermiosAfterShrinkAndGrow",
+      "Action": "pass",
+      "Elapsed": 0.53
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeTinyFrameBounds/1",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeTinyFrameBounds/3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeTinyFrameBounds/4",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Test": "TestUnicodeResizeTinyFrameBounds",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal",
+      "Action": "pass",
+      "Elapsed": 8.203
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorComposeVersionProbeHasDeadline",
+      "Action": "pass",
+      "Elapsed": 11.06
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorComposeTimeoutIsolatedProbe",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorMissingAndNonExecutableTools/missing",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorMissingAndNonExecutableTools/non-executable-path",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorMissingAndNonExecutableTools/directory",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorMissingAndNonExecutableTools/executable",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorMissingAndNonExecutableTools",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorSymlinkAndBlockedConfiguration",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorComposeProviderFailureAndScope/docker/0",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorComposeProviderFailureAndScope/docker/9",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorComposeProviderFailureAndScope/podman/0",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorComposeProviderFailureAndScope/podman/9",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorComposeProviderFailureAndScope",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorRequiresAndConfigSymlink",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorSpecialFileExecutableIsRejected/fifo-executable",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorSpecialFileExecutableIsRejected/regular-executable",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorSpecialFileExecutableIsRejected/regular-not-executable",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDoctorSpecialFileExecutableIsRejected",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirEvidenceOnlyOffline",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirContainedRegularBoundedEvidence/oversized",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirContainedRegularBoundedEvidence/symlink",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirContainedRegularBoundedEvidence/directory",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirContainedRegularBoundedEvidence",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirScanNestedExcludedAndOptIn",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirDeclaredUmbrellaConfiguration/declared",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirDeclaredUmbrellaConfiguration/wrong-language",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirDeclaredUmbrellaConfiguration/wrong-manager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirDeclaredUmbrellaConfiguration/missing-manifest",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirDeclaredUmbrellaConfiguration",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirBuildAndDependencySourcesIgnored/_build",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirBuildAndDependencySourcesIgnored/deps",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestElixirBuildAndDependencySourcesIgnored",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestContextExecutorOutputAndStdin",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestContextExecutorRejectsEmptyAndCancelled",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestContextExecutorCancelsOwnedProcessGroup",
+      "Action": "pass",
+      "Elapsed": 0.31
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestContextExecutorBoundsInheritedOutputPipe",
+      "Action": "pass",
+      "Elapsed": 0.4
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestContextExecutorBoundsPipeAfterParentExits",
+      "Action": "pass",
+      "Elapsed": 1.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestKubernetesStopOnlyScalesWorkloads",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDryRunDoesNotExposeEnvironment",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestFramePersistentChromeAndGeometry",
+      "Action": "pass",
+      "Elapsed": 0.09
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestFrameOutputFiltersFragmentedControlsAndBoundsHistory",
+      "Action": "pass",
+      "Elapsed": 0.32
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestFrameResizeUsesActualSmallWindow",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestFramePipeFallback",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGeneratePreflightProtectsAllDestinations/edited-launcher",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGeneratePreflightProtectsAllDestinations/invalid-manifest",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGeneratePreflightProtectsAllDestinations",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInitSelectionFailureDoesNotSave/unknown-selection",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInitSelectionFailureDoesNotSave/interactive-eof",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInitSelectionFailureDoesNotSave",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionSortedOfflineSuggestions",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionInitPromotesOnlyStart",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionMultipleRejectedBeforeWrite/select",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionMultipleRejectedBeforeWrite/all",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionMultipleRejectedBeforeWrite/interactive",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionMultipleRejectedBeforeWrite",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/json/",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/json/inherit",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/json/off",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/json/invalid",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/yaml/",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/yaml/inherit",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/yaml/off",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip/yaml/invalid",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceConfigRoundtrip",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceNonGoRejected",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionSingleKeepsAutomaticStartAndDefaultOmitted",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceRunnerChildEnvironmentScoped//argv",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceRunnerChildEnvironmentScoped//shell",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceRunnerChildEnvironmentScoped/inherit/argv",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceRunnerChildEnvironmentScoped/inherit/shell",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceRunnerChildEnvironmentScoped/off/argv",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceRunnerChildEnvironmentScoped/off/shell",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSelectionWorkspaceRunnerChildEnvironmentScoped",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSourceIOBoundedRegularSources/ordinary",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSourceIOBoundedRegularSources/exact-limit",
+      "Action": "pass",
+      "Elapsed": 0.74
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSourceIOBoundedRegularSources/over-limit",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSourceIOBoundedRegularSources",
+      "Action": "pass",
+      "Elapsed": 0.77
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSourceIOFIFOIsNotOpened",
+      "Action": "pass",
+      "Elapsed": 1.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoSourceIOIsolatedProbe",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserValidQuotedBlockAndNormalizedMembership",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserOfficialReplacementSyntaxKeepsMembershipScope",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/syntax",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/missing",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/duplicate-canonical-member",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/not-module",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/invalid-member-module",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/missing-module-declaration",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/outside-relative",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/outside-absolute",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/work-over-limit",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/module-over-limit",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserInvalidMembershipWarnsAndPreservesModules",
+      "Action": "pass",
+      "Elapsed": 0.09
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserSymlinkMemberNeverTraversed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserOfflineNeverRunsGo",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserFIFOIsBounded/workspace",
+      "Action": "pass",
+      "Elapsed": 1.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserFIFOIsBounded/member-module",
+      "Action": "pass",
+      "Elapsed": 1.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserFIFOIsBounded",
+      "Action": "pass",
+      "Elapsed": 2.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserIsolatedProbe",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserDuplicateModulePathIsDiagnosedWithoutHidingMembers",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserExcludedMembershipIsNotRead/private",
+      "Action": "pass",
+      "Elapsed": 1.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserExcludedMembershipIsNotRead/private/go.mod",
+      "Action": "pass",
+      "Elapsed": 1.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkParserExcludedMembershipIsNotRead",
+      "Action": "pass",
+      "Elapsed": 2.06
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceDiagnosticsPreviewShowsEffectiveIsolation",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceDiagnosticsDryRunShowsIsolationWithoutExecution",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/off",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/#00",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/inherit",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/library",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/tests-only",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/main-package-without-entry",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/ignored-main",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/inactive-host-tag",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/inactive-host-suffix",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/active-plus-ignored-other-package",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints/same-package-main-files",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceEntrypointConstraints",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceInvalidMembershipIsVisible/syntax",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceInvalidMembershipIsVisible/missing",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceInvalidMembershipIsVisible/member-without-module",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceInvalidMembershipIsVisible/outside-root",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceInvalidMembershipIsVisible",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestGoWorkspaceNonmembersRemainIndependentAndOffline",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureComposeProviders/docker",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureComposeProviders/podman",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureComposeProviders",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureDockerfileContracts/docker",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureDockerfileContracts/podman",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureDockerfileContracts",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesCompleteness/manifests",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesCompleteness/kustomize",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesCompleteness/helm",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesCompleteness",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesProbeErrorsAndKinds/stateful-list",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesProbeErrorsAndKinds/single-deployment",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesProbeErrorsAndKinds/daemonset-logs",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesProbeErrorsAndKinds/only-pvc",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesProbeErrorsAndKinds/daemonset-down",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesProbeErrorsAndKinds/invalid-json",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureKubernetesProbeErrorsAndKinds",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureSQLiteInitPreservesAndRejectsSymlink",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInfrastructureHelmProbeSelectsReleaseOnly",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationManifestReadFailurePreventsWrites",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationDestinationCreationFailure",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationAtomicRenameFailureKeepsDestination",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationConfigReadAndInitFailure",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationExecutorOutputExitStatusAndMissingCommand",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationGenerateWriterFailurePropagatesBeforeMutation",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationManifestSpecialFileDoesNotBlock",
+      "Action": "pass",
+      "Elapsed": 1.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationPermissionFailures",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationSecondAnnouncementFailurePreventsAllWrites/write",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationSecondAnnouncementFailurePreventsAllWrites/dry-run",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationSecondAnnouncementFailurePreventsAllWrites",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationPreservedMessageFailurePreventsWrites",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationReadManifestBoundedRegularFiles/limit",
+      "Action": "pass",
+      "Elapsed": 0.07
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationReadManifestBoundedRegularFiles/over-limit",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationReadManifestBoundedRegularFiles",
+      "Action": "pass",
+      "Elapsed": 0.08
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationOwnershipManifestFIFORejectsWithoutBlocking",
+      "Action": "pass",
+      "Elapsed": 1.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationMalformedAndOversizedOwnershipManifest/malformed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationMalformedAndOversizedOwnershipManifest/oversized",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestIOPreservationMalformedAndOversizedOwnershipManifest",
+      "Action": "pass",
+      "Elapsed": 0.05
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerOnlyInheritanceAndRootInstall/[\"packages/*\"]",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerOnlyInheritanceAndRootInstall/{\"packages\":[\"packages/*\"]}",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerOnlyInheritanceAndRootInstall",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceGlobsNegationsAndExcludes/single-star",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceGlobsNegationsAndExcludes/question-and-class",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceGlobsNegationsAndExcludes/double-star-negation",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceGlobsNegationsAndExcludes/scan-exclusion",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceGlobsNegationsAndExcludes",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerAndVersionConflicts/same-manager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerAndVersionConflicts/different-manager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerAndVersionConflicts/different-lock",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerAndVersionConflicts/different-exact-version",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerAndVersionConflicts/same-manager-lock",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceManagerAndVersionConflicts",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceNestedBoundaryUsesNearestDeclaration/unresolved-nested-owner-is-not-overwritten",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceNestedBoundaryUsesNearestDeclaration",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceSymlinksAndScanStayOffline",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnsupportedPatternsAreDiagnosed/packages/{a,b}",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnsupportedPatternsAreDiagnosed/packages/@(a|b)",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnsupportedPatternsAreDiagnosed/../outside",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnsupportedPatternsAreDiagnosed//outside",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnsupportedPatternsAreDiagnosed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspacePnpmManifestInheritance",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceExistingManualConfigurationIsPreserved",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceDualDeclarationsEquivalentOrAmbiguous/equivalent-reordered",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceDualDeclarationsEquivalentOrAmbiguous/divergent-union-blocked",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceDualDeclarationsEquivalentOrAmbiguous",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspacePnpmDeclarationWithoutManagerInfersRootManager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnresolvedRootDoesNotFallbackMemberManager/invalid-packageManager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnresolvedRootDoesNotFallbackMemberManager/ambiguous-locks",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestJavaScriptWorkspaceUnresolvedRootDoesNotFallbackMemberManager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOwnedErrorsRespectLocale/en/unknown",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOwnedErrorsRespectLocale/pt-BR/unknown",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOwnedErrorsRespectLocale/en/run",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOwnedErrorsRespectLocale/pt-BR/run",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOwnedErrorsRespectLocale",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInvalidConfigErrorLocaleAndExternalOutput/en",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInvalidConfigErrorLocaleAndExternalOutput/pt-BR",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestInvalidConfigErrorLocaleAndExternalOutput",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestMixArtifactIgnoresDoNotHideOtherProjects/deps",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestMixArtifactIgnoresDoNotHideOtherProjects/_build",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestMixArtifactIgnoresDoNotHideOtherProjects",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestNativeSourcesMixedMakeTargetsRemainOptInAndScanOffline",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestNativeSourcesNearestMakeAndUnrelatedDirectories",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestNativeSourcesExistingLanguageOwnerAndNestedMakeBoundary",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestNativeSourcesExcludeSymlinkAndHeadersOnly",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestNativeSourcesIDCollisionDoesNotOverwriteService",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestNativeSourcesSpecialFilesAreRejectedWithoutOpening",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestNativeSourcesUnownedMakefileDoesNotUseSiblingService",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationNxTargetKeysAreCaseSensitive",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationTurboExplicitTasksAreRootOptIn",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationNxExplicitProjectTargets",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationNestedOwnersAndSharedTaskNames",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationMalformedAndMissingOwnerDiagnostic/turbo-malformed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationMalformedAndMissingOwnerDiagnostic/nx-malformed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationMalformedAndMissingOwnerDiagnostic/project-malformed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationMalformedAndMissingOwnerDiagnostic/turbo-no-owner",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationMalformedAndMissingOwnerDiagnostic/nx-no-owner",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationMalformedAndMissingOwnerDiagnostic/json-comments",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationMalformedAndMissingOwnerDiagnostic",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationExcludedAndSymlinkSourcesNeverFollowed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationDuplicateNxNamesAndUnsafeIdentifiers/duplicate-project",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationDuplicateNxNamesAndUnsafeIdentifiers/unsafe-project",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationDuplicateNxNamesAndUnsafeIdentifiers/unsafe-target",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationDuplicateNxNamesAndUnsafeIdentifiers",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationSuggestionCollisionIsDiagnosed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationNormalizedSuggestionCollisionsBlockBoth/turbo-tasks",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationNormalizedSuggestionCollisionsBlockBoth/nx-projects",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationNormalizedSuggestionCollisionsBlockBoth",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOrchestrationInvalidTurboDoesNotHideValidNxTasks",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/pnpm@0.0.0",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/yarn@4.18.1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/bun@1.4.0",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha.0",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-0",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-0a",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3--",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-a-b.10",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+001.02",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+build-meta.9",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha.1+build.001",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/yarn@4.18.1+sha224.abcdef0123456789",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+sha224.nothex",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions/npm@18446744073709551616.0.0",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverAcceptsStrictVersions",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3.4",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/01.2.3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.02.3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.03",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/v1.2.3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/^1.2.3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/~1.2.3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/latest",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/https:__example.invalid_tool",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3@extra",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-01",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-alpha.01",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-a..b",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-alpha_1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-\u03b1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+a..b",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+build_1",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+\u00e9",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3++build",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3_",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3_#01",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+build_metadata",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverRejectsOpaqueOrMalformedVersions",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts/selected-script-rejected-before-config",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts/new-invalid-field-preserves-generated",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationKnownNamesPreserveContracts/npm",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationKnownNamesPreserveContracts/pnpm",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationKnownNamesPreserveContracts/yarn",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationKnownNamesPreserveContracts/bun",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationKnownNamesPreserveContracts",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/unknown",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/.._manager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/_tmp_manager",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/https:__example.invalid_tool",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/_npm",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/npm@",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/@1.2.3",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_#01",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_#02",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationBadNamesDoNotPlanExecution",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationWrongJSONTypesDiagnosed/123",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationWrongJSONTypesDiagnosed/true",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationWrongJSONTypesDiagnosed/[]",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationWrongJSONTypesDiagnosed/{}",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationWrongJSONTypesDiagnosed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationInitInvalidSelectionPreservesProject",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationScanPreservesExistingGeneratedFiles",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPackageManagerValidationExplicitConfigurationKeepsCustomCommands",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportDetectionAndDjangoArgv/Pipfile",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportDetectionAndDjangoArgv/Pipfile+lock",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportDetectionAndDjangoArgv",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportMalformedManifestsAreDiagnosed/toml",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportMalformedManifestsAreDiagnosed/lock-json",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportMalformedManifestsAreDiagnosed/script-value",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportMalformedManifestsAreDiagnosed",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportManagerConflictsRemainPending/uv.lock",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportManagerConflictsRemainPending/poetry.lock",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportManagerConflictsRemainPending",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportOrphanLockIsActionable",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportScriptSuggestionAndSelectedInit",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportScriptCollisionsStayExplicit",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportDatabaseActionsUseOwnedEnvironment/django",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportDatabaseActionsUseOwnedEnvironment/alembic",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPipenvSupportDatabaseActionsUseOwnedEnvironment",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityFIFOIsNonblocking",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityRedactsEmbeddedCredentials/embedded-uri",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityRedactsEmbeddedCredentials/uri-query",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityRedactsEmbeddedCredentials/authorization",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityRedactsEmbeddedCredentials/flags-assignments",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityRedactsEmbeddedCredentials/script-source",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityRedactsEmbeddedCredentials",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityNavigationDoesNotExecute",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityTotalSourceBudget",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecurityRejectsSourceSymlinks",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPreviewSecuritySourceCannotEmitTerminalControls",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestMenuUsesExplicitConsumerName",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestScriptNormalizationCollisionRequiresExplicitCommand",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDockerfileOwnershipUsesExecutor/docker/owned",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDockerfileOwnershipUsesExecutor/docker/foreign",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDockerfileOwnershipUsesExecutor/docker/absent",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDockerfileOwnershipUsesExecutor/podman/owned",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDockerfileOwnershipUsesExecutor/podman/foreign",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDockerfileOwnershipUsesExecutor/podman/absent",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestDockerfileOwnershipUsesExecutor",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestOSExecutorRejectsEmptyCommand",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-zero",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-one",
+      "Action": "pass",
+      "Elapsed": 0.04
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-negative",
+      "Action": "pass",
+      "Elapsed": 0.04
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/empty-token",
+      "Action": "pass",
+      "Elapsed": 0.04
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/short-token",
+      "Action": "pass",
+      "Elapsed": 0.04
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/wrong-token",
+      "Action": "pass",
+      "Elapsed": 0.04
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-root-metadata",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-service-metadata",
+      "Action": "pass",
+      "Elapsed": 0.03
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess",
+      "Action": "pass",
+      "Elapsed": 0.77
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityCorruptJSONMustNotAuthorizeSignals",
+      "Action": "pass",
+      "Elapsed": 0.54
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityDoesNotAdoptAnotherProjectSupervisor",
+      "Action": "pass",
+      "Elapsed": 0.68
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityStalePIDAndUnrelatedOwnedPID",
+      "Action": "pass",
+      "Elapsed": 0.21
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityConcurrentUpAndRestart",
+      "Action": "pass",
+      "Elapsed": 0.68
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityStartupFailureAndSupervisorSignal",
+      "Action": "pass",
+      "Elapsed": 0.68
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRejectsForeignExecutableAndEmbeddedMarker",
+      "Action": "pass",
+      "Elapsed": 0.37
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityRootAndSelectedConfigWithSpaces",
+      "Action": "pass",
+      "Elapsed": 0.54
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupervisorIdentityLinuxRejectsSpoofedArgvZero",
+      "Action": "pass",
+      "Elapsed": 0.51
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager/npm",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager/pnpm",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager/yarn",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager/pip",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager/uv",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager/poetry",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager/go",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGenerationPipelineByManager",
+      "Action": "pass",
+      "Elapsed": 0.09
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportJavascriptManagers/default",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportJavascriptManagers/npm",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportJavascriptManagers/yarn",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportJavascriptManagers/pnpm-ts",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportJavascriptManagers/explicit-wins",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportJavascriptManagers",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportPythonManagers/pip",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportPythonManagers/uv",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportPythonManagers/poetry",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportPythonManagers/ambiguous-locks",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportPythonManagers",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportGoWorkspaceBoundaries",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportAmbiguousDatabaseAndInfrastructure",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportCLIRunDryMatrix/prisma",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportCLIRunDryMatrix/django",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportCLIRunDryMatrix/alembic",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportCLIRunDryMatrix/goose",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportCLIRunDryMatrix",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportScanJSONDeterministicAndReadOnly",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestSupportOversizedManifestWarning",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestPlainMenuHasNoANSIEscapes",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestUICLIInitJSONPreservesExistingAndGenerateIdempotent",
+      "Action": "pass",
+      "Elapsed": 0.01
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestUICLISelectedConfigWrapperWithSpaces",
+      "Action": "pass",
+      "Elapsed": 0.02
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestUICLIAmbiguousConfigNeedsSelection",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestUICLILocaleOverrideDoesNotWriteConfig",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Test": "TestUICLIPreviewDisabledHasNoPreviewHint",
+      "Action": "pass",
+      "Elapsed": 0
+    },
+    {
+      "Package": "github.com/viralabs-dev/mudarro/test/internal/mudarro",
+      "Action": "pass",
+      "Elapsed": 28.385
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "testsPASS": 199,
+  "FAIL": 0,
+  "testSKIP": 0,
+  "elixirGroups": 5,
+  "nativeGroups": 7,
+  "mixIgnoreRegression": "PASS",
+  "coverage": {
+    "covered": 2634,
+    "total": 3223,
+    "percent": 81.72510083772882
+  },
+  "binarySHA256": "118b9c03628481fd3bf662c1590a036e0ec812d744d59055d23983bdd3a5aef4"
+}

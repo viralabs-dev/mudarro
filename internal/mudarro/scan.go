@@ -28,7 +28,7 @@ type LanguageAdapter interface {
 	Detect(root, dir string, files map[string]bool, excludes []string) (*Service, []Suggestion, error)
 }
 
-var languageAdapters = []LanguageAdapter{adapters.JavaScript{}, adapters.Python{}, adapters.Go{}}
+var languageAdapters = []LanguageAdapter{adapters.JavaScript{}, adapters.Python{}, adapters.Go{}, adapters.Elixir{}}
 
 func read(root, dir, file string) ([]byte, error) { return projectfs.ReadManifest(root, dir, file) }
 func cmd(group string, args ...string) Command    { return Command{Args: args, Group: group} }
@@ -52,6 +52,24 @@ func Scan(root string, excludes []string) (Report, error) {
 			}
 		}
 		if d.IsDir() {
+			// Mix artifacts are scoped to an adjacent declared project, never
+			// globally hidden from unrelated language/workspace scans.
+			if d.Name() == "deps" || d.Name() == "_build" {
+				manifest := filepath.Join(filepath.Dir(rel), "mix.exs")
+				excluded := false
+				for _, pat := range excludes {
+					match, _ := filepath.Match(pat, filepath.ToSlash(manifest))
+					if match || manifest == pat || strings.HasPrefix(filepath.ToSlash(manifest), strings.TrimSuffix(pat, "/")+"/") {
+						excluded = true
+						break
+					}
+				}
+				if !excluded {
+					if st, err := os.Lstat(filepath.Join(root, manifest)); err == nil && st.Mode().IsRegular() {
+						return filepath.SkipDir
+					}
+				}
+			}
 			if rel != "." && adapters.IgnoredDirectory(d.Name()) {
 				return filepath.SkipDir
 			}
@@ -122,6 +140,7 @@ func Scan(root string, excludes []string) (Report, error) {
 			}
 		}
 	}
+	scanNativeSources(root, paths, dirs, &r)
 	if len(r.Config.Services) == 0 {
 		s := adapters.BaseService(".", "custom")
 		detectInfrastructure(root, s, &r)
@@ -137,7 +156,7 @@ func Scan(root string, excludes []string) (Report, error) {
 			if file == "menu.sh" {
 				continue
 			}
-			owner := 0
+			owner := -1
 			best := -1
 			for i, s := range r.Config.Services {
 				if s.Dir == "." || dir == s.Dir || strings.HasPrefix(dir, s.Dir+string(filepath.Separator)) {
@@ -146,6 +165,10 @@ func Scan(root string, excludes []string) (Report, error) {
 						best = len(s.Dir)
 					}
 				}
+			}
+			if owner < 0 {
+				r.Warnings = append(r.Warnings, "unowned script/Makefile: "+filepath.ToSlash(filepath.Join(dir, file))+"; configure a service explicitly")
+				continue
 			}
 			s := r.Config.Services[owner]
 			rel, _ := filepath.Rel(s.Dir, filepath.Join(dir, file))

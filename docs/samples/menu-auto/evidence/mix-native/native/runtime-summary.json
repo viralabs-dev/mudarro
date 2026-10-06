@@ -1,0 +1,16 @@
+{
+  "commands": 63,
+  "profiles": [
+    "c",
+    "cpp",
+    "mixed",
+    "source-only"
+  ],
+  "result": "PASS",
+  "binary": "/tmp/mudarro-mud044045-root/mudarro",
+  "binarySHA256": "6c9734f0b214a2bc0501be6454e58be8b84f811e4e4a349100ceff76baa84436",
+  "scope": "native source evidence + custom services; explicit Make suggestions selected by user",
+  "startupInferred": false,
+  "installation": false,
+  "persistentProcessesStarted": false
+}

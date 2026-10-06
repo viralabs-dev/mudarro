@@ -1,5 +1,10 @@
 [English](../language-roadmap.md) · Português (Brasil)
 
+## Checkpoint vigente — MUD-044/MUD-045
+
+199racePASS/zero falhas-pulados/81,73%; Mixestático compile-test opt-in/umbrella declarado e C-C++customMake targetsusuário validados em samples internos.26Mixchecks+8rechecks/63comandosnativos+rechecks; nenhuma instalação/startinventado/publicação deste lote. MUD037 publicado6c868c95[daneiel/skipci/0Actions]. [Evidências e limites](../samples/menu-auto/evidence/mix-native/README.pt-BR.md).
+
+
 ## Estado local atual da implementação — 2026-10-06
 
 Locks Bun e runtime genuíno Bun1.4.0 validados localmente. Detecção Pipfile/Pipenv, scripts e argv de banco implementados/testados; runtime Pipenv2026.8.0 passou fixture isolada sem dependências. Nomes packageManager conhecidos validados; versões informadas agora exigem SemVer exato (metadata somente sintática). Entradas Go do host e IO limitado corrigidos; seleção targets e isolamento explícito passaram; parser completo de membros workspace continua aberto. Yarn1.22.22/4.18.1, uv0.12.23 e Poetry2.5.1 passaram runtime isolado sem dependências. O roadmap abaixo fica restrito ao trabalho restante; nenhuma demanda/adapter de linguagem nova inferida. [Evidência mais recente](../samples/menu-auto/evidence/isolated-runtimes/README.md). Mudanças locais não commitadas sobre base publicada b887f64.

@@ -1,5 +1,10 @@
 English · [Português (Brasil)](pt-BR/coverage.md)
 
+## Current checkpoint — MUD-044/MUD-045
+
+199racePASS/zero failures-testskips/81.73%; static Mix opt-in compile/test and explicit umbrella, C/C++custom Make user targets validated in internal samples.26Mixchecks+8rechecks/63nativecommands+rechecks; no installation/inventedstart/publication of this batch. MUD037 published6c868c95[daneiel/skipci/0Actions]. [Evidence and limits](samples/menu-auto/evidence/mix-native/README.md).
+
+
 Published base is now `b887f64` after the authorized personal-attribution rewrite of `56dadba`, with an identical tree. [Old/new SHA map and preservation proof](samples/menu-auto/evidence/git-identity-repair/README.md). New robustness/Unicode changes and this reference update remain local.
 
 ## Latest integrated checkpoint — JavaScript workspaces

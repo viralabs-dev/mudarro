@@ -1,5 +1,10 @@
 English · [Português (Brasil)](pt-BR/support-matrix.md)
 
+## Current checkpoint — MUD-044/MUD-045
+
+199racePASS/zero failures-testskips/81.73%; static Mix opt-in compile/test and explicit umbrella, C/C++custom Make user targets validated in internal samples.26Mixchecks+8rechecks/63nativecommands+rechecks; no installation/inventedstart/publication of this batch. MUD037 published6c868c95[daneiel/skipci/0Actions]. [Evidence and limits](samples/menu-auto/evidence/mix-native/README.md).
+
+
 Published base is now `b887f64` after the authorized personal-attribution rewrite of `56dadba`, with an identical tree. [Old/new SHA map and preservation proof](samples/menu-auto/evidence/git-identity-repair/README.md). New robustness/Unicode changes and this reference update remain local.
 
 ## Latest integrated checkpoint — JavaScript workspaces
@@ -74,7 +79,8 @@ Code inventory reconciled after package extraction, 2026-10-06. Manifest detecti
 | JavaScript/TypeScript | package.json; TS config/dependency; install, application dev/start/build, quality test/lint, selectable scripts | npm default; npm/pnpm/yarn/bun single manager locks or explicit known packageManager; bun.lock/bun.lockb deduplicated; unknown names diagnosed, supplied versions require exact SemVer; metadata is syntax-only, with no hash verification/provisioning; next/Nest/vite/express labels only |
 | Python | pyproject/requirements/manage.py/Pipfile; pip venv/install, uv sync, poetry install; Pipenv install/sync and opt-in script suggestions; Django start/test | Pipfile selects pipenv with conflicts pending; malformed TOML/JSON diagnosed, full schema/hash not validated; Pipenv2026.8.0 zero-dependency runtime validated; non-Django start explicit; no automatic Flask/FastAPI/pytest actions |
 | Go | go.mod; active host build constraints and func main parser; build/test/mod download; unique entry start | sources regular and bounded4MiB; no/multiple entries pending; custom targets/imports/compilability not inferred; official go.work/go.mod parser validates bounded root-contained members; conflicts/exclusions warned; selected entry promotes start; inherited context default, explicit off available |
-| Custom | configured commands, Makefile/shell suggestions | not an automatic language adapter |
+| Elixir/Mix | mix.exs static bounded evidence; opt-in compile/test; explicit mix_umbrella declaration | no manifest evaluation, aliases/graph/deps/start inference; root/umbrella real26checks+final rechecks |
+| C/C++ / Custom | regular source/header evidence; nearest Make/custom ownership; explicit Make targets or configured commands | no source parsing/compiler flags/start; source-only pending; Make parser subset, no CMake/Meson |
 
 JS :/. identifiers normalize to -; collisions now produce pending choices and cannot save ambiguous selection, demonstrated before/after regression. Recursive directory scan respects exclusions/ignored dirs/symlinks and deterministic ordering. Declared JS workspaces resolve member ownership and inherit only manager; root installation, own member scripts/cwd, explicit conflicts. No Turbo/Nx graph or root infra/database/command inheritance. Nested Go modules are detected separately; no aggregate go.work execution. Shell/Make suggestions use nearest ancestor owner, fallback index0 outside services.
 

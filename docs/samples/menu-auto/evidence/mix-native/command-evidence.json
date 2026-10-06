@@ -1,0 +1,139 @@
+{
+  "provenance": "Selected actual output excerpts, no rerun or synthesized output; command exits in runtime summaries/results",
+  "records": [
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/controlled-test-failure.log",
+      "output": "Running ExUnit with seed: 325041, max_cases: 40\n\n\n\n  1) test actual value (SampleTest)\n     test/sample_test.exs:3\n     Assertion with == failed\n     code:  assert Sample.value() == 99\n     left:  42\n     right: 99\n     stacktrace:\n       test/sample_test.exs:3: (test)\n\n\nFinished in 0.01 seconds (0.00s async, 0.01s sync)\n\nResult: 0/1 passed\nFailed: 1 test\nmudarro: exit status 2\n"
+    },
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/preview-compile.log",
+      "output": "Action: app-elixir:compile\nDirectory: .\nargv (not shell evaluation):\n  [0] \"mix\"\n  [1] \"compile\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n"
+    },
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/preview-test.log",
+      "output": "Action: app-elixir:test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"mix\"\n  [1] \"test\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n"
+    },
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/run-compile.log",
+      "output": "Compiling 1 file (.ex)\nGenerated mudarro_root app\n"
+    },
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/run-test.log",
+      "output": "Running ExUnit with seed: 255744, max_cases: 40\n\n.\nFinished in 0.02 seconds (0.00s async, 0.02s sync)\n\nResult: 1 passed\n"
+    },
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/test-restored.log",
+      "output": "Running ExUnit with seed: 923764, max_cases: 40\n\n.\nFinished in 0.02 seconds (0.00s async, 0.02s sync)\n\nResult: 1 passed\n"
+    },
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/wrapper-compile.log",
+      "output": ""
+    },
+    {
+      "profile": "root-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/root-runtime-logs/wrapper-test.log",
+      "output": "Running ExUnit with seed: 819048, max_cases: 40\n\n.\nFinished in 0.01 seconds (0.00s async, 0.01s sync)\n\nResult: 1 passed\n"
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/controlled-test-failure.log",
+      "output": "==> member\nRunning ExUnit with seed: 926176, max_cases: 40\n\n\n\n  1) test actual umbrella value (SampleTest)\n     apps/member/test/sample_test.exs:3\n     Assertion with == failed\n     code:  assert Sample.value() == 99\n     left:  42\n     right: 99\n     stacktrace:\n       test/sample_test.exs:3: (test)\n\n\nFinished in 0.02 seconds (0.00s async, 0.02s sync)\n\nResult: 0/1 passed\nFailed: 1 test\nmudarro: exit status 2\n"
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/preview-compile.log",
+      "output": "Action: app-elixir:compile\nDirectory: .\nargv (not shell evaluation):\n  [0] \"mix\"\n  [1] \"compile\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n"
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/preview-test.log",
+      "output": "Action: app-elixir:test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"mix\"\n  [1] \"test\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n"
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/run-compile.log",
+      "output": "==> member\nCompiling 1 file (.ex)\nGenerated member app\n"
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/run-test.log",
+      "output": "==> member\nRunning ExUnit with seed: 820910, max_cases: 40\n\n.\nFinished in 0.01 seconds (0.00s async, 0.01s sync)\n\nResult: 1 passed\n"
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/test-restored.log",
+      "output": "==> member\nRunning ExUnit with seed: 548318, max_cases: 40\n\n.\nFinished in 0.01 seconds (0.00s async, 0.01s sync)\n\nResult: 1 passed\n"
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/wrapper-compile.log",
+      "output": ""
+    },
+    {
+      "profile": "umbrella-runtime-logs",
+      "source": "/tmp/mudarro-mud044-implementation/umbrella-runtime-logs/wrapper-test.log",
+      "output": "==> member\nRunning ExUnit with seed: 384909, max_cases: 40\n\n.\nFinished in 0.01 seconds (0.00s async, 0.01s sync)\n\nResult: 1 passed\n"
+    },
+    {
+      "profile": "c",
+      "case": "selected-run-build",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/c'\nmkdir -p build\ngcc -Wall -Wextra -Werror -pedantic -std=c11 main.c -o build/sample\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/c'\n",
+      "stderr": ""
+    },
+    {
+      "profile": "c",
+      "case": "selected-run-test",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/c'\ntest \"$(./build/sample)\" = \"21\"\nREAL_C_TEST_PASS\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/c'\n",
+      "stderr": ""
+    },
+    {
+      "profile": "c",
+      "case": "selected-run-fail",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/c'\nOWNED_RECIPE_EXIT_7\nmake: *** [Makefile:11: fail] Error 7\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/c'\n",
+      "stderr": "mudarro: exit status 2\n"
+    },
+    {
+      "profile": "cpp",
+      "case": "selected-run-build",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp'\nmkdir -p build\ng++ -Wall -Wextra -Werror -pedantic -std=c++17 main.cpp -o build/sample\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp'\n",
+      "stderr": ""
+    },
+    {
+      "profile": "cpp",
+      "case": "selected-run-test",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp'\ntest \"$(./build/sample)\" = \"42\"\nREAL_CPP_TEST_PASS\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp'\n",
+      "stderr": ""
+    },
+    {
+      "profile": "cpp",
+      "case": "selected-run-fail",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp'\nOWNED_RECIPE_EXIT_7\nmake: *** [Makefile:11: fail] Error 7\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp'\n",
+      "stderr": "mudarro: exit status 2\n"
+    },
+    {
+      "profile": "mixed",
+      "case": "selected-run-build",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed'\nmkdir -p build\ngcc -Wall -Wextra -Werror -pedantic -std=c11 main.c -o build/c\nmkdir -p build\ng++ -Wall -Wextra -Werror -pedantic -std=c++17 main.cpp -o build/cpp\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed'\n",
+      "stderr": ""
+    },
+    {
+      "profile": "mixed",
+      "case": "selected-run-test",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed'\ntest \"$(./build/c)\" = \"21\"\ntest \"$(./build/cpp)\" = \"42\"\nREAL_MIXED_TEST_PASS\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed'\n",
+      "stderr": ""
+    },
+    {
+      "profile": "mixed",
+      "case": "selected-run-fail",
+      "stdout": "make: Entering directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed'\nOWNED_RECIPE_EXIT_7\nmake: *** [Makefile:15: owned-fail] Error 7\nmake: Leaving directory '/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed'\n",
+      "stderr": "mudarro: exit status 2\n"
+    }
+  ]
+}

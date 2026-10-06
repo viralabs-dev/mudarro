@@ -1,0 +1,766 @@
+[
+  {
+    "family": "c",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.002
+  },
+  {
+    "family": "c",
+    "name": "scan-repeat",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "c",
+    "name": "init-select",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "--select",
+      "app-custom:make-build,app-custom:make-fail,app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "c",
+    "name": "init-preservation",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c"
+    ],
+    "exit": 1,
+    "elapsed": 0.003
+  },
+  {
+    "family": "c",
+    "name": "generate-1",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "c",
+    "name": "generate-2",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "c",
+    "name": "preview-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "c",
+    "name": "selected-run-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.055
+  },
+  {
+    "family": "c",
+    "name": "selected-wrapper-build",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c/.mudarro/scripts/app-custom/make-build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.013
+  },
+  {
+    "family": "c",
+    "name": "preview-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "c",
+    "name": "selected-run-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.009
+  },
+  {
+    "family": "c",
+    "name": "selected-wrapper-test",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c/.mudarro/scripts/app-custom/make-test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.015
+  },
+  {
+    "family": "c",
+    "name": "preview-fail",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-fail"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "c",
+    "name": "selected-run-fail",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-fail"
+    ],
+    "exit": 1,
+    "elapsed": 0.007
+  },
+  {
+    "family": "c",
+    "name": "selected-wrapper-fail",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c/.mudarro/scripts/app-custom/make-fail.sh"
+    ],
+    "exit": 1,
+    "elapsed": 0.013
+  },
+  {
+    "family": "c",
+    "name": "repeat-selected-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.006
+  },
+  {
+    "family": "c",
+    "name": "repeat-selected-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+      "app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.009
+  },
+  {
+    "family": "c",
+    "name": "missing-target",
+    "argv": [
+      "/usr/bin/make",
+      "missing-owned-target"
+    ],
+    "exit": 2,
+    "elapsed": 0.002
+  },
+  {
+    "family": "cpp",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "cpp",
+    "name": "scan-repeat",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "cpp",
+    "name": "init-select",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "--select",
+      "app-custom:make-build,app-custom:make-fail,app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "cpp",
+    "name": "init-preservation",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp"
+    ],
+    "exit": 1,
+    "elapsed": 0.004
+  },
+  {
+    "family": "cpp",
+    "name": "generate-1",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp"
+    ],
+    "exit": 0,
+    "elapsed": 0.006
+  },
+  {
+    "family": "cpp",
+    "name": "generate-2",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "cpp",
+    "name": "preview-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "cpp",
+    "name": "selected-run-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.211
+  },
+  {
+    "family": "cpp",
+    "name": "selected-wrapper-build",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp/.mudarro/scripts/app-custom/make-build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.009
+  },
+  {
+    "family": "cpp",
+    "name": "preview-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "cpp",
+    "name": "selected-run-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.008
+  },
+  {
+    "family": "cpp",
+    "name": "selected-wrapper-test",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp/.mudarro/scripts/app-custom/make-test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.015
+  },
+  {
+    "family": "cpp",
+    "name": "preview-fail",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-fail"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "cpp",
+    "name": "selected-run-fail",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-fail"
+    ],
+    "exit": 1,
+    "elapsed": 0.008
+  },
+  {
+    "family": "cpp",
+    "name": "selected-wrapper-fail",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp/.mudarro/scripts/app-custom/make-fail.sh"
+    ],
+    "exit": 1,
+    "elapsed": 0.013
+  },
+  {
+    "family": "cpp",
+    "name": "repeat-selected-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.005
+  },
+  {
+    "family": "cpp",
+    "name": "repeat-selected-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+      "app-custom:make-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.01
+  },
+  {
+    "family": "cpp",
+    "name": "missing-target",
+    "argv": [
+      "/usr/bin/make",
+      "missing-owned-target"
+    ],
+    "exit": 2,
+    "elapsed": 0.003
+  },
+  {
+    "family": "mixed",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "mixed",
+    "name": "scan-repeat",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "mixed",
+    "name": "init-select",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "--select",
+      "app-custom:make-owned-build,app-custom:make-owned-fail,app-custom:make-owned-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.005
+  },
+  {
+    "family": "mixed",
+    "name": "init-preservation",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed"
+    ],
+    "exit": 1,
+    "elapsed": 0.004
+  },
+  {
+    "family": "mixed",
+    "name": "generate-1",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed"
+    ],
+    "exit": 0,
+    "elapsed": 0.005
+  },
+  {
+    "family": "mixed",
+    "name": "generate-2",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed"
+    ],
+    "exit": 0,
+    "elapsed": 0.005
+  },
+  {
+    "family": "mixed",
+    "name": "preview-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "mixed",
+    "name": "selected-run-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.245
+  },
+  {
+    "family": "mixed",
+    "name": "selected-wrapper-build",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed/.mudarro/scripts/app-custom/make-owned-build.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.009
+  },
+  {
+    "family": "mixed",
+    "name": "preview-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "mixed",
+    "name": "selected-run-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.012
+  },
+  {
+    "family": "mixed",
+    "name": "selected-wrapper-test",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed/.mudarro/scripts/app-custom/make-owned-test.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.019
+  },
+  {
+    "family": "mixed",
+    "name": "preview-fail",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "preview",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-fail"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "mixed",
+    "name": "selected-run-fail",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-fail"
+    ],
+    "exit": 1,
+    "elapsed": 0.009
+  },
+  {
+    "family": "mixed",
+    "name": "selected-wrapper-fail",
+    "argv": [
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed/.mudarro/scripts/app-custom/make-owned-fail.sh"
+    ],
+    "exit": 1,
+    "elapsed": 0.013
+  },
+  {
+    "family": "mixed",
+    "name": "repeat-selected-build",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-build"
+    ],
+    "exit": 0,
+    "elapsed": 0.007
+  },
+  {
+    "family": "mixed",
+    "name": "repeat-selected-test",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+      "app-custom:make-owned-test"
+    ],
+    "exit": 0,
+    "elapsed": 0.012
+  },
+  {
+    "family": "mixed",
+    "name": "missing-target",
+    "argv": [
+      "/usr/bin/make",
+      "missing-owned-target"
+    ],
+    "exit": 2,
+    "elapsed": 0.003
+  },
+  {
+    "family": "source-only",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "source-only",
+    "name": "scan-repeat",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.004
+  },
+  {
+    "family": "source-only",
+    "name": "scan",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "source-only",
+    "name": "scan-repeat",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "source-only",
+    "name": "init-source-only",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only"
+    ],
+    "exit": 0,
+    "elapsed": 0.002
+  },
+  {
+    "family": "source-only",
+    "name": "init-preservation",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only"
+    ],
+    "exit": 1,
+    "elapsed": 0.002
+  },
+  {
+    "family": "source-only",
+    "name": "generate-1",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "source-only",
+    "name": "generate-2",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only"
+    ],
+    "exit": 0,
+    "elapsed": 0.003
+  },
+  {
+    "family": "source-only",
+    "name": "source-only-no-test-command",
+    "argv": [
+      "/tmp/mudarro-mud044045-root/mudarro",
+      "run",
+      "--root",
+      "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only",
+      "app-custom:test"
+    ],
+    "exit": 1,
+    "elapsed": 0.003
+  }
+]

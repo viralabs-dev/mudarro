@@ -1,0 +1,161 @@
+{
+  "root": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "scan",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "init",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "preview-compile",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "run-compile",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-compile",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "preview-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "run-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "controlled-test-failure",
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "test-restored",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "existing-init-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "manual_configuration_preserved": true,
+    "generate_idempotent": true,
+    "no_start_inferred": true,
+    "source_restored": true
+  },
+  "umbrella": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "scan",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "init",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "preview-compile",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "run-compile",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-compile",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "preview-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "run-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "controlled-test-failure",
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "test-restored",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "existing-init-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "manual_configuration_preserved": true,
+    "generate_idempotent": true,
+    "no_start_inferred": true,
+    "source_restored": true
+  },
+  "metadata": {
+    "binary": "/tmp/mudarro-mud044045-root/mudarro",
+    "binary_sha256": "6c9734f0b214a2bc0501be6454e58be8b84f811e4e4a349100ceff76baa84436",
+    "mix_version": "1.20.2",
+    "otp": "29",
+    "dependencies_downloaded": false,
+    "hex_installed": false,
+    "umbrella_flag": "explicit metadata only; native Mix handles graph from root cwd",
+    "persistent_application_started": false,
+    "local_TCP_locks_escalation_authorized": true
+  }
+}

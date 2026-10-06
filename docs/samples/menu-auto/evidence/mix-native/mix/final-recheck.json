@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "fixture": "root",
+      "case": "scan",
+      "exit_code": 0
+    },
+    {
+      "fixture": "root",
+      "case": "compile",
+      "exit_code": 0
+    },
+    {
+      "fixture": "root",
+      "case": "test",
+      "exit_code": 0
+    },
+    {
+      "fixture": "root",
+      "case": "wrapper",
+      "exit_code": 0
+    },
+    {
+      "fixture": "umbrella",
+      "case": "scan",
+      "exit_code": 0
+    },
+    {
+      "fixture": "umbrella",
+      "case": "compile",
+      "exit_code": 0
+    },
+    {
+      "fixture": "umbrella",
+      "case": "test",
+      "exit_code": 0
+    },
+    {
+      "fixture": "umbrella",
+      "case": "wrapper",
+      "exit_code": 0
+    }
+  ],
+  "binary_sha256": "118b9c03628481fd3bf662c1590a036e0ec812d744d59055d23983bdd3a5aef4",
+  "configuration_preserved": true,
+  "original26_logs_preserved": true,
+  "downloads_or_installations": false
+}

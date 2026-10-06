@@ -1,0 +1,32 @@
+version: 1
+name: mixed
+services:
+    - id: app-custom
+      dir: .
+      language: custom
+      infrastructure:
+        kind: local
+      commands:
+        make-owned-build:
+            args:
+                - make
+                - -C
+                - .
+                - owned-build
+            group: scripts
+        make-owned-fail:
+            args:
+                - make
+                - -C
+                - .
+                - owned-fail
+            group: scripts
+        make-owned-test:
+            args:
+                - make
+                - -C
+                - .
+                - owned-test
+            group: scripts
+      pending:
+        - 'Native sources with Makefile: select explicit Make targets or declare commands; compiler flags and startup are not inferred'

@@ -128,3 +128,26 @@ GIF final genuíno: 983×739, 8 frames, 15,04 s. Frame composto inspecionado: le
 Evidências: [project-name-tests.txt](../samples/menu-auto/evidence/project-name-tests.txt), [project-name-coverage.out](../samples/menu-auto/evidence/project-name-coverage.out), [project-name-coverage-functions.txt](../samples/menu-auto/evidence/project-name-coverage-functions.txt), [project-name-coverage-summary.tsv](../samples/menu-auto/evidence/project-name-coverage-summary.tsv), [project-name-vet.txt](../samples/menu-auto/evidence/project-name-vet.txt), [project-name-visual/frame-menu-recording.png](../samples/menu-auto/evidence/project-name-visual/frame-menu-recording.png).
 
 Implementação atual: [configuração UI](ui-configuration.md). Config/i18n/tema/preview implementados; fonte/aceite mouse em emulador real continuam pendentes separados. Gates finais:74 testes,76,38% statements agregados; ver [cobertura](coverage.md).
+
+
+## Mix e Make explícitos
+
+Serviço language:elixir/manager:mix oferece compile/test somente com seleção. mix_umbrella:true é declaração manual; requer mix.exs regular/legível e não infere membros/grafo. C/C++ permanece custom com targetsMake escolhidos pelo usuário; semMake, evidência pendente. [Sample e limites](../samples/menu-auto/evidence/mix-native/README.pt-BR.md).
+
+```yaml
+version: 1
+name: Explicit Mix umbrella
+services:
+  - id: umbrella
+    dir: .
+    language: elixir
+    manager: mix
+    mix_umbrella: true
+    infrastructure:
+      kind: local
+    commands:
+      compile:
+        args: [mix, compile]
+      test:
+        args: [mix, test]
+```

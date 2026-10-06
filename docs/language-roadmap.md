@@ -1,5 +1,10 @@
 English · [Português (Brasil)](pt-BR/language-roadmap.md)
 
+## Current checkpoint — MUD-044/MUD-045
+
+199racePASS/zero failures-testskips/81.73%; static Mix opt-in compile/test and explicit umbrella, C/C++custom Make user targets validated in internal samples.26Mixchecks+8rechecks/63nativecommands+rechecks; no installation/inventedstart/publication of this batch. MUD037 published6c868c95[daneiel/skipci/0Actions]. [Evidence and limits](samples/menu-auto/evidence/mix-native/README.md).
+
+
 ## Current local implementation status — 2026-10-06
 
 Bun locks and Bun1.4.0 real runtime are validated locally. Pipfile/Pipenv detection, scripts and database argv are implemented and tested, and Pipenv2026.8.0 runtime now passes a zero-dependency fixture. Known packageManager names are validated; supplied versions now require exact SemVer syntax (metadata syntactic only). Go host entrypoints and bounded source IO are corrected; explicit target selection and scoped isolation pass; full workspace membership parser remains open. Yarn1.22.22/4.18.1, uv0.12.23 and Poetry2.5.1 now pass isolated zero-dependency runtime validation. This narrows the remaining roadmap below; no new-language demand or adapters are inferred. [Latest evidence](samples/menu-auto/evidence/isolated-runtimes/README.md). Changes uncommitted on published base b887f64.

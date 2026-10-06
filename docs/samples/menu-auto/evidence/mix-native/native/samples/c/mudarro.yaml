@@ -1,0 +1,32 @@
+version: 1
+name: c
+services:
+    - id: app-custom
+      dir: .
+      language: custom
+      infrastructure:
+        kind: local
+      commands:
+        make-build:
+            args:
+                - make
+                - -C
+                - .
+                - build
+            group: scripts
+        make-fail:
+            args:
+                - make
+                - -C
+                - .
+                - fail
+            group: scripts
+        make-test:
+            args:
+                - make
+                - -C
+                - .
+                - test
+            group: scripts
+      pending:
+        - 'Native sources with Makefile: select explicit Make targets or declare commands; compiler flags and startup are not inferred'

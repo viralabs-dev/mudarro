@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "files": {
+    ".mudarro/scripts/app-elixir/compile.sh": "37b351d638d88574c0dbd835ed4ec3410aaf5a38fb932ab129078f56fd383a01",
+    ".mudarro/scripts/app-elixir/down.sh": "dbcf8c57cf87459cffb2ab2e13370e50a44263eb95f52b5a7dd4b9a3481b8b59",
+    ".mudarro/scripts/app-elixir/logs.sh": "61d4be4e538ec6d0b44977b89a4cea38912a3a2cd3f33519cb05ca95f7c63ffc",
+    ".mudarro/scripts/app-elixir/restart.sh": "244eee9ab0c1f94d08a4f9942d1e4301039b0d3fc691514c9853f5a4165b823c",
+    ".mudarro/scripts/app-elixir/status.sh": "c508bdf1900b6141186c6569ac8d1b8b3e38c3331d42b9bd1c442eddbaf5837d",
+    ".mudarro/scripts/app-elixir/test.sh": "be128b9b41a1f7a27ff5cafded9108a78c77ff6587d46ec223f705aa10103b75",
+    ".mudarro/scripts/app-elixir/up.sh": "50c88082866c6ab35b9db2bdaccdbcccd7137335f664affd9dc7bf57dd584cef",
+    "menu.sh": "ee014a7b2ddd253088e9775c8f692a7374b729269cb4c67f5e8ea59f3b66c98f"
+  }
+}

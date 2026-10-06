@@ -1,0 +1,12 @@
+{
+  "newRuntimeInstalls": false,
+  "noNewCommitPush": true,
+  "sampleFiles": 46,
+  "markdownLinksMissing": 0,
+  "hashes": "PASS",
+  "exclusiveProcessesRemaining": [],
+  "reviewFinding": "global Mix ignores reproduced; fixed context-scoped, regressionPASS",
+  "race": "199PASS/0fail/0testskip",
+  "rawCoveragePreserved": "/tmp/mudarro-mud044045-root/verified-coverage-raw.out",
+  "publicationBase": "6c868c95c780cd6ae5939c16a69e3134acdfef01"
+}

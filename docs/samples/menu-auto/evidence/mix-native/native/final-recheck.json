@@ -1,0 +1,129 @@
+{
+  "binary": "/tmp/mudarro-mud044045-root/mudarro",
+  "sha256": "118b9c03628481fd3bf662c1590a036e0ec812d744d59055d23983bdd3a5aef4",
+  "result": "PASS",
+  "commands": [
+    {
+      "family": "c",
+      "name": "scan",
+      "argv": [
+        "/tmp/mudarro-mud044045-root/mudarro",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+        "--json"
+      ],
+      "exit": 0,
+      "elapsed": 0.002
+    },
+    {
+      "family": "c",
+      "name": "selected-test",
+      "argv": [
+        "/tmp/mudarro-mud044045-root/mudarro",
+        "run",
+        "--root",
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/c",
+        "app-custom:make-test"
+      ],
+      "exit": 0,
+      "elapsed": 0.006
+    },
+    {
+      "family": "c",
+      "name": "wrapper-test",
+      "argv": [
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/c/.mudarro/scripts/app-custom/make-test.sh"
+      ],
+      "exit": 0,
+      "elapsed": 0.009
+    },
+    {
+      "family": "cpp",
+      "name": "scan",
+      "argv": [
+        "/tmp/mudarro-mud044045-root/mudarro",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+        "--json"
+      ],
+      "exit": 0,
+      "elapsed": 0.004
+    },
+    {
+      "family": "cpp",
+      "name": "selected-test",
+      "argv": [
+        "/tmp/mudarro-mud044045-root/mudarro",
+        "run",
+        "--root",
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp",
+        "app-custom:make-test"
+      ],
+      "exit": 0,
+      "elapsed": 0.011
+    },
+    {
+      "family": "cpp",
+      "name": "wrapper-test",
+      "argv": [
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/cpp/.mudarro/scripts/app-custom/make-test.sh"
+      ],
+      "exit": 0,
+      "elapsed": 0.018
+    },
+    {
+      "family": "mixed",
+      "name": "scan",
+      "argv": [
+        "/tmp/mudarro-mud044045-root/mudarro",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+        "--json"
+      ],
+      "exit": 0,
+      "elapsed": 0.005
+    },
+    {
+      "family": "mixed",
+      "name": "selected-test",
+      "argv": [
+        "/tmp/mudarro-mud044045-root/mudarro",
+        "run",
+        "--root",
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+        "app-custom:make-owned-test"
+      ],
+      "exit": 0,
+      "elapsed": 0.014
+    },
+    {
+      "family": "mixed",
+      "name": "wrapper-test",
+      "argv": [
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed/.mudarro/scripts/app-custom/make-owned-test.sh"
+      ],
+      "exit": 0,
+      "elapsed": 0.019
+    },
+    {
+      "family": "source-only",
+      "name": "scan",
+      "argv": [
+        "/tmp/mudarro-mud044045-root/mudarro",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud045-implementation/runtime-fixtures/source-only",
+        "--json"
+      ],
+      "exit": 0,
+      "elapsed": 0.004
+    }
+  ],
+  "originalEvidencePreserved": "runtime-results.json/runtime-logs",
+  "recordFixture": "/tmp/mudarro-mud045-implementation/runtime-fixtures/mixed",
+  "recordAction": "app-custom:make-owned-test",
+  "recordEnv": "recording-env.json"
+}
