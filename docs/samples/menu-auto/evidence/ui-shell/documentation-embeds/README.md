@@ -1,6 +1,6 @@
 # Visible documentation media — MUD-054
 
-Nine pages, 36 standalone Markdown image embeds, zero broken relative links. Each gallery uses #recorded-screens (English) or #telas-gravadas (pt-BR). Root README shows dark-English; pt-BR README shows light-Portuguese. Guides/samples show both. Existing recordings and Library version 3 are unchanged.
+Nine pages, 40 standalone Markdown image embeds, zero broken relative links. Each gallery uses #recorded-screens (English) or #telas-gravadas (pt-BR). Both READMEs and guides/samples show dark-English and light-Portuguese PNG/GIF pairs. Existing recordings and Library version 3 are unchanged.
 
 Images use standard Markdown image syntax with relative PNG/GIF paths, filenames match on a case-sensitive filesystem, and each image has a visible prose caption. PNGs were decoded and visually inspected. GIFs decode all frames, have nonzero durations/multiple frames and loop indefinitely. This validates the local media and embed structure; it does not claim a browser or actual GitHub page preview was opened.
 

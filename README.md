@@ -21,7 +21,17 @@ Frame of real long output with the banner and footer preserved.
 
 Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
 
-[See the light theme, details and reproduction](docs/ui-shell.md#recorded-screens).
+### Light · Portuguese
+
+![Real PTY recording frame in the light palette, with fixed banner and footer.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png)
+
+Real PTY recording frame in the light palette, with fixed banner and footer.
+
+![Animated real light-theme session in Portuguese.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif)
+
+Animated real light-theme session in Portuguese. Renderer background illustrates the palette; Mudarro does not change terminal background settings.
+
+[See both themes, details and reproduction](docs/ui-shell.md#recorded-screens).
 
 ## Current CI correction — MUD-030
 

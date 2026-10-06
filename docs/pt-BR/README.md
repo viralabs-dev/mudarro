@@ -21,7 +21,17 @@ Frame da saída real longa, com banner e rodapé preservados.
 
 GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.
 
-[Ver também tema escuro, detalhes e reprodução](ui-shell.md#telas-gravadas).
+### Escuro · inglês
+
+![Frame real da gravação PTY na paleta escura, com banner e rodapé fixos.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+
+Frame real da gravação PTY na paleta escura, com banner e rodapé fixos.
+
+![GIF animado da sessão real com tema escuro em inglês.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+
+GIF animado da sessão real com tema escuro em inglês. O fundo do renderizador ilustra a paleta; o Mudarro não altera configurações de fundo do terminal.
+
+[Ver ambos os temas, detalhes e reprodução](ui-shell.md#telas-gravadas).
 
 ## Correção atual da CI — MUD-030
 
