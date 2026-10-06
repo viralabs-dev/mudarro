@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "name": "mudarro",
+  "ui": {
+    "locale": "pt-BR",
+    "theme": "light",
+    "preview": {
+      "enabled": true,
+      "mouse": "on"
+    }
+  },
+  "services": [
+    {
+      "id": "mudarro",
+      "dir": ".",
+      "language": "custom",
+      "infrastructure": {
+        "kind": "custom"
+      },
+      "commands": {
+        "a-output": {
+          "args": [
+            "bash",
+            "long.sh"
+          ],
+          "group": "quality"
+        },
+        "b-error": {
+          "args": [
+            "sh",
+            "-c",
+            "printf \"real-failure\\n\"; exit 7"
+          ],
+          "group": "quality"
+        },
+        "c-input": {
+          "args": [
+            "sh",
+            "input.sh"
+          ],
+          "group": "quality"
+        },
+        "d-cancel": {
+          "args": [
+            "bash",
+            "cancel.sh"
+          ],
+          "group": "quality"
+        },
+        "e-confirm": {
+          "args": [
+            "sh",
+            "confirm.sh"
+          ],
+          "destructive": true,
+          "group": "quality"
+        }
+      }
+    }
+  ]
+}

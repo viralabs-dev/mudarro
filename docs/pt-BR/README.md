@@ -2,10 +2,12 @@
 
 # Mudarro
 
-Detecta a stack de um projeto e gera um menu Bash com ASCII art, submenus e scripts de operação. **Sem IA**: a detecção e a geração funcionam sem rede. Downloads só acontecem em ações de instalação ou nas ferramentas acionadas pelo usuário.
+Detecta a stack de um projeto e gera um menu Bash com ASCII art, submenus e scripts de operação. A detecção e a geração funcionam sem rede. Downloads só acontecem em ações de instalação ou nas ferramentas acionadas pelo usuário.
 
 
 ## Telas gravadas
+
+Exemplo atual: projeto `mudarro`, definido por `Config.Name`, com capturas reais atualizadas em MUD-055. Esta revisão publica o exemplo atualizado a partir de `246048a`; a etapa anterior Aurora foi preservada como histórico.
 
 Execução real do CLI em PTY, com entrada controlada. PNGs são frames renderizados da gravação; não são screenshots do desktop. O banner e o rodapé permanecem fixos enquanto o centro mostra menus, prévia e execução.
 
@@ -13,21 +15,21 @@ Execução real do CLI em PTY, com entrada controlada. PNGs são frames renderiz
 
 ### Claro · português
 
-![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png)
+![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png)
 
 Frame da saída real longa, com banner e rodapé preservados.
 
-![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif)
+![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif)
 
 GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.
 
 ### Escuro · inglês
 
-![Frame real da gravação PTY na paleta escura, com banner e rodapé fixos.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+![Frame real da gravação PTY na paleta escura, com banner e rodapé fixos.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png)
 
 Frame real da gravação PTY na paleta escura, com banner e rodapé fixos.
 
-![GIF animado da sessão real com tema escuro em inglês.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+![GIF animado da sessão real com tema escuro em inglês.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif)
 
 GIF animado da sessão real com tema escuro em inglês. O fundo do renderizador ilustra a paleta; o Mudarro não altera configurações de fundo do terminal.
 
@@ -86,7 +88,7 @@ Os IDs reais aparecem em `scan` e em `mudarro.yaml`. Os menus gerados dependem d
 
 ```yaml
 version: 1
-name: Minha aplicação
+name: mudarro
 services:
   - id: app
     dir: .

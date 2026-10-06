@@ -33,7 +33,7 @@ Leitura autenticada de permissões Actions retornou enabled=true/allowed_actions
 
 ```yaml
 version: 1
-name: Meu serviço
+name: mudarro
 services:
   - id: api
     dir: .

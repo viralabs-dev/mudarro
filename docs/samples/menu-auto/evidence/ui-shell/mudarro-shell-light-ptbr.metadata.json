@@ -1,0 +1,149 @@
+{
+  "profile": "mudarro-shell-light-ptbr",
+  "locale": "pt-BR",
+  "theme": "light",
+  "exit_code": 0,
+  "termios_restored": true,
+  "chrome_checks": 24,
+  "duration_seconds": 11.515,
+  "binary_sha256": "0665a9bff0e80b238bf38506cefa3bee226e0c2cf72bbb7043f8bbf28556b970",
+  "events": [
+    {
+      "time": 0.500324,
+      "label": "service",
+      "hex": "310d"
+    },
+    {
+      "time": 0.900806,
+      "label": "group",
+      "hex": "310d"
+    },
+    {
+      "time": 1.301403,
+      "label": "preview",
+      "hex": "1b5b42"
+    },
+    {
+      "time": 1.701833,
+      "label": "preview page",
+      "hex": "1b5b367e"
+    },
+    {
+      "time": 2.102281,
+      "label": "wheel in preview",
+      "hex": "1b5b3c36353b39383b32304d"
+    },
+    {
+      "time": 2.502658,
+      "label": "outside header mouse",
+      "hex": "1b5b3c36353b39383b324d"
+    },
+    {
+      "time": 2.902971,
+      "label": "collapse",
+      "hex": "1b5b41"
+    },
+    {
+      "time": 3.303321,
+      "label": "execute long/ANSI/stdout+stderr",
+      "hex": "310d"
+    },
+    {
+      "time": 5.003857,
+      "label": "return",
+      "hex": "0d"
+    },
+    {
+      "time": 5.404408,
+      "label": "execute error",
+      "hex": "320d"
+    },
+    {
+      "time": 5.804767,
+      "label": "return error",
+      "hex": "0d"
+    },
+    {
+      "time": 6.205221,
+      "label": "execute stdin",
+      "hex": "330d"
+    },
+    {
+      "time": 6.605738,
+      "label": "owned stdin",
+      "hex": "666978747572652d696e7075740d"
+    },
+    {
+      "time": 7.006232,
+      "label": "return stdin",
+      "hex": "0d"
+    },
+    {
+      "time": 7.406696,
+      "label": "execute cancel",
+      "hex": "340d"
+    },
+    {
+      "time": 7.807119,
+      "label": "Ctrl+C cancel process group",
+      "hex": "03"
+    },
+    {
+      "time": 8.507801,
+      "label": "execute after cancel",
+      "hex": "320d"
+    },
+    {
+      "time": 8.908248,
+      "label": "return repeat",
+      "hex": "0d"
+    },
+    {
+      "time": 9.30859,
+      "label": "destructive prompt",
+      "hex": "350d"
+    },
+    {
+      "time": 9.709013,
+      "label": "explicit confirmation",
+      "hex": "415041474152206d75646172726f0d7175657565642d6368696c642d696e7075740d"
+    },
+    {
+      "time": 10.1096,
+      "label": "return confirmation",
+      "hex": "0d"
+    },
+    {
+      "time": 10.510107,
+      "label": "actions back",
+      "hex": "71"
+    },
+    {
+      "time": 10.910583,
+      "label": "groups back",
+      "hex": "71"
+    },
+    {
+      "time": 11.311018,
+      "label": "exit",
+      "hex": "71"
+    }
+  ],
+  "capture": "genuine CLI PTY output; injected keys/SGR mouse bytes; no GUI or browser",
+  "project_name": "mudarro",
+  "project_header_checks": 24,
+  "removed_slogans_absent": true,
+  "cases": [
+    "preview",
+    "mouse bounds",
+    "long output",
+    "ANSI containment",
+    "stderr",
+    "error",
+    "stdin",
+    "cancel descendant",
+    "repeat after cancel",
+    "destructive confirmation",
+    "cleanup"
+  ]
+}

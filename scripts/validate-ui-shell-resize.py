@@ -1,11 +1,11 @@
-import importlib.util,sys,os,pty,fcntl,termios,struct,subprocess,time,select,pathlib,json,signal
+import importlib.util,sys,os,pty,fcntl,termios,struct,subprocess,time,select,pathlib,json,signal,re
 # Reuse the actual-output screen decoder without invoking its recordings.
 script_dir=pathlib.Path(__file__).resolve().parent
 binary=pathlib.Path(sys.argv[1]).resolve();output=pathlib.Path(sys.argv[2]).resolve()
-src=(script_dir/'record-ui-shell.py').read_text().split("record('aurora-shell-dark-en'")[0]
+src=(script_dir/'record-ui-shell.py').read_text().split("record('mudarro-shell-dark-en'")[0]
 sys.argv=['validator',str(binary),str(output)];scope={};exec(src,scope);Screen=scope['Screen']
 root=output;root.mkdir(exist_ok=True)
-(root/'mudarro.json').write_text(json.dumps({'version':1,'name':'Aurora','ui':{'lettering':'text','preview':{'enabled':True,'mouse':'on'}},'services':[{'id':'aurora','dir':'.','language':'custom','infrastructure':{'kind':'custom'},'commands':{'test':{'args':['true'],'group':'quality'}}}]}))
+(root/'mudarro.json').write_text(json.dumps({'version':1,'name':'mudarro','ui':{'lettering':'text','preview':{'enabled':True,'mouse':'on'}},'services':[{'id':'mudarro','dir':'.','language':'custom','infrastructure':{'kind':'custom'},'commands':{'test':{'args':['true'],'group':'quality'}}}]}))
 results=[]
 for no_color in [False,True]:
  m,s=pty.openpty();before=termios.tcgetattr(s)
@@ -20,7 +20,9 @@ for no_color in [False,True]:
    ready,_,_=select.select([m],[],[],.02)
    if ready:out+=os.read(m,65536)
   return out
- initial=read();os.write(m,b'1\r');read();os.write(m,b'1\r');read();os.write(m,b'\x1b[B');read()
+ initial=read();initial_screen=Screen(100,32);initial_screen.feed(initial.decode());assert any('mudarro' in line for line in initial_screen.text()[:10]),'Config.Name missing from project header'
+ assert not re.search(rb'no\s+ai|sem\s+ia',initial,re.IGNORECASE),'Removed UI slogan reappeared'
+ os.write(m,b'1\r');read();os.write(m,b'1\r');read();os.write(m,b'\x1b[B');read()
  for cols,rows in [(12,6),(8,2),(100,32)]:
   fcntl.ioctl(s,termios.TIOCSWINSZ,struct.pack('HHHH',rows,cols,0,0));data=read();sc=Screen(cols,rows);sc.feed(data.decode());
   # DECAWM disables wrap; verify row addresses never leave actual dimensions.

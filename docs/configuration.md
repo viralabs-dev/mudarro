@@ -41,7 +41,7 @@ Commands and configuration identifiers are preserved verbatim; Portuguese commen
 
 ```yaml
 version: 1
-name: Meu serviço
+name: mudarro
 services:
   - id: api
     dir: .

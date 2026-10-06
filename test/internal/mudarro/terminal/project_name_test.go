@@ -15,7 +15,7 @@ import (
 
 func TestConsumerProjectNamesAndWidths(t *testing.T) {
 	for _, tc := range []struct{ name, visible string }{
-		{"Atlas API", "Atlas API"}, {"Aurora", "Aurora"},
+		{"Atlas API", "Atlas API"}, {"Aurora", "Aurora"}, {"mudarro", "mudarro"},
 		{"Café Equipe", "Café Equipe"}, {"漢字😀", "漢字😀"},
 		{"Equipe com um nome de projeto muito longo", "Equipe com um nom"},
 		{"Atlas\x1b]52;secret\a\n", "Atlas]52;secret"},
@@ -59,7 +59,7 @@ func TestConsumerProjectNamesAndWidths(t *testing.T) {
 				if !strings.Contains(text, want) && !strings.Contains(text, strings.ToUpper(want)) {
 					t.Fatalf("name not readable: %q in %q", want, text)
 				}
-				if strings.Contains(text, "MUDARRO") {
+				if !strings.EqualFold(tc.name, "mudarro") && strings.Contains(text, "MUDARRO") {
 					t.Fatal("consumer menu replaced project with tool branding")
 				}
 				for _, line := range strings.Split(text, "\n") {

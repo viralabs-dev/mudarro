@@ -2,10 +2,12 @@ English · [Português (Brasil)](docs/pt-BR/README.md)
 
 # Mudarro
 
-Detect a project's stack and generate a Bash menu with ASCII lettering, submenus and operational scripts. **No AI:** scanning and generation work offline. Downloads occur only through installation actions or tools explicitly invoked by the user.
+Detect a project's stack and generate a Bash menu with ASCII lettering, submenus and operational scripts. Scanning and generation work offline. Downloads occur only through installation actions or tools explicitly invoked by the user.
 
 
 ## Recorded screens
+
+Current example: project `mudarro`, supplied by `Config.Name`, with real captures refreshed in MUD-055. This revision publishes the refreshed example based on `246048a`; the earlier Aurora checkpoint remains preserved as history.
 
 Real CLI execution in a PTY with controlled input. PNGs are rendered recording frames, not desktop screenshots. The banner and footer remain fixed while the center shows menus, preview and execution.
 
@@ -13,21 +15,21 @@ Real CLI execution in a PTY with controlled input. PNGs are rendered recording f
 
 ### Dark · English
 
-![Frame of real long output with the banner and footer preserved.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+![Frame of real long output with the banner and footer preserved.](docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png)
 
 Frame of real long output with the banner and footer preserved.
 
-![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif)
 
 Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
 
 ### Light · Portuguese
 
-![Real PTY recording frame in the light palette, with fixed banner and footer.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png)
+![Real PTY recording frame in the light palette, with fixed banner and footer.](docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png)
 
 Real PTY recording frame in the light palette, with fixed banner and footer.
 
-![Animated real light-theme session in Portuguese.](docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif)
+![Animated real light-theme session in Portuguese.](docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif)
 
 Animated real light-theme session in Portuguese. Renderer background illustrates the palette; Mudarro does not change terminal background settings.
 
@@ -82,7 +84,7 @@ Actual service IDs appear in scan output and `mudarro.yaml`. Generated menus req
 
 ```yaml
 version: 1
-name: My application
+name: mudarro
 services:
   - id: app
     dir: .

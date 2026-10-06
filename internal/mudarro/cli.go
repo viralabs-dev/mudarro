@@ -93,9 +93,9 @@ func Main(args []string, version string, in io.Reader, out io.Writer) (result er
 		return nil
 	}
 	if args[0] == "help" || args[0] == "--help" {
-		text := "Mudarro — operational menus without AI\n\n  scan [--json] [--exclude path]\n  init [--interactive | --select service:script,... | --all-scripts] [--format yaml|json]\n  generate [--dry-run]\n  menu\n  preview service:action\n  run service:action [--name name] [--dry-run]\n  doctor\n  version\n\nAll commands accept --root directory and --config file. Configure mudarro.yaml or mudarro.json before generating. UI flags: --locale en|pt-BR --theme auto|light|dark.\n"
+		text := "Mudarro — operational menus\n\n  scan [--json] [--exclude path]\n  init [--interactive | --select service:script,... | --all-scripts] [--format yaml|json]\n  generate [--dry-run]\n  menu\n  preview service:action\n  run service:action [--name name] [--dry-run]\n  doctor\n  version\n\nAll commands accept --root directory and --config file. Configure mudarro.yaml or mudarro.json before generating. UI flags: --locale en|pt-BR --theme auto|light|dark.\n"
 		if locale == "pt-BR" {
-			text = "Mudarro — menus operacionais sem IA\n\n  scan [--json] [--exclude caminho]\n  init [--interactive | --select serviço:script,... | --all-scripts] [--format yaml|json]\n  generate [--dry-run]\n  menu\n  preview serviço:ação\n  run serviço:ação [--name nome] [--dry-run]\n  doctor\n  version\n\nTodos os comandos aceitam --root diretório e --config arquivo. Configure mudarro.yaml ou mudarro.json antes de gerar. UI: --locale en|pt-BR --theme auto|light|dark.\n"
+			text = "Mudarro — menus operacionais\n\n  scan [--json] [--exclude caminho]\n  init [--interactive | --select serviço:script,... | --all-scripts] [--format yaml|json]\n  generate [--dry-run]\n  menu\n  preview serviço:ação\n  run serviço:ação [--name nome] [--dry-run]\n  doctor\n  version\n\nTodos os comandos aceitam --root diretório e --config arquivo. Configure mudarro.yaml ou mudarro.json antes de gerar. UI: --locale en|pt-BR --theme auto|light|dark.\n"
 		}
 		fmt.Fprint(out, text)
 		return nil
@@ -288,7 +288,7 @@ func findAction(c Config, key string) (Service, Action, error) {
 func menu(root string, c Config, in io.Reader, out io.Writer) error {
 	reader := bufio.NewReader(in)
 	u := c.UIOptions()
-	view := terminal.NewMenu(out, c.Name, fmt.Sprintf(uiText(c, "%d service(s) · offline detection · no AI", "%d serviço(s) · detecção offline · sem IA"), len(c.Services)))
+	view := terminal.NewMenu(out, c.Name, fmt.Sprintf(uiText(c, "%d service(s) · offline detection", "%d serviço(s) · detecção offline"), len(c.Services)))
 	view.Configure(terminal.Presentation{Locale: u.Locale, Theme: u.Theme, Density: u.Density, Lettering: u.Lettering, Mouse: u.Preview.Mouse})
 	if f, ok := in.(*os.File); ok {
 		if _, err := view.BeginShell(f); err != nil {

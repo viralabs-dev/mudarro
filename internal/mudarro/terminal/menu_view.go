@@ -32,7 +32,7 @@ func (v *Menu) Choose(reader *bufio.Reader, title string, labels []string) (int,
 		}
 		fmt.Fprintln(v.out)
 		fmt.Fprintln(v.out, "   "+s.Hint(fitText(v.text("PROJECT / ", "PROJETO / ")+v.project, s.width-4)))
-		fmt.Fprintln(v.out, "   "+s.Hint(fitText(v.text("LOCAL OPERATIONS · NO AI", "OPERAÇÕES LOCAIS · SEM IA"), s.width-4)))
+		fmt.Fprintln(v.out, "   "+s.Hint(fitText(v.text("LOCAL OPERATIONS", "OPERAÇÕES LOCAIS"), s.width-4)))
 		fmt.Fprintln(v.out, "   "+s.heading(fitText(v.context, s.width-4)))
 		fmt.Fprintln(v.out, s.rule())
 	} else if !v.printed {

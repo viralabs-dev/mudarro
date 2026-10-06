@@ -6,27 +6,29 @@
 
 ## Telas gravadas
 
+Exemplo atual: projeto `mudarro`, definido por `Config.Name`, com capturas reais atualizadas em MUD-055. Esta revisão publica o exemplo atualizado a partir de `246048a`; a etapa anterior Aurora foi preservada como histórico.
+
 Execução real do CLI em PTY, com entrada controlada. PNGs são frames renderizados da gravação; não são screenshots do desktop. O banner e o rodapé permanecem fixos enquanto o centro mostra menus, prévia e execução.
 
 **Revisão gravada:** estas telas reais acompanham o shell permanente de MUD-032. As gravações anteriores foram preservadas; a validação abaixo foi executada localmente, independente da CI.
 
 ### Escuro · inglês
 
-![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png)
 
 Frame da saída real longa, com banner e rodapé preservados.
 
-![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif)
 
 GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.
 
 ### Claro · português
 
-![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png)
+![Frame da saída real longa, com banner e rodapé preservados.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png)
 
 Frame da saída real longa, com banner e rodapé preservados.
 
-![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif)
+![GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.](../samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif)
 
 GIF animado da sessão real: prévia, execução, erro, entrada, cancelamento e retorno ao menu.
 

@@ -45,7 +45,7 @@ printf 'output-finished\\n'
  (root/'confirm.sh').write_text('read answer; printf \"confirmed:%s\\n\" \"$answer\"\n')
  commands={'a-output':{'args':['bash','long.sh']},'b-error':{'args':['sh','-c','printf "real-failure\\n"; exit 7']},'c-input':{'args':['sh','input.sh']},'d-cancel':{'args':['bash','cancel.sh']},'e-confirm':{'args':['sh','confirm.sh'],'destructive':True}}
  for c in commands.values():c['group']='quality'
- conf={'version':1,'name':'Aurora','ui':{'locale':locale,'theme':theme,'preview':{'enabled':True,'mouse':'on'}},'services':[{'id':'aurora','dir':'.','language':'custom','infrastructure':{'kind':'custom'},'commands':commands}]}
+ conf={'version':1,'name':'mudarro','ui':{'locale':locale,'theme':theme,'preview':{'enabled':True,'mouse':'on'}},'services':[{'id':'mudarro','dir':'.','language':'custom','infrastructure':{'kind':'custom'},'commands':commands}]}
  (root/'mudarro.json').write_text(json.dumps(conf,indent=2)+'\n')
  master,slave=pty.openpty(); original=termios.tcgetattr(slave); w,h=100,32;fcntl.ioctl(slave,termios.TIOCSWINSZ,struct.pack('HHHH',h,w,0,0))
  env=os.environ.copy();env.pop('NO_COLOR',None);env.update(TERM='xterm-256color')
@@ -66,6 +66,8 @@ printf 'output-finished\\n'
    raw.extend(data);txt=dec.decode(data);screen.feed(txt);cast.write(json.dumps([round(time.monotonic()-start,6),'o',txt],ensure_ascii=False)+'\n');cast.flush()
   if check:
    rows=screen.text(); current=rows[:10]+rows[-2:]
+   if not any(conf['name'] in line for line in rows[:10]):raise AssertionError('Config.Name missing from project header')
+   if re.search(r'no\s+ai|sem\s+ia', '\n'.join(rows), re.IGNORECASE):raise AssertionError('Removed UI slogan reappeared')
    if chrome is None:chrome=current
    elif current!=chrome:raise AssertionError('Header/footer changed outside resize: '+repr(current))
    if screen.bad:raise AssertionError('paint outside screen '+repr(screen.bad[:4]))
@@ -83,16 +85,17 @@ printf 'output-finished\\n'
    state=pathlib.Path('/proc')/str(pid)/'stat'
    if state.exists() and state.read_text().split(') ')[1][0]!='Z':raise AssertionError('owned child survives')
   except FileNotFoundError:pass
-  key('execute after cancel',b'2\r');key('return repeat',b'\r');key('destructive prompt',b'5\r');key('explicit confirmation',b'APAGAR aurora\rqueued-child-input\r')
+  key('execute after cancel',b'2\r');key('return repeat',b'\r');key('destructive prompt',b'5\r');key('explicit confirmation',b'APAGAR mudarro\rqueued-child-input\r')
   if b'confirmed:queued-child-input' not in raw:raise AssertionError('confirmation missing')
   key('return confirmation',b'\r');key('actions back',b'q');key('groups back',b'q');key('exit',b'q',.2,False);p.wait(timeout=3)
   restored=termios.tcgetattr(slave)==original
+  if re.search(rb'no\s+ai|sem\s+ia',raw,re.IGNORECASE):raise AssertionError('Removed UI slogan in current capture')
   if p.returncode or not restored:raise AssertionError('exit/termios failure')
   (BASE/(profile+'.pty.txt')).write_bytes(raw)
-  meta={'profile':profile,'locale':locale,'theme':theme,'exit_code':p.returncode,'termios_restored':restored,'chrome_checks':checks,'duration_seconds':round(time.monotonic()-start,3),'binary_sha256':hashlib.sha256(BIN.read_bytes()).hexdigest(),'events':events,'capture':'genuine CLI PTY output; injected keys/SGR mouse bytes; no GUI or browser','cases':['preview','mouse bounds','long output','ANSI containment','stderr','error','stdin','cancel descendant','repeat after cancel','destructive confirmation','cleanup']}
+  meta={'profile':profile,'locale':locale,'theme':theme,'exit_code':p.returncode,'termios_restored':restored,'chrome_checks':checks,'duration_seconds':round(time.monotonic()-start,3),'binary_sha256':hashlib.sha256(BIN.read_bytes()).hexdigest(),'events':events,'capture':'genuine CLI PTY output; injected keys/SGR mouse bytes; no GUI or browser','project_name':conf['name'],'project_header_checks':checks,'removed_slogans_absent':True,'cases':['preview','mouse bounds','long output','ANSI containment','stderr','error','stdin','cancel descendant','repeat after cancel','destructive confirmation','cleanup']}
   (BASE/(profile+'.metadata.json')).write_text(json.dumps(meta,indent=2)+'\n');print(json.dumps(meta|{'events':'see metadata'},ensure_ascii=False))
  finally:
   cast.close()
   if p.poll() is None:p.terminate();p.wait(timeout=3)
   os.close(slave);os.close(master)
-record('aurora-shell-dark-en','en','dark');record('aurora-shell-light-ptbr','pt-BR','light')
+record('mudarro-shell-dark-en','en','dark');record('mudarro-shell-light-ptbr','pt-BR','light')

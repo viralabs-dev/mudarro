@@ -19,27 +19,29 @@ Evidence: [tests-race.txt](samples/menu-auto/evidence/ui-configuration/tests-rac
 
 ## Recorded screens
 
+Current example: project `mudarro`, supplied by `Config.Name`, with real captures refreshed in MUD-055. This revision publishes the refreshed example based on `246048a`; the earlier Aurora checkpoint remains preserved as history.
+
 Real CLI execution in a PTY with controlled input. PNGs are rendered recording frames, not desktop screenshots. The banner and footer remain fixed while the center shows menus, preview and execution.
 
 **Recorded revision:** these real screens accompany the persistent shell added by MUD-032. Previous recordings are preserved; validation below was performed locally, independently of CI.
 
 ### Dark · English
 
-![Frame of real long output with the banner and footer preserved.](samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png)
+![Frame of real long output with the banner and footer preserved.](samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png)
 
 Frame of real long output with the banner and footer preserved.
 
-![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif)
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif)
 
 Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
 
 ### Light · Portuguese
 
-![Frame of real long output with the banner and footer preserved.](samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png)
+![Frame of real long output with the banner and footer preserved.](samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png)
 
 Frame of real long output with the banner and footer preserved.
 
-![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif)
+![Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.](samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif)
 
 Animated GIF of the real session: preview, execution, error, input, cancellation and return to the menu.
 
@@ -55,7 +57,7 @@ CLI UI overrides take precedence over the selected file and built-in defaults. N
 
 ```yaml
 version: 1
-name: Aurora
+name: mudarro
 ui:
   locale: pt-BR
   theme: dark

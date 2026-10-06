@@ -1,0 +1,247 @@
+[
+  {
+    "page": "README.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      }
+    ]
+  },
+  {
+    "page": "docs/pt-BR/README.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      }
+    ]
+  },
+  {
+    "page": "docs/ui-shell.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      }
+    ]
+  },
+  {
+    "page": "docs/pt-BR/ui-shell.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      }
+    ]
+  },
+  {
+    "page": "docs/ui-configuration.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-configuration/frame-dark-en.png",
+        "bytes": 127754,
+        "sha256": "5c2bdf0321f46a3b4746bb2801d54b0ebab33b49dc63db7112ca30211e80d357"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-configuration/aurora-dark-en.gif",
+        "bytes": 178400,
+        "sha256": "2a6956cad6c467785145202d13beffffb65e05a6dc4fd1b4a7c012b9e50850e6"
+      }
+    ]
+  },
+  {
+    "page": "docs/pt-BR/ui-configuration.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-configuration/frame-dark-en.png",
+        "bytes": 127754,
+        "sha256": "5c2bdf0321f46a3b4746bb2801d54b0ebab33b49dc63db7112ca30211e80d357"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-configuration/aurora-dark-en.gif",
+        "bytes": 178400,
+        "sha256": "2a6956cad6c467785145202d13beffffb65e05a6dc4fd1b4a7c012b9e50850e6"
+      }
+    ]
+  },
+  {
+    "page": "docs/samples/menu-auto/README.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      }
+    ]
+  },
+  {
+    "page": "docs/pt-BR/samples/menu-auto/README.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      }
+    ]
+  },
+  {
+    "page": "docs/samples/menu-auto/evidence/ui-shell/README.md",
+    "images": [
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.png",
+        "bytes": 70901,
+        "sha256": "7084e0ac5f403f2ea675fa960dcd7295719b678ecf572d017c45b32bfb44c0ba"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-dark-en.gif",
+        "bytes": 252899,
+        "sha256": "b4a301ca4627c3692d564509d02ccf95b29bb43ddeba3c8e98fcf24336f588a2"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.png",
+        "bytes": 71198,
+        "sha256": "11de222bc98e1583c7da400951b7fc4fd5664b697657a354d38998c8aa794042"
+      },
+      {
+        "asset": "docs/samples/menu-auto/evidence/ui-shell/mudarro-shell-light-ptbr.gif",
+        "bytes": 251760,
+        "sha256": "4cf99e73d3c48bbfa7f999eeaed33c70930daba9c2fae8a11bdc53532c939cfa"
+      }
+    ]
+  }
+]
