@@ -1,0 +1,7 @@
+/bin/
+/dist/
+/.mudarro/
+*.log
+.env
+
+.idea/
