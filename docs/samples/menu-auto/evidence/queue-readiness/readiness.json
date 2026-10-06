@@ -1,5 +1,5 @@
 {
-  "live_todo_count": 13,
+  "live_todo_count": 12,
   "requested_count": 14,
   "ready_full_code_now": 0,
   "cards": [
@@ -12,19 +12,11 @@
       "ready_full_code_now": false
     },
     {
-      "id": "MUD-036",
-      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-036 \u2014 Resolu\u00e7\u00e3o de workspaces JavaScript (Mudarro).md",
-      "classification": "decision_dependency",
-      "blocker": "MUD-035 is complete; explicit JavaScript root/child manager and ownership inheritance contract remains unresolved",
-      "next": "Confirm workspace ownership and inheritance before implementation; installed Yarn runtimes do not settle this policy.",
-      "ready_full_code_now": false
-    },
-    {
       "id": "MUD-037",
       "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-037 \u2014 Orquestra\u00e7\u00e3o Turborepo e Nx (Mudarro).md",
       "classification": "decision_target_dependency",
-      "blocker": "MUD-036 and real Turbo/Nx target repository",
-      "next": "Confirm actual repository/tasks; no inferred startup or scan plugin execution.",
+      "blocker": "MUD036 delivered locally; actual Turbo/Nx target/tasks and corresponding runtime required",
+      "next": "Confirm concrete orchestration target and tasks; read-only runtime discovery before any new installer.",
       "ready_full_code_now": false
     },
     {
@@ -124,5 +116,5 @@
     ],
     "executed_new_tests": false
   },
-  "checkpoint": "post authorized installations, exact SemVer and official Go workspace parser;165PASS/80.08%"
+  "checkpoint": "post local MUD036176PASS80.85%, prior batch published44c4e04"
 }

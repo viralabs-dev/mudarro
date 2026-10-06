@@ -18,7 +18,7 @@ import (
 	"strings"
 )
 
-func (JavaScript) Detect(root, dir string, f map[string]bool, excludes []string) (*model.Service, []model.Suggestion, error) {
+func (adapter JavaScript) Detect(root, dir string, f map[string]bool, excludes []string) (*model.Service, []model.Suggestion, error) {
 	if !f["package.json"] {
 		return nil, nil, nil
 	}
@@ -62,6 +62,15 @@ func (JavaScript) Detect(root, dir string, f map[string]bool, excludes []string)
 	if len(managers) > 1 && p.PackageManager == "" {
 		s.Pending = append(s.Pending, "Múltiplos lockfiles: declare manager")
 	}
+	if adapter.WorkspaceRoot != "" {
+		s.WorkspaceRoot = adapter.WorkspaceRoot
+		if adapter.WorkspaceConflict != "" {
+			s.Manager = ""
+			s.Pending = append(s.Pending, adapter.WorkspaceConflict)
+		} else {
+			s.Manager = adapter.WorkspaceManager
+		}
+	}
 	for _, k := range []string{"next", "@nestjs/core", "vite", "express"} {
 		if p.Dependencies[k] != "" || p.DevDependencies[k] != "" {
 			s.Framework = k
@@ -100,12 +109,15 @@ func (JavaScript) Detect(root, dir string, f map[string]bool, excludes []string)
 			group = "aplicacao"
 		}
 		c := cmd(group, s.Manager, "run", k)
+		if adapter.WorkspaceConflict != "" {
+			continue
+		}
 		suggestions = append(suggestions, model.Suggestion{Name: name, Command: c, Evidence: filepath.Join(dir, "package.json")})
 		if s.Manager != "" && group != "scripts" {
 			s.Commands[name] = c
 		}
 	}
-	if s.Manager != "" {
+	if s.Manager != "" && (adapter.WorkspaceRoot == "" || adapter.WorkspaceRoot == filepath.ToSlash(dir)) {
 		s.Commands["install"] = cmd("dependencias", s.Manager, "install")
 	}
 	if _, ok := s.Commands["start"]; !ok {
@@ -281,6 +293,6 @@ func (Go) Detect(root, dir string, f map[string]bool, excludes []string) (*model
 	return s, suggestions, nil
 }
 
-type JavaScript struct{}
+type JavaScript struct{ WorkspaceManager, WorkspaceRoot, WorkspaceConflict string }
 type Python struct{}
 type Go struct{}

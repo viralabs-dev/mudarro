@@ -1,0 +1,113 @@
+=== RUN   TestPackageManagerValidationKnownNamesPreserveContracts
+=== RUN   TestPackageManagerValidationKnownNamesPreserveContracts/npm
+=== RUN   TestPackageManagerValidationKnownNamesPreserveContracts/pnpm
+=== RUN   TestPackageManagerValidationKnownNamesPreserveContracts/yarn
+=== RUN   TestPackageManagerValidationKnownNamesPreserveContracts/bun
+--- PASS: TestPackageManagerValidationKnownNamesPreserveContracts (0.00s)
+    --- PASS: TestPackageManagerValidationKnownNamesPreserveContracts/npm (0.00s)
+    --- PASS: TestPackageManagerValidationKnownNamesPreserveContracts/pnpm (0.00s)
+    --- PASS: TestPackageManagerValidationKnownNamesPreserveContracts/yarn (0.00s)
+    --- PASS: TestPackageManagerValidationKnownNamesPreserveContracts/bun (0.00s)
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/unknown
+    package_manager_validation_test.go:59: invalid field chosen as executable: "unknown"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[unknown install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[unknown run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[unknown run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[unknown run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[unknown run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[unknown run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/.._manager
+    package_manager_validation_test.go:59: invalid field chosen as executable: "../manager"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[../manager install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[../manager run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[../manager run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[../manager run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[../manager run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[../manager run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/_tmp_manager
+    package_manager_validation_test.go:59: invalid field chosen as executable: "/tmp/manager"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[/tmp/manager install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[/tmp/manager run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[/tmp/manager run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[/tmp/manager run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[/tmp/manager run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[/tmp/manager run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/https:__example.invalid_tool
+    package_manager_validation_test.go:59: invalid field chosen as executable: "https://example.invalid/tool"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[https://example.invalid/tool install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[https://example.invalid/tool run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[https://example.invalid/tool run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[https://example.invalid/tool run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[https://example.invalid/tool run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[https://example.invalid/tool run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_
+    package_manager_validation_test.go:59: invalid field chosen as executable: "npm "
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[npm  install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm  run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm  run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm  run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm  run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm  run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/_npm
+    package_manager_validation_test.go:59: invalid field chosen as executable: " npm"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[ npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[ npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[ npm run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[ npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[ npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[ npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/npm@
+    package_manager_validation_test.go:59: invalid field chosen as executable: "npm"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/@1.2.3
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  Declare commands.start para execução local
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_#01
+    package_manager_validation_test.go:59: invalid field chosen as executable: "npm\t"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[npm	 install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm	 run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm	 run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm	 run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm	 run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm	 run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_#02
+    package_manager_validation_test.go:59: invalid field chosen as executable: "npm\n"
+    package_manager_validation_test.go:62: invalid field generated commands: map[install:{Args:[npm
+         install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm
+         run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm
+         run test] Shell: Group:qualidade Destructive:false Requires:[]}]
+    package_manager_validation_test.go:70: missing actionable packageManager diagnostic:  
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm
+         run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm
+         run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_validation_test.go:74: invalid manager executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm
+         run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+--- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/unknown (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/.._manager (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/_tmp_manager (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/https:__example.invalid_tool (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_ (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/_npm (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/npm@ (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/@1.2.3 (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_#01 (0.00s)
+    --- FAIL: TestPackageManagerValidationBadNamesDoNotPlanExecution/npm_#02 (0.00s)
+=== RUN   TestPackageManagerValidationWrongJSONTypesDiagnosed
+=== RUN   TestPackageManagerValidationWrongJSONTypesDiagnosed/123
+=== RUN   TestPackageManagerValidationWrongJSONTypesDiagnosed/true
+=== RUN   TestPackageManagerValidationWrongJSONTypesDiagnosed/[]
+=== RUN   TestPackageManagerValidationWrongJSONTypesDiagnosed/{}
+--- PASS: TestPackageManagerValidationWrongJSONTypesDiagnosed (0.00s)
+    --- PASS: TestPackageManagerValidationWrongJSONTypesDiagnosed/123 (0.00s)
+    --- PASS: TestPackageManagerValidationWrongJSONTypesDiagnosed/true (0.00s)
+    --- PASS: TestPackageManagerValidationWrongJSONTypesDiagnosed/[] (0.00s)
+    --- PASS: TestPackageManagerValidationWrongJSONTypesDiagnosed/{} (0.00s)
+=== RUN   TestPackageManagerValidationInitInvalidSelectionPreservesProject
+    package_manager_validation_test.go:105: invalid manager selected at init
+    package_manager_validation_test.go:108: invalid init changed files
+--- FAIL: TestPackageManagerValidationInitInvalidSelectionPreservesProject (0.00s)
+=== RUN   TestPackageManagerValidationScanPreservesExistingGeneratedFiles
+    package_manager_validation_test.go:133: invalid field was not diagnosed
+--- FAIL: TestPackageManagerValidationScanPreservesExistingGeneratedFiles (0.01s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.023s
+FAIL

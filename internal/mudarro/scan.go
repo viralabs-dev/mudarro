@@ -17,11 +17,12 @@ type Evidence struct {
 	Kind string `json:"kind"`
 }
 type Report struct {
-	Workspaces  []Workspace  `json:"workspaces,omitempty"`
-	Config      Config       `json:"config"`
-	Evidence    []Evidence   `json:"evidence"`
-	Suggestions []Suggestion `json:"suggestions"`
-	Warnings    []string     `json:"warnings"`
+	JavaScriptWorkspaces []JavaScriptWorkspace `json:"javascript_workspaces,omitempty"`
+	Workspaces           []Workspace           `json:"workspaces,omitempty"`
+	Config               Config                `json:"config"`
+	Evidence             []Evidence            `json:"evidence"`
+	Suggestions          []Suggestion          `json:"suggestions"`
+	Warnings             []string              `json:"warnings"`
 }
 type LanguageAdapter interface {
 	Detect(root, dir string, files map[string]bool, excludes []string) (*Service, []Suggestion, error)
@@ -74,6 +75,13 @@ func Scan(root string, excludes []string) (Report, error) {
 		paths = append(paths, p)
 	}
 	sort.Strings(paths)
+	jsPlans, jsWarnings := javascriptWorkspacePlans(root, paths, dirs)
+	r.Warnings = append(r.Warnings, jsWarnings...)
+	jsContexts, jsPlans := javascriptWorkspaceContexts(root, paths, dirs, jsPlans)
+	for _, plan := range jsPlans {
+		r.JavaScriptWorkspaces = append(r.JavaScriptWorkspaces, plan.JavaScriptWorkspace)
+		r.Evidence = append(r.Evidence, Evidence{plan.Path, "javascript-workspace"})
+	}
 	for _, dir := range paths {
 		f := dirs[dir]
 		if f["go.work"] {
@@ -84,6 +92,11 @@ func Scan(root string, excludes []string) (Report, error) {
 			r.Warnings = append(r.Warnings, warnings...)
 		}
 		for _, a := range languageAdapters {
+			if _, ok := a.(adapters.JavaScript); ok {
+				if context, found := jsContexts[dir]; found {
+					a = adapters.JavaScript{WorkspaceManager: context.manager, WorkspaceRoot: context.root, WorkspaceConflict: context.conflict}
+				}
+			}
 			s, suggestions, e := a.Detect(root, dir, f, excludes)
 			if e != nil {
 				r.Warnings = append(r.Warnings, e.Error())

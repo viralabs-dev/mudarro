@@ -1,0 +1,16 @@
+{
+  "groups": 11,
+  "subcases": 20,
+  "race": "PASS",
+  "fresh": true,
+  "failures": 0,
+  "cli": "before published checkpoint and after workspace manager inheritance; no actions executed",
+  "limitations": [
+    "runtime execution belongs to root integrator",
+    "glob syntax limited to declared subset; no full npm glob equivalence claim",
+    "only manager inherited; no root scripts/infra/DB",
+    "config overrides preserved"
+  ],
+  "log": "after-final.jsonl",
+  "nestedUnresolvedRegression": "PASS"
+}

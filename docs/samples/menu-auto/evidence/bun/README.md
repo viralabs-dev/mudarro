@@ -4,7 +4,7 @@ Published base `b887f64`; all new robustness, Unicode and Bun changes remain unc
 
 Detection recognizes `bun.lock` and legacy `bun.lockb`. Both files count as one manager; locks belonging to different managers retain the existing Pending behavior unless an explicit packageManager selects one. Scan never invokes Bun and does not migrate locks. [Official Bun lockfile reference](https://bun.sh/docs/pm/lockfile).
 
-[Before](before.log): locks were ignored, conflicts silently selected another manager and init selected npm. [After](after.log): four top-level regression groups, six subcases passed with race, covering both formats, deduplication, npm/pnpm/yarn conflicts, explicit Bun override, init and generation idempotence.
+[Before](before-evidence.txt): locks were ignored, conflicts silently selected another manager and init selected npm. [After](after-evidence.txt): four top-level regression groups, six subcases passed with race, covering both formats, deduplication, npm/pnpm/yarn conflicts, explicit Bun override, init and generation idempotence.
 
 Integrated: **121 top-level race tests PASS, 0 FAIL, 0 SKIP; 1,971/2,517 statements = 78.31%**, deduplicating repeated coverpkg blocks. [Summary](summary.json), [events](tests.jsonl), [coverage](coverage.out), [functions](coverage-functions.txt), [genuine integrated PTY](interactive.cast). Vet, Linux build and Darwin arm64 cross-build passed; native macOS was not executed. Smoke, menu and selected-config E2Es and PTY resize/NO_COLOR/SIGTERM passed. Binary SHA256: `6214994c4e1dfcc06acfbd7beae14e9b88e592b7e25049fbb06a55e3a8c12033`.
 

@@ -15,7 +15,7 @@ Authenticated Actions permissions read returned enabled=true/allowed_actions=all
 
 No new-language demand was established in the reviewed material. This order is a hypothesis about value/cost for Daniel's actual repositories, not a popularity ranking or comparative benchmark.
 
-1. **Close manager/monorepo gaps in current families.** remaining packageManager provisioning, real dependency/framework integrations, JS workspace ownership/inheritance and Go module graph/framework integrations (entry selection and official go.work membership parsing delivered). Low/medium cost; define inheritance and selection before implementation. Require realistic fixtures, explicit ambiguity and generation/menu tests.
+1. **Close manager/monorepo gaps in current families.** remaining packageManager provisioning, real dependency/framework integrations, remaining JS dependency graph/Turbo/Nx (declared ownership/manager inheritance delivered) and Go module graph/framework integrations (entry selection and official go.work membership parsing delivered). Low/medium cost; define inheritance and selection before implementation. Require realistic fixtures, explicit ambiguity and generation/menu tests.
 2. **Rust/Cargo only with a real target repository.** Existing TOML parsing may help, but workspace/default-members, library vs multiple binaries and targets need explicit rules. Medium complexity; no automatic start merely from Cargo.toml. Require real authorized cargo execution before claiming runtime support.
 3. **PHP/Composer only with personal web demand.** JSON/scripts fit existing mechanisms; PHP/Composer runtime and framework startup differ. Medium complexity; start with explicit scripts, evidence-based Laravel/Symfony separately.
 4. **Java/Kotlin or .NET only with concrete demand.** Maven/Gradle wrappers/multimodule or csproj/solution selection increase complexity. Separate build/test from startup; do not execute wrappers during detection.
@@ -29,3 +29,6 @@ MUD-015 plans capabilities; MUD-016 expands current tests. JS script collisions 
 
 
 Current Go workspace parser, explicit entry selection and inherited/off policy are delivered and validated locally; replacement/toolchain/dependency graph resolution and workspace service inheritance remain outside this implementation. [Evidence](samples/menu-auto/evidence/go-work-parser/README.md).
+
+
+Declared JavaScript workspace manager-only inheritance and root installation are delivered locally; dependency graph/Turbo/Nx and full glob-language equivalence remain separate. [Evidence](samples/menu-auto/evidence/javascript-workspaces/README.md).

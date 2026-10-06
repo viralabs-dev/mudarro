@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "name": "mudarro-workspace-bun",
+  "services": [
+    {
+      "id": "app-javascript",
+      "dir": ".",
+      "language": "javascript",
+      "manager": "bun",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "install": {
+          "args": [
+            "bun",
+            "install"
+          ],
+          "group": "dependencias"
+        },
+        "test": {
+          "args": [
+            "bun",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start para execução local"
+      ]
+    },
+    {
+      "id": "packages-a-javascript",
+      "dir": "packages/a",
+      "language": "javascript",
+      "manager": "bun",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "hello": {
+          "args": [
+            "bun",
+            "run",
+            "hello"
+          ],
+          "group": "scripts"
+        },
+        "start": {
+          "args": [
+            "bun",
+            "run",
+            "start"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "bun",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      }
+    },
+    {
+      "id": "packages-b-javascript",
+      "dir": "packages/b",
+      "language": "javascript",
+      "manager": "bun",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "hello": {
+          "args": [
+            "bun",
+            "run",
+            "hello"
+          ],
+          "group": "scripts"
+        },
+        "start": {
+          "args": [
+            "bun",
+            "run",
+            "start"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "bun",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      }
+    }
+  ]
+}

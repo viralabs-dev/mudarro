@@ -1,0 +1,34 @@
+=== RUN   TestPipenvSupportDetectionAndDjangoArgv
+=== RUN   TestPipenvSupportDetectionAndDjangoArgv/Pipfile
+=== RUN   TestPipenvSupportDetectionAndDjangoArgv/Pipfile+lock
+--- PASS: TestPipenvSupportDetectionAndDjangoArgv (0.00s)
+    --- PASS: TestPipenvSupportDetectionAndDjangoArgv/Pipfile (0.00s)
+    --- PASS: TestPipenvSupportDetectionAndDjangoArgv/Pipfile+lock (0.00s)
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed/toml
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed/lock-json
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed/script-value
+--- PASS: TestPipenvSupportMalformedManifestsAreDiagnosed (0.00s)
+    --- PASS: TestPipenvSupportMalformedManifestsAreDiagnosed/toml (0.00s)
+    --- PASS: TestPipenvSupportMalformedManifestsAreDiagnosed/lock-json (0.00s)
+    --- PASS: TestPipenvSupportMalformedManifestsAreDiagnosed/script-value (0.00s)
+=== RUN   TestPipenvSupportManagerConflictsRemainPending
+=== RUN   TestPipenvSupportManagerConflictsRemainPending/uv.lock
+=== RUN   TestPipenvSupportManagerConflictsRemainPending/poetry.lock
+--- PASS: TestPipenvSupportManagerConflictsRemainPending (0.00s)
+    --- PASS: TestPipenvSupportManagerConflictsRemainPending/uv.lock (0.00s)
+    --- PASS: TestPipenvSupportManagerConflictsRemainPending/poetry.lock (0.00s)
+=== RUN   TestPipenvSupportOrphanLockIsActionable
+--- PASS: TestPipenvSupportOrphanLockIsActionable (0.00s)
+=== RUN   TestPipenvSupportScriptSuggestionAndSelectedInit
+--- PASS: TestPipenvSupportScriptSuggestionAndSelectedInit (0.01s)
+=== RUN   TestPipenvSupportScriptCollisionsStayExplicit
+--- PASS: TestPipenvSupportScriptCollisionsStayExplicit (0.00s)
+=== RUN   TestPipenvSupportDatabaseActionsUseOwnedEnvironment
+=== RUN   TestPipenvSupportDatabaseActionsUseOwnedEnvironment/django
+=== RUN   TestPipenvSupportDatabaseActionsUseOwnedEnvironment/alembic
+--- PASS: TestPipenvSupportDatabaseActionsUseOwnedEnvironment (0.00s)
+    --- PASS: TestPipenvSupportDatabaseActionsUseOwnedEnvironment/django (0.00s)
+    --- PASS: TestPipenvSupportDatabaseActionsUseOwnedEnvironment/alembic (0.00s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	1.034s

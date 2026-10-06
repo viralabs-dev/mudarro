@@ -2,7 +2,11 @@ English · [Português (Brasil)](pt-BR/support-matrix.md)
 
 Published base is now `b887f64` after the authorized personal-attribution rewrite of `56dadba`, with an identical tree. [Old/new SHA map and preservation proof](samples/menu-auto/evidence/git-identity-repair/README.md). New robustness/Unicode changes and this reference update remain local.
 
-## Latest integrated checkpoint — official Go workspace parser
+## Latest integrated checkpoint — JavaScript workspaces
+
+176 race PASS (173 substantive groups + three helpers), 0 FAIL/SKIP; **2381/2945 = 80.85%**. Declared workspace manager-only inheritance, root install, own member script cwd, globs/nested/exclusions/offline/conflicts and manual preservation pass. Five existing managers pass85actualCLIchecks plus negative scans/final-bin rechecks. Genuine PTY media/samples saved. Changes local on published44c4e04, no new publication. [Evidence / reprodução](samples/menu-auto/evidence/javascript-workspaces/README.md).
+
+## Historical checkpoint165 — official Go workspace parser
 
 165 race PASS (162 substantive groups + three helpers), 0 FAIL/SKIP; **2199/2746 = 80.08%**. Official go.work/go.mod parsing, membership/conflict/exclusion diagnostics, inherited context and explicit isolation pass. All final local gates and genuine Go/five installed runtime rechecks pass. Four cross-built archives and installer fixtures preserve licenses. Native macOS and physical graphical acceptance remain unexecuted. [Evidence / reprodução](samples/menu-auto/evidence/go-work-parser/README.md).
 
@@ -72,7 +76,7 @@ Code inventory reconciled after package extraction, 2026-10-06. Manifest detecti
 | Go | go.mod; active host build constraints and func main parser; build/test/mod download; unique entry start | sources regular and bounded4MiB; no/multiple entries pending; custom targets/imports/compilability not inferred; official go.work/go.mod parser validates bounded root-contained members; conflicts/exclusions warned; selected entry promotes start; inherited context default, explicit off available |
 | Custom | configured commands, Makefile/shell suggestions | not an automatic language adapter |
 
-JS :/. identifiers normalize to -; collisions now produce pending choices and cannot save ambiguous selection, demonstrated before/after regression. Recursive directory scan respects exclusions/ignored dirs/symlinks and deterministic ordering. JS workspace root/children can become separate services; no workspace/Turbo/Nx resolution or root manager/infra inheritance. Nested Go modules are detected separately; no aggregate go.work execution. Shell/Make suggestions use nearest ancestor owner, fallback index0 outside services.
+JS :/. identifiers normalize to -; collisions now produce pending choices and cannot save ambiguous selection, demonstrated before/after regression. Recursive directory scan respects exclusions/ignored dirs/symlinks and deterministic ordering. Declared JS workspaces resolve member ownership and inherit only manager; root installation, own member scripts/cwd, explicit conflicts. No Turbo/Nx graph or root infra/database/command inheritance. Nested Go modules are detected separately; no aggregate go.work execution. Shell/Make suggestions use nearest ancestor owner, fallback index0 outside services.
 
 Infra: local supervisor, Docker/Podman Compose/Dockerfile and Kubernetes manifests/kustomize/Helm. Compose requires engine choice, multiple candidates remain pending, Compose precedes Dockerfile. Kubernetes requires context/namespace. Infra discovery is service-local, not arbitrary nested chart discovery. Podman uses podman-compose. Down preserves storage objects; persistence requires separate data tests.
 

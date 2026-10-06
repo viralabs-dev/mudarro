@@ -1,0 +1,1 @@
+{"version": 1, "name": "mudarro", "ui": {"lettering": "text", "preview": {"enabled": true, "mouse": "on"}}, "services": [{"id": "mudarro", "dir": ".", "language": "custom", "infrastructure": {"kind": "custom"}, "commands": {"test": {"args": ["true"], "group": "quality"}}}]}

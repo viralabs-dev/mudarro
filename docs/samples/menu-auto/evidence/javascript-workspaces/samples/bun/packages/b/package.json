@@ -1,0 +1,9 @@
+{
+  "name": "mudarro-child-bun-b",
+  "private": true,
+  "scripts": {
+    "start": "node app.cjs",
+    "test": "node probe.cjs",
+    "hello": "node probe.cjs"
+  }
+}

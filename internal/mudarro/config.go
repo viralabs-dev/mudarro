@@ -45,6 +45,18 @@ func (c Config) Validate(root string) error {
 		if s.GoWorkspace != "" && (s.Language != "go" || (s.GoWorkspace != "inherit" && s.GoWorkspace != "off")) {
 			return fmt.Errorf("%s: go_workspace requires a Go service and inherit or off", s.ID)
 		}
+		if s.WorkspaceRoot != "" {
+			if s.Language != "javascript" && s.Language != "typescript" {
+				return fmt.Errorf("%s: workspace_root requires JavaScript/TypeScript", s.ID)
+			}
+			if _, err := safePath(root, s.WorkspaceRoot); err != nil {
+				return err
+			}
+			rel, err := filepath.Rel(s.WorkspaceRoot, s.Dir)
+			if err != nil || rel == ".." || strings.HasPrefix(rel, ".."+string(filepath.Separator)) {
+				return fmt.Errorf("%s: workspace_root must contain service directory", s.ID)
+			}
+		}
 		p, e := safePath(root, s.Dir)
 		if e != nil {
 			return e

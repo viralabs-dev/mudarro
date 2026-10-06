@@ -1,0 +1,11 @@
+{
+  "name": "mudarro-workspace-npm",
+  "private": true,
+  "packageManager": "npm@11.19.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "node root.cjs"
+  }
+}

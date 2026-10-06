@@ -1,0 +1,14 @@
+{
+  "COREPACK_HOME": "/tmp/mudarro-runtimes.K7F4J1/cache/corepack",
+  "COREPACK_ENABLE_PROJECT_SPEC": "0",
+  "COREPACK_ENABLE_NETWORK": "0",
+  "YARN_CACHE_FOLDER": "/tmp/mudarro-runtimes.K7F4J1/yarn-modern/cache",
+  "YARN_GLOBAL_FOLDER": "/tmp/mudarro-runtimes.K7F4J1/yarn-modern/global",
+  "YARN_RC_FILENAME": ".mudarro-isolated-yarnrc.yml",
+  "YARN_ENABLE_NETWORK": "0",
+  "YARN_ENABLE_TELEMETRY": "0",
+  "YARN_NPM_REGISTRY_SERVER": "https://registry.npmjs.org",
+  "NPM_CONFIG_USERCONFIG": "/tmp/mudarro-runtimes.K7F4J1/config/yarn-npm-user.rc",
+  "NPM_CONFIG_GLOBALCONFIG": "/tmp/mudarro-runtimes.K7F4J1/config/yarn-npm-global.rc",
+  "PATH_note": "Use approved manager/interpreter prefix; original private path recorded in runtime/tool-versions.json and reproduction scripts"
+}

@@ -1,0 +1,485 @@
+{
+  "npm": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "after-scan",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "root-install",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "menu-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-up",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-status",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-restart",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-logs",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-down",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "member-install-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "existing-init-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "child_cwd_verified": true,
+    "configuration_preserved": true,
+    "generate_idempotent": true,
+    "owned_process_stopped": true
+  },
+  "classic": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "after-scan",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "root-install",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "menu-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-up",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-status",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-restart",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-logs",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-down",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "member-install-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "existing-init-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "child_cwd_verified": true,
+    "configuration_preserved": true,
+    "generate_idempotent": true,
+    "owned_process_stopped": true
+  },
+  "modern": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "after-scan",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "root-install",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "menu-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-up",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-status",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-restart",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-logs",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-down",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "member-install-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "existing-init-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "child_cwd_verified": true,
+    "configuration_preserved": true,
+    "generate_idempotent": true,
+    "owned_process_stopped": true
+  },
+  "bun": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "after-scan",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "root-install",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "menu-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-up",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-status",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-restart",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-logs",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-down",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "member-install-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "existing-init-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "child_cwd_verified": true,
+    "configuration_preserved": true,
+    "generate_idempotent": true,
+    "owned_process_stopped": true
+  },
+  "pnpm": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "after-scan",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "root-install",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "a-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-test",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "b-hello",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "generate-repeat",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "wrapper-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "menu-a",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-up",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-status",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-restart",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-logs",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "lifecycle-down",
+        "exit_code": 0,
+        "expected_success": true
+      },
+      {
+        "case": "member-install-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      },
+      {
+        "case": "existing-init-rejected",
+        "exit_code": 1,
+        "expected_success": false
+      }
+    ],
+    "child_cwd_verified": true,
+    "configuration_preserved": true,
+    "generate_idempotent": true,
+    "owned_process_stopped": true
+  },
+  "metadata": {
+    "binary_sha256": "91b8408b6a71cf40cb580d4640bf7bdebd096cd19fcd7d64f033e494588e6c36",
+    "explicit_manager_conflict_blocked": true,
+    "divergent_declarations_blocked": true,
+    "real_runtime_profiles": 5,
+    "fixture_dependencies": 0,
+    "initial_environment_errors": [
+      "Bun default tempdir EROFS, fixed own TMPDIR/BUN_INSTALL_CACHE_DIR",
+      "pnpm11 defaultstore SQLite open failed, npm_config_store_dir ignored, fixed scoped pnpm_config_store_dir"
+    ],
+    "personal_cleanup_performed": false,
+    "desktop_emulator_tested": false
+  }
+}

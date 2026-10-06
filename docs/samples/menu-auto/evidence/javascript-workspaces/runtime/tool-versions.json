@@ -1,0 +1,27 @@
+{
+  "npm": {
+    "exit_code": 0,
+    "version": "11.19.0",
+    "stderr": ""
+  },
+  "pnpm": {
+    "exit_code": 0,
+    "version": "11.3.0",
+    "stderr": ""
+  },
+  "classic": {
+    "exit_code": 0,
+    "version": "1.22.22",
+    "stderr": ""
+  },
+  "modern": {
+    "exit_code": 0,
+    "version": "4.18.1",
+    "stderr": ""
+  },
+  "bun": {
+    "exit_code": 0,
+    "version": "1.4.0",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "config": {
+    "version": 1,
+    "name": "mudarro-workspace-pnpm",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "pnpm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "pnpm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "test": {
+            "args": [
+              "pnpm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "packages-a-javascript",
+        "dir": "packages/a",
+        "language": "javascript",
+        "manager": "npm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "npm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "npm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        }
+      },
+      {
+        "id": "packages-b-javascript",
+        "dir": "packages/b",
+        "language": "javascript",
+        "manager": "npm",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "npm",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "npm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "npm",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/a",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/b",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "packages-a-javascript",
+      "name": "hello",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "hello"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/a/package.json"
+    },
+    {
+      "service": "packages-a-javascript",
+      "name": "start",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "start"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/a/package.json"
+    },
+    {
+      "service": "packages-a-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/a/package.json"
+    },
+    {
+      "service": "packages-b-javascript",
+      "name": "hello",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "hello"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "packages/b/package.json"
+    },
+    {
+      "service": "packages-b-javascript",
+      "name": "start",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "start"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "packages/b/package.json"
+    },
+    {
+      "service": "packages-b-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "packages/b/package.json"
+    }
+  ],
+  "warnings": null
+}

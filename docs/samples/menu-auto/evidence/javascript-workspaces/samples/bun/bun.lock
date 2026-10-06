@@ -1,0 +1,20 @@
+{
+  "lockfileVersion": 2,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "mudarro-workspace-bun",
+    },
+    "packages/a": {
+      "name": "mudarro-child-bun-a",
+    },
+    "packages/b": {
+      "name": "mudarro-child-bun-b",
+    },
+  },
+  "packages": {
+    "mudarro-child-bun-a": ["mudarro-child-bun-a@workspace:packages/a"],
+
+    "mudarro-child-bun-b": ["mudarro-child-bun-b@workspace:packages/b"],
+  }
+}

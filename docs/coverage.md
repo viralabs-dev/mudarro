@@ -2,7 +2,11 @@ English · [Português (Brasil)](pt-BR/coverage.md)
 
 Published base is now `b887f64` after the authorized personal-attribution rewrite of `56dadba`, with an identical tree. [Old/new SHA map and preservation proof](samples/menu-auto/evidence/git-identity-repair/README.md). New robustness/Unicode changes and this reference update remain local.
 
-## Latest integrated checkpoint — official Go workspace parser
+## Latest integrated checkpoint — JavaScript workspaces
+
+176 race PASS (173 substantive groups + three helpers), 0 FAIL/SKIP; **2381/2945 = 80.85%**. Declared workspace manager-only inheritance, root install, own member script cwd, globs/nested/exclusions/offline/conflicts and manual preservation pass. Five existing managers pass85actualCLIchecks plus negative scans/final-bin rechecks. Genuine PTY media/samples saved. Changes local on published44c4e04, no new publication. [Evidence / reprodução](samples/menu-auto/evidence/javascript-workspaces/README.md).
+
+## Historical checkpoint165 — official Go workspace parser
 
 165 race PASS (162 substantive groups + three helpers), 0 FAIL/SKIP; **2199/2746 = 80.08%**. Official go.work/go.mod parsing, membership/conflict/exclusion diagnostics, inherited context and explicit isolation pass. All final local gates and genuine Go/five installed runtime rechecks pass. Four cross-built archives and installer fixtures preserve licenses. Native macOS and physical graphical acceptance remain unexecuted. [Evidence / reprodução](samples/menu-auto/evidence/go-work-parser/README.md).
 

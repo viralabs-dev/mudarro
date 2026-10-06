@@ -1,0 +1,22 @@
+=== RUN   TestIOPreservationManifestReadFailurePreventsWrites
+--- PASS: TestIOPreservationManifestReadFailurePreventsWrites (0.00s)
+=== RUN   TestIOPreservationDestinationCreationFailure
+--- PASS: TestIOPreservationDestinationCreationFailure (0.00s)
+=== RUN   TestIOPreservationAtomicRenameFailureKeepsDestination
+--- PASS: TestIOPreservationAtomicRenameFailureKeepsDestination (0.00s)
+=== RUN   TestIOPreservationConfigReadAndInitFailure
+--- PASS: TestIOPreservationConfigReadAndInitFailure (0.00s)
+=== RUN   TestIOPreservationExecutorOutputExitStatusAndMissingCommand
+--- PASS: TestIOPreservationExecutorOutputExitStatusAndMissingCommand (0.00s)
+=== RUN   TestIOPreservationGenerateWriterFailurePropagatesBeforeMutation
+    io_preservation_regression_test.go:163: writer error not propagated: <nil>
+    io_preservation_regression_test.go:166: output failure still mutated project
+--- FAIL: TestIOPreservationGenerateWriterFailurePropagatesBeforeMutation (0.00s)
+=== RUN   TestIOPreservationManifestSpecialFileDoesNotBlock
+    io_preservation_regression_test.go:191: manifest FIFO read blocked; helper killed and joined: context deadline exceeded
+--- FAIL: TestIOPreservationManifestSpecialFileDoesNotBlock (1.01s)
+=== RUN   TestIOPreservationPermissionFailures
+--- PASS: TestIOPreservationPermissionFailures (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	1.018s
+FAIL

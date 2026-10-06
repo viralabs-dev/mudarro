@@ -2,7 +2,11 @@
 
 A base publicada agora é `b887f64`, após reescrita autorizada da autoria pessoal de `56dadba`, com árvore idêntica. [Mapa de SHAs e provas de preservação](../samples/menu-auto/evidence/git-identity-repair/README.md). As novas mudanças de robustez/Unicode e esta referência permanecem locais.
 
-## Checkpoint integrado mais recente — parser oficial Go workspace
+## Checkpoint integrado mais recente — workspaces JavaScript
+
+176 PASS race (173 grupos substantivos + três helpers),0 falhas/skips; **2381/2945 = 80,85%**. Herança sómanager do workspace declarado, install raiz, scripts/cwd próprios, globs/nested/exclusões/offline/conflitos e preservação manual passaram. Cinco managers existentes passaram85checksCLIreais, negativos e rechecks finais. MídiasPTY/samples salvos. Mudanças locais sobre44c4e04publicado, sem nova publicação. [Evidence / reprodução](../samples/menu-auto/evidence/javascript-workspaces/README.md).
+
+## Checkpoint histórico165 — parser oficial Go workspace
 
 165 PASS race (162 grupos substantivos + três helpers), 0 falhas/skips; **2199/2746 = 80,08%**. Parser oficial go.work/go.mod, diagnósticos de membros/conflitos/exclusões, contexto herdado e isolamento explícito passaram. Gates finais e rechecks reais Go/cinco runtimes instalados passaram. Quatro archives cross-build e fixtures do instalador preservam licenças. macOS nativo e aceite gráfico físico não executados. [Evidence / reprodução](../samples/menu-auto/evidence/go-work-parser/README.md).
 
@@ -78,7 +82,7 @@ Manager é string de configuração, não registro fechado validado. Entry scrip
 
 ## Monorepos
 
-Walk recursivo detecta serviços por diretório com manifests. Ordenação de diretórios determinística; exclusões, ignorados e symlinks respeitados. JS workspace root e filhos podem virar serviços separados; não há resolução de package.json.workspaces/pnpm-workspace.yaml/yarn workspace/Turborepo/Nx. Não herda manager/infra do root para filho. Go ignora módulos aninhados ao buscar main e detecta cada go.mod separadamente; go.work não produz plano de execução agregado. Sugestões Makefile/shell associadas ao serviço ancestral mais próximo, com fallback índice 0 quando fora de qualquer serviço.
+Walk recursivo detecta serviços por diretório com manifests. Ordenação de diretórios determinística; exclusões, ignorados e symlinks respeitados. Workspaces JS declarados resolvem ownership e herdam somente manager; instalação na raiz, scripts/cwd próprios dos membros, conflitos explícitos. Sem grafo Turbo/Nx ou herança de infra/banco/comandos. Go ignora módulos aninhados ao buscar main e detecta cada go.mod separadamente; go.work não produz plano de execução agregado. Sugestões Makefile/shell associadas ao serviço ancestral mais próximo, com fallback índice 0 quando fora de qualquer serviço.
 
 ## Infraestrutura
 

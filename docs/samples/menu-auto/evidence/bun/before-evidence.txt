@@ -1,0 +1,30 @@
+=== RUN   TestBunSupportLockDetection
+=== RUN   TestBunSupportLockDetection/bun.lock
+    bun_support_regression_test.go:31: Bun lock manager="npm"
+=== RUN   TestBunSupportLockDetection/bun.lockb
+    bun_support_regression_test.go:31: Bun lock manager="npm"
+=== RUN   TestBunSupportLockDetection/bun.lock+bun.lockb
+    bun_support_regression_test.go:31: Bun lock manager="npm"
+--- FAIL: TestBunSupportLockDetection (0.00s)
+    --- FAIL: TestBunSupportLockDetection/bun.lock (0.00s)
+    --- FAIL: TestBunSupportLockDetection/bun.lockb (0.00s)
+    --- FAIL: TestBunSupportLockDetection/bun.lock+bun.lockb (0.00s)
+=== RUN   TestBunSupportConflictingManagersRemainExplicit
+=== RUN   TestBunSupportConflictingManagersRemainExplicit/package-lock.json
+    bun_support_regression_test.go:57: conflict chose manager {ID:app-javascript Dir:. Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+=== RUN   TestBunSupportConflictingManagersRemainExplicit/pnpm-lock.yaml
+    bun_support_regression_test.go:57: conflict chose manager {ID:app-javascript Dir:. Language:javascript Manager:pnpm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[pnpm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[pnpm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[pnpm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+=== RUN   TestBunSupportConflictingManagersRemainExplicit/yarn.lock
+    bun_support_regression_test.go:57: conflict chose manager {ID:app-javascript Dir:. Language:javascript Manager:yarn Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[yarn install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[yarn run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[yarn run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+--- FAIL: TestBunSupportConflictingManagersRemainExplicit (0.00s)
+    --- FAIL: TestBunSupportConflictingManagersRemainExplicit/package-lock.json (0.00s)
+    --- FAIL: TestBunSupportConflictingManagersRemainExplicit/pnpm-lock.yaml (0.00s)
+    --- FAIL: TestBunSupportConflictingManagersRemainExplicit/yarn.lock (0.00s)
+=== RUN   TestBunSupportExplicitPackageManagerOverridesLockConflict
+--- PASS: TestBunSupportExplicitPackageManagerOverridesLockConflict (0.00s)
+=== RUN   TestBunSupportInitSelectedScriptAndGenerateIdempotent
+    bun_support_regression_test.go:90: selected Bun script {ID:app-javascript Dir:. Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[hello:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+--- FAIL: TestBunSupportInitSelectedScriptAndGenerateIdempotent (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.005s
+FAIL

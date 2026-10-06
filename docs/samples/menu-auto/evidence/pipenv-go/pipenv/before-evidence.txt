@@ -1,0 +1,39 @@
+=== RUN   TestPipenvSupportDetectionAndDjangoArgv
+=== RUN   TestPipenvSupportDetectionAndDjangoArgv/Pipfile
+    pipenv_support_regression_test.go:37: Pipenv detection {ID:app-python Dir:. Language:python Manager:pip Framework:django Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool:django Generate:false URLenv:DATABASE_URL Path:} Commands:map[install:{Args:[.venv/bin/python -m pip install -e .] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[.venv/bin/python manage.py runserver] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[.venv/bin/python manage.py test] Shell: Group:qualidade Destructive:false Requires:[]} venv:{Args:[python3 -m venv .venv] Shell: Group:dependencias Destructive:false Requires:[]}] Pending:[Declare database.kind; conexão não será executada durante detecção]}
+=== RUN   TestPipenvSupportDetectionAndDjangoArgv/Pipfile+lock
+    pipenv_support_regression_test.go:37: Pipenv detection {ID:app-python Dir:. Language:python Manager:pip Framework:django Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool:django Generate:false URLenv:DATABASE_URL Path:} Commands:map[install:{Args:[.venv/bin/python -m pip install -e .] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[.venv/bin/python manage.py runserver] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[.venv/bin/python manage.py test] Shell: Group:qualidade Destructive:false Requires:[]} venv:{Args:[python3 -m venv .venv] Shell: Group:dependencias Destructive:false Requires:[]}] Pending:[Declare database.kind; conexão não será executada durante detecção]}
+--- FAIL: TestPipenvSupportDetectionAndDjangoArgv (0.00s)
+    --- FAIL: TestPipenvSupportDetectionAndDjangoArgv/Pipfile (0.00s)
+    --- FAIL: TestPipenvSupportDetectionAndDjangoArgv/Pipfile+lock (0.00s)
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed/toml
+    pipenv_support_regression_test.go:76: malformed Pipenv files silently accepted
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed/lock-json
+    pipenv_support_regression_test.go:76: malformed Pipenv files silently accepted
+=== RUN   TestPipenvSupportMalformedManifestsAreDiagnosed/script-value
+    pipenv_support_regression_test.go:76: malformed Pipenv files silently accepted
+--- FAIL: TestPipenvSupportMalformedManifestsAreDiagnosed (0.00s)
+    --- FAIL: TestPipenvSupportMalformedManifestsAreDiagnosed/toml (0.00s)
+    --- FAIL: TestPipenvSupportMalformedManifestsAreDiagnosed/lock-json (0.00s)
+    --- FAIL: TestPipenvSupportMalformedManifestsAreDiagnosed/script-value (0.00s)
+=== RUN   TestPipenvSupportManagerConflictsRemainPending
+=== RUN   TestPipenvSupportManagerConflictsRemainPending/uv.lock
+    pipenv_support_regression_test.go:94: ambiguous manager selected {ID:app-python Dir:. Language:python Manager:uv Framework:django Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool:django Generate:false URLenv:DATABASE_URL Path:} Commands:map[install:{Args:[uv sync] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[uv run python manage.py runserver] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[uv run python manage.py test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[Declare database.kind; conexão não será executada durante detecção]}
+=== RUN   TestPipenvSupportManagerConflictsRemainPending/poetry.lock
+    pipenv_support_regression_test.go:94: ambiguous manager selected {ID:app-python Dir:. Language:python Manager:poetry Framework:django Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool:django Generate:false URLenv:DATABASE_URL Path:} Commands:map[install:{Args:[poetry install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[poetry run python manage.py runserver] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[poetry run python manage.py test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[Declare database.kind; conexão não será executada durante detecção]}
+--- FAIL: TestPipenvSupportManagerConflictsRemainPending (0.00s)
+    --- FAIL: TestPipenvSupportManagerConflictsRemainPending/uv.lock (0.00s)
+    --- FAIL: TestPipenvSupportManagerConflictsRemainPending/poetry.lock (0.00s)
+=== RUN   TestPipenvSupportOrphanLockIsActionable
+    pipenv_support_regression_test.go:123: orphan lock not diagnosed:  Declare comandos da aplicação
+--- FAIL: TestPipenvSupportOrphanLockIsActionable (0.00s)
+=== RUN   TestPipenvSupportScriptSuggestionAndSelectedInit
+    pipenv_support_regression_test.go:150: Pipfile script not suggested
+--- FAIL: TestPipenvSupportScriptSuggestionAndSelectedInit (0.00s)
+=== RUN   TestPipenvSupportScriptCollisionsStayExplicit
+    pipenv_support_regression_test.go:201: collision not actionable: [Declare commands.start; módulo Python não é inferido]
+--- FAIL: TestPipenvSupportScriptCollisionsStayExplicit (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.008s
+FAIL

@@ -1,0 +1,85 @@
+{
+  "javascript_workspaces": [
+    {
+      "path": "package.json",
+      "root": ".",
+      "members": [
+        "packages/a"
+      ],
+      "manager": "pnpm"
+    }
+  ],
+  "config": {
+    "version": 1,
+    "name": "conflict-root",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "pnpm",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "pnpm",
+              "install"
+            ],
+            "group": "dependencias"
+          }
+        },
+        "pending": [
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "packages-a-javascript",
+        "dir": "packages/a",
+        "language": "javascript",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Workspace manager conflict: root . uses pnpm, member uses npm; configure explicitly",
+          "Declare commands.start para execução local"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "package.json",
+      "kind": "javascript-workspace"
+    },
+    {
+      "path": ".",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/a",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "rootonly",
+      "command": {
+        "args": [
+          "pnpm",
+          "run",
+          "rootonly"
+        ],
+        "group": "scripts"
+      },
+      "evidence": "package.json"
+    }
+  ],
+  "warnings": null
+}

@@ -1,0 +1,82 @@
+{
+  "javascript_workspaces": [
+    {
+      "path": "pnpm-workspace.yaml",
+      "root": ".",
+      "members": [
+        "others/b",
+        "packages/a"
+      ]
+    }
+  ],
+  "config": {
+    "version": 1,
+    "name": "divergent",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Workspace manager unresolved: configure manager and commands explicitly",
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "others-b-javascript",
+        "dir": "others/b",
+        "language": "javascript",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Workspace manager unresolved: configure manager and commands explicitly",
+          "Declare commands.start para execução local"
+        ]
+      },
+      {
+        "id": "packages-a-javascript",
+        "dir": "packages/a",
+        "language": "javascript",
+        "workspace_root": ".",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "pending": [
+          "Workspace manager unresolved: configure manager and commands explicitly",
+          "Declare commands.start para execução local"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "pnpm-workspace.yaml",
+      "kind": "javascript-workspace"
+    },
+    {
+      "path": ".",
+      "kind": "javascript"
+    },
+    {
+      "path": "others/b",
+      "kind": "javascript"
+    },
+    {
+      "path": "packages/a",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": null,
+  "warnings": [
+    ".: conflicting workspace declarations; configure ownership explicitly"
+  ]
+}

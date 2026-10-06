@@ -1,0 +1,16 @@
+{
+  "top_level_tests": {
+    "pass": 176,
+    "fail": 0,
+    "skip": 0
+  },
+  "substantive_groups": 173,
+  "isolated_helpers": 3,
+  "covered_statements": 2381,
+  "total_statements": 2945,
+  "coverage_percent": 80.85,
+  "linux_binary_sha256": "f7ad58a06507516a0d97de1ffb8efd561ff0cb17240b3cb15649743b940d341c",
+  "base": "44c4e04016038fe6f8241951568f6ec7de1470a0",
+  "gates": "mod verify/race/vet/Linux build/Darwin arm64 cross-build/smoke/menu/config/resize PASS",
+  "publication": "MUD036 local only; previous165checkpoint published44c4e04"
+}

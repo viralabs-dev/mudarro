@@ -5,7 +5,7 @@ Base main `56dadbaf62e3515e4bb31bb3c3ff2a583cd642ed`; this checkpoint is local a
 | Scope | Before | Final focused result | Evidence |
 |---|---|---|---|
 | Supervisor identity | Corrupt JSON and forged project state failed; separate forged argv[0] failed after first fix | 9 groups passed with race | [before](supervisor/supervisor-before.txt), [spoof before](supervisor/spoof-before.txt), [final](supervisor/supervisor-final.txt) |
-| IO/preservation | Writer failure ignored and FIFO read blocked (owned helper terminated/joined) | 13 groups / 6 subcases passed with race | [before](io/io-before.log), [final](io/io-final-expanded.log) |
+| IO/preservation | Writer failure ignored and FIFO read blocked (owned helper terminated/joined) | 13 groups / 6 subcases passed with race | [before](io/io-before-evidence.txt), [final](io/io-final-expanded-evidence.txt) |
 | Doctor negatives | No new production defect reproduced | 4 groups passed with race | [focused](doctor/doctor-focused.txt) |
 
 Integrated race: **112 top-level tests passed, zero failures/skips**, including optional real PTY recording. Deduplicated internal statement coverage **1,943 / 2,510 = 77.41%**. Repeated coverpkg blocks are merged by source range and covered if any binary executed them. Supervisor subprocesses use an ordinary built CLI: their behavior is real E2E evidence, not instrumentation of child functions. [Summary](summary.json), [JSON test events](tests.jsonl), [profile](coverage.out), [functions](coverage-functions.txt), [PTY cast](interactive.cast).

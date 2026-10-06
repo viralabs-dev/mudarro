@@ -1,0 +1,30 @@
+--- FAIL: TestGoSelectionSortedOfflineSuggestions (0.00s)
+    go_selection_context_test.go:33: suggestions []
+--- FAIL: TestGoSelectionInitPromotesOnlyStart (0.00s)
+    go_selection_context_test.go:60: suggested script does not exist: app-go:go-entry-2
+--- FAIL: TestGoSelectionMultipleRejectedBeforeWrite (0.00s)
+    --- FAIL: TestGoSelectionMultipleRejectedBeforeWrite/all (0.00s)
+        go_selection_context_test.go:110: ambiguous selection accepted
+    --- FAIL: TestGoSelectionMultipleRejectedBeforeWrite/interactive (0.00s)
+        go_selection_context_test.go:110: ambiguous selection accepted
+--- FAIL: TestGoSelectionWorkspaceConfigRoundtrip (0.00s)
+    --- FAIL: TestGoSelectionWorkspaceConfigRoundtrip/json/ (0.00s)
+        go_selection_context_test.go:142: mudarro.json: json: unknown field "go_workspace"
+    --- FAIL: TestGoSelectionWorkspaceConfigRoundtrip/json/inherit (0.00s)
+        go_selection_context_test.go:142: mudarro.json: json: unknown field "go_workspace"
+    --- FAIL: TestGoSelectionWorkspaceConfigRoundtrip/json/off (0.00s)
+        go_selection_context_test.go:142: mudarro.json: json: unknown field "go_workspace"
+    --- FAIL: TestGoSelectionWorkspaceConfigRoundtrip/yaml/ (0.00s)
+        go_selection_context_test.go:142: mudarro.yaml: yaml: unmarshal errors:
+              line 10: field go_workspace not found in type model.Service
+    --- FAIL: TestGoSelectionWorkspaceConfigRoundtrip/yaml/inherit (0.00s)
+        go_selection_context_test.go:142: mudarro.yaml: yaml: unmarshal errors:
+              line 10: field go_workspace not found in type model.Service
+    --- FAIL: TestGoSelectionWorkspaceConfigRoundtrip/yaml/off (0.00s)
+        go_selection_context_test.go:142: mudarro.yaml: yaml: unmarshal errors:
+              line 10: field go_workspace not found in type model.Service
+--- FAIL: TestGoSelectionSingleKeepsAutomaticStartAndDefaultOmitted (0.00s)
+    go_selection_context_test.go:185: suggested script does not exist: app-go:go-entry-1
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.015s
+FAIL

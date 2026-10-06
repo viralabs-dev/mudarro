@@ -1,0 +1,13 @@
+=== RUN   TestPipenvSupportDatabaseActionsUseOwnedEnvironment
+=== RUN   TestPipenvSupportDatabaseActionsUseOwnedEnvironment/django
+    pipenv_support_regression_test.go:227: Pipenv db-migrate uses foreign environment: [.venv/bin/python manage.py migrate]
+    pipenv_support_regression_test.go:234: Pipenv db-install uses foreign environment: [.venv/bin/python -m pip install django]
+=== RUN   TestPipenvSupportDatabaseActionsUseOwnedEnvironment/alembic
+    pipenv_support_regression_test.go:227: Pipenv db-migrate uses foreign environment: [.venv/bin/python -m alembic upgrade head]
+    pipenv_support_regression_test.go:234: Pipenv db-install uses foreign environment: [.venv/bin/python -m pip install alembic sqlalchemy]
+--- FAIL: TestPipenvSupportDatabaseActionsUseOwnedEnvironment (0.00s)
+    --- FAIL: TestPipenvSupportDatabaseActionsUseOwnedEnvironment/django (0.00s)
+    --- FAIL: TestPipenvSupportDatabaseActionsUseOwnedEnvironment/alembic (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.004s
+FAIL

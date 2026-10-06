@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "termios_restored": true,
+  "genuine_pty": true,
+  "child_cwd_verified": "/tmp/mudarro-mud036-runtime/pnpm/packages/a",
+  "actual_pnpm_script_output_verified": true,
+  "frames": 88
+}

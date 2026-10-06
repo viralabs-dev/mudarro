@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "name": "mudarro-workspace-classic",
+  "services": [
+    {
+      "id": "app-javascript",
+      "dir": ".",
+      "language": "javascript",
+      "manager": "yarn",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "install": {
+          "args": [
+            "yarn",
+            "install"
+          ],
+          "group": "dependencias"
+        },
+        "test": {
+          "args": [
+            "yarn",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start para execução local"
+      ]
+    },
+    {
+      "id": "packages-a-javascript",
+      "dir": "packages/a",
+      "language": "javascript",
+      "manager": "yarn",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "hello": {
+          "args": [
+            "yarn",
+            "run",
+            "hello"
+          ],
+          "group": "scripts"
+        },
+        "start": {
+          "args": [
+            "yarn",
+            "run",
+            "start"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "yarn",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      }
+    },
+    {
+      "id": "packages-b-javascript",
+      "dir": "packages/b",
+      "language": "javascript",
+      "manager": "yarn",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "hello": {
+          "args": [
+            "yarn",
+            "run",
+            "hello"
+          ],
+          "group": "scripts"
+        },
+        "start": {
+          "args": [
+            "yarn",
+            "run",
+            "start"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "yarn",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      }
+    }
+  ]
+}

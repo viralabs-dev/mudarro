@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "files": {
+    ".mudarro/scripts/app-javascript/down.sh": "feb9ca59dbabf58cceaf17d31e2f35df5baa389573d9b4c36bd70cb5813716a1",
+    ".mudarro/scripts/app-javascript/install.sh": "e60a19c1291521e336202f1c7849489c85f9b1b453245386f1b8ec9060882e16",
+    ".mudarro/scripts/app-javascript/logs.sh": "a260edab31794ac5b1f3f6e95bbb9a86771ad8f1567aedc6b53f79a6409de3a1",
+    ".mudarro/scripts/app-javascript/restart.sh": "9c1ec1cd59f02cc3a2f184db19f3a9852285ffbd8bafa03c13d2d2381beabcaf",
+    ".mudarro/scripts/app-javascript/status.sh": "80acbce126016a922b639114e50e9c0ca598b63c790c2da0fb5e32ea6e700ce0",
+    ".mudarro/scripts/app-javascript/test.sh": "57f2cf06bb18b4125c494d1f50c24500a984ba2b5465f25f500501c061092b3d",
+    ".mudarro/scripts/app-javascript/up.sh": "d7f90076bc5a8ed10a1cae4a763cb46adee564b0201c8fa266767a4acbdc76a5",
+    ".mudarro/scripts/packages-a-javascript/down.sh": "77fafb556bacb7ad683a327887224f2dfef62416bf9cf4a82338fd1cba1b7d9f",
+    ".mudarro/scripts/packages-a-javascript/hello.sh": "ff9efa9a0fd4c62f8e542290241d61c7cf6d75b5170434fddeebf2f213b0d5ac",
+    ".mudarro/scripts/packages-a-javascript/logs.sh": "0cf3aa03ade45888330ac44bcd9d056028a1dbec67e116f2733776e85f5c34fd",
+    ".mudarro/scripts/packages-a-javascript/restart.sh": "0c6abebc5052241b03dff6f557b1631bb0ef5fae7c5106ec47639bb0e52d22e3",
+    ".mudarro/scripts/packages-a-javascript/start.sh": "f98ad391164bb81c5f09cd427aaacf0eaf9e6082e9d106466f23450ae838961d",
+    ".mudarro/scripts/packages-a-javascript/status.sh": "0eef231c2b25a9fe03b86d263540e11c7ba5f75d3658d04e803187130fa610c7",
+    ".mudarro/scripts/packages-a-javascript/test.sh": "a1a9bbb444c163bc2e69960ab7bd5ae9dea13c1a222e62c7c99e0f7cdb8c4738",
+    ".mudarro/scripts/packages-a-javascript/up.sh": "cc182a81ca08167439631f4060d727cabd421f0ee1d5de3c758e113e0f39e222",
+    ".mudarro/scripts/packages-b-javascript/down.sh": "32f3b4acae575922aaa7b5eab08ab0d6e2d8bdb87c064e5f59e66b7ec687a05c",
+    ".mudarro/scripts/packages-b-javascript/hello.sh": "57c3ac8236230eab4ac8ceb22e9db86e6f6fa09a0140119c4d46ca26d88cf0e9",
+    ".mudarro/scripts/packages-b-javascript/logs.sh": "86d9e98da6a4c734ed4700ba53ed0a5af156c6c1c6c9e0dda663d6f6dece10fd",
+    ".mudarro/scripts/packages-b-javascript/restart.sh": "283ce02229547aed389f2c02302502148efebaa60e432103dc30e18cc6f5089a",
+    ".mudarro/scripts/packages-b-javascript/start.sh": "d0ac0261bd6fafbdf4b6d1bbc103cd4cc6b531ab2cf8df3137e3b84a96795216",
+    ".mudarro/scripts/packages-b-javascript/status.sh": "9dd3e7b74d1383275663a14ffb4bbf25db13b4385cd29b9d541b3ee1b87c26fd",
+    ".mudarro/scripts/packages-b-javascript/test.sh": "2b42386ba75892c43b640a611abd6822d969d48ca987363d867e3ea9bdd722fc",
+    ".mudarro/scripts/packages-b-javascript/up.sh": "1b87484a34555565edc44c368b0e4ca7f3f6520dd6a8f79e321d3abcbf96efaf",
+    "menu.sh": "ee014a7b2ddd253088e9775c8f692a7374b729269cb4c67f5e8ea59f3b66c98f"
+  }
+}

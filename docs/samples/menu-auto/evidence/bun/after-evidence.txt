@@ -1,0 +1,22 @@
+=== RUN   TestBunSupportLockDetection
+=== RUN   TestBunSupportLockDetection/bun.lock
+=== RUN   TestBunSupportLockDetection/bun.lockb
+=== RUN   TestBunSupportLockDetection/bun.lock+bun.lockb
+--- PASS: TestBunSupportLockDetection (0.00s)
+    --- PASS: TestBunSupportLockDetection/bun.lock (0.00s)
+    --- PASS: TestBunSupportLockDetection/bun.lockb (0.00s)
+    --- PASS: TestBunSupportLockDetection/bun.lock+bun.lockb (0.00s)
+=== RUN   TestBunSupportConflictingManagersRemainExplicit
+=== RUN   TestBunSupportConflictingManagersRemainExplicit/package-lock.json
+=== RUN   TestBunSupportConflictingManagersRemainExplicit/pnpm-lock.yaml
+=== RUN   TestBunSupportConflictingManagersRemainExplicit/yarn.lock
+--- PASS: TestBunSupportConflictingManagersRemainExplicit (0.00s)
+    --- PASS: TestBunSupportConflictingManagersRemainExplicit/package-lock.json (0.00s)
+    --- PASS: TestBunSupportConflictingManagersRemainExplicit/pnpm-lock.yaml (0.00s)
+    --- PASS: TestBunSupportConflictingManagersRemainExplicit/yarn.lock (0.00s)
+=== RUN   TestBunSupportExplicitPackageManagerOverridesLockConflict
+--- PASS: TestBunSupportExplicitPackageManagerOverridesLockConflict (0.00s)
+=== RUN   TestBunSupportInitSelectedScriptAndGenerateIdempotent
+--- PASS: TestBunSupportInitSelectedScriptAndGenerateIdempotent (0.02s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	1.047s

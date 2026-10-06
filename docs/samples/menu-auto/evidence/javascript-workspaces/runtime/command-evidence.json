@@ -1,0 +1,155 @@
+{
+  "scope": "15 representative genuine command outputs; original raw files preserved locally; full85check result in after-summary.json; original helper after.py supplies command mapping",
+  "checks": [
+    {
+      "profile": "npm",
+      "case": "root-install",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/npm",
+      "original_file": "runtime/npm/logs/root-install.log",
+      "stdout_stderr": "\nup to date in 128ms\n",
+      "original_sha256": "0b5a7fc83e5bd6e826900f20cbcb75d1d721edabfc27b69617d88a6549e22d23"
+    },
+    {
+      "profile": "npm",
+      "case": "a-test",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/npm",
+      "original_file": "runtime/npm/logs/a-test.log",
+      "stdout_stderr": "\n> test\n> node probe.cjs\n\nWORKSPACE_CHILD_a /tmp/mudarro-mud036-runtime/npm/packages/a\n",
+      "original_sha256": "455bc263cf8cf422901653a9698c8f8c7a108d40327f388bb827ab705be0574d"
+    },
+    {
+      "profile": "npm",
+      "case": "member-install-rejected",
+      "exit": 1,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/npm",
+      "original_file": "runtime/npm/logs/member-install-rejected.log",
+      "stdout_stderr": "mudarro: action does not exist: packages-a-javascript:install\n",
+      "original_sha256": "cb15d36d1889625e766e66b25955529a5ff9611a7e6c9716468ba8ad885dbe81"
+    },
+    {
+      "profile": "pnpm",
+      "case": "root-install",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/pnpm",
+      "original_file": "runtime/pnpm/logs/root-install.log",
+      "stdout_stderr": "Scope: all 3 workspace projects\nAlready up to date\n\nDone in 398ms using pnpm v11.3.0\n",
+      "original_sha256": "baac43e0093e262604fe44c0221dd2b98869e1746164816f5ff13c498a44ea6c"
+    },
+    {
+      "profile": "pnpm",
+      "case": "a-test",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/pnpm",
+      "original_file": "runtime/pnpm/logs/a-test.log",
+      "stdout_stderr": "$ node probe.cjs\nWORKSPACE_CHILD_a /tmp/mudarro-mud036-runtime/pnpm/packages/a\n",
+      "original_sha256": "16f7ea9f9fb2d47a3a201769ec68e343db1e4011ce641740901b9237f0b67eb4"
+    },
+    {
+      "profile": "pnpm",
+      "case": "member-install-rejected",
+      "exit": 1,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/pnpm",
+      "original_file": "runtime/pnpm/logs/member-install-rejected.log",
+      "stdout_stderr": "mudarro: action does not exist: packages-a-javascript:install\n",
+      "original_sha256": "cb15d36d1889625e766e66b25955529a5ff9611a7e6c9716468ba8ad885dbe81"
+    },
+    {
+      "profile": "classic",
+      "case": "root-install",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/classic",
+      "original_file": "runtime/classic/logs/root-install.log",
+      "stdout_stderr": "yarn install v1.22.22\nwarning Missing version in workspace at \"/tmp/mudarro-mud036-runtime/classic/packages/a\", ignoring.\nwarning Missing version in workspace at \"/tmp/mudarro-mud036-runtime/classic/packages/b\", ignoring.\n[1/4] Resolving packages...\nsuccess Already up-to-date.\nDone in 0.04s.\n",
+      "original_sha256": "42468b5f8808574be266c047eb67609f357f9635aa60a0c84e2a4f67b09e3ea6"
+    },
+    {
+      "profile": "classic",
+      "case": "a-test",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/classic",
+      "original_file": "runtime/classic/logs/a-test.log",
+      "stdout_stderr": "yarn run v1.22.22\n$ node probe.cjs\nWORKSPACE_CHILD_a /tmp/mudarro-mud036-runtime/classic/packages/a\nDone in 0.07s.\n",
+      "original_sha256": "90930904bb5f9304195e2e371ff9bb649f64048e695f9c43a6bbd63c64c85a77"
+    },
+    {
+      "profile": "classic",
+      "case": "member-install-rejected",
+      "exit": 1,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/classic",
+      "original_file": "runtime/classic/logs/member-install-rejected.log",
+      "stdout_stderr": "mudarro: action does not exist: packages-a-javascript:install\n",
+      "original_sha256": "cb15d36d1889625e766e66b25955529a5ff9611a7e6c9716468ba8ad885dbe81"
+    },
+    {
+      "profile": "modern",
+      "case": "root-install",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/modern",
+      "original_file": "runtime/modern/logs/root-install.log",
+      "stdout_stderr": "\u27a4 YN0000: \u00b7 Yarn 4.18.1\n\u27a4 YN0000: \u250c Resolution step\n\u27a4 YN0000: \u2514 Completed\n\u27a4 YN0000: \u250c Fetch step\n\u27a4 YN0000: \u2514 Completed\n\u27a4 YN0000: \u250c Link step\n\u27a4 YN0000: \u2514 Completed\n\u27a4 YN0000: \u00b7 Done in 0s 24ms\n",
+      "original_sha256": "b12e36807f124ed18742f752d9e8bc33b18893c252872a7b7c2237f747d76b29"
+    },
+    {
+      "profile": "modern",
+      "case": "a-test",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/modern",
+      "original_file": "runtime/modern/logs/a-test.log",
+      "stdout_stderr": "WORKSPACE_CHILD_a /tmp/mudarro-mud036-runtime/modern/packages/a\n",
+      "original_sha256": "23aa8985eb4b0379f1bac290cbc4e4b7d4c23e336b392d92ef85cf496e104310"
+    },
+    {
+      "profile": "modern",
+      "case": "member-install-rejected",
+      "exit": 1,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/modern",
+      "original_file": "runtime/modern/logs/member-install-rejected.log",
+      "stdout_stderr": "mudarro: action does not exist: packages-a-javascript:install\n",
+      "original_sha256": "cb15d36d1889625e766e66b25955529a5ff9611a7e6c9716468ba8ad885dbe81"
+    },
+    {
+      "profile": "bun",
+      "case": "root-install",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/bun",
+      "original_file": "runtime/bun/logs/root-install.log",
+      "stdout_stderr": "bun install v1.4.0 (34cbb9a40)\n\nDone! Checked 3 packages (no changes) [2.00ms]\n",
+      "original_sha256": "04902eda66bcf79a99b41c673bd1a766927bc924f47a19b557b29f2b3c539965"
+    },
+    {
+      "profile": "bun",
+      "case": "a-test",
+      "exit": 0,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/bun",
+      "original_file": "runtime/bun/logs/a-test.log",
+      "stdout_stderr": "$ node probe.cjs\nWORKSPACE_CHILD_a /tmp/mudarro-mud036-runtime/bun/packages/a\n",
+      "original_sha256": "66284c585b9e4f7493379dbecd77578cbf5fa62035fa0409f943c1bc497518ee"
+    },
+    {
+      "profile": "bun",
+      "case": "member-install-rejected",
+      "exit": 1,
+      "cwd_kind": "workspace root; member script executes in packages/a",
+      "original_fixture": "/tmp/mudarro-mud036-runtime/bun",
+      "original_file": "runtime/bun/logs/member-install-rejected.log",
+      "stdout_stderr": "mudarro: action does not exist: packages-a-javascript:install\n",
+      "original_sha256": "cb15d36d1889625e766e66b25955529a5ff9611a7e6c9716468ba8ad885dbe81"
+    }
+  ]
+}

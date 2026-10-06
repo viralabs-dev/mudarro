@@ -15,7 +15,7 @@ Leitura autenticada de permissões Actions retornou enabled=true/allowed_actions
 
 Não há demanda comprovada de linguagem nova no material consultado. Ordem abaixo é hipótese de valor/custo a validar com repositórios reais de Daniel; não ranking de popularidade. Nenhuma recomendação externa ou benchmark usado.
 
-1. **Fechar managers/monorepos das três famílias atuais.** Maior retorno provável: provisionamento restante de versões packageManager; integrações reais de dependências/frameworks; managers JS root/filhos e workspace; integrações de grafo/framework Go (seleção de entrada e parser oficial de membros go.work entregues). Custo baixo/médio, depende de definir semântica de herança e escolha antes de código. Aceite: fixtures realistas, ambiguidade explícita, nenhum comando inventado, cobertura de geração/menu.
+1. **Fechar managers/monorepos das três famílias atuais.** Maior retorno provável: provisionamento restante de versões packageManager; integrações reais de dependências/frameworks; grafo/Turbo/Nx JS restante (ownership/herança manager declarado entregues); integrações de grafo/framework Go (seleção de entrada e parser oficial de membros go.work entregues). Custo baixo/médio, depende de definir semântica de herança e escolha antes de código. Aceite: fixtures realistas, ambiguidade explícita, nenhum comando inventado, cobertura de geração/menu.
 2. **Rust/Cargo, se houver projeto real alvo.** Manifest TOML já tem parser no produto; build/test/install e seleção de binários oferecem contrato plausível. Custo médio: workspace members/default-members, biblioteca vs múltiplos bins e caminho/target precisam regra explícita. Não afirmar suporte até adapter, fixtures e execução cargo real autorizada. Evitar start automático baseado somente Cargo.toml.
 3. **PHP/Composer, se houver demanda web pessoal.** JSON facilita manifest/scripts; custom scripts podem reutilizar mecanismo existente. Custo médio: Composer runtime e PHP, frameworks/start variados. Começar scripts explícitos; Laravel/Symfony somente com evidência e critérios próprios.
 4. **Java/Kotlin ou .NET somente com demanda concreta.** Valor alto em equipes desses ecossistemas, demanda aqui desconhecida; custo médio/alto por Maven/Gradle multimodule/wrapper, JVM targets ou csproj/solution múltiplos projetos. Separar build/test de start, evitar inferir entrypoint e executar wrappers na detecção.
@@ -31,3 +31,6 @@ MUD-015 planeja; MUD-016 amplia testes atuais. Colisões de scripts JS foram cor
 
 
 Parser Go workspace, seleção explícita de entrada e política herdado/off entregues e validados localmente; resolução de replacements/toolchain/grafo e herança de serviços workspace permanecem fora da implementação. [Evidências](../samples/menu-auto/evidence/go-work-parser/README.md).
+
+
+Ownership/herança somente manager e instalação raiz dos workspaces JavaScript declarados entregues localmente; grafo/Turbo/Nx e equivalência completa da linguagem de globs permanecem separados. [Evidências](../samples/menu-auto/evidence/javascript-workspaces/README.md).

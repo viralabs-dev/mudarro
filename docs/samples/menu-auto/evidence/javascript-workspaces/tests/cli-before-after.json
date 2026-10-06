@@ -1,0 +1,89 @@
+[
+  {
+    "phase": "before",
+    "argv": [
+      "/tmp/mudarro-parser-checkpoint/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud036-tests/cli-fixture",
+      "--json"
+    ],
+    "binarySHA256": "c926247ab2c47f24aa4124ba934cffd02f90bb534b12fd6550b99c246a0fdf60",
+    "child": {
+      "id": "packages-api-javascript",
+      "dir": "packages/api",
+      "language": "javascript",
+      "manager": "npm",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "install": {
+          "args": [
+            "npm",
+            "install"
+          ],
+          "group": "dependencias"
+        },
+        "test": {
+          "args": [
+            "npm",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start para execu\u00e7\u00e3o local"
+      ]
+    },
+    "workspaceMetadata": null
+  },
+  {
+    "phase": "after",
+    "argv": [
+      "/tmp/mudarro-mud036-tests/mudarro-final",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud036-tests/cli-fixture",
+      "--json"
+    ],
+    "binarySHA256": "f7ad58a06507516a0d97de1ffb8efd561ff0cb17240b3cb15649743b940d341c",
+    "child": {
+      "id": "packages-api-javascript",
+      "dir": "packages/api",
+      "language": "javascript",
+      "manager": "pnpm",
+      "workspace_root": ".",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "test": {
+          "args": [
+            "pnpm",
+            "run",
+            "test"
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start para execu\u00e7\u00e3o local"
+      ]
+    },
+    "workspaceMetadata": [
+      {
+        "path": "package.json",
+        "root": ".",
+        "members": [
+          "packages/api"
+        ],
+        "manager": "pnpm"
+      }
+    ]
+  }
+]
