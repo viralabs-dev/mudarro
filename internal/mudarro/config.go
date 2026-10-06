@@ -42,6 +42,9 @@ func (c Config) Validate(root string) error {
 			return fmt.Errorf("id inválido ou duplicado: %q", s.ID)
 		}
 		seen[s.ID] = true
+		if s.GoWorkspace != "" && (s.Language != "go" || (s.GoWorkspace != "inherit" && s.GoWorkspace != "off")) {
+			return fmt.Errorf("%s: go_workspace requires a Go service and inherit or off", s.ID)
+		}
 		p, e := safePath(root, s.Dir)
 		if e != nil {
 			return e

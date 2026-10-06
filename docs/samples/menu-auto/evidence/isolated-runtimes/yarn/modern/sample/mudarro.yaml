@@ -1,0 +1,39 @@
+version: 1
+name: mudarro-yarn-modern
+services:
+    - id: app-javascript
+      dir: .
+      language: javascript
+      manager: yarn
+      infrastructure:
+        kind: local
+      commands:
+        fail:
+            args:
+                - yarn
+                - run
+                - fail
+            group: scripts
+        hello:
+            args:
+                - yarn
+                - run
+                - hello
+            group: scripts
+        install:
+            args:
+                - yarn
+                - install
+            group: dependencias
+        start:
+            args:
+                - yarn
+                - run
+                - start
+            group: aplicacao
+        test:
+            args:
+                - yarn
+                - run
+                - test
+            group: qualidade

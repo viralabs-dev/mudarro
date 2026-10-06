@@ -1,0 +1,26 @@
+[
+  {
+    "argv": [
+      "/tmp/mudarro-parser-checkpoint/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/yarn/classic",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"mudarro-yarn-classic\",\n    \"services\": [\n      {\n        \"id\": \"app-javascript\",\n        \"dir\": \".\",\n        \"language\": \"javascript\",\n        \"manager\": \"yarn\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"install\": {\n            \"args\": [\n              \"yarn\",\n              \"install\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"start\": {\n            \"args\": [\n              \"yarn\",\n              \"run\",\n              \"start\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"yarn\",\n              \"run\",\n              \"test\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        }\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"javascript\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"yarn\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"hello\",\n      \"command\": {\n        \"args\": [\n          \"yarn\",\n          \"run\",\n          \"hello\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"start\",\n      \"command\": {\n        \"args\": [\n          \"yarn\",\n          \"run\",\n          \"start\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"package.json\"\n    },\n    {\n      \"service\": \"app-javascript\",\n      \"name\": \"test\",\n      \"command\": {\n        \"args\": [\n          \"yarn\",\n          \"run\",\n          \"test\"\n        ],\n        \"group\": \"qualidade\"\n      },\n      \"evidence\": \"package.json\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-parser-checkpoint/mudarro",
+      "run",
+      "app-javascript:test",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/yarn/classic"
+    ],
+    "exit": 0,
+    "stdout": "yarn run v1.22.22\n$ node probe.cjs\nYarn quality real OK\nDone in 0.05s.\n",
+    "stderr": ""
+  }
+]

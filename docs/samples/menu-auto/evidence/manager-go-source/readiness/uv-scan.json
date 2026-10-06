@@ -1,0 +1,38 @@
+{
+  "config": {
+    "version": 1,
+    "name": "uv",
+    "services": [
+      {
+        "id": "app-python",
+        "dir": ".",
+        "language": "python",
+        "manager": "uv",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "uv",
+              "sync"
+            ],
+            "group": "dependencias"
+          }
+        },
+        "pending": [
+          "Declare commands.start; módulo Python não é inferido"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "python"
+    }
+  ],
+  "suggestions": null,
+  "warnings": null
+}

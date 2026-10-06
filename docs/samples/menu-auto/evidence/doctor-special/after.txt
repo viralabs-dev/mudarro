@@ -1,0 +1,10 @@
+=== RUN   TestDoctorSpecialFileExecutableIsRejected
+=== RUN   TestDoctorSpecialFileExecutableIsRejected/fifo-executable
+=== RUN   TestDoctorSpecialFileExecutableIsRejected/regular-executable
+=== RUN   TestDoctorSpecialFileExecutableIsRejected/regular-not-executable
+--- PASS: TestDoctorSpecialFileExecutableIsRejected (0.00s)
+    --- PASS: TestDoctorSpecialFileExecutableIsRejected/fifo-executable (0.00s)
+    --- PASS: TestDoctorSpecialFileExecutableIsRejected/regular-executable (0.00s)
+    --- PASS: TestDoctorSpecialFileExecutableIsRejected/regular-not-executable (0.00s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	1.019s

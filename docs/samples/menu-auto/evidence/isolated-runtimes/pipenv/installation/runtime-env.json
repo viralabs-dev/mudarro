@@ -1,0 +1,20 @@
+{
+  "PIPENV_VENV_IN_PROJECT": "1",
+  "PIPENV_DONT_LOAD_ENV": "1",
+  "PIPENV_IGNORE_VIRTUALENVS": "1",
+  "PIPENV_PYTHON": "/home/linuxbrew/.linuxbrew/bin/python3",
+  "PIPENV_CACHE_DIR": "/tmp/mudarro-runtimes.K7F4J1/cache/pipenv/manager",
+  "PIPENV_NOSPIN": "1",
+  "PIPENV_YES": "1",
+  "PIPENV_DONT_USE_PYENV": "1",
+  "PIPENV_DONT_USE_ASDF": "1",
+  "PIP_CONFIG_FILE": "/dev/null",
+  "PIP_CACHE_DIR": "/tmp/mudarro-runtimes.K7F4J1/cache/pipenv/project-pip",
+  "PIP_NO_INDEX": "1",
+  "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+  "VIRTUALENV_OVERRIDE_APP_DATA": "/tmp/mudarro-runtimes.K7F4J1/cache/pipenv/virtualenv",
+  "VIRTUALENV_NO_PERIODIC_UPDATE": "1",
+  "VIRTUALENV_DOWNLOAD": "0",
+  "XDG_CACHE_HOME": "/tmp/mudarro-runtimes.K7F4J1/cache/pipenv/xdg",
+  "XDG_CONFIG_HOME": "/tmp/mudarro-runtimes.K7F4J1/pipenv/config"
+}

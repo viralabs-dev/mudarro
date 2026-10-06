@@ -1,0 +1,7 @@
+{"version": 2, "width": 100, "height": 24, "timestamp": 1791300900, "title": "MUD034 genuine generated menu/check; actual PTY TERM=dumb fallback; injected navigation", "env": {"TERM": "dumb"}}
+[0.000156, "o", "1\r\n3\r\n1\r\n0\r\n0\r\n0\r\n"]
+[0.005985, "o", "### ### # #  #  #   \r\n#    #  ### # # #   \r\n##   #  ### ### #   \r\n#    #  ### # # #   \r\n#   ### # # # # ### \r\nfinal\r\n\r\n\r\n  Choose an area / Services\r\n\r\n   1.  app-python \u2014 .\r\n\r\n   0.  Back / exit\r\n  > "]
+[0.006036, "o", "\r\n  Choose an area / app-python\r\n\r\n   1.  dependencies\r\n   2.  infrastructure\r\n   3.  scripts\r\n\r\n   0.  Back / exit\r\n  > "]
+[0.006103, "o", "\r\n  Choose an area / scripts\r\n\r\n   1.  check\r\n   2.  fail\r\n   3.  seed\r\n"]
+[0.006126, "o", "   4.  start\r\n\r\n   0.  Back / exit\r\n  p<number> preview only; number executes\r\n  > "]
+[0.326299, "o", "PIPENV REAL CHECK PASS 3.14.7\r\n"]

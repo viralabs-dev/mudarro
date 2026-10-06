@@ -1,0 +1,35 @@
+[
+  {
+    "argv": [
+      "/tmp/mudarro-mud035-semver/mudarro-after",
+      "preview",
+      "app:test",
+      "--root",
+      "/tmp/mudarro-mud038-next/diagnostics/cli-fixture"
+    ],
+    "exit": 0,
+    "output": "Action: app:test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"go\"\n  [1] \"test\"\n  [2] \"./...\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud035-semver/mudarro-after",
+      "run",
+      "app:test",
+      "--dry-run",
+      "--root",
+      "/tmp/mudarro-mud038-next/diagnostics/cli-fixture"
+    ],
+    "exit": 0,
+    "output": "app: {\"args\":[\"go\",\"test\",\"./...\"],\"group\":\"qualidade\"}\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud035-semver/mudarro-after",
+      "doctor",
+      "--root",
+      "/tmp/mudarro-mud038-next/diagnostics/cli-fixture"
+    ],
+    "exit": 0,
+    "output": "OK app: go\nNenhuma depend\u00eancia execut\u00e1vel ausente. Isso n\u00e3o valida conex\u00e3o, credenciais ou sa\u00fade da aplica\u00e7\u00e3o.\n"
+  }
+]

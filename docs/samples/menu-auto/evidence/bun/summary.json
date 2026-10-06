@@ -1,0 +1,14 @@
+{
+  "top_level_tests": {
+    "pass": 121,
+    "fail": 0,
+    "skip": 0
+  },
+  "covered_statements": 1971,
+  "total_statements": 2517,
+  "coverage_percent": 78.31,
+  "linux_binary_sha256": "6214994c4e1dfcc06acfbd7beae14e9b88e592b7e25049fbb06a55e3a8c12033",
+  "base": "b887f64",
+  "publication": "local only",
+  "native_darwin": "not executed"
+}

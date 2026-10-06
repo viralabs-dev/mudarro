@@ -1,0 +1,89 @@
+
+COMMAND: /tmp/mudarro-mud033-runtime/mudarro init --root /tmp/mudarro-mud033-runtime/fixture
+Project: bun-runtime-exclusive
+- app-javascript (.): javascript / bun / local
+  suggestion: app-javascript:build [package.json]
+  suggestion: app-javascript:lint [package.json]
+  suggestion: app-javascript:start [package.json]
+  suggestion: app-javascript:test [package.json]
+Created mudarro.yaml. Review pending choices, then run mudarro generate.
+mudarro: configuration already exists; edit the preserved file
+
+COMMAND: /tmp/mudarro-mud033-runtime/mudarro generate --root /tmp/mudarro-mud033-runtime/fixture --dry-run
+gerar: .mudarro/scripts/app-javascript/build.sh
+gerar: .mudarro/scripts/app-javascript/down.sh
+gerar: .mudarro/scripts/app-javascript/install.sh
+gerar: .mudarro/scripts/app-javascript/lint.sh
+gerar: .mudarro/scripts/app-javascript/logs.sh
+gerar: .mudarro/scripts/app-javascript/restart.sh
+gerar: .mudarro/scripts/app-javascript/start.sh
+gerar: .mudarro/scripts/app-javascript/status.sh
+gerar: .mudarro/scripts/app-javascript/test.sh
+gerar: .mudarro/scripts/app-javascript/up.sh
+gerar: menu.sh
+
+COMMAND: /tmp/mudarro-mud033-runtime/mudarro generate --root /tmp/mudarro-mud033-runtime/fixture
+gerar: .mudarro/scripts/app-javascript/build.sh
+gerar: .mudarro/scripts/app-javascript/down.sh
+gerar: .mudarro/scripts/app-javascript/install.sh
+gerar: .mudarro/scripts/app-javascript/lint.sh
+gerar: .mudarro/scripts/app-javascript/logs.sh
+gerar: .mudarro/scripts/app-javascript/restart.sh
+gerar: .mudarro/scripts/app-javascript/start.sh
+gerar: .mudarro/scripts/app-javascript/status.sh
+gerar: .mudarro/scripts/app-javascript/test.sh
+gerar: .mudarro/scripts/app-javascript/up.sh
+gerar: menu.sh
+
+COMMAND: /tmp/mudarro-mud033-runtime/mudarro generate --root /tmp/mudarro-mud033-runtime/fixture
+
+COMMAND: /tmp/mudarro-mud033-runtime/mudarro doctor --root /tmp/mudarro-mud033-runtime/fixture
+OK app-javascript: bun
+OK app-javascript: ps
+Nenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/test.sh
+$ bun check.js
+MUD033 Bun check PASS 1.4.0
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/lint.sh
+$ bun check.js
+MUD033 Bun check PASS 1.4.0
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/build.sh
+$ bun check.js
+MUD033 Bun check PASS 1.4.0
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/up.sh
+app-javascript: started (PID 110)
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/up.sh
+app-javascript: already running
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/status.sh
+app-javascript: running (PID 110)
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/logs.sh
+$ bun app.js
+MUD033 Bun startup 121
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/restart.sh
+app-javascript: started (PID 160)
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/status.sh
+app-javascript: running (PID 160)
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/logs.sh
+$ bun app.js
+MUD033 Bun startup 121
+MUD033 Bun shutdown SIGTERM
+$ bun app.js
+MUD033 Bun startup 170
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/down.sh
+app-javascript: stopped
+
+COMMAND: bash /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/status.sh
+app-javascript: stopped
+app-javascript: stopped
+BUN REAL E2E PASS

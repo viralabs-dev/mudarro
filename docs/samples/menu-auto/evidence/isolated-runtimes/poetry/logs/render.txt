@@ -1,0 +1,7 @@
+[INFO  agg] recording terminal size: 100x32
+[INFO  agg] usable font families: ["DejaVu Sans Mono", "Liberation Mono", "Symbols Nerd Font", "DejaVu Sans", "Noto Color Emoji", "Noto Emoji"]
+[INFO  agg] primary text font family: DejaVu Sans Mono
+[INFO  agg] selected theme: githubdark
+[INFO  agg] gif dimensions: 860x647
+1 / 2 [=========================>--------------------------] 50.00 % 10.32/s 0s 2 / 2 [======================================================] 100.00 % 17.85/s 
+[INFO  agg] rendering finished in 0.11224829s

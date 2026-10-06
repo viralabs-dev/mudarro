@@ -1,0 +1,34 @@
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-zero
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-one
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-negative
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/empty-token
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/short-token
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/wrong-token
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-root-metadata
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-service-metadata
+--- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess (0.90s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-zero (0.03s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-one (0.03s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-negative (0.04s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/empty-token (0.03s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/short-token (0.02s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/wrong-token (0.08s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-root-metadata (0.06s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-service-metadata (0.08s)
+=== RUN   TestSupervisorIdentityCorruptJSONMustNotAuthorizeSignals
+    supervisor_identity_regression_test.go:160: corrupt state accepted as running: <nil> app: running (PID 1583688)
+--- FAIL: TestSupervisorIdentityCorruptJSONMustNotAuthorizeSignals (0.60s)
+=== RUN   TestSupervisorIdentityDoesNotAdoptAnotherProjectSupervisor
+    supervisor_identity_regression_test.go:181: another project adopted: <nil> app: running (PID 1583820)
+    supervisor_identity_regression_test.go:189: forged state stopped another exclusively owned project supervisor
+--- FAIL: TestSupervisorIdentityDoesNotAdoptAnotherProjectSupervisor (0.87s)
+=== RUN   TestSupervisorIdentityStalePIDAndUnrelatedOwnedPID
+--- PASS: TestSupervisorIdentityStalePIDAndUnrelatedOwnedPID (0.43s)
+=== RUN   TestSupervisorIdentityConcurrentUpAndRestart
+--- PASS: TestSupervisorIdentityConcurrentUpAndRestart (0.83s)
+=== RUN   TestSupervisorIdentityStartupFailureAndSupervisorSignal
+--- PASS: TestSupervisorIdentityStartupFailureAndSupervisorSignal (0.80s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	4.448s
+FAIL

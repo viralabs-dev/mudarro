@@ -1,0 +1,120 @@
+{
+  "config": {
+    "version": 1,
+    "name": "bun-runtime-exclusive",
+    "services": [
+      {
+        "id": "app-javascript",
+        "dir": ".",
+        "language": "javascript",
+        "manager": "bun",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "bun",
+              "run",
+              "build"
+            ],
+            "group": "aplicacao"
+          },
+          "install": {
+            "args": [
+              "bun",
+              "install"
+            ],
+            "group": "dependencias"
+          },
+          "lint": {
+            "args": [
+              "bun",
+              "run",
+              "lint"
+            ],
+            "group": "qualidade"
+          },
+          "start": {
+            "args": [
+              "bun",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "bun",
+              "run",
+              "test"
+            ],
+            "group": "qualidade"
+          }
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "javascript"
+    }
+  ],
+  "suggestions": [
+    {
+      "service": "app-javascript",
+      "name": "build",
+      "command": {
+        "args": [
+          "bun",
+          "run",
+          "build"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "lint",
+      "command": {
+        "args": [
+          "bun",
+          "run",
+          "lint"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "start",
+      "command": {
+        "args": [
+          "bun",
+          "run",
+          "start"
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "package.json"
+    },
+    {
+      "service": "app-javascript",
+      "name": "test",
+      "command": {
+        "args": [
+          "bun",
+          "run",
+          "test"
+        ],
+        "group": "qualidade"
+      },
+      "evidence": "package.json"
+    }
+  ],
+  "warnings": null
+}

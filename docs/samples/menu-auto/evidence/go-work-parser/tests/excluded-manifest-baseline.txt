@@ -1,0 +1,11 @@
+=== RUN   TestGoWorkParserExcludedMembershipIsNotRead
+=== RUN   TestGoWorkParserExcludedMembershipIsNotRead/private
+=== RUN   TestGoWorkParserExcludedMembershipIsNotRead/private/go.mod
+    go_work_parser_test.go:325: excluded declared metadata missing: {Workspaces:[{Path:go.work Excluded:[.mudarro] Modules:map[app:example.test/app]}]}
+    go_work_parser_test.go:339: excluded FIFO content/type was validated: "go.work: member \"private\" go.mod: manifest deve ser arquivo regular: /tmp/testgoworkparserexcludedmembershipisnotreadprivatego.mod2719136141/001/private/go.mod go.work: member \".mudarro\" excluded from scan; membership not validated for this entry"
+--- FAIL: TestGoWorkParserExcludedMembershipIsNotRead (2.05s)
+    --- PASS: TestGoWorkParserExcludedMembershipIsNotRead/private (1.02s)
+    --- FAIL: TestGoWorkParserExcludedMembershipIsNotRead/private/go.mod (1.02s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	2.066s
+FAIL

@@ -1,0 +1,6 @@
+Collecting uv==0.12.23
+  Downloading uv-0.12.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+Downloading uv-0.12.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.6/20.6 MB 22.3 MB/s  0:00:00
+Saved /tmp/mudarro-runtimes.K7F4J1/uv/wheelhouse/uv-0.12.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Successfully downloaded uv

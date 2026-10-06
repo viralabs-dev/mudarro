@@ -1,0 +1,59 @@
+{
+  "pipenv": {
+    "version": "2026.8.0",
+    "requires_python": ">=3.10",
+    "metadata": "https://pypi.org/pypi/pipenv/json",
+    "artifacts": [
+      {
+        "filename": "pipenv-2026.8.0-py3-none-any.whl",
+        "sha256": "8da889c636a8cab59a435c1366f30d252ecee465372341eb8cd4da43b055ad9d"
+      }
+    ]
+  },
+  "poetry": {
+    "version": "2.5.1",
+    "requires_python": "<4.0,>=3.10",
+    "metadata": "https://pypi.org/pypi/poetry/json",
+    "artifacts": [
+      {
+        "filename": "poetry-2.5.1-py3-none-any.whl",
+        "sha256": "3f7910abc667ce0c33a67e306baf017acdec1c8eeec4aa64d176e530d8338a61"
+      }
+    ]
+  },
+  "uv": {
+    "version": "0.12.23",
+    "requires_python": ">=3.8",
+    "metadata": "https://pypi.org/pypi/uv/json",
+    "artifacts": [
+      {
+        "filename": "uv-0.12.23-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "565c6e2874dbeae86c02f3dea97255e878fec672659a73d4930c6b93fcab2fff"
+      }
+    ]
+  },
+  "yarn": {
+    "version": "1.22.22",
+    "engines": {
+      "node": ">=4.0.0"
+    },
+    "integrity": "sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==",
+    "metadata": "https://registry.npmjs.org/yarn/latest"
+  },
+  "corepack": {
+    "version": "0.36.0",
+    "engines": {
+      "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+    },
+    "integrity": "sha512-SiiJsBhZqdBiPHTEl6OT3sASrRrKIcYTQMsVGXx6EE/gM8WFMwYjeIX8Tt8RiU4Iv2J6LbT8KpGfCOsBpRWB/w==",
+    "metadata": "https://registry.npmjs.org/corepack/latest"
+  },
+  "yarn-modern": {
+    "version": "4.18.1",
+    "engines": {
+      "node": ">=18.12.0"
+    },
+    "integrity": "sha512-EH+A4TxAtBWXKE0DGQxW9Bo9crXHLJ73mfxjTQJuv8XonNWWTpei8BQ5JjczHJNU9GROTycwMFn8iOvRIZXUcA==",
+    "metadata": "https://registry.npmjs.org/@yarnpkg/cli-dist/latest"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/tmp/mudarro-mud061/mudarro-after",
+    "doctor",
+    "--root",
+    "/tmp/mudarro-mud061/fixture"
+  ],
+  "exit": 1,
+  "elapsed": 10.051003379994654,
+  "output": "OK app: docker\nTIMEOUT app: provedor Compose \u2014 sondagem de vers\u00e3o excedeu 10s\nmudarro: 1 pending item(s); independent actions remain available\n",
+  "ownedProviderPid": 13,
+  "ownedProviderRemaining": false
+}

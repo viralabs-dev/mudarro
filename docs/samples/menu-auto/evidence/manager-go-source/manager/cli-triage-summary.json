@@ -1,0 +1,133 @@
+{
+  "passed": 14,
+  "cases": [
+    {
+      "case": "unknown",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "relative-path",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "absolute-path",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "url",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "trailing-space",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "leading-space",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "empty-version",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "empty-name",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "tab",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "newline",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "number",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "boolean",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "array",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    },
+    {
+      "case": "object",
+      "exit_code": 0,
+      "diagnostic": true,
+      "invalid_executable_plan": false,
+      "valid_sibling": true,
+      "files_preserved": true,
+      "offline_scan_no_script_execution": true
+    }
+  ],
+  "binary_sha256": "80a463f64932ff17486db261f66c1f2327b17c1ead27411265f786a66af7a8da",
+  "runtime": "real built CLI scan; no package-manager command invoked"
+}

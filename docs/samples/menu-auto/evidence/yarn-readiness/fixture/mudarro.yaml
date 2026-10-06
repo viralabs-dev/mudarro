@@ -1,0 +1,23 @@
+version: 1
+name: mudarro-yarn-runtime-probe
+services:
+    - id: app-javascript
+      dir: .
+      language: javascript
+      manager: yarn
+      infrastructure:
+        kind: local
+      commands:
+        install:
+            args:
+                - yarn
+                - install
+            group: dependencias
+        test:
+            args:
+                - yarn
+                - run
+                - test
+            group: qualidade
+      pending:
+        - Declare commands.start para execução local

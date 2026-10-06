@@ -1,0 +1,39 @@
+{
+  "tool": "pipenv",
+  "PATH": null,
+  "known_candidates": [
+    {
+      "path": "/home/danielsouza/.local/bin/pipenv",
+      "exists": false,
+      "executable": false
+    },
+    {
+      "path": "/home/linuxbrew/.linuxbrew/bin/pipenv",
+      "exists": false,
+      "executable": false
+    },
+    {
+      "path": "/home/linuxbrew/.linuxbrew/opt/pipenv/bin/pipenv",
+      "exists": false,
+      "executable": false
+    },
+    {
+      "path": "/home/danielsouza/.local/share/pipx/venvs/pipenv/bin/pipenv",
+      "exists": false,
+      "executable": false
+    },
+    {
+      "path": "/home/danielsouza/.local/pipx/venvs/pipenv/bin/pipenv",
+      "exists": false,
+      "executable": false
+    },
+    {
+      "path": "/home/danielsouza/.pyenv/shims/pipenv",
+      "exists": false,
+      "executable": false
+    }
+  ],
+  "runtime_executed": false,
+  "installation_performed": false,
+  "scope": "known executable locations only; not exhaustive home search"
+}

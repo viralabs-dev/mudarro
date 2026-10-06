@@ -1,0 +1,163 @@
+{
+  "classic": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "generated-install",
+        "exit_code": 0
+      },
+      {
+        "case": "wrapper-test",
+        "exit_code": 0
+      },
+      {
+        "case": "wrapper-hello",
+        "exit_code": 0
+      },
+      {
+        "case": "menu-test",
+        "exit_code": 0
+      },
+      {
+        "case": "init-repeat",
+        "exit_code": 1
+      },
+      {
+        "case": "generate-idempotence",
+        "exit_code": 0
+      },
+      {
+        "case": "unknown-action",
+        "exit_code": 1
+      },
+      {
+        "case": "up",
+        "exit_code": 0
+      },
+      {
+        "case": "up-repeat",
+        "exit_code": 0
+      },
+      {
+        "case": "status",
+        "exit_code": 0
+      },
+      {
+        "case": "restart",
+        "exit_code": 0
+      },
+      {
+        "case": "logs",
+        "exit_code": 0
+      },
+      {
+        "case": "down",
+        "exit_code": 0
+      },
+      {
+        "case": "status-stopped",
+        "exit_code": 0
+      },
+      {
+        "case": "manual-edit-rejection",
+        "exit_code": 1
+      },
+      {
+        "case": "manifest_lock_generated_hashes_preserved",
+        "passed": true
+      }
+    ],
+    "fixture": "/tmp/mudarro-runtimes.K7F4J1/fixtures/yarn/classic",
+    "lockfile_sha256": "38df2378ed26e20124d8c38a945af1b4a058656aab3b3b1f71a9d8a629cc0d81",
+    "configuration_sha256": "864855a69de9f7bbec01420896f25830c67cab9f3bf8142191cce565a2b80f94",
+    "processes_stopped": true,
+    "runtime": "real Yarn 1.22.22",
+    "network_disabled_during_fixture_runtime": false,
+    "classic_offline_initial_install": true
+  },
+  "modern": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "generated-install",
+        "exit_code": 0
+      },
+      {
+        "case": "wrapper-test",
+        "exit_code": 0
+      },
+      {
+        "case": "wrapper-hello",
+        "exit_code": 0
+      },
+      {
+        "case": "menu-test",
+        "exit_code": 0
+      },
+      {
+        "case": "init-repeat",
+        "exit_code": 1
+      },
+      {
+        "case": "generate-idempotence",
+        "exit_code": 0
+      },
+      {
+        "case": "unknown-action",
+        "exit_code": 1
+      },
+      {
+        "case": "up",
+        "exit_code": 0
+      },
+      {
+        "case": "up-repeat",
+        "exit_code": 0
+      },
+      {
+        "case": "status",
+        "exit_code": 0
+      },
+      {
+        "case": "restart",
+        "exit_code": 0
+      },
+      {
+        "case": "logs",
+        "exit_code": 0
+      },
+      {
+        "case": "down",
+        "exit_code": 0
+      },
+      {
+        "case": "status-stopped",
+        "exit_code": 0
+      },
+      {
+        "case": "manual-edit-rejection",
+        "exit_code": 1
+      },
+      {
+        "case": "manifest_lock_generated_hashes_preserved",
+        "passed": true
+      },
+      {
+        "case": "frozen-compatibility",
+        "exit_code": 0
+      },
+      {
+        "case": "frozen-lockfile_compatibility",
+        "passed": true,
+        "note": "accepted but deprecated; inspect log; prefer immutable for Modern"
+      }
+    ],
+    "fixture": "/tmp/mudarro-runtimes.K7F4J1/fixtures/yarn/modern",
+    "lockfile_sha256": "a5563e30234d080fc9669aedca213ffbcfcadbe95d484712fa21f272630c5cd2",
+    "configuration_sha256": "da8eafe89237f2e6ca6b122979f1087cea3de0a9678914ab61d304772ddafbe4",
+    "processes_stopped": true,
+    "runtime": "real Yarn 4.18.1",
+    "network_disabled_during_fixture_runtime": true,
+    "classic_offline_initial_install": false
+  }
+}

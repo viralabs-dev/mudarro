@@ -1,0 +1,59 @@
+{
+  "exit_code": 0,
+  "termios_restored": true,
+  "real_yarn_test_output": true,
+  "duration_seconds": 4.153,
+  "events": [
+    {
+      "label": "service",
+      "time": 0.350192,
+      "hex": "310d"
+    },
+    {
+      "label": "quality group",
+      "time": 0.700373,
+      "hex": "340d"
+    },
+    {
+      "label": "read-only preview down",
+      "time": 1.050506,
+      "hex": "1b5b42"
+    },
+    {
+      "label": "preview wheel",
+      "time": 1.550662,
+      "hex": "1b5b3c36353b39383b32304d"
+    },
+    {
+      "label": "collapse preview",
+      "time": 1.850859,
+      "hex": "1b5b41"
+    },
+    {
+      "label": "execute real Yarn test",
+      "time": 2.151084,
+      "hex": "310d"
+    },
+    {
+      "label": "return",
+      "time": 2.951339,
+      "hex": "0d"
+    },
+    {
+      "label": "actions back",
+      "time": 3.251586,
+      "hex": "71"
+    },
+    {
+      "label": "groups back",
+      "time": 3.551809,
+      "hex": "71"
+    },
+    {
+      "label": "exit",
+      "time": 3.852198,
+      "hex": "71"
+    }
+  ],
+  "capture": "genuine application PTY; injected keyboard/SGR mouse, no desktop/browser"
+}

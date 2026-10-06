@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "name": "uv-runtime-explicit",
+  "services": [
+    {
+      "id": "app-python",
+      "dir": ".",
+      "language": "python",
+      "manager": "uv",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "install": {
+          "args": [
+            "uv",
+            "sync"
+          ],
+          "group": "dependencias"
+        },
+        "start": {
+          "args": [
+            "uv",
+            "run",
+            "--offline",
+            "python",
+            "app.py"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "uv",
+            "run",
+            "--offline",
+            "python",
+            "check.py"
+          ],
+          "group": "qualidade"
+        },
+        "lint": {
+          "args": [
+            "uv",
+            "run",
+            "--offline",
+            "python",
+            "check.py"
+          ],
+          "group": "qualidade"
+        },
+        "build": {
+          "args": [
+            "uv",
+            "run",
+            "--offline",
+            "python",
+            "check.py"
+          ],
+          "group": "aplicacao"
+        },
+        "seed": {
+          "args": [
+            "uv",
+            "run",
+            "--offline",
+            "python",
+            "seed.py"
+          ],
+          "group": "banco"
+        },
+        "fail": {
+          "args": [
+            "uv",
+            "run",
+            "--offline",
+            "python",
+            "fail.py"
+          ],
+          "group": "qualidade"
+        }
+      }
+    }
+  ]
+}

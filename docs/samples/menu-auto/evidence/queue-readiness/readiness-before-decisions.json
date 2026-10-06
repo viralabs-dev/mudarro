@@ -1,0 +1,127 @@
+{
+  "live_todo_count": 13,
+  "requested_count": 14,
+  "ready_full_code_now": 0,
+  "cards": [
+    {
+      "id": "MUD-046",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-046 — Validação Podman local (Mudarro).md",
+      "classification": "runtime_missing",
+      "blocker": "podman/podman-compose absent PATH; platform/install approval",
+      "next": "Use MUD058 reviewable tooling plan; unrelated CI/container/Linux runtime does not satisfy native runtime.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-036",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-036 — Resolução de workspaces JavaScript (Mudarro).md",
+      "classification": "decision_dependency",
+      "blocker": "MUD-035 plus explicit manager/ownership inheritance contract",
+      "next": "Resolve grammar and root/child ownership before code.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-037",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-037 — Orquestração Turborepo e Nx (Mudarro).md",
+      "classification": "decision_target_dependency",
+      "blocker": "MUD-036 and real Turbo/Nx target repository",
+      "next": "Confirm actual repository/tasks; no inferred startup or scan plugin execution.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-039",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-039 — Adaptador Rust e Cargo (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-040",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-040 — Adaptadores Java e Kotlin (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-041",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-041 — Adaptador PHP e Composer (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-042",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-042 — Adaptador C sharp e .NET (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-043",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-043 — Adaptador Ruby (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-044",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-044 — Adaptador Elixir (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-045",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-045 — Adaptadores C e C mais mais (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-001",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-001 — Smoke em WSL (Mudarro).md",
+      "classification": "runtime_missing",
+      "blocker": "Authorized actual WSL environment",
+      "next": "Use MUD058 reviewable tooling plan; unrelated CI/container/Linux runtime does not satisfy native runtime.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-002",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-002 — PostgreSQL nativo no host (Mudarro).md",
+      "classification": "runtime_missing",
+      "blocker": "initdb/pg_ctl/postgres absent PATH; install approval",
+      "next": "Use MUD058 reviewable tooling plan; unrelated CI/container/Linux runtime does not satisfy native runtime.",
+      "ready_full_code_now": false
+    },
+    {
+      "id": "MUD-005",
+      "note": "/home/danielsouza/Vault/personal/projetos/viralabs/mudarro/06-backlog/atividades/MUD-005 — Frameworks e diagnóstico de módulos runtime (Mudarro).md",
+      "classification": "unconfirmed_demand_target",
+      "blocker": "Real language/framework demand and repository target, then executable contract",
+      "next": "Keep conditional; no unsolicited adapter implementation.",
+      "ready_full_code_now": false
+    }
+  ],
+  "doctor_review": {
+    "completed_tests": "MUD051 four negative groups already cover missing/non-executable/directory/symlink/blocked/requires/provider exits.",
+    "static_concerns": [
+      {
+        "source": "internal/mudarro/cli.go:420",
+        "finding": "Relative executable checks do not reject special files carrying execute bits.",
+        "triage": "Own FIFO chmod0755 reproduction only after root records activity."
+      },
+      {
+        "source": "internal/mudarro/cli.go:445",
+        "finding": "Compose provider Run has no timeout/context.",
+        "triage": "Define bounded/cancellable contract before exclusive helper reproduction."
+      }
+    ],
+    "executed_new_tests": false
+  }
+}

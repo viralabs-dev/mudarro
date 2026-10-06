@@ -1,6 +1,7 @@
 package mudarro
 
 import (
+	"bytes"
 	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
@@ -10,6 +11,7 @@ import (
 	"os/exec"
 	"os/signal"
 	"path/filepath"
+	"runtime"
 	"strconv"
 	"strings"
 	"syscall"
@@ -23,26 +25,47 @@ type processState struct {
 	Service string `json:"service"`
 }
 
-func running(st processState) bool {
-	if st.PID < 2 || len(st.Token) != 32 {
+func running(st processState, configPath string) bool {
+	if st.PID < 2 || len(st.Token) != 32 || st.Root == "" || !identifier.MatchString(st.Service) {
 		return false
 	}
-	b, e := exec.Command("ps", "-ww", "-p", strconv.Itoa(st.PID), "-o", "args=").Output()
-	if e != nil {
+	if _, err := hex.DecodeString(st.Token); err != nil {
 		return false
 	}
-	fields := strings.Fields(string(b))
-	for i, f := range fields {
-		if f == "__supervise" && len(fields) > i+1 && fields[len(fields)-1] == st.Token {
-			return true
+	executable, err := os.Executable()
+	if err != nil {
+		return false
+	}
+	expected := []string{executable, "__supervise", st.Root, st.Service}
+	if configPath != "" {
+		expected = append(expected, configPath)
+	}
+	expected = append(expected, st.Token)
+	if runtime.GOOS == "linux" {
+		// argv[0] can be forged: also require the actual executable inode.
+		self, err := os.Stat("/proc/self/exe")
+		if err != nil {
+			return false
 		}
+		other, err := os.Stat(filepath.Join("/proc", strconv.Itoa(st.PID), "exe"))
+		if err != nil || !os.SameFile(self, other) {
+			return false
+		}
+		// NUL separators preserve argument boundaries, including roots/configs with spaces.
+		b, err := os.ReadFile(filepath.Join("/proc", strconv.Itoa(st.PID), "cmdline"))
+		return err == nil && bytes.Equal(b, []byte(strings.Join(expected, "\x00")+"\x00"))
 	}
-	return false
+	// Darwin ps does not expose NUL-separated argv. Compare the entire expected
+	// command, never search for a supervisor/token substring in an unrelated process.
+	b, err := exec.Command("ps", "-ww", "-p", strconv.Itoa(st.PID), "-o", "args=").Output()
+	return err == nil && strings.TrimSuffix(string(b), "\n") == strings.Join(expected, " ")
 }
 func readState(path string) processState {
 	var st processState
-	b, _ := os.ReadFile(path)
-	_ = json.Unmarshal(b, &st)
+	b, err := os.ReadFile(path)
+	if err != nil || json.Unmarshal(b, &st) != nil {
+		return processState{}
+	}
 	return st
 }
 func (r Runner) local(root string, s Service, op string) error {
@@ -77,7 +100,7 @@ func (r Runner) local(root string, s Service, op string) error {
 	}
 	path := filepath.Join(base, "state.json")
 	st := readState(path)
-	alive := running(st) && st.Root == root && st.Service == s.ID
+	alive := running(st, r.ConfigPath) && st.Root == root && st.Service == s.ID
 	switch op {
 	case "status":
 		if alive {
@@ -99,10 +122,10 @@ func (r Runner) local(root string, s Service, op string) error {
 			if e = syscall.Kill(-st.PID, syscall.SIGTERM); e != nil {
 				return e
 			}
-			for j := 0; j < 100 && running(st); j++ {
+			for j := 0; j < 100 && running(st, r.ConfigPath); j++ {
 				time.Sleep(50 * time.Millisecond)
 			}
-			if running(st) {
+			if running(st, r.ConfigPath) {
 				return fmt.Errorf("processo não encerrou; verifique os logs antes de tentar novamente")
 			}
 		}
@@ -152,7 +175,7 @@ func (r Runner) local(root string, s Service, op string) error {
 	}
 	_ = child.Process.Release()
 	time.Sleep(150 * time.Millisecond)
-	if !running(st) {
+	if !running(st, r.ConfigPath) {
 		return fmt.Errorf("aplicação encerrou durante a subida; consulte logs")
 	}
 	fmt.Fprintf(r.Out, r.text("%s: started (PID %d)\n", "%s: iniciado (PID %d)\n"), s.ID, st.PID)
@@ -202,6 +225,7 @@ func supervise(args []string) error {
 	if e != nil {
 		return e
 	}
+	v = goWorkspaceArgs(s, v)
 	child := exec.Command(v[0], v[1:]...)
 	child.Dir = dir
 	child.Stdout = os.Stdout

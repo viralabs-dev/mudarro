@@ -1,0 +1,21 @@
+{
+  "classic": {
+    "version": "1.22.22",
+    "metadata_url": "https://registry.npmjs.org/yarn/1.22.22",
+    "tarball_url": "https://registry.npmjs.org/yarn/-/yarn-1.22.22.tgz",
+    "integrity_sha512": "sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==",
+    "tarball_sha256": "c17d3797fb9a9115bf375e31bfd30058cac6bc9c3b8807a3d8cb2094794b51ca",
+    "runtime_path": "/tmp/mudarro-runtimes.K7F4J1/yarn-classic/node_modules/.bin/yarn",
+    "reported_version": "1.22.22"
+  },
+  "modern": {
+    "version": "4.18.1",
+    "metadata_url": "https://registry.npmjs.org/%40yarnpkg%2Fcli-dist/4.18.1",
+    "tarball_url": "https://registry.npmjs.org/@yarnpkg/cli-dist/-/cli-dist-4.18.1.tgz",
+    "integrity_sha512": "sha512-EH+A4TxAtBWXKE0DGQxW9Bo9crXHLJ73mfxjTQJuv8XonNWWTpei8BQ5JjczHJNU9GROTycwMFn8iOvRIZXUcA==",
+    "tarball_sha256": "f6729593ad4c17784e3d4ade53b3ed684e3dba3af5adb9bebe21bb854fe0b153",
+    "official_runtime_sha256": "a28ad591febb769f939c11f82f89bacad0b0fac0c884d3b78fa2aaaee970907e",
+    "runtime_path": "/tmp/mudarro-runtimes.K7F4J1/yarn-modern/bin/yarn",
+    "reported_version": "4.18.1"
+  }
+}

@@ -2,6 +2,7 @@ package mudarro
 
 import (
 	"bufio"
+	"context"
 	"encoding/json"
 	"fmt"
 	"github.com/viralabs-dev/mudarro/internal/mudarro/terminal"
@@ -11,6 +12,7 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
+	"time"
 )
 
 type options struct {
@@ -183,6 +185,7 @@ func Main(args []string, version string, in io.Reader, out io.Writer) (result er
 		}
 		reader := bufio.NewReader(in)
 		available := map[string]bool{}
+		selectedGo := map[string]int{}
 		for _, su := range report.Suggestions {
 			key := su.Service + ":" + su.Name
 			available[key] = true
@@ -202,7 +205,25 @@ func Main(args []string, version string, in io.Reader, out io.Writer) (result er
 						if len(su.Command.Args) > 0 && su.Command.Args[0] == "" {
 							return fmt.Errorf("defina o gerenciador antes de incluir %s", key)
 						}
-						report.Config.Services[j].Commands[su.Name] = su.Command
+						s := &report.Config.Services[j]
+						if su.Purpose == "go-start" {
+							selectedGo[s.ID]++
+							if selectedGo[s.ID] > 1 {
+								return fmt.Errorf("multiple Go entries selected for %s; select one start target", s.ID)
+							}
+							if _, exists := s.Commands["start"]; !exists {
+								s.Commands["start"] = su.Command
+							}
+							pending := s.Pending[:0]
+							for _, item := range s.Pending {
+								if item != "Declare commands.start: nenhuma entrada Go única" {
+									pending = append(pending, item)
+								}
+							}
+							s.Pending = pending
+						} else {
+							s.Commands[su.Name] = su.Command
+						}
 					}
 				}
 			}
@@ -395,6 +416,9 @@ func doctor(root string, c Config, w io.Writer) error {
 				continue
 			}
 			tools := append([]string{}, a.Command.Requires...)
+			if s.Language == "go" && s.GoWorkspace == "off" && (len(a.Command.Args) > 0 || a.Command.Shell != "") {
+				tools = append(tools, "env")
+			}
 			if a.Command.Shell != "" {
 				tools = append(tools, "bash")
 			}
@@ -419,7 +443,7 @@ func doctor(root string, c Config, w io.Writer) error {
 					if e == nil {
 						var st os.FileInfo
 						st, e = os.Stat(p)
-						if e == nil && (st.IsDir() || st.Mode()&0111 == 0) {
+						if e == nil && (!st.Mode().IsRegular() || st.Mode()&0111 == 0) {
 							e = fmt.Errorf("não executável")
 						}
 					}
@@ -441,10 +465,19 @@ func doctor(root string, c Config, w io.Writer) error {
 				provider = "podman-compose"
 				args = []string{"--version"}
 			}
-			check := exec.Command(provider, args...)
+			// Version probes must not stall diagnostics; application actions keep their own lifecycle.
+			ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+			check := exec.CommandContext(ctx, provider, args...)
 			check.Dir = dir
-			if e := check.Run(); e != nil {
-				fmt.Fprintf(w, "AUSENTE %s: provedor Compose\n", s.ID)
+			err := check.Run()
+			timedOut := ctx.Err() == context.DeadlineExceeded
+			cancel()
+			if err != nil {
+				if timedOut {
+					fmt.Fprintf(w, "TIMEOUT %s: provedor Compose — sondagem de versão excedeu 10s\n", s.ID)
+				} else {
+					fmt.Fprintf(w, "AUSENTE %s: provedor Compose\n", s.ID)
+				}
 				failures++
 			}
 		}

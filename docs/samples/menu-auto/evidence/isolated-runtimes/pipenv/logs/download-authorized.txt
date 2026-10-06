@@ -1,0 +1,40 @@
+Collecting pipenv==2026.8.0
+  Downloading pipenv-2026.8.0-py3-none-any.whl.metadata (18 kB)
+Collecting certifi (from pipenv==2026.8.0)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting packaging>=22 (from pipenv==2026.8.0)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting setuptools>=67 (from pipenv==2026.8.0)
+  Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting virtualenv>=20.26.6 (from pipenv==2026.8.0)
+  Downloading virtualenv-21.14.5-py3-none-any.whl.metadata (4.1 kB)
+Collecting distlib<1,>=0.3.7 (from virtualenv>=20.26.6->pipenv==2026.8.0)
+  Downloading distlib-0.4.3-py2.py3-none-any.whl.metadata (5.3 kB)
+Collecting filelock<5,>=3.24.2 (from virtualenv>=20.26.6->pipenv==2026.8.0)
+  Downloading filelock-4.0.12-py3-none-any.whl.metadata (2.0 kB)
+Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.26.6->pipenv==2026.8.0)
+  Downloading platformdirs-4.12.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting python-discovery>=1.6 (from virtualenv>=20.26.6->pipenv==2026.8.0)
+  Downloading python_discovery-1.6.1-py3-none-any.whl.metadata (5.1 kB)
+Downloading pipenv-2026.8.0-py3-none-any.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 15.0 MB/s  0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 17.1 MB/s  0:00:00
+Downloading virtualenv-21.14.5-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 21.0 MB/s  0:00:00
+Downloading distlib-0.4.3-py2.py3-none-any.whl (470 kB)
+Downloading filelock-4.0.12-py3-none-any.whl (111 kB)
+Downloading platformdirs-4.12.3-py3-none-any.whl (32 kB)
+Downloading python_discovery-1.6.1-py3-none-any.whl (38 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/pipenv-2026.8.0-py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/packaging-26.3-py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/setuptools-84.0.0-py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/virtualenv-21.14.5-py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/distlib-0.4.3-py2.py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/filelock-4.0.12-py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/platformdirs-4.12.3-py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/python_discovery-1.6.1-py3-none-any.whl
+Saved /tmp/mudarro-runtimes.K7F4J1/pipenv/wheelhouse/certifi-2026.7.22-py3-none-any.whl
+Successfully downloaded pipenv packaging setuptools virtualenv distlib filelock platformdirs python-discovery certifi

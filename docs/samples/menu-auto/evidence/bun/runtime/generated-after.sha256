@@ -1,0 +1,16 @@
+05e4f5834acf616387f58fd555e4e3d9f8f45d25e9f0528bae92bf5ec6f1abd2  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/build.sh
+12df1d4e82a45fc29d12c3e76af9c1d497cfd9568650ec0af72ebc87e440c14d  /tmp/mudarro-mud033-runtime/fixture/.mudarro/generated.json
+1b8826f46909f7f7a09c23c9f0889decb91a841bd3b1814fef4dd58960d473bc  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/logs.sh
+1d5e0b38a0b819fa5096c465b6477ad2431365d591dbde4a5e7006d79518b27f  /tmp/mudarro-mud033-runtime/fixture/menu.sh
+39cc4b3c9c2eb121786176801e933ac0d118bf243cb16414b162105bbd75e6ef  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/restart.sh
+3d99554091a25244ded20128780ff2b83cb97be1ab8044d809ab04c9715cf4ce  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/test.sh
+65f75316e77fc15c0ea037c627d98c18955b7d26358afa2e077474d51a1ef991  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/install.sh
+9a79007e7aa9733651a60c0a47707e4cdd0495504659d2730ee44ec8a9d64816  /tmp/mudarro-mud033-runtime/fixture/check.js
+9ef45c53d56ac30472343a54b7438847d221717a8fbbf6db5e4084c7986240f3  /tmp/mudarro-mud033-runtime/fixture/app.js
+bd63828a57b54d7cb30c7a69c853da89e45778d3e67122b24d538a478d7c0b9f  /tmp/mudarro-mud033-runtime/fixture/package.json
+be5f6a07e80b3b77607b666e1882b49221fa0d96f307e86d1c12b943e29c4d9a  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/down.sh
+cc443009fbb9f1324cc0c677d35c05a452da9ba98b1f4cd218a92d3c8f5dd30c  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/lint.sh
+d14ad2ec4fc2db38a4cc10e40a1f2e5e6f6f4f90ecbeacd9c3e31176d6e89d4b  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/status.sh
+d1a70df6cefb438c1c6eed59851bdc314def69ed75c8868763636a00370f8663  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/start.sh
+f27d35778835934aac822a0c115180136c6f26557b49d3d27ed4e9d302dc9ca0  /tmp/mudarro-mud033-runtime/fixture/.mudarro/scripts/app-javascript/up.sh
+ff9539a8578e2eac6a35b72601c2f2edf1d61a3fb2c781e5392d3bcf7e32e23b  /tmp/mudarro-mud033-runtime/fixture/mudarro.yaml

@@ -1,0 +1,39 @@
+version: 1
+name: bun-runtime-exclusive
+services:
+    - id: app-javascript
+      dir: .
+      language: javascript
+      manager: bun
+      infrastructure:
+        kind: local
+      commands:
+        build:
+            args:
+                - bun
+                - run
+                - build
+            group: aplicacao
+        install:
+            args:
+                - bun
+                - install
+            group: dependencias
+        lint:
+            args:
+                - bun
+                - run
+                - lint
+            group: qualidade
+        start:
+            args:
+                - bun
+                - run
+                - start
+            group: aplicacao
+        test:
+            args:
+                - bun
+                - run
+                - test
+            group: qualidade

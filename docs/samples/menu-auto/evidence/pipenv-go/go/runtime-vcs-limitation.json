@@ -1,0 +1,70 @@
+[
+  {
+    "argv": [
+      "/tmp/mudarro-mud038/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-mud038/runtime-final",
+      "--json"
+    ],
+    "exit": 0,
+    "output": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"runtime-final\",\n    \"services\": [\n      {\n        \"id\": \"app-go\",\n        \"dir\": \"app\",\n        \"language\": \"go\",\n        \"manager\": \"go\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"go\",\n              \"build\",\n              \"./...\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"install\": {\n            \"args\": [\n              \"go\",\n              \"mod\",\n              \"download\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"start\": {\n            \"args\": [\n              \"go\",\n              \"run\",\n              \"./cmd/live\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"go\",\n              \"test\",\n              \"./...\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        }\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \"go.work\",\n      \"kind\": \"go-workspace\"\n    },\n    {\n      \"path\": \"app\",\n      \"kind\": \"go\"\n    }\n  ],\n  \"suggestions\": null,\n  \"warnings\": [\n    \"go.work: workspace membership and execution context are not validated; declare explicit commands for workspace targets\"\n  ]\n}\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud038/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-mud038/runtime-final"
+    ],
+    "exit": 0,
+    "output": "Project: runtime-final\n- app-go (app): go / go / local\nwarning: go.work: workspace membership and execution context are not validated; declare explicit commands for workspace targets\nCreated mudarro.yaml. Review pending choices, then run mudarro generate.\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud038/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud038/runtime-final"
+    ],
+    "exit": 0,
+    "output": "gerar: .mudarro/scripts/app-go/build.sh\ngerar: .mudarro/scripts/app-go/down.sh\ngerar: .mudarro/scripts/app-go/install.sh\ngerar: .mudarro/scripts/app-go/logs.sh\ngerar: .mudarro/scripts/app-go/restart.sh\ngerar: .mudarro/scripts/app-go/start.sh\ngerar: .mudarro/scripts/app-go/status.sh\ngerar: .mudarro/scripts/app-go/test.sh\ngerar: .mudarro/scripts/app-go/up.sh\ngerar: menu.sh\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud038/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-mud038/runtime-final"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-mud038/runtime-final/.mudarro/scripts/app-go/test.sh"
+    ],
+    "exit": 0,
+    "output": "ok  \texample.test/app/cmd/live\t0.002s\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-mud038/runtime-final/.mudarro/scripts/app-go/build.sh"
+    ],
+    "exit": 1,
+    "output": "error obtaining VCS status: exit status 128\n\tUse -buildvcs=false to disable VCS stamping.\nmudarro: exit status 1\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud038/mudarro",
+      "run",
+      "app-go:down",
+      "--root",
+      "/tmp/mudarro-mud038/runtime-final"
+    ],
+    "exit": 0,
+    "output": "app-go: stopped\n"
+  }
+]

@@ -1,0 +1,60 @@
+ M docs/coverage.md
+ M docs/language-roadmap.md
+ M docs/pt-BR/coverage.md
+ M docs/pt-BR/language-roadmap.md
+ M docs/pt-BR/support-matrix.md
+ M docs/pt-BR/validation.md
+ M docs/support-matrix.md
+ M docs/validation.md
+ M go.mod
+ M go.sum
+ M install.sh
+ M internal/mudarro/adapters/database_setup.go
+ M internal/mudarro/adapters/language_adapters.go
+ M internal/mudarro/cli.go
+ M internal/mudarro/config.go
+ M internal/mudarro/generate.go
+ M internal/mudarro/local_runner.go
+ M internal/mudarro/model/types.go
+ M internal/mudarro/projectfs/path.go
+ M internal/mudarro/runner.go
+ M internal/mudarro/scan.go
+ M internal/mudarro/terminal/menu_view.go
+ M internal/mudarro/ui_integration.go
+ M scripts/release.sh
+ M scripts/test-installer.sh
+?? LICENSES/
+?? THIRD_PARTY_NOTICES.md
+?? docs/samples/menu-auto/evidence/bun/
+?? docs/samples/menu-auto/evidence/doctor-compose-timeout/
+?? docs/samples/menu-auto/evidence/doctor-special/
+?? docs/samples/menu-auto/evidence/git-identity-repair/
+?? docs/samples/menu-auto/evidence/go-work-parser/
+?? docs/samples/menu-auto/evidence/isolated-runtimes/
+?? docs/samples/menu-auto/evidence/isolated-tool-plan/
+?? docs/samples/menu-auto/evidence/manager-go-decisions/
+?? docs/samples/menu-auto/evidence/manager-go-source/
+?? docs/samples/menu-auto/evidence/package-manager-contracts/
+?? docs/samples/menu-auto/evidence/pipenv-go/
+?? docs/samples/menu-auto/evidence/queue-readiness/
+?? docs/samples/menu-auto/evidence/robustness/
+?? docs/samples/menu-auto/evidence/unicode-resize/
+?? docs/samples/menu-auto/evidence/yarn-readiness/
+?? internal/mudarro/adapters/package_manager.go
+?? internal/mudarro/adapters/pipenv.go
+?? internal/mudarro/go_workspace.go
+?? test/internal/mudarro/bun_support_regression_test.go
+?? test/internal/mudarro/doctor_compose_timeout_test.go
+?? test/internal/mudarro/doctor_negative_regression_test.go
+?? test/internal/mudarro/doctor_special_file_regression_test.go
+?? test/internal/mudarro/go_selection_context_test.go
+?? test/internal/mudarro/go_source_io_regression_test.go
+?? test/internal/mudarro/go_work_parser_test.go
+?? test/internal/mudarro/go_workspace_diagnostics_test.go
+?? test/internal/mudarro/go_workspace_regression_test.go
+?? test/internal/mudarro/io_preservation_regression_test.go
+?? test/internal/mudarro/package_manager_semver_test.go
+?? test/internal/mudarro/package_manager_validation_test.go
+?? test/internal/mudarro/pipenv_support_regression_test.go
+?? test/internal/mudarro/supervisor_identity_regression_test.go
+?? test/internal/mudarro/terminal/unicode_resize_regression_test.go

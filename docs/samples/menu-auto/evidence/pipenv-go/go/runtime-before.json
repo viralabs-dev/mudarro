@@ -1,0 +1,22 @@
+[
+  {
+    "case": "ignored",
+    "argv": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "run",
+      "./."
+    ],
+    "exit": 1,
+    "output": "package example.test/ignored: build constraints exclude all Go files in /tmp/mudarro-mud038/runtime-before/ignored\n"
+  },
+  {
+    "case": "noentry",
+    "argv": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "run",
+      "./."
+    ],
+    "exit": 1,
+    "output": "# example.test/noentry\nruntime.main_main\u00b7f: function main is undeclared in the main package\n"
+  }
+]

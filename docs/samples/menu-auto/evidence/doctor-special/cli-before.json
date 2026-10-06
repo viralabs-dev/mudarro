@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/tmp/mudarro-mud060/mudarro-before",
+    "doctor",
+    "--root",
+    "/tmp/mudarro-mud060/cli-fixture"
+  ],
+  "fixture": "owned FIFO0755; action not executed",
+  "exit": 0,
+  "output": "OK app: ./probe-tool\nNenhuma depend\u00eancia execut\u00e1vel ausente. Isso n\u00e3o valida conex\u00e3o, credenciais ou sa\u00fade da aplica\u00e7\u00e3o.\n"
+}

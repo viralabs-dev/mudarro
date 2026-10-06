@@ -1,0 +1,59 @@
+### ### # #  #  #   
+#    #  ### # # #   
+##   #  ### ### #   
+#    #  ### # # #   
+#   ### # # # # ### 
+final
+
+
+  Choose an area / Services
+
+   1.  app-python — .
+
+   0.  Back / exit
+  > 
+  Choose an area / app-python
+
+   1.  dependencies
+   2.  infrastructure
+   3.  scripts
+
+   0.  Back / exit
+  > 
+  Choose an area / infrastructure
+
+   1.  down
+   2.  logs
+   3.  restart
+   4.  status
+   5.  up
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > app-python: stopped
+
+  Choose an area / infrastructure
+
+   1.  down
+   2.  logs
+   3.  restart
+   4.  status
+   5.  up
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > 
+  Choose an area / app-python
+
+   1.  dependencies
+   2.  infrastructure
+   3.  scripts
+
+   0.  Back / exit
+  > 
+  Choose an area / Services
+
+   1.  app-python — .
+
+   0.  Back / exit
+  > 

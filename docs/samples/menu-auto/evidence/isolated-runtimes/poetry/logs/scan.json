@@ -1,0 +1,38 @@
+{
+  "config": {
+    "version": 1,
+    "name": "poetry",
+    "services": [
+      {
+        "id": "app-python",
+        "dir": ".",
+        "language": "python",
+        "manager": "poetry",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "poetry",
+              "install"
+            ],
+            "group": "dependencias"
+          }
+        },
+        "pending": [
+          "Declare commands.start; módulo Python não é inferido"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "python"
+    }
+  ],
+  "suggestions": null,
+  "warnings": null
+}

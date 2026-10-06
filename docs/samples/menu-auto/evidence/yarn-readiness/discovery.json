@@ -1,0 +1,16 @@
+{
+  "yarn": {
+    "PATH": null,
+    "known_executables": []
+  },
+  "yarnpkg": {
+    "PATH": null,
+    "known_executables": []
+  },
+  "corepack": {
+    "PATH": "/home/danielsouza/.nvm/versions/node/v24.15.0/bin/corepack",
+    "known_executables": [
+      "/home/danielsouza/.nvm/versions/node/v24.15.0/bin/corepack"
+    ]
+  }
+}

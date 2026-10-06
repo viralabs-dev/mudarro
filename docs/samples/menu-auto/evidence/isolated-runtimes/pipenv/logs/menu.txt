@@ -1,0 +1,43 @@
+### ### # #  #  #   
+#    #  ### # # #   
+##   #  ### ### #   
+#    #  ### # # #   
+#   ### # # # # ### 
+final
+
+
+  Choose an area / Services
+
+   1.  app-python — .
+
+   0.  Back / exit
+  > 
+  Choose an area / app-python
+
+   1.  dependencies
+   2.  infrastructure
+   3.  scripts
+
+   0.  Back / exit
+  > 
+  Choose an area / scripts
+
+   1.  check
+   2.  fail
+   3.  seed
+   4.  start
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > PIPENV REAL CHECK PASS 3.14.7
+
+  Choose an area / scripts
+
+   1.  check
+   2.  fail
+   3.  seed
+   4.  start
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > 

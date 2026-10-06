@@ -1,0 +1,12 @@
+version: 1
+name: Poetry runtime
+services:
+  - id: app-python
+    dir: .
+    language: python
+    manager: poetry
+    infrastructure: {kind: local}
+    commands:
+      install: {args: [poetry, install], group: dependencias}
+      start: {args: [poetry, run, python, app.py], group: aplicacao}
+      test: {args: [poetry, run, python, probe.py], group: qualidade}

@@ -1,0 +1,16 @@
+{
+	"Path": "golang.org/x/mod",
+	"Version": "v0.25.0",
+	"Info": "/tmp/mudarro-mud038-parser/module-cache/cache/download/golang.org/x/mod/@v/v0.25.0.info",
+	"GoMod": "/tmp/mudarro-mud038-parser/module-cache/cache/download/golang.org/x/mod/@v/v0.25.0.mod",
+	"Zip": "/tmp/mudarro-mud038-parser/module-cache/cache/download/golang.org/x/mod/@v/v0.25.0.zip",
+	"Dir": "/tmp/mudarro-mud038-parser/module-cache/golang.org/x/mod@v0.25.0",
+	"Sum": "h1:n7a+ZbQKQA/Ysbyb0/6IbB1H/X41mKgbhfv7AfG/44w=",
+	"GoModSum": "h1:IXM97Txy2VM4PJ3gI61r1YEk/gAj6zAHN3AdZt6S9Ww=",
+	"Origin": {
+		"VCS": "git",
+		"URL": "https://go.googlesource.com/mod",
+		"Hash": "9d3333156f465c85f68264344b5c08fbcf5fcacb",
+		"Ref": "refs/tags/v0.25.0"
+	}
+}

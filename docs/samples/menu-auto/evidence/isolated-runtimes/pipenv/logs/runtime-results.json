@@ -1,0 +1,279 @@
+[
+  {
+    "argv": [
+      "/tmp/mudarro-runtimes.K7F4J1/pipenv/tool-venv/bin/pipenv",
+      "--version"
+    ],
+    "exit": 0,
+    "elapsed": 0.28453223399992567,
+    "output": "pipenv, version 2026.8.0\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-runtimes.K7F4J1/pipenv/tool-venv/bin/pipenv",
+      "lock"
+    ],
+    "exit": 0,
+    "elapsed": 0.6427480109996395,
+    "output": "Creating a virtualenv for this project\nPipfile: /tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/Pipfile\nUsing /home/linuxbrew/.linuxbrew/bin/python3 3.14.7 to create virtualenv...\ncreated virtual environment CPython3.14.7.final.0-64-x86_64 in 78ms\n  creator \nCPython3Posix(dest=/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.venv, \nclear=False, no_vcs_ignore=False, venv_redirect=None, global=False)\n  seeder FromAppData(download=False, pip=bundle, via=copy, \napp_data_dir=/tmp/mudarro-runtimes.K7F4J1/cache/pipenv/virtualenv)\n    added seed packages: pip==26.2.1\n  activators \nBashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator\n,PythonActivator,XonshActivator\n\n\u2714 Successfully created virtual environment!\nVirtualenv location: /tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.venv\nLocking  dependencies...\nLocking  dependencies...\nUpdated Pipfile.lock \n(be43225d7d56471fd9b60269c82252cc19448eb3578abebecdcd914e2213171e)!\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-runtimes.K7F4J1/pipenv/tool-venv/bin/pipenv",
+      "install",
+      "--deploy",
+      "--ignore-pipfile"
+    ],
+    "exit": 0,
+    "elapsed": 0.3925402180029778,
+    "output": "Installing dependencies from Pipfile.lock (13171e)...\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-runtimes.K7F4J1/pipenv/tool-venv/bin/pipenv",
+      "sync"
+    ],
+    "exit": 0,
+    "elapsed": 0.3833120180061087,
+    "output": "To activate this project's virtualenv, run pipenv shell.\nAlternatively, run a command inside the virtualenv with pipenv run.\nInstalling dependencies from Pipfile.lock (13171e)...\nAll dependencies are now up-to-date!\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-runtimes.K7F4J1/pipenv/tool-venv/bin/pipenv",
+      "run",
+      "check"
+    ],
+    "exit": 0,
+    "elapsed": 0.33629882599780103,
+    "output": "PIPENV REAL CHECK PASS 3.14.7\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-runtimes.K7F4J1/pipenv/tool-venv/bin/pipenv",
+      "run",
+      "fail"
+    ],
+    "exit": 7,
+    "elapsed": 0.32852331699541537,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final",
+      "--json"
+    ],
+    "exit": 0,
+    "elapsed": 0.003542446000210475,
+    "output": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"final\",\n    \"services\": [\n      {\n        \"id\": \"app-python\",\n        \"dir\": \".\",\n        \"language\": \"python\",\n        \"manager\": \"pipenv\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"install\": {\n            \"args\": [\n              \"pipenv\",\n              \"sync\"\n            ],\n            \"group\": \"dependencias\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start; m\u00f3dulo Python n\u00e3o \u00e9 inferido\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"python\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"service\": \"app-python\",\n      \"name\": \"check\",\n      \"command\": {\n        \"args\": [\n          \"pipenv\",\n          \"run\",\n          \"check\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"Pipfile\"\n    },\n    {\n      \"service\": \"app-python\",\n      \"name\": \"fail\",\n      \"command\": {\n        \"args\": [\n          \"pipenv\",\n          \"run\",\n          \"fail\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"Pipfile\"\n    },\n    {\n      \"service\": \"app-python\",\n      \"name\": \"seed\",\n      \"command\": {\n        \"args\": [\n          \"pipenv\",\n          \"run\",\n          \"seed\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"Pipfile\"\n    },\n    {\n      \"service\": \"app-python\",\n      \"name\": \"start\",\n      \"command\": {\n        \"args\": [\n          \"pipenv\",\n          \"run\",\n          \"start\"\n        ],\n        \"group\": \"scripts\"\n      },\n      \"evidence\": \"Pipfile\"\n    }\n  ],\n  \"warnings\": null\n}\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final",
+      "--select",
+      "app-python:start,app-python:check,app-python:fail,app-python:seed"
+    ],
+    "exit": 0,
+    "elapsed": 0.0026338030002079904,
+    "output": "Project: final\n- app-python (.): python / pipenv / local\n  pending: Declare commands.start; Python module is not inferred\n  suggestion: app-python:check [Pipfile]\n  suggestion: app-python:fail [Pipfile]\n  suggestion: app-python:seed [Pipfile]\n  suggestion: app-python:start [Pipfile]\nCreated mudarro.yaml. Review pending choices, then run mudarro generate.\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "init",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final"
+    ],
+    "exit": 1,
+    "elapsed": 0.00222434399620397,
+    "output": "mudarro: configuration already exists; edit the preserved file\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final"
+    ],
+    "exit": 0,
+    "elapsed": 0.0041559750025044195,
+    "output": "gerar: .mudarro/scripts/app-python/check.sh\ngerar: .mudarro/scripts/app-python/down.sh\ngerar: .mudarro/scripts/app-python/fail.sh\ngerar: .mudarro/scripts/app-python/install.sh\ngerar: .mudarro/scripts/app-python/logs.sh\ngerar: .mudarro/scripts/app-python/restart.sh\ngerar: .mudarro/scripts/app-python/seed.sh\ngerar: .mudarro/scripts/app-python/start.sh\ngerar: .mudarro/scripts/app-python/status.sh\ngerar: .mudarro/scripts/app-python/up.sh\ngerar: menu.sh\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "generate",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final"
+    ],
+    "exit": 0,
+    "elapsed": 0.005579540993494447,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "doctor",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final"
+    ],
+    "exit": 0,
+    "elapsed": 0.003915631001291331,
+    "output": "OK app-python: pipenv\nOK app-python: ps\nNenhuma depend\u00eancia execut\u00e1vel ausente. Isso n\u00e3o valida conex\u00e3o, credenciais ou sa\u00fade da aplica\u00e7\u00e3o.\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/install.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.3748433169967029,
+    "output": "To activate this project's virtualenv, run pipenv shell.\nAlternatively, run a command inside the virtualenv with pipenv run.\nInstalling dependencies from Pipfile.lock (13171e)...\nAll dependencies are now up-to-date!\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/check.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.32561709899891866,
+    "output": "PIPENV REAL CHECK PASS 3.14.7\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/seed.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.3773607820039615,
+    "output": "PIPENV SQLITE CUSTOM SEED PASS\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/seed.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.3325371899991296,
+    "output": "PIPENV SQLITE CUSTOM SEED PASS\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/fail.sh"
+    ],
+    "exit": 1,
+    "elapsed": 0.35903288400004385,
+    "output": "mudarro: exit status 7\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/up.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.15882004000013694,
+    "output": "app-python: started (PID 146)\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/up.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.01349086099799024,
+    "output": "app-python: already running\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/status.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.013064169994322583,
+    "output": "app-python: running (PID 146)\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/logs.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.010060626998892985,
+    "output": "PIPENV REAL STARTUP\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/restart.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.2129017199986265,
+    "output": "app-python: started (PID 189)\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/status.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.01331303899496561,
+    "output": "app-python: running (PID 189)\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/logs.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.01008201399963582,
+    "output": "PIPENV REAL STARTUP\nPIPENV REAL SHUTDOWN\nPIPENV REAL STARTUP\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/down.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.06222713099850807,
+    "output": "app-python: stopped\n"
+  },
+  {
+    "argv": [
+      "bash",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final/.mudarro/scripts/app-python/status.sh"
+    ],
+    "exit": 0,
+    "elapsed": 0.011876898002810776,
+    "output": "app-python: stopped\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "run",
+      "app-python:unknown",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final"
+    ],
+    "exit": 1,
+    "elapsed": 0.004379630001494661,
+    "output": "mudarro: action does not exist: app-python:unknown\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-timeout-checkpoint/mudarro",
+      "run",
+      "app-python:down",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/pipenv/final"
+    ],
+    "exit": 0,
+    "elapsed": 0.00443965700105764,
+    "output": "app-python: stopped\n"
+  }
+]

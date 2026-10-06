@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "valid-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "missing-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "invalid-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "outside-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "symlink-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "nonmodule-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "duplicate-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "fifo-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "oversized-after-scan",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-init",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-build",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-test",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-probe-inherit",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-probe-off-expected-fail",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "case": "after-generate",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-generate-repeat",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-wrapper",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-up",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-status",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-logs",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "after-down",
+      "exit_code": 0,
+      "expected_success": true
+    }
+  ],
+  "owned_service_stopped": true,
+  "manual_configuration_preserved": true,
+  "generated_hashes_idempotent": true,
+  "binary": "/tmp/mudarro-mud038-parser/mudarro",
+  "binary_sha256": "0e3e43f4b8cff5218b4e174c0a9d683155da3490994c6fbe698e2dbfefcad193"
+}

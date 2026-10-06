@@ -1,0 +1,6 @@
+=== RUN   TestDoctorComposeVersionProbeHasDeadline
+--- PASS: TestDoctorComposeVersionProbeHasDeadline (11.03s)
+=== RUN   TestDoctorComposeTimeoutIsolatedProbe
+--- PASS: TestDoctorComposeTimeoutIsolatedProbe (0.00s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	12.069s

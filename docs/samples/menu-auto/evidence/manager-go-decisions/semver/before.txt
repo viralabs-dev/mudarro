@@ -1,0 +1,215 @@
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/pnpm@0.0.0
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/yarn@4.18.1
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/bun@1.4.0
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha.0
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-0
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-0a
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3--
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-a-b.10
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+001.02
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+build-meta.9
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha.1+build.001
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/yarn@4.18.1+sha224.abcdef0123456789
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+sha224.nothex
+=== RUN   TestPackageManagerSemverAcceptsStrictVersions/npm@18446744073709551616.0.0
+--- PASS: TestPackageManagerSemverAcceptsStrictVersions (0.03s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/pnpm@0.0.0 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/yarn@4.18.1 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/bun@1.4.0 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha.0 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-0 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-0a (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-- (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-a-b.10 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+001.02 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+build-meta.9 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3-alpha.1+build.001 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/yarn@4.18.1+sha224.abcdef0123456789 (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@1.2.3+sha224.nothex (0.00s)
+    --- PASS: TestPackageManagerSemverAcceptsStrictVersions/npm@18446744073709551616.0.0 (0.00s)
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3.4
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/01.2.3
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.02.3
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.03
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/v1.2.3
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/^1.2.3
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/~1.2.3
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/latest
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/https:__example.invalid_tool
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3@extra
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-01
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-alpha.01
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-a..b
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-alpha_1
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-α
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+a..b
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+build_1
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+é
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3++build
+    package_manager_semver_test.go:69: invalid version planned execution: {ID:bad-javascript Dir:bad Language:javascript Manager:npm Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[install:{Args:[npm install] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}
+    package_manager_semver_test.go:77: missing field diagnostic: " "
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:hello Command:{Args:[npm run hello] Shell: Group:scripts Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:start Command:{Args:[npm run start] Shell: Group:aplicacao Destructive:false Requires:[]} Evidence:bad/package.json}
+    package_manager_semver_test.go:81: invalid version executable suggestion: {Service:bad-javascript Name:test Command:{Args:[npm run test] Shell: Group:qualidade Destructive:false Requires:[]} Evidence:bad/package.json}
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3_
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3_#01
+=== RUN   TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+build_metadata
+--- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions (0.05s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3.4 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/01.2.3 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.02.3 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.03 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/v1.2.3 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/^1.2.3 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/~1.2.3 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/latest (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/https:__example.invalid_tool (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3@extra (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3- (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-01 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-alpha.01 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-a..b (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-alpha_1 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3-α (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+ (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+a..b (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+build_1 (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+é (0.00s)
+    --- FAIL: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3++build (0.00s)
+    --- PASS: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3_ (0.00s)
+    --- PASS: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3_#01 (0.00s)
+    --- PASS: TestPackageManagerSemverRejectsOpaqueOrMalformedVersions/1.2.3+build_metadata (0.00s)
+=== RUN   TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts
+=== RUN   TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts/selected-script-rejected-before-config
+    package_manager_semver_test.go:97: invalid SemVer selected at init
+    package_manager_semver_test.go:100: invalid init wrote config or changed fixture
+=== RUN   TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts/new-invalid-field-preserves-generated
+    package_manager_semver_test.go:124: new bad version silent
+--- FAIL: TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts (0.01s)
+    --- FAIL: TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts/selected-script-rejected-before-config (0.00s)
+    --- FAIL: TestPackageManagerSemverInvalidInitAndScanPreserveArtifacts/new-invalid-field-preserves-generated (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.105s
+FAIL

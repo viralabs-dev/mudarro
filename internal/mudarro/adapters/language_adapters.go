@@ -1,12 +1,16 @@
 package adapters
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"github.com/pelletier/go-toml/v2"
 	"github.com/viralabs-dev/mudarro/internal/mudarro/model"
+	"go/ast"
+	"go/build"
 	"go/parser"
 	"go/token"
+	"io"
 	"io/fs"
 	"os"
 	"path/filepath"
@@ -37,13 +41,19 @@ func (JavaScript) Detect(root, dir string, f map[string]bool, excludes []string)
 		s.Language = "typescript"
 	}
 	managers := []string{}
-	for _, m := range []struct{ f, m string }{{"package-lock.json", "npm"}, {"pnpm-lock.yaml", "pnpm"}, {"yarn.lock", "yarn"}} {
-		if f[m.f] {
+	seenManagers := map[string]bool{}
+	for _, m := range []struct{ f, m string }{{"package-lock.json", "npm"}, {"pnpm-lock.yaml", "pnpm"}, {"yarn.lock", "yarn"}, {"bun.lock", "bun"}, {"bun.lockb", "bun"}} {
+		if f[m.f] && !seenManagers[m.m] {
 			managers = append(managers, m.m)
+			seenManagers[m.m] = true
 		}
 	}
 	if p.PackageManager != "" {
-		s.Manager = strings.Split(p.PackageManager, "@")[0]
+		manager, err := packageManagerName(p.PackageManager)
+		if err != nil {
+			return nil, nil, fmt.Errorf("%s: %w", filepath.Join(dir, "package.json"), err)
+		}
+		s.Manager = manager
 	} else if len(managers) == 1 {
 		s.Manager = managers[0]
 	} else if len(managers) == 0 {
@@ -108,6 +118,9 @@ func (JavaScript) Detect(root, dir string, f map[string]bool, excludes []string)
 	return s, suggestions, nil
 }
 func (Python) Detect(root, dir string, f map[string]bool, excludes []string) (*model.Service, []model.Suggestion, error) {
+	if f["Pipfile"] || f["Pipfile.lock"] {
+		return detectPipenv(root, dir, f)
+	}
 	if !f["pyproject.toml"] && !f["requirements.txt"] && !f["manage.py"] && !f["Pipfile"] {
 		return nil, nil, nil
 	}
@@ -179,6 +192,9 @@ func pythonArgs(manager string, args ...string) []string {
 	if manager == "poetry" {
 		prefix = []string{"poetry", "run", "python"}
 	}
+	if manager == "pipenv" {
+		prefix = []string{"pipenv", "run", "python"}
+	}
 	return append(prefix, args...)
 }
 func (Go) Detect(root, dir string, f map[string]bool, excludes []string) (*model.Service, []model.Suggestion, error) {
@@ -216,23 +232,53 @@ func (Go) Detect(root, dir string, f map[string]bool, excludes []string) (*model
 		if d.Type()&os.ModeSymlink != 0 || !strings.HasSuffix(path, ".go") || strings.HasSuffix(path, "_test.go") {
 			return nil
 		}
-		p, e := parser.ParseFile(token.NewFileSet(), path, nil, parser.PackageClauseOnly)
-		if e == nil && p.Name.Name == "main" {
-			entries[filepath.Dir(rel)] = true
+		if !d.Type().IsRegular() {
+			return fmt.Errorf("Go source must be a regular file: %s", rootRel)
+		}
+		source, err := read(root, dir, rel)
+		if err != nil {
+			return fmt.Errorf("Go source %s: %w", rootRel, err)
+		}
+		context := build.Default
+		context.OpenFile = func(string) (io.ReadCloser, error) {
+			return io.NopCloser(bytes.NewReader(source)), nil
+		}
+		active, err := context.MatchFile(filepath.Dir(path), filepath.Base(path))
+		if err != nil || !active {
+			return nil
+		}
+		p, err := parser.ParseFile(token.NewFileSet(), path, source, 0)
+		if err != nil || p.Name.Name != "main" {
+			return nil
+		}
+		for _, decl := range p.Decls {
+			fn, ok := decl.(*ast.FuncDecl)
+			if ok && fn.Name.Name == "main" && fn.Recv == nil && fn.Body != nil && fn.Type.Params.NumFields() == 0 && fn.Type.Results.NumFields() == 0 && fn.Type.TypeParams.NumFields() == 0 {
+				entries[filepath.Dir(rel)] = true
+			}
 		}
 		return nil
 	})
 	if e != nil {
 		return nil, nil, e
 	}
-	if len(entries) == 1 {
-		for p := range entries {
-			s.Commands["start"] = cmd("aplicacao", "go", "run", "./"+filepath.ToSlash(p))
+	targets := make([]string, 0, len(entries))
+	for p := range entries {
+		targets = append(targets, p)
+	}
+	sort.Strings(targets)
+	suggestions := make([]model.Suggestion, 0, len(targets))
+	for i, p := range targets {
+		c := cmd("aplicacao", "go", "run", "./"+filepath.ToSlash(p))
+		suggestions = append(suggestions, model.Suggestion{Name: fmt.Sprintf("go-entry-%d", i+1), Purpose: "go-start", Command: c, Evidence: filepath.Join(dir, p)})
+		if len(targets) == 1 {
+			s.Commands["start"] = c
 		}
-	} else {
+	}
+	if len(targets) != 1 {
 		s.Pending = append(s.Pending, "Declare commands.start: nenhuma entrada Go única")
 	}
-	return s, nil, nil
+	return s, suggestions, nil
 }
 
 type JavaScript struct{}

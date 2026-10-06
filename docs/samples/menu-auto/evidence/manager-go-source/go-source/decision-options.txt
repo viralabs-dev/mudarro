@@ -1,0 +1,9 @@
+Go entrypoint selection (no parser/new dependency)
+A: expose discovered entries as ordinary named suggestions; --select copies them as named actions. User explicitly copies a chosen command into commands.start. Existing supervisor semantics stay intact; multiple entries are not automatically resolved.
+B: give entry candidates explicit selection metadata; choosing exactly one via existing --select assigns the same argv to commands.start (and optionally keeps its named action). Validate all selections before saving: reject 2+ selected candidates per service and ambiguous --all-scripts; never last-wins start overwrite. Candidate names must be deterministic and collision-checked. Removes only the entry ambiguity pending, preserving other pending reasons. Public schema/new flag optional, decision required before implementation.
+Current CLI uses suggestion.Name as map key; duplicating all candidate names as start cannot distinguish entries and would cause last-wins ambiguity. Name-prefix inference without explicit candidate metadata is brittle.
+
+Workspace execution context
+Preserve inherited context: no implicit GOWORK policy change, warnings remain. Real offline evidence: nonmember fails inside valid go.work; valid member fails if other member missing; ../outside modules enter selected build list.
+Force module isolation: argv env GOWORK=off go ... is representable in existing Command.Args and executes via same supervisor. But changes legitimate workspace dependency resolution, adds env executable requirement and platform portability considerations. Command.Env does not exist; shell assignments would unnecessarily change quoting/execution semantics. Must be explicit user decision, not automatic inferred remediation.
+No full go.work validation from warning; no parser approximation. Native Go subprocess at scan time would break current offline/read-only no-execution contract, even with GOPROXY off, so not recommended.

@@ -1,0 +1,26 @@
+ docs/coverage.md                               | 58 ++++++++++++++++++++--
+ docs/language-roadmap.md                       | 10 +++-
+ docs/pt-BR/coverage.md                         | 56 +++++++++++++++++++--
+ docs/pt-BR/language-roadmap.md                 | 10 +++-
+ docs/pt-BR/support-matrix.md                   | 58 ++++++++++++++++++++--
+ docs/pt-BR/validation.md                       | 52 +++++++++++++++++++-
+ docs/support-matrix.md                         | 58 ++++++++++++++++++++--
+ docs/validation.md                             | 52 +++++++++++++++++++-
+ go.mod                                         |  2 +
+ go.sum                                         |  2 +
+ install.sh                                     | 20 ++++++++
+ internal/mudarro/adapters/database_setup.go    |  3 ++
+ internal/mudarro/adapters/language_adapters.go | 68 +++++++++++++++++++++-----
+ internal/mudarro/cli.go                        | 43 ++++++++++++++--
+ internal/mudarro/config.go                     |  3 ++
+ internal/mudarro/generate.go                   | 23 ++++++---
+ internal/mudarro/local_runner.go               | 56 +++++++++++++++------
+ internal/mudarro/model/types.go                |  2 +
+ internal/mudarro/projectfs/path.go             | 28 ++++++++++-
+ internal/mudarro/runner.go                     | 27 +++++++++-
+ internal/mudarro/scan.go                       |  7 ++-
+ internal/mudarro/terminal/menu_view.go         | 16 ++++--
+ internal/mudarro/ui_integration.go             |  3 ++
+ scripts/release.sh                             |  4 +-
+ scripts/test-installer.sh                      | 44 +++++++++++++++++
+ 25 files changed, 629 insertions(+), 76 deletions(-)

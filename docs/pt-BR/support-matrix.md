@@ -1,12 +1,60 @@
 [English](../support-matrix.md) · Português (Brasil)
 
+A base publicada agora é `b887f64`, após reescrita autorizada da autoria pessoal de `56dadba`, com árvore idêntica. [Mapa de SHAs e provas de preservação](../samples/menu-auto/evidence/git-identity-repair/README.md). As novas mudanças de robustez/Unicode e esta referência permanecem locais.
+
+## Checkpoint integrado mais recente — parser oficial Go workspace
+
+165 PASS race (162 grupos substantivos + três helpers), 0 falhas/skips; **2199/2746 = 80,08%**. Parser oficial go.work/go.mod, diagnósticos de membros/conflitos/exclusões, contexto herdado e isolamento explícito passaram. Gates finais e rechecks reais Go/cinco runtimes instalados passaram. Quatro archives cross-build e fixtures do instalador preservam licenças. macOS nativo e aceite gráfico físico não executados. [Evidence / reprodução](../samples/menu-auto/evidence/go-work-parser/README.md).
+
+## Checkpoint histórico156 — decisões managers/Go
+
+156 PASS race (154 grupos substantivos + dois helpers), 0 falhas/skips; **79,47%**. SemVer exato, seleção start Go e isolamento workspace off passaram; preview/dry-run/doctor exibem/verificam isolamento. Gates locais e scans/qualidade dos cinco runtimes com binário atual passaram. Parser completo de membros go.work pendente; macOS nativo não executado. [Evidence / reprodução](../samples/menu-auto/evidence/manager-go-decisions/README.md).
+
+## Validação runtime local mais recente — managers isolados
+
+Pipenv2026.8.0, uv0.12.23, Poetry2.5.1 e YarnClassic1.22.22/Modern4.18.1 aprovados agora possuem validação genuína em fixtures sem dependências. Locks reais, menus/wrappers, idempotência, negativos de preservação e lifecycle passaram; start Python é explícito. Provas de instalação e mídias arquivadas. Código de produção não mudou;143 testes race/79,08% continuam o último checkpoint medido. [Evidence / reprodução](../samples/menu-auto/evidence/isolated-runtimes/README.md).
+
+## Checkpoint local mais recente — timeout Compose no doctor
+
+143 PASS race (141 grupos substantivos + dois helpers), 0 falhas/skips; **79,08%**. Sondagem Compose real expirou em 10,05s; configuração preservada e processo direto encerrado. Gates locais passaram; macOS nativo continua não executado. [Evidence / reprodução](../samples/menu-auto/evidence/doctor-compose-timeout/README.md).
+
+## Checkpoint local anterior — doctor e arquivos especiais
+
+141 PASS race (140 grupos substantivos + helper),0 falhas/skips; **79,03%**. Doctor rejeita arquivos especiais relativos com bits executáveis; CLI real antes/depois preservou fixtures. Vet/builds/smoke/menu/config/resize passaram; macOS nativo não executado, mudanças novas locais. [Evidence / reprodução](../samples/menu-auto/evidence/doctor-special/README.md).
+
+
+## Checkpoint local anterior — nomes packageManager / IO fontes Go
+
+140 PASS race (139 grupos substantivos + helper subprocesso), 0 falhas/skips; **2.058/2.604 = 79,03%**. Validação de nomes e leitura regular/limitada Go passaram; vet/builds/smoke/menu/config/resize passaram. Gramática versões, seleção/contexto Go aguardam decisão; runtime UV/Poetry ausente. Mudanças locais. [Evidence / reprodução](../samples/menu-auto/evidence/manager-go-source/README.md).
+
+
+## Checkpoint local anterior — MUD-034/038 parciais
+
+**131 testes principais race PASS, 0 falhas/skips; 2.041/2.588 = 78,86%.** Detecção/scripts/argv de banco Pipenv e regressões de entrada Go passaram; vet/build Linux/cross-build Darwin/smoke/menu/config/resize passaram. Runtime Pipenv ausente; membros/contexto/seleção targets go.work ainda não implementados, com aviso explícito. [Evidências e reprodução](../samples/menu-auto/evidence/pipenv-go/README.md). Mudanças locais.
+
+
+## Checkpoint local anterior — MUD-033
+
+121 testes principais com race PASS, zero falhas/skips; 1.971/2.517 statements internos = **78,31%**. Runtime genuíno Bun 1.4.0, menu/wrappers/supervisor e regressões bun.lock/bun.lockb/conflitos passaram sem instalação. Vet, build Linux, cross-build Darwin e gates smoke/menu/config/resize PTY passaram. [Evidências, sample salvo e reprodução](../samples/menu-auto/evidence/bun/README.md). macOS nativo e aceite gráfico/físico continuam pendentes. Mudanças novas locais sobre b887f64; MUD-035 somente análise.
+
+
+## Último checkpoint local — MUD-053
+
+117 testes principais racePASS/zero falhas/skips; cobertura deduplicada1.965/2.515=78,13%. U+3000 agora ocupa2células; clipping respeita1–3colunas semexpandir orçamento. 17variantes ePTYresize/NO_COLOR/restauração passaram, assim como vet/buildLinux/crosscompileDarwin eE2Essmoke/menu/config/resize. [Evidências, reprodução e limites](../samples/menu-auto/evidence/unicode-resize/README.md). Política conservadora por rune,sem shapingperfeito/grafemas indivisíveis;aceite físico026/027separado,macOSnativo031pendente. Mudanças locais sobre56dadba,sem novo commit/push/CI;histórico056aguardadecisão. [Triagem035somenteanálise](../samples/menu-auto/evidence/package-manager-contracts/README.md).
+
+## Anterior checkpoint local de robustez — MUD-050/051/052
+
+112 testes principais passaram com race, zero falhas/skips; nova cobertura interna 1.943/2.510 = **77,41%**. Supervisor Linux verifica inode real e argv exato; estado JSON inválido é rejeitado. Geração propaga erros de saída antes de escrever, e leitura de manifests rejeita arquivos especiais estáticos e limita a 4 MiB. Negativos do doctor passaram sem executar ações da aplicação. Vet/build Linux, crosscompile Darwin, smoke/menu/idempotência/preservação e E2E de configuração selecionada passaram. [Reprodução, logs e limites](../samples/menu-auto/evidence/robustness/README.md).
+
+Trabalho local sobre base publicada56dadba, sem novo commit/push ou validação CI. macOS nativo segue não validado e seu fallback ps tem garantias de identidade menores. IO é atômico por arquivo, sem rollback coletivo ou proteção atômica contra troca concorrente de caminhos. Medições históricas abaixo mantêm seus denominadores originais.
+
 ## Correção atual da CI — MUD-030
 
 Verificada [CI de push37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: concluída com **falha**. Jobs Ubuntu/bancos/containers passaram; macOS executou e falhou no tratamento EOF/cleanup com race, incluindo panic com índice n=-1. macOS não é mais globalmente “não executado”: cross-compile Darwin local passou, runtime real da CI falhou. Podman local continua indisponível; CI containers passou, distinta da execução local.
 
 Leitura autenticada de permissões Actions retornou enabled=true/allowed_actions=all; não identifica quem alterou settings. Nenhuma alteração de settings/workflow/config, habilitação, dispatch ou rerun ocorreu. Este commit corretivo usa o marcador oficial [skip ci] para o push autorizado somente de main, respeitando o pedido de não executar Actions sem mudar settings. Gates/evidências brutos anteriores preservados como históricos, superados quanto ao estado atual da CI. Linux local74 testes/76,38% permanece válido para checkpoint registrado. Fix de portabilidade passou 75 testes locais Linux com race, vet e compilação Linux/Darwin arm64. Runtime macOS corrigido permanece não validado; pular CI não significa aprovação.
 
-## Gate atual da UI configurável
+## Gate histórico da UI configurável
 
 **74 funções Test passaram com race; 1.552/2.032 statements executados = 76,38% (Go exibe76,4%)**, 480 não executados. Terminal:379/422=89,81%. Vet, build Linux e compilação cruzada do binário inteiro Darwin arm64 passaram; compilação não valida runtime macOS. E2E UI genuíno passou propagação de config personalizada nos wrappers/supervisor, scan traduzido, preview somente leitura/redação de segredos e smoke/menu. Rodadas reais Python/Go e pnpm passaram; Dockerfile e oito combinações de bancos com dependências existentes também passaram. Números anteriores abaixo são históricos com denominadores distintos. Fonte/aceite mouse em emulador real pendentes.
 
@@ -21,9 +69,9 @@ Escopo: checkout pessoal, inventário conciliado após extração de pacotes. Ne
 
 | Família | Evidência de detecção | Ações inferidas | Limites atuais |
 |---|---|---|---|
-| JavaScript / TypeScript | package.json; TS por tsconfig.json ou dependência typescript | install; scripts classificados start/dev/build aplicação, test/lint qualidade; demais selecionáveis | npm default; npm/pnpm/yarn por lock único; packageManager tem prioridade, mas nome arbitrário não validado; Bun não reconhecido por lock; frameworks next/@nestjs/core/vite/express são rótulos |
-| Python | pyproject.toml / requirements.txt / manage.py / Pipfile | pip venv/install, uv sync, poetry install; entrypoints project/poetry sugeridos; Django runserver/test | uv/poetry só por locks; ambos geram pendência; Pipfile identifica Python mas NÃO pipenv: cai em pip; Python não-Django exige start explícito; não detecta Flask/FastAPI/pytest como ações |
-| Go | go.mod; parser de package main em arquivos não-test | build ./..., test ./..., mod download; go run da única pasta main | múltiplas/nenhuma entrada bloqueiam inferência start; go.work é evidência, não resolve módulos; build tags não avaliadas como go list |
+| JavaScript / TypeScript | package.json; TS por tsconfig.json ou dependência typescript | install; start/dev/build aplicação, test/lint qualidade; demais scripts selecionáveis | npm default; npm/pnpm/yarn/bun por locks únicos ou packageManager conhecido explícito; bun.lock/bun.lockb deduplicados; nomes inválidos diagnosticados, versões informadas exigem SemVer exato; metadata apenas sintática, sem verificar hash; frameworks são rótulos |
+| Python | pyproject.toml / requirements.txt / manage.py / Pipfile | pip venv/install, uv sync, poetry install; Pipenv install/sync e sugestões de scripts opt-in; Django runserver/test | Pipfile seleciona pipenv, conflitos pendentes; TOML/JSON inválidos diagnosticados, sem schema/hash completo; runtime Pipenv2026.8.0 sem dependências validado; não-Django exige start explícito; sem ações automáticas Flask/FastAPI/pytest |
+| Go | go.mod; constraints do host e parser de func main ativo | build ./..., test ./..., mod download; start para única entrada ativa | fontes regulares limitadas4MiB; múltiplas/nenhuma entrada ficam pendentes; não infere tags custom/imports/compilabilidade; parser oficial go.work/go.mod valida membros bounded dentro da raiz; conflitos/exclusões diagnosticados; seleção promove start, contexto herdado por padrão e off explícito disponível |
 | Outras / custom | fallback sem manifest reconhecido | comandos declarados; sugestões Makefile/*.sh | configuração manual pode orquestrar qualquer runtime, mas não é adapter automático |
 
 Manager é string de configuração, não registro fechado validado. Entry scripts Python vêm de maps e ordenação final ocorre por serviço/nome. Scripts JS normalizam : e . para -. Colisões agora geram pendência e não oferecem seleção ambígua; regressão demonstrou falha antes e aprovação após correção.
@@ -89,7 +137,7 @@ As 41 funções Test passaram com race e instrumentação explícita coverpkg ap
 
 Evidências: [test-tree-tests.txt](../samples/menu-auto/evidence/test-tree-tests.txt), [test-tree-coverage.out](../samples/menu-auto/evidence/test-tree-coverage.out), [test-tree-coverage-functions.txt](../samples/menu-auto/evidence/test-tree-coverage-functions.txt), [test-tree-coverage-summary.tsv](../samples/menu-auto/evidence/test-tree-coverage-summary.tsv), [test-tree-gates.txt](../samples/menu-auto/evidence/test-tree-gates.txt).
 
-## Validação atual do nome consumidor — MUD-022
+## Validação histórica do nome consumidor — MUD-022
 
 43 funções Test passaram com race, incluindo 24 casos nome/modo. Vet, build Linux, compilação cruzada dos testes terminal Darwin arm64 e sintaxe Bash passaram. Cobertura: **1.063/1.451 statements = 73,26% (Go exibe 73,3%)**, 388 não executados. MUD-017 anterior 1.035/1.427=72,53% é histórico; mudança de código/denominador impede interpretar diferença como cobertura equivalente de requisitos. Runtime macOS não executado nesta etapa local histórica; CI atual executou e falhou, registrada acima.
 

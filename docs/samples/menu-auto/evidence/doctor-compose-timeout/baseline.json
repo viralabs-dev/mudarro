@@ -1,0 +1,14 @@
+{
+  "blocked": true,
+  "ownedGroup": 9,
+  "joined": true,
+  "exit": -15,
+  "output": "OK app: docker\n",
+  "argv": [
+    "/tmp/mudarro-mud060/mudarro-after",
+    "doctor",
+    "--root",
+    "/tmp/mudarro-mud061/fixture"
+  ],
+  "elapsed": 1.0067532760003814
+}

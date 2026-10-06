@@ -1,0 +1,5 @@
+Project: mudarro-yarn-runtime-probe
+- app-javascript (.): javascript / yarn / local
+  pending: Declare commands.start for local execution
+  suggestion: app-javascript:test [package.json]
+Created mudarro.yaml. Review pending choices, then run mudarro generate.

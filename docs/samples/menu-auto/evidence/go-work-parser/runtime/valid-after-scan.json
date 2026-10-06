@@ -1,0 +1,241 @@
+{
+  "workspaces": [
+    {
+      "path": "go.work",
+      "members": [
+        "app space",
+        "lib"
+      ],
+      "modules": {
+        "app space": "example.test/app",
+        "lib": "example.test/lib"
+      },
+      "go_version": "1.23"
+    }
+  ],
+  "config": {
+    "version": 1,
+    "name": "valid",
+    "services": [
+      {
+        "id": "app-space-go",
+        "dir": "app space",
+        "language": "go",
+        "manager": "go",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "go",
+              "build",
+              "./..."
+            ],
+            "group": "aplicacao"
+          },
+          "install": {
+            "args": [
+              "go",
+              "mod",
+              "download"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "go",
+              "run",
+              "./."
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "go",
+              "test",
+              "./..."
+            ],
+            "group": "qualidade"
+          }
+        }
+      },
+      {
+        "id": "app-space-nested-go",
+        "dir": "app space/nested",
+        "language": "go",
+        "manager": "go",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "go",
+              "build",
+              "./..."
+            ],
+            "group": "aplicacao"
+          },
+          "install": {
+            "args": [
+              "go",
+              "mod",
+              "download"
+            ],
+            "group": "dependencias"
+          },
+          "test": {
+            "args": [
+              "go",
+              "test",
+              "./..."
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start: nenhuma entrada Go única"
+        ]
+      },
+      {
+        "id": "lib-go",
+        "dir": "lib",
+        "language": "go",
+        "manager": "go",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "go",
+              "build",
+              "./..."
+            ],
+            "group": "aplicacao"
+          },
+          "install": {
+            "args": [
+              "go",
+              "mod",
+              "download"
+            ],
+            "group": "dependencias"
+          },
+          "test": {
+            "args": [
+              "go",
+              "test",
+              "./..."
+            ],
+            "group": "qualidade"
+          }
+        },
+        "pending": [
+          "Declare commands.start: nenhuma entrada Go única"
+        ]
+      },
+      {
+        "id": "other-go",
+        "dir": "other",
+        "language": "go",
+        "manager": "go",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "build": {
+            "args": [
+              "go",
+              "build",
+              "./..."
+            ],
+            "group": "aplicacao"
+          },
+          "install": {
+            "args": [
+              "go",
+              "mod",
+              "download"
+            ],
+            "group": "dependencias"
+          },
+          "start": {
+            "args": [
+              "go",
+              "run",
+              "./."
+            ],
+            "group": "aplicacao"
+          },
+          "test": {
+            "args": [
+              "go",
+              "test",
+              "./..."
+            ],
+            "group": "qualidade"
+          }
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "go.work",
+      "kind": "go-workspace"
+    },
+    {
+      "path": "app space",
+      "kind": "go"
+    },
+    {
+      "path": "app space/nested",
+      "kind": "go"
+    },
+    {
+      "path": "lib",
+      "kind": "go"
+    },
+    {
+      "path": "other",
+      "kind": "go"
+    }
+  ],
+  "suggestions": [
+    {
+      "purpose": "go-start",
+      "service": "app-space-go",
+      "name": "go-entry-1",
+      "command": {
+        "args": [
+          "go",
+          "run",
+          "./."
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "app space"
+    },
+    {
+      "purpose": "go-start",
+      "service": "other-go",
+      "name": "go-entry-1",
+      "command": {
+        "args": [
+          "go",
+          "run",
+          "./."
+        ],
+        "group": "aplicacao"
+      },
+      "evidence": "other"
+    }
+  ],
+  "warnings": null
+}

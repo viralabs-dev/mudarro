@@ -1,0 +1,9 @@
+Proposed offline Go detection contract (before production changes)
+- go.work evidence supplements independent go.mod discovery; nonmembers/nested modules remain visible.
+- Invalid workspace syntax, absent members, member without go.mod and paths outside root produce warnings; no outside traversal/network.
+- No automatic start for library, main_test only, package main without func main, build-ignore or inactive host constraint.
+- Exactly one active main package gets go run ./path, with nested module boundary preserved.
+- Multiple active main packages remain pending; build/test commands stay module local ./....
+- Scan never invokes go, tools or shell, and preserves manifests and sentinel files.
+Accepted root adjustment: no partial go.work parser/no new dependency. Every discovered go.work emits an explicit warning that membership/context is unvalidated, including valid workspace; all modules remain independent. This is partial delivery: workspace semantics and cross-target selection stay open.
+Entrypoint proposal: build.Default.MatchFile(parent,basename); parser.ParseFile flags0; package main; ast.FuncDecl Name main, Recv nil, Type.TypeParams empty, Params empty, Results empty. Package compilation, imports, duplicate declarations and alternative build targets remain unverified.

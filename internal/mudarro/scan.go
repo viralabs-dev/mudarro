@@ -17,6 +17,7 @@ type Evidence struct {
 	Kind string `json:"kind"`
 }
 type Report struct {
+	Workspaces  []Workspace  `json:"workspaces,omitempty"`
 	Config      Config       `json:"config"`
 	Evidence    []Evidence   `json:"evidence"`
 	Suggestions []Suggestion `json:"suggestions"`
@@ -76,7 +77,11 @@ func Scan(root string, excludes []string) (Report, error) {
 	for _, dir := range paths {
 		f := dirs[dir]
 		if f["go.work"] {
-			r.Evidence = append(r.Evidence, Evidence{filepath.Join(dir, "go.work"), "go-workspace"})
+			workspace := filepath.Join(dir, "go.work")
+			r.Evidence = append(r.Evidence, Evidence{workspace, "go-workspace"})
+			parsed, warnings := scanWorkspace(root, dir, excludes)
+			r.Workspaces = append(r.Workspaces, parsed)
+			r.Warnings = append(r.Warnings, warnings...)
 		}
 		for _, a := range languageAdapters {
 			s, suggestions, e := a.Detect(root, dir, f, excludes)

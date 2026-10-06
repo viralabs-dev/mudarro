@@ -1,0 +1,14 @@
+=== RUN   TestGoWorkspaceDiagnosticsPreviewShowsEffectiveIsolation
+--- PASS: TestGoWorkspaceDiagnosticsPreviewShowsEffectiveIsolation (0.00s)
+=== RUN   TestGoWorkspaceDiagnosticsDryRunShowsIsolationWithoutExecution
+--- PASS: TestGoWorkspaceDiagnosticsDryRunShowsIsolationWithoutExecution (0.00s)
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/off
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/#00
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/inherit
+--- PASS: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation (0.01s)
+    --- PASS: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/off (0.00s)
+    --- PASS: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/#00 (0.00s)
+    --- PASS: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/inherit (0.01s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	1.027s

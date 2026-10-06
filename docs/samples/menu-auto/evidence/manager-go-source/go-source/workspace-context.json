@@ -1,0 +1,140 @@
+[
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member",
+    "args": [
+      "env",
+      "GOWORK"
+    ],
+    "extraEnv": {},
+    "exit": 0,
+    "output": "/tmp/mudarro-mud038-next/workspace/go.work\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {},
+    "exit": 0,
+    "output": "?   \texample.test/member\t[no test files]\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {
+      "GOWORK": "off"
+    },
+    "exit": 0,
+    "output": "?   \texample.test/member\t[no test files]\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member/nested",
+    "args": [
+      "env",
+      "GOWORK"
+    ],
+    "extraEnv": {},
+    "exit": 0,
+    "output": "/tmp/mudarro-mud038-next/workspace/go.work\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member/nested",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {},
+    "exit": 0,
+    "output": "?   \texample.test/nested\t[no test files]\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member/nested",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {
+      "GOWORK": "off"
+    },
+    "exit": 0,
+    "output": "?   \texample.test/nested\t[no test files]\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/nonmember",
+    "args": [
+      "env",
+      "GOWORK"
+    ],
+    "extraEnv": {},
+    "exit": 0,
+    "output": "/tmp/mudarro-mud038-next/workspace/go.work\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/nonmember",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {},
+    "exit": 1,
+    "output": "# ./...\npattern ./...: directory prefix . does not contain modules listed in go.work or their selected dependencies\nFAIL\t./... [setup failed]\nFAIL\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/nonmember",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {
+      "GOWORK": "off"
+    },
+    "exit": 0,
+    "output": "?   \texample.test/nonmember\t[no test files]\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member",
+    "args": [
+      "list",
+      "-m"
+    ],
+    "extraEnv": {},
+    "exit": 0,
+    "output": "example.test/member\nexample.test/outside\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {},
+    "exit": 1,
+    "output": "# ./...\npattern ./...: directory prefix . does not contain modules listed in go.work or their selected dependencies\nFAIL\t./... [setup failed]\nFAIL\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {},
+    "exit": 1,
+    "output": "go: cannot load module ../missing listed in go.work file: open ../missing/go.mod: no such file or directory\n"
+  },
+  {
+    "cwd": "/tmp/mudarro-mud038-next/workspace/member",
+    "args": [
+      "test",
+      "./..."
+    ],
+    "extraEnv": {
+      "GOWORK": "off"
+    },
+    "exit": 0,
+    "output": "?   \texample.test/member\t[no test files]\n"
+  }
+]

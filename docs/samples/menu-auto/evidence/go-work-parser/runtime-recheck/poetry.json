@@ -1,0 +1,26 @@
+[
+  {
+    "argv": [
+      "/tmp/mudarro-parser-checkpoint/mudarro",
+      "scan",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/poetry",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"poetry\",\n    \"services\": [\n      {\n        \"id\": \"app-python\",\n        \"dir\": \".\",\n        \"language\": \"python\",\n        \"manager\": \"poetry\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"install\": {\n            \"args\": [\n              \"poetry\",\n              \"install\"\n            ],\n            \"group\": \"dependencias\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start; m\u00f3dulo Python n\u00e3o \u00e9 inferido\"\n        ]\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \".\",\n      \"kind\": \"python\"\n    }\n  ],\n  \"suggestions\": null,\n  \"warnings\": null\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-parser-checkpoint/mudarro",
+      "run",
+      "app-python:test",
+      "--root",
+      "/tmp/mudarro-runtimes.K7F4J1/fixtures/poetry"
+    ],
+    "exit": 0,
+    "stdout": "Poetry quality OK\n",
+    "stderr": ""
+  }
+]

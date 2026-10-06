@@ -1,0 +1,39 @@
+mudarro: both mudarro.yaml and mudarro.json exist; select a configuration explicitly
+gerar: .mudarro/scripts/app/down.sh
+gerar: .mudarro/scripts/app/logs.sh
+gerar: .mudarro/scripts/app/probe.sh
+gerar: .mudarro/scripts/app/restart.sh
+gerar: .mudarro/scripts/app/secret.sh
+gerar: .mudarro/scripts/app/start.sh
+gerar: .mudarro/scripts/app/status.sh
+gerar: .mudarro/scripts/app/up.sh
+gerar: menu.sh
+
+>>> selected config wrapper: up
+app: started (PID 437)
+
+>>> selected config wrapper: up
+app: already running
+
+>>> selected config wrapper: status
+app: running (PID 437)
+
+>>> selected config wrapper: restart
+app: started (PID 469)
+
+>>> selected config wrapper: status
+app: running (PID 469)
+
+>>> selected config wrapper: logs
+supervisor ready
+mudarro: signal: terminated
+supervisor ready
+
+>>> selected config wrapper: down
+app: stopped
+app: stopped
+app: started (PID 514)
+app: running (PID 514)
+app: stopped
+mudarro: invalid ui.theme "invalid"
+UI selected configuration, supervisor, locale and preview end-to-end: OK

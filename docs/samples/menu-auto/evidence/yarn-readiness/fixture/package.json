@@ -1,0 +1,8 @@
+{
+  "name": "mudarro-yarn-runtime-probe",
+  "private": true,
+  "packageManager": "yarn",
+  "scripts": {
+    "test": "node probe.cjs"
+  }
+}

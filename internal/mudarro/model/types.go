@@ -30,6 +30,7 @@ type Service struct {
 	Dir            string             `yaml:"dir" json:"dir"`
 	Language       string             `yaml:"language,omitempty" json:"language,omitempty"`
 	Manager        string             `yaml:"manager,omitempty" json:"manager,omitempty"`
+	GoWorkspace    string             `yaml:"go_workspace,omitempty" json:"go_workspace,omitempty"`
 	Framework      string             `yaml:"framework,omitempty" json:"framework,omitempty"`
 	Infrastructure Infrastructure     `yaml:"infrastructure" json:"infrastructure"`
 	Database       Database           `yaml:"database,omitempty" json:"database,omitempty"`
@@ -37,6 +38,7 @@ type Service struct {
 	Pending        []string           `yaml:"pending,omitempty" json:"pending,omitempty"`
 }
 type Suggestion struct {
+	Purpose  string  `json:"purpose,omitempty"`
 	Service  string  `json:"service"`
 	Name     string  `json:"name"`
 	Command  Command `json:"command"`

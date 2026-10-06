@@ -1,0 +1,46 @@
+##  # # # #     ##  # # # # ### ### # # ###     ### # #  ## #   
+# # # # ###     # # # # ###  #   #  ### #       #   # # #   #   
+##  # # ### ### ##  # # ###  #   #  ### ##  ### ##   #  #   #   
+# # # # ###     # # # # ###  #   #  # # #       #   # # #   #   
+##  ### # #     # # ### # #  #  ### # # ###     ### # #  ## ### 
+# #  ## ### # # ### 
+# # #    #  # # #   
+# #  #   #  # # ##  
+# #   #  #  # # #   
+### ##  ###  #  ### 
+bun-runtime-exclusive
+
+
+  Choose an area / Services
+
+   1.  app-javascript — .
+
+   0.  Back / exit
+  > 
+  Choose an area / app-javascript
+
+   1.  application
+   2.  dependencies
+   3.  infrastructure
+   4.  quality
+
+   0.  Back / exit
+  > 
+  Choose an area / quality
+
+   1.  lint
+   2.  test
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > $ bun check.js
+MUD033 Bun check PASS 1.4.0
+
+  Choose an area / quality
+
+   1.  lint
+   2.  test
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > 

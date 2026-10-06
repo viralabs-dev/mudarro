@@ -97,7 +97,7 @@ func runeColumns(r rune) int {
 	if unicode.Is(unicode.Mn, r) || unicode.Is(unicode.Me, r) {
 		return 0
 	}
-	if unicode.Is(unicode.Han, r) || unicode.Is(unicode.Hangul, r) || unicode.Is(unicode.Hiragana, r) || unicode.Is(unicode.Katakana, r) ||
+	if r == '\u3000' || unicode.Is(unicode.Han, r) || unicode.Is(unicode.Hangul, r) || unicode.Is(unicode.Hiragana, r) || unicode.Is(unicode.Katakana, r) ||
 		r >= 0xff01 && r <= 0xff60 || r >= 0xffe0 && r <= 0xffe6 || r >= 0x1f000 && r <= 0x1faff || r >= 0x2600 && r <= 0x27bf {
 		return 2
 	}
@@ -113,8 +113,8 @@ func cleanText(text string) string {
 }
 func fitText(text string, width int) string {
 	text = cleanText(text)
-	if width < 4 {
-		width = 4
+	if width <= 0 {
+		return ""
 	}
 	cells := 0
 	for _, r := range text {
@@ -124,16 +124,22 @@ func fitText(text string, width int) string {
 		return text
 	}
 	var b strings.Builder
+	suffix := ""
+	limit := width
+	if width >= 4 {
+		suffix = "..."
+		limit -= len(suffix)
+	}
 	cells = 0
 	for _, r := range text {
 		n := runeColumns(r)
-		if cells+n > width-3 {
+		if cells+n > limit {
 			break
 		}
 		b.WriteRune(r)
 		cells += n
 	}
-	return b.String() + "..."
+	return b.String() + suffix
 }
 
 // Original bitmap lettering, independent of FIGlet fonts and third-party logos.

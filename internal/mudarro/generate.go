@@ -4,6 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
+	"github.com/viralabs-dev/mudarro/internal/mudarro/projectfs"
 	"io"
 	"os"
 	"path/filepath"
@@ -64,7 +65,7 @@ func Generate(root string, c Config, dry bool, w io.Writer) error {
 		return e
 	}
 	old := fileManifest{Version: 1, Files: map[string]string{}}
-	if b, e := os.ReadFile(manifestPath); e == nil {
+	if b, e := projectfs.ReadManifest(root, ".mudarro", "generated.json"); e == nil {
 		if e = json.Unmarshal(b, &old); e != nil {
 			return fmt.Errorf("manifest inválido: %w", e)
 		}
@@ -99,7 +100,9 @@ func Generate(root string, c Config, dry bool, w io.Writer) error {
 					continue
 				}
 			} else {
-				fmt.Fprintln(w, "preservado:", p)
+				if _, e := fmt.Fprintln(w, "preservado:", p); e != nil {
+					return e
+				}
 				continue
 			}
 		} else if !os.IsNotExist(e) {
@@ -110,17 +113,21 @@ func Generate(root string, c Config, dry bool, w io.Writer) error {
 		writes = append(writes, p)
 	}
 	for _, p := range writes {
-		fmt.Fprintln(w, "gerar:", p)
-		if dry {
-			continue
-		}
-		full, _ := safePath(root, p)
-		if e := atomicWrite(full, files[p].Data, files[p].Mode); e != nil {
+		if _, e := fmt.Fprintln(w, "gerar:", p); e != nil {
 			return e
 		}
 	}
 	if dry {
 		return nil
+	}
+	for _, p := range writes {
+		full, e := safePath(root, p)
+		if e != nil {
+			return e
+		}
+		if e := atomicWrite(full, files[p].Data, files[p].Mode); e != nil {
+			return e
+		}
 	}
 	b, _ := json.MarshalIndent(next, "", "  ")
 	return atomicWrite(manifestPath, append(b, '\n'), 0644)

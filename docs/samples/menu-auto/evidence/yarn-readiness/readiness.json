@@ -1,0 +1,55 @@
+{
+  "runtime_available": false,
+  "corepack_available": true,
+  "corepack_version": "0.34.6",
+  "yarn_version": null,
+  "runtime_approved": false,
+  "scan_init_generate_passed": true,
+  "real_run_attempt_exit": 1,
+  "runtime_marker_created": false,
+  "fixture_has_fake_lockfile": false,
+  "installations": false,
+  "network_downloads": false,
+  "binary_sha256": "80a463f64932ff17486db261f66c1f2327b17c1ead27411265f786a66af7a8da",
+  "commands": [
+    {
+      "command": [
+        "/tmp/mudarro-validation-next/mudarro",
+        "scan",
+        "--json",
+        "--root",
+        "/tmp/mudarro-yarn-readiness/fixture"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/mudarro-validation-next/mudarro",
+        "init",
+        "--root",
+        "/tmp/mudarro-yarn-readiness/fixture"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/mudarro-validation-next/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-yarn-readiness/fixture"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/tmp/mudarro-validation-next/mudarro",
+        "run",
+        "app-javascript:test",
+        "--root",
+        "/tmp/mudarro-yarn-readiness/fixture"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "limitation": "No yarn/yarnpkg executable or known cached Yarn runtime found. Corepack alone is not an installed Yarn runtime. Global locations were only inspected, never changed."
+}

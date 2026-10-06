@@ -1,0 +1,140 @@
+{
+  "bin": {
+    "pnpm": "./dist/pnpm.js",
+    "pnpx": "./dist/pnpx.js",
+    "yarn": "./dist/yarn.js",
+    "yarnpkg": "./dist/yarnpkg.js",
+    "corepack": "./dist/corepack.js"
+  },
+  "bugs": {
+    "url": "https://github.com/nodejs/corepack/issues"
+  },
+  "dist": {
+    "shasum": "04e62edc9b34b932cc09124d0181ae5c922fbce8",
+    "tarball": "https://registry.npmjs.org/corepack/-/corepack-0.36.0.tgz",
+    "fileCount": 54,
+    "integrity": "sha512-SiiJsBhZqdBiPHTEl6OT3sASrRrKIcYTQMsVGXx6EE/gM8WFMwYjeIX8Tt8RiU4Iv2J6LbT8KpGfCOsBpRWB/w==",
+    "signatures": [
+      {
+        "sig": "MEQCIBEqmfUqszAPHktxzl5J8NQgPjU/LAeEXO0TDlJk90n+AiALVr0njA5ykINYCItTJDrwYECovteRXWf+JMxEsZk2RA==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEYCIQCpjMYbJfj2qRLuNq4C0/hyURYitRZT/oLrV/2TLkSi5gIhAJq6bTQuVc/yGyUkpQcJL3CGGlGxVSttfn+BSE/h6vxv",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/corepack@0.36.0",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 607299
+  },
+  "name": "corepack",
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "gitHead": "7a4c30b1aecece619a3e01db757f0eb947414b1f",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint",
+    "test": "vitest",
+    "build": "run clean && run build:bundle && node ./mkshims.ts",
+    "clean": "run rimraf dist shims",
+    "rimraf": "node -e 'for(let i=2;i<process.argv.length;i++)fs.rmSync(process.argv[i],{recursive:true,force:true});'",
+    "prepack": "yarn build",
+    "corepack": "node ./sources/_cli.ts",
+    "postpack": "run clean",
+    "typecheck": "tsc --noEmit",
+    "build:bundle": "esbuild ./sources/_lib.ts --bundle --platform=node --target=node22.22.2 --external:corepack --outfile='./dist/lib/corepack.cjs' --resolve-extensions='.ts,.mjs,.js'"
+  },
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "oidc:dfc64cca-b4d6-424e-94d3-0651802f3f08"
+    }
+  },
+  "homepage": "https://github.com/nodejs/corepack#readme",
+  "repository": {
+    "url": "https://github.com/nodejs/corepack.git",
+    "type": "git"
+  },
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "nodejs-foundation",
+      "email": "build@iojs.org"
+    }
+  ],
+  "publishConfig": {
+    "bin": {
+      "pnpm": "./dist/pnpm.js",
+      "pnpx": "./dist/pnpx.js",
+      "yarn": "./dist/yarn.js",
+      "yarnpkg": "./dist/yarnpkg.js",
+      "corepack": "./dist/corepack.js"
+    },
+    "executableFiles": [
+      "./dist/npm.js",
+      "./dist/npx.js",
+      "./dist/pnpm.js",
+      "./dist/pnpx.js",
+      "./dist/yarn.js",
+      "./dist/yarnpkg.js",
+      "./dist/corepack.js",
+      "./shims/npm",
+      "./shims/npm.ps1",
+      "./shims/npx",
+      "./shims/npx.ps1",
+      "./shims/pnpm",
+      "./shims/pnpm.ps1",
+      "./shims/pnpx",
+      "./shims/pnpx.ps1",
+      "./shims/yarn",
+      "./shims/yarn.ps1",
+      "./shims/yarnpkg",
+      "./shims/yarnpkg.ps1"
+    ]
+  },
+  "_hasShrinkwrap": false,
+  "packageManager": "yarn@4.18.0+sha224.5707fce90df5d8720fae4e85a07ab55e90aa20fded8914893e2ba225",
+  "devDependencies": {
+    "tar": "^7.5.11",
+    "debug": "^4.1.1",
+    "which": "^7.0.0",
+    "eslint": "^10.8.1",
+    "semver": "^7.6.3",
+    "vitest": "^4.0.5",
+    "esbuild": "^0.28.0",
+    "clipanion": "patch:clipanion@npm%3A3.2.1#~/.yarn/patches/clipanion-npm-3.2.1-fc9187f56c.patch",
+    "typescript": "^5.7.3",
+    "@types/node": "^22.0.0",
+    "@types/debug": "^4.1.5",
+    "@types/which": "^3.0.0",
+    "@types/semver": "^7.1.0",
+    "@yarnpkg/fslib": "^3.0.0-rc.48",
+    "supports-color": "^11.0.0",
+    "v8-compile-cache": "^2.3.0",
+    "@zkochan/cmd-shim": "^6.0.0",
+    "@types/proxy-from-env": "^1",
+    "@yarnpkg/eslint-config": "^3.1.1"
+  },
+  "dependenciesMeta": {
+    "esbuild": {
+      "built": true
+    }
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/corepack_0.36.0_1787925423593_0.8782123445167023",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "corepack@0.36.0",
+  "version": "0.36.0"
+}

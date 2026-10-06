@@ -1,0 +1,45 @@
+{
+  "tool": "Poetry",
+  "version": "2.5.1",
+  "origin": "https://pypi.org/simple",
+  "wheel_only": true,
+  "direct_hash_verified": true,
+  "hashed_transitive_wheels": 45,
+  "offline_hashed_install": true,
+  "python": "3.14.7",
+  "fixture_zero_dependencies": true,
+  "authentic_lock": "/tmp/mudarro-runtimes.K7F4J1/fixtures/poetry/poetry.lock",
+  "passed": [
+    "Poetry env use existing Python",
+    "Poetry lock",
+    "Poetry install --no-root",
+    "Mudarro install action",
+    "Poetry run probe",
+    "genuine scan manager=poetry",
+    "init then explicit start/test configuration",
+    "generate twice hashes equal",
+    "real launcher/menu",
+    "test wrapper",
+    "up repeated/status/logs ready/restart/down",
+    "repeated init rejects",
+    "unknown action rejects",
+    "manual edit refuses and preserves",
+    "PTY genuine recording"
+  ],
+  "runtime_exit": 0,
+  "final_check_exit": 0,
+  "limits": [
+    "No web framework inference claimed",
+    "No DB seed needed for zero-dependency language fixture",
+    "No macOS/WSL runtime",
+    "No GIF rendered; genuine PTY typescript/timing provided",
+    "Initial fixture YAML indentation error and missing private launcher PATH were test setup issues corrected locally, not production defects",
+    "Poetry start is explicitly configured; language detection does not infer it"
+  ],
+  "hashes": {
+    "pyproject.toml": "99520ee8d03f858f3497b2f29984a3641fd6035ba81cfa82cf80e07ddbc885e2",
+    "poetry.lock": "ad5de0809c60ccff57e2e1329fda49eb249155bba53b12a0f881dabf60c38d9f",
+    "mudarro.yaml": "651e80fba792e2bbcb757e43e551fc13063e7d57e3d1aa63e2f814954a00b451",
+    "requirements-hashed.txt": "3eb276c433f66a292501cdf86baf649869c0de55ded6cb7c9f71cdeebe44eef4"
+  }
+}

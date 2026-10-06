@@ -1,0 +1,41 @@
+version: 1
+name: final
+services:
+    - id: app-python
+      dir: .
+      language: python
+      manager: pipenv
+      infrastructure:
+        kind: local
+      commands:
+        check:
+            args:
+                - pipenv
+                - run
+                - check
+            group: scripts
+        fail:
+            args:
+                - pipenv
+                - run
+                - fail
+            group: scripts
+        install:
+            args:
+                - pipenv
+                - sync
+            group: dependencias
+        seed:
+            args:
+                - pipenv
+                - run
+                - seed
+            group: scripts
+        start:
+            args:
+                - pipenv
+                - run
+                - start
+            group: scripts
+      pending:
+        - Declare commands.start; módulo Python não é inferido

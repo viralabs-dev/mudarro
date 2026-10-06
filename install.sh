@@ -31,12 +31,32 @@ else
 fi
 [[ "${actual%% *}" == "$expected" ]] || { echo 'Checksum divergente; instalação interrompida.' >&2; exit 1; }
 tar -xzf "$tmp/$asset" -C "$tmp" mudarro
+# Older archives contain only the binary. New archives also preserve notices.
+tar -tzf "$tmp/$asset" > "$tmp/archive-members.txt"
+has_notices=false
+if grep -Fxq 'THIRD_PARTY_NOTICES.md' "$tmp/archive-members.txt"; then
+  tar -xzf "$tmp/$asset" -C "$tmp" THIRD_PARTY_NOTICES.md LICENSES/golang.org-x-mod.txt LICENSES/go-toml-v2.txt LICENSES/gopkg.in-yaml.v3.txt
+  has_notices=true
+fi
 mkdir -p "$install_dir"
 [[ ! -L "$install_dir/mudarro" ]] || { echo 'Destino é symlink; escolha outro diretório.' >&2; exit 1; }
+if [[ "$has_notices" == true ]]; then
+  notice_dir="$install_dir/mudarro-licenses"
+  [[ ! -L "$notice_dir" && ! -L "$notice_dir/LICENSES" ]] || { echo 'Destino dos avisos é symlink; escolha outro diretório.' >&2; exit 1; }
+  for file in THIRD_PARTY_NOTICES.md LICENSES/golang.org-x-mod.txt LICENSES/go-toml-v2.txt LICENSES/gopkg.in-yaml.v3.txt; do
+    [[ -f "$tmp/$file" && ! -L "$tmp/$file" ]] || { echo 'Arquivo de licença inválido.' >&2; exit 1; }
+    [[ ! -L "$notice_dir/$file" ]] || { echo 'Destino de licença é symlink.' >&2; exit 1; }
+  done
+fi
 target="$(mktemp "$install_dir/.mudarro-install.XXXXXX")"
 cp "$tmp/mudarro" "$target"
 chmod 755 "$target"
 mv -f "$target" "$install_dir/mudarro"
+if [[ "$has_notices" == true ]]; then
+  mkdir -p "$install_dir/mudarro-licenses/LICENSES"
+  cp "$tmp/THIRD_PARTY_NOTICES.md" "$install_dir/mudarro-licenses/"
+  cp "$tmp/LICENSES/"*.txt "$install_dir/mudarro-licenses/LICENSES/"
+fi
 printf 'Mudarro instalado: %s/mudarro\n' "$install_dir"
 case ":$PATH:" in *":$install_dir:"*) ;; *) printf 'Adicione ao PATH: export PATH="%s:$PATH"\n' "$install_dir" ;; esac
 "$install_dir/mudarro" version

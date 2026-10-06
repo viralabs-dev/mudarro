@@ -1,0 +1,10 @@
+{
+  "gofmt": "PASS",
+  "diffcheck": "PASS",
+  "vet": "PASS",
+  "linux_build": "PASS",
+  "darwin_binary_crosscompile": "PASS",
+  "darwin_orchestration_test_crosscompile": "PASS",
+  "binary_sha256": "8350359bafb6d4591efbdf347311acd6abef54b46fb8f42e804867ef3b97183b",
+  "native_macos": "NOT EXECUTED"
+}

@@ -1,0 +1,18 @@
+Script started on 2026-10-06 12:32:47-03:00 [COMMAND="poetry run python probe.py; /tmp/mudarro-timeout-checkpoint/mudarro menu" <not executed on terminal>]
+0
+Poetry quality OK
+##   #  ### ### ##  # #     ##  # # # # ### ### # # ### 
+# # # # #    #  # # # #     # # # # ###  #   #  ### #   
+##  # # ##   #  ##   #      ##  # # ###  #   #  ### ##  
+#   # # #    #  # #  #      # # # # ###  #   #  # # #   
+#    #  ###  #  # #  #      # # ### # #  #  ### # # ### 
+Poetry runtime
+
+
+  Choose an area / Services
+
+   1.  app-python — .
+
+   0.  Back / exit
+  > 
+Script done on 2026-10-06 12:32:47-03:00 [COMMAND_EXIT_CODE="0"]

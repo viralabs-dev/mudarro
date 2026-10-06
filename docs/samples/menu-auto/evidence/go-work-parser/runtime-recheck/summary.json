@@ -1,0 +1,31 @@
+{
+  "binary_sha256": "c926247ab2c47f24aa4124ba934cffd02f90bb534b12fd6550b99c246a0fdf60",
+  "checks": [
+    {
+      "tool": "pipenv",
+      "scan_exit": 0,
+      "quality_exit": 0
+    },
+    {
+      "tool": "uv",
+      "scan_exit": 0,
+      "quality_exit": 0
+    },
+    {
+      "tool": "poetry",
+      "scan_exit": 0,
+      "quality_exit": 0
+    },
+    {
+      "tool": "yarn-classic",
+      "scan_exit": 0,
+      "quality_exit": 0
+    },
+    {
+      "tool": "yarn-modern",
+      "scan_exit": 0,
+      "quality_exit": 0
+    }
+  ],
+  "scope": "post SemVer/Go fix actual scan and quality on all five already-installed versions; original full runtime evidence retained"
+}

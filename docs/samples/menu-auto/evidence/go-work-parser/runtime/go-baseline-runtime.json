@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "case": "inherited-crossmodule",
+      "exit_code": 0
+    },
+    {
+      "case": "off-crossmodule",
+      "exit_code": 1
+    }
+  ],
+  "scoped_environment": {
+    "GOCACHE": "/tmp/mudarro-mud038-parser/runtime/go-cache",
+    "GOMODCACHE": "/tmp/mudarro-mud038-parser/runtime/go-mod-cache",
+    "GOTOOLCHAIN": "local",
+    "GOPROXY": "off",
+    "GOFLAGS": "-buildvcs=false"
+  }
+}

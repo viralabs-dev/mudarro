@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/mudarro-runtimes.K7F4J1/uv/runtime.py", line 21, in <module>
+    run(['bash',root/'.mudarro/scripts/app-python/fail.sh'],7);run([bin,'run','app-python:unknown','--root',root],1)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/mudarro-runtimes.K7F4J1/uv/runtime.py", line 12, in run
+    out.write('\nCOMMAND '+repr([str(a) for a in args])+'\n');out.flush();p=subprocess.run([str(a) for a in args],cwd=cwd,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=30);out.write(p.stdout);out.write('EXIT '+str(p.returncode)+'\n');out.flush();steps.append({'argv':[str(a) for a in args],'exit':p.returncode,'expected':expected});assert p.returncode==expected,(args,p.returncode,p.stdout);return p.stdout
+                                                                                                                                                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (['bash', PosixPath('/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/fail.sh')], 1, 'expected controlled failure\nmudarro: exit status 7\n')

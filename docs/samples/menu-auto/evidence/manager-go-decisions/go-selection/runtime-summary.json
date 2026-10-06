@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "member-inherit",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "nonmember-inherit",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "case": "init",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "cli-nonmember-inherit",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "case": "cli-off",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "missing-inherit",
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "case": "missing-off",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "generate",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "generate-repeat",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "wrapper-off",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "supervisor-up",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "supervisor-status",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "supervisor-logs",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "supervisor-down",
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "case": "existing-init",
+      "exit_code": 1,
+      "expected_success": false
+    }
+  ],
+  "manual_configuration_preserved": true,
+  "generated_hashes_idempotent": true,
+  "scoped_environment": {
+    "GOCACHE": "/tmp/mudarro-mud038-selection/go-cache",
+    "GOTOOLCHAIN": "local",
+    "GOPROXY": "off",
+    "GOFLAGS": "-buildvcs=false"
+  },
+  "global_GOWORK_not_modified": null,
+  "membership_parser_validated": false
+}

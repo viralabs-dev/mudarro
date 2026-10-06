@@ -1,0 +1,15 @@
+{
+  "menu.sh": "1d5e0b38a0b819fa5096c465b6477ad2431365d591dbde4a5e7006d79518b27f",
+  "mudarro.yaml": "1a9907ef842c36e50ccc49e1e68e418771d1ed0df9359c635b8d132a6b4692ac",
+  ".mudarro/generated.json": "dfa35ef5f292446350706c9bedc7bbd3ac02fde92124e934cb08b70bff7ecea0",
+  ".mudarro/scripts/app-python/check.sh": "93beca4945dd63a1e51af05d2cfb2aec927e32c837dfe01dacb0a7c7ffa0d88d",
+  ".mudarro/scripts/app-python/install.sh": "226d35da92b64e0289143f34d18b300b92f180eebbd43a1d8787471963be9d0d",
+  ".mudarro/scripts/app-python/status.sh": "6369f1a085a82de05eca683ffbd69dd6e3866bac1e8ceb0409153267e3a86923",
+  ".mudarro/scripts/app-python/up.sh": "9ba5099d8978df937a991940d3160b857950058bedfc4e47763f0d3e4022aa59",
+  ".mudarro/scripts/app-python/logs.sh": "536a223d67f2070af365e7f22225044d49a4f4fad89deaa4b66f9edec78922c2",
+  ".mudarro/scripts/app-python/restart.sh": "04eb45c5173f2290c7b620b0ea6c2755110dc5158716799b2395c2cbfa70989c",
+  ".mudarro/scripts/app-python/start.sh": "83b9725117175a1af906c49abaf284a83be6470994bd5e670379666267d2dc8d",
+  ".mudarro/scripts/app-python/fail.sh": "571b7dbbb58a4f9f3ea7694f3d6649978d98ada56ac970c6ae4ea4f05f11bfed",
+  ".mudarro/scripts/app-python/seed.sh": "3d4f788a3500c7620d7f88b42524ab80740c479b41e8a4f181a0f29baff9f3c3",
+  ".mudarro/scripts/app-python/down.sh": "876db3e29521f508dd7b8feee7d5b683902b42247f6b533d2e590b203558cd2a"
+}

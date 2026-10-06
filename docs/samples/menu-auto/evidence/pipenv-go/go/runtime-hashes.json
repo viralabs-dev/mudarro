@@ -1,0 +1,19 @@
+{
+  "mudarro.yaml": "12de7a8a755811dfd507907f9286cc38d1567e635dfba849f010312d1acdfef6",
+  "go.work": "06e0d84bef75d2465db4ad61563e03cb4cf4900d7842e6f31548dea819fa6ab1",
+  "menu.sh": "1d5e0b38a0b819fa5096c465b6477ad2431365d591dbde4a5e7006d79518b27f",
+  "app/go.mod": "ac6df3702566c71dade6fa9c61e61586410f7f4c2ad875d8c3e69c06b27624db",
+  ".mudarro/generated.json": "62291a19c727792adc71c7f4d7d4cfa01760471172b4e644b64c42242390b69d",
+  ".mudarro/scripts/app-go/install.sh": "bd958722872b8823874da8d7e10c692d5141c52d2a0f071846bc23eab81752bd",
+  ".mudarro/scripts/app-go/status.sh": "c7cda490f79b50caeaeca4e49bac6e12dccfb1f01768b442ea51751a9474692a",
+  ".mudarro/scripts/app-go/up.sh": "8df6abce40947af6024f79d7d8d8c23eaa6ac152df00e360c4713ec27c2e57d6",
+  ".mudarro/scripts/app-go/logs.sh": "60215965957990b6d5fa5c4f4ac42b253a22f6d181aab513612e0fdf200b2ab1",
+  ".mudarro/scripts/app-go/restart.sh": "e9160b82e6ae8c863cf238e501e06fbf9c81fef4df91dd561f7e3ef77a778ed8",
+  ".mudarro/scripts/app-go/start.sh": "6afe06deed5aee333cb91a09ff060d7aa4fe12d1cd9abdbb2647fd5f3606d916",
+  ".mudarro/scripts/app-go/build.sh": "bda1f7707c2aee13bfa1623d8c8b2b3e35e9ac608645e91b2fdeb02ea46179de",
+  ".mudarro/scripts/app-go/test.sh": "bf0d073732391a7e9855d75b7c0f19b31d3cc4ce95b2c597b609721fed525e26",
+  ".mudarro/scripts/app-go/down.sh": "3aade4cefac317094133abcfbca52dd772d94072b28b71d1ac515d347fece340",
+  "app/cmd/tool/main.go": "4527b4e620fe7a1badb58b3e2e77b170e5d55b22ceac8f2c09e335a8276ccbde",
+  "app/cmd/live/main_test.go": "4e9d96f9153795e928b1b491c5a9e576c578e880d7c4d0a4e2412d913ae8bf71",
+  "app/cmd/live/main.go": "22ed6a398ca82d42c50f3a9bbec61f2b6dede6e13e632446023b860041d9105e"
+}

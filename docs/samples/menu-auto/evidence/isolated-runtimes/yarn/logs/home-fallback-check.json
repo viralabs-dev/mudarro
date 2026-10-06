@@ -1,0 +1,7 @@
+{
+  "initial_classic_warning": "Cannot find a suitable global folder. Tried these: /usr/local, /home/danielsouza/.yarn",
+  "final_private_prefix_rerun_passed": true,
+  "specific_home_yarn_path_exists_now": false,
+  "specific_home_yarn_path_symlink_now": false,
+  "historical_writes_not_proven_absent": "No pre-execution baseline; only named path checked, no home scan or cleanup."
+}

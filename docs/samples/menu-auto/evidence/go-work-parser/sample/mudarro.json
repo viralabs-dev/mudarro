@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "name": "valid",
+  "services": [
+    {
+      "id": "app-space-go",
+      "dir": "app space",
+      "language": "go",
+      "manager": "go",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "group": "aplicacao"
+        },
+        "install": {
+          "args": [
+            "go",
+            "mod",
+            "download"
+          ],
+          "group": "dependencias"
+        },
+        "start": {
+          "args": [
+            "go",
+            "run",
+            "./.",
+            "stay"
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "go",
+            "test",
+            "./..."
+          ],
+          "group": "qualidade"
+        },
+        "probe": {
+          "args": [
+            "go",
+            "run",
+            "."
+          ],
+          "group": "qualidade"
+        }
+      }
+    },
+    {
+      "id": "app-space-nested-go",
+      "dir": "app space/nested",
+      "language": "go",
+      "manager": "go",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "group": "aplicacao"
+        },
+        "install": {
+          "args": [
+            "go",
+            "mod",
+            "download"
+          ],
+          "group": "dependencias"
+        },
+        "test": {
+          "args": [
+            "go",
+            "test",
+            "./..."
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start: nenhuma entrada Go \u00fanica"
+      ]
+    },
+    {
+      "id": "lib-go",
+      "dir": "lib",
+      "language": "go",
+      "manager": "go",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "group": "aplicacao"
+        },
+        "install": {
+          "args": [
+            "go",
+            "mod",
+            "download"
+          ],
+          "group": "dependencias"
+        },
+        "test": {
+          "args": [
+            "go",
+            "test",
+            "./..."
+          ],
+          "group": "qualidade"
+        }
+      },
+      "pending": [
+        "Declare commands.start: nenhuma entrada Go \u00fanica"
+      ]
+    },
+    {
+      "id": "other-go",
+      "dir": "other",
+      "language": "go",
+      "manager": "go",
+      "infrastructure": {
+        "kind": "local"
+      },
+      "database": {},
+      "commands": {
+        "build": {
+          "args": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "group": "aplicacao"
+        },
+        "install": {
+          "args": [
+            "go",
+            "mod",
+            "download"
+          ],
+          "group": "dependencias"
+        },
+        "start": {
+          "args": [
+            "go",
+            "run",
+            "./."
+          ],
+          "group": "aplicacao"
+        },
+        "test": {
+          "args": [
+            "go",
+            "test",
+            "./..."
+          ],
+          "group": "qualidade"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "tests": 117,
+  "pass": 117,
+  "fail": 0,
+  "skip": 0,
+  "covered": 1965,
+  "total": 2515,
+  "percentage": 78.13,
+  "binary_sha256": "0cc82b21da942853aec6d2cf518544d8fcd4e00bdc20161299fe95945de35b5b"
+}

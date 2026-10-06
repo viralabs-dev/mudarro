@@ -1,0 +1,18 @@
+=== RUN   TestGoSourceIOBoundedRegularSources
+=== RUN   TestGoSourceIOBoundedRegularSources/ordinary
+=== RUN   TestGoSourceIOBoundedRegularSources/exact-limit
+=== RUN   TestGoSourceIOBoundedRegularSources/over-limit
+    go_source_io_regression_test.go:40: start=true want=false; report={Config:{configPath: Version:1 Name:001 Exclude:[] Services:[{ID:app-go Dir:. Language:go Manager:go Framework: Infrastructure:{Kind:local File: Mode: Context: Namespace: Image: Port:0 Generate:false} Database:{Kind: Tool: Generate:false URLenv: Path:} Commands:map[build:{Args:[go build ./...] Shell: Group:aplicacao Destructive:false Requires:[]} install:{Args:[go mod download] Shell: Group:dependencias Destructive:false Requires:[]} start:{Args:[go run ./.] Shell: Group:aplicacao Destructive:false Requires:[]} test:{Args:[go test ./...] Shell: Group:qualidade Destructive:false Requires:[]}] Pending:[]}] UI:<nil>} Evidence:[{Path:. Kind:go}] Suggestions:[] Warnings:[]}
+    go_source_io_regression_test.go:43: rejected source must remain visibly unresolved
+--- FAIL: TestGoSourceIOBoundedRegularSources (1.47s)
+    --- PASS: TestGoSourceIOBoundedRegularSources/ordinary (0.00s)
+    --- PASS: TestGoSourceIOBoundedRegularSources/exact-limit (0.74s)
+    --- FAIL: TestGoSourceIOBoundedRegularSources/over-limit (0.73s)
+=== RUN   TestGoSourceIOFIFOIsNotOpened
+    go_source_io_regression_test.go:66: scan opened FIFO and blocked; owned helper killed/joined: context deadline exceeded
+--- FAIL: TestGoSourceIOFIFOIsNotOpened (2.01s)
+=== RUN   TestGoSourceIOIsolatedProbe
+--- PASS: TestGoSourceIOIsolatedProbe (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	3.509s
+FAIL

@@ -1,0 +1,62 @@
+=== RUN   TestGoWorkParserValidQuotedBlockAndNormalizedMembership
+    go_work_parser_test.go:58: members=[] present=false
+    go_work_parser_test.go:61: valid membership received blanket/error warning: [go.work: workspace membership and execution context are not validated; declare explicit commands for workspace targets]
+--- FAIL: TestGoWorkParserValidQuotedBlockAndNormalizedMembership (0.01s)
+=== RUN   TestGoWorkParserOfficialReplacementSyntaxKeepsMembershipScope
+    go_work_parser_test.go:88: replace incorrectly treated as membership: [] false
+--- FAIL: TestGoWorkParserOfficialReplacementSyntaxKeepsMembershipScope (0.00s)
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/syntax
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/missing
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+    go_work_parser_test.go:124: members=[] want=[app]
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/not-module
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+    go_work_parser_test.go:124: members=[] want=[app]
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/invalid-member-module
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+    go_work_parser_test.go:124: members=[] want=[app]
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/missing-module-declaration
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+    go_work_parser_test.go:124: members=[] want=[app]
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/outside-relative
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+    go_work_parser_test.go:124: members=[] want=[app]
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/outside-absolute
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+    go_work_parser_test.go:124: members=[] want=[app]
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/work-over-limit
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+=== RUN   TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/module-over-limit
+    go_work_parser_test.go:121: diagnosed workspace descriptor absent
+    go_work_parser_test.go:124: members=[] want=[app]
+--- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules (0.10s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/syntax (0.00s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/missing (0.00s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/not-module (0.00s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/invalid-member-module (0.00s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/missing-module-declaration (0.00s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/outside-relative (0.00s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/outside-absolute (0.00s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/work-over-limit (0.03s)
+    --- FAIL: TestGoWorkParserInvalidMembershipWarnsAndPreservesModules/module-over-limit (0.04s)
+=== RUN   TestGoWorkParserSymlinkMemberNeverTraversed
+    go_work_parser_test.go:159: symlink admitted: [] false
+--- FAIL: TestGoWorkParserSymlinkMemberNeverTraversed (0.00s)
+=== RUN   TestGoWorkParserOfflineNeverRunsGo
+    go_work_parser_test.go:188: offline parser descriptors absent: [] false
+--- FAIL: TestGoWorkParserOfflineNeverRunsGo (0.00s)
+=== RUN   TestGoWorkParserFIFOIsBounded
+=== RUN   TestGoWorkParserFIFOIsBounded/workspace
+    go_work_parser_test.go:234: FIFO descriptor members=[] present=false
+=== RUN   TestGoWorkParserFIFOIsBounded/member-module
+    go_work_parser_test.go:234: FIFO descriptor members=[] present=false
+--- FAIL: TestGoWorkParserFIFOIsBounded (2.05s)
+    --- FAIL: TestGoWorkParserFIFOIsBounded/workspace (1.02s)
+    --- FAIL: TestGoWorkParserFIFOIsBounded/member-module (1.03s)
+=== RUN   TestGoWorkParserIsolatedProbe
+--- PASS: TestGoWorkParserIsolatedProbe (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	2.191s
+FAIL

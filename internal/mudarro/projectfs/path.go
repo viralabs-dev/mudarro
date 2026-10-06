@@ -3,6 +3,7 @@ package projectfs
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"strings"
@@ -39,8 +40,31 @@ func ReadManifest(root, dir, file string) ([]byte, error) {
 	if e != nil {
 		return nil, e
 	}
-	if st.Size() > 4<<20 {
+	if !st.Mode().IsRegular() {
+		return nil, fmt.Errorf("manifest deve ser arquivo regular: %s", p)
+	}
+	const limit = 4 << 20
+	if st.Size() > limit {
 		return nil, fmt.Errorf("manifest grande demais: %s", p)
 	}
-	return os.ReadFile(p)
+	f, e := os.Open(p)
+	if e != nil {
+		return nil, e
+	}
+	defer f.Close()
+	st, e = f.Stat()
+	if e != nil {
+		return nil, e
+	}
+	if !st.Mode().IsRegular() {
+		return nil, fmt.Errorf("manifest deve ser arquivo regular: %s", p)
+	}
+	b, e := io.ReadAll(io.LimitReader(f, limit+1))
+	if e != nil {
+		return nil, e
+	}
+	if len(b) > limit {
+		return nil, fmt.Errorf("manifest grande demais: %s", p)
+	}
+	return b, nil
 }

@@ -1,0 +1,40 @@
+[
+  {
+    "tool": "uv",
+    "path_match": null,
+    "candidate_paths_checked": [
+      "/home/danielsouza/.local/bin/uv",
+      "/home/linuxbrew/.linuxbrew/bin/uv",
+      "/home/linuxbrew/.linuxbrew/opt/uv/bin/uv",
+      "/home/linuxbrew/.linuxbrew/opt/poetry/bin/uv",
+      "/home/danielsouza/.pyenv/shims/uv",
+      "/home/danielsouza/.local/share/pipx/venvs/poetry/bin/uv",
+      "/home/danielsouza/.local/share/pipx/venvs/uv/bin/uv",
+      "/home/danielsouza/.local/pipx/venvs/poetry/bin/uv"
+    ],
+    "executable_candidates": [],
+    "available": false,
+    "scope": "PATH and explicit common user/Linuxbrew/pipx/pyenv paths only; nonexhaustive, no filesystem-wide search",
+    "runtime_executed": false,
+    "installation_attempted": false
+  },
+  {
+    "tool": "poetry",
+    "path_match": null,
+    "candidate_paths_checked": [
+      "/home/danielsouza/.local/bin/poetry",
+      "/home/linuxbrew/.linuxbrew/bin/poetry",
+      "/home/linuxbrew/.linuxbrew/opt/uv/bin/poetry",
+      "/home/linuxbrew/.linuxbrew/opt/poetry/bin/poetry",
+      "/home/danielsouza/.pyenv/shims/poetry",
+      "/home/danielsouza/.local/share/pipx/venvs/poetry/bin/poetry",
+      "/home/danielsouza/.local/share/pipx/venvs/uv/bin/poetry",
+      "/home/danielsouza/.local/pipx/venvs/poetry/bin/poetry"
+    ],
+    "executable_candidates": [],
+    "available": false,
+    "scope": "PATH and explicit common user/Linuxbrew/pipx/pyenv paths only; nonexhaustive, no filesystem-wide search",
+    "runtime_executed": false,
+    "installation_attempted": false
+  }
+]

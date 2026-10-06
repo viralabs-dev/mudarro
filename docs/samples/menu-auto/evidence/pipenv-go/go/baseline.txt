@@ -1,0 +1,46 @@
+=== RUN   TestGoWorkspaceEntrypointConstraints
+=== RUN   TestGoWorkspaceEntrypointConstraints/library
+=== RUN   TestGoWorkspaceEntrypointConstraints/tests-only
+=== RUN   TestGoWorkspaceEntrypointConstraints/main-package-without-entry
+    go_workspace_regression_test.go:45: start=[go run ./.] want=[]; pending=[]
+    go_workspace_regression_test.go:48: unresolved start must stay pending
+=== RUN   TestGoWorkspaceEntrypointConstraints/ignored-main
+    go_workspace_regression_test.go:45: start=[go run ./.] want=[]; pending=[]
+    go_workspace_regression_test.go:48: unresolved start must stay pending
+=== RUN   TestGoWorkspaceEntrypointConstraints/inactive-host-tag
+    go_workspace_regression_test.go:45: start=[go run ./.] want=[]; pending=[]
+    go_workspace_regression_test.go:48: unresolved start must stay pending
+=== RUN   TestGoWorkspaceEntrypointConstraints/inactive-host-suffix
+    go_workspace_regression_test.go:45: start=[go run ./.] want=[]; pending=[]
+    go_workspace_regression_test.go:48: unresolved start must stay pending
+=== RUN   TestGoWorkspaceEntrypointConstraints/active-plus-ignored-other-package
+    go_workspace_regression_test.go:45: start=[] want=[go run ./cmd/live]; pending=[Declare commands.start: nenhuma entrada Go única]
+=== RUN   TestGoWorkspaceEntrypointConstraints/same-package-main-files
+--- FAIL: TestGoWorkspaceEntrypointConstraints (0.01s)
+    --- PASS: TestGoWorkspaceEntrypointConstraints/library (0.00s)
+    --- PASS: TestGoWorkspaceEntrypointConstraints/tests-only (0.00s)
+    --- FAIL: TestGoWorkspaceEntrypointConstraints/main-package-without-entry (0.00s)
+    --- FAIL: TestGoWorkspaceEntrypointConstraints/ignored-main (0.00s)
+    --- FAIL: TestGoWorkspaceEntrypointConstraints/inactive-host-tag (0.00s)
+    --- FAIL: TestGoWorkspaceEntrypointConstraints/inactive-host-suffix (0.00s)
+    --- FAIL: TestGoWorkspaceEntrypointConstraints/active-plus-ignored-other-package (0.00s)
+    --- PASS: TestGoWorkspaceEntrypointConstraints/same-package-main-files (0.00s)
+=== RUN   TestGoWorkspaceInvalidMembershipIsVisible
+=== RUN   TestGoWorkspaceInvalidMembershipIsVisible/syntax
+    go_workspace_regression_test.go:80: invalid go.work membership silently accepted: "go 1.23\nuse (\n"
+=== RUN   TestGoWorkspaceInvalidMembershipIsVisible/missing
+    go_workspace_regression_test.go:80: invalid go.work membership silently accepted: "go 1.23\nuse ./missing\n"
+=== RUN   TestGoWorkspaceInvalidMembershipIsVisible/member-without-module
+    go_workspace_regression_test.go:80: invalid go.work membership silently accepted: "go 1.23\nuse ./plain\n"
+=== RUN   TestGoWorkspaceInvalidMembershipIsVisible/outside-root
+    go_workspace_regression_test.go:80: invalid go.work membership silently accepted: "go 1.23\nuse ../outside\n"
+--- FAIL: TestGoWorkspaceInvalidMembershipIsVisible (0.00s)
+    --- FAIL: TestGoWorkspaceInvalidMembershipIsVisible/syntax (0.00s)
+    --- FAIL: TestGoWorkspaceInvalidMembershipIsVisible/missing (0.00s)
+    --- FAIL: TestGoWorkspaceInvalidMembershipIsVisible/member-without-module (0.00s)
+    --- FAIL: TestGoWorkspaceInvalidMembershipIsVisible/outside-root (0.00s)
+=== RUN   TestGoWorkspaceNonmembersRemainIndependentAndOffline
+--- PASS: TestGoWorkspaceNonmembersRemainIndependentAndOffline (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.027s
+FAIL

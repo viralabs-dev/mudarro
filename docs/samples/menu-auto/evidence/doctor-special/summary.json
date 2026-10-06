@@ -1,0 +1,15 @@
+{
+  "top_level_tests": {
+    "pass": 141,
+    "fail": 0,
+    "skip": 0
+  },
+  "covered_statements": 2058,
+  "total_statements": 2604,
+  "coverage_percent": 79.03,
+  "linux_binary_sha256": "3dd67bf6d6d13281266bb253bf4a630ade6fc909e9a5795a1a08a022e243b9a1",
+  "base": "b887f64",
+  "publication": "local only",
+  "native_darwin": "not executed",
+  "helper_note": "Includes one isolated-probe helper."
+}

@@ -1,0 +1,3 @@
+{"version": 2, "width": 80, "height": 24, "command": "bash fixture/menu.sh", "env": {"TERM": "dumb"}}
+[0.011501, "o", "# # # #     ##  # # # # ### ### # # ###     ### # # ##  #   ### \r\n# # # #     # # # # ###  #   #  ### #       #   # # # # #    #  \r\n# # # # ### ##  # # ###  #   #  ### ##  ### ##   #  ##  #    #  \r\n# # # #     # # # # ###  #   #  # # #       #   # # #   #    #  \r\n###  #      # # ### # #  #  ### # # ###     ### # # #   ### ### \r\n ## ### ### \r\n#    #   #  \r\n#    #   #  \r\n#    #   #  \r\n ## ###  #  \r\nuv-runtime-explicit\r\n\r\n\r\n  Choose an area / Services\r\n\r\n   1.  app-python \u2014 .\r\n\r\n   0.  Back / exit\r\n  > "]
+[0.715095, "o", "0\r\n"]

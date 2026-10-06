@@ -1,0 +1,42 @@
+{
+  "resize_checks": [
+    {
+      "no_color": false,
+      "cols": 12,
+      "rows": 6,
+      "cursor_rows_within_actual_height": true
+    },
+    {
+      "no_color": false,
+      "cols": 8,
+      "rows": 2,
+      "cursor_rows_within_actual_height": true
+    },
+    {
+      "no_color": false,
+      "cols": 100,
+      "rows": 32,
+      "cursor_rows_within_actual_height": true
+    },
+    {
+      "no_color": true,
+      "cols": 12,
+      "rows": 6,
+      "cursor_rows_within_actual_height": true
+    },
+    {
+      "no_color": true,
+      "cols": 8,
+      "rows": 2,
+      "cursor_rows_within_actual_height": true
+    },
+    {
+      "no_color": true,
+      "cols": 100,
+      "rows": 32,
+      "cursor_rows_within_actual_height": true
+    }
+  ],
+  "SIGTERM_cleanup": true,
+  "NO_COLOR": true
+}

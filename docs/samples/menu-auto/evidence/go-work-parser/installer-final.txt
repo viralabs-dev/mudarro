@@ -1,0 +1,19 @@
+Mudarro instalado: /tmp/tmp.Igp8DHrWA0/install/mudarro
+Adicione ao PATH: export PATH="/tmp/tmp.Igp8DHrWA0/install:$PATH"
+test-version
+Mudarro instalado: /tmp/tmp.Igp8DHrWA0/install/mudarro
+Adicione ao PATH: export PATH="/tmp/tmp.Igp8DHrWA0/install:$PATH"
+test-version
+Mudarro instalado: /tmp/tmp.Igp8DHrWA0/install/mudarro
+Adicione ao PATH: export PATH="/tmp/tmp.Igp8DHrWA0/install:$PATH"
+test-version
+Mudarro instalado: /tmp/tmp.Igp8DHrWA0/install/mudarro
+Adicione ao PATH: export PATH="/tmp/tmp.Igp8DHrWA0/install:$PATH"
+test-version
+tar: LICENSES/go-toml-v2.txt: Not found in archive
+tar: LICENSES/gopkg.in-yaml.v3.txt: Not found in archive
+tar: Exiting with failure status due to previous errors
+Destino dos avisos é symlink; escolha outro diretório.
+Destino dos avisos é symlink; escolha outro diretório.
+Checksum divergente; instalação interrompida.
+Instalação, atualização e remoção simuladas: OK

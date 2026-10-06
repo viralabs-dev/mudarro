@@ -1,0 +1,20 @@
+{
+  "authorized_root": "/tmp/mudarro-runtimes.K7F4J1",
+  "versions": {
+    "pipenv": "2026.8.0",
+    "poetry": "2.5.1",
+    "uv": "0.12.23",
+    "yarn_classic": "1.22.22",
+    "yarn_modern": "4.18.1"
+  },
+  "code_binary_sha256": "5428ee7ee71e5ac1d92110b0170e9dc2efff34a13bcb41eb08025efc2e472607",
+  "code_changes": "none required for these runtime fixtures",
+  "gates_reference": "../doctor-compose-timeout/summary.json",
+  "prior_race_tests": 143,
+  "substantive_groups": 141,
+  "isolated_helpers": 2,
+  "coverage_percent": 79.08,
+  "scope": "zero application third-party dependencies, generated real locks, explicit Python start/custom scripts",
+  "publication": "new work local, no commit/push/Actions",
+  "media": "actual PTY recordings; rendered frames, not desktop screenshots"
+}

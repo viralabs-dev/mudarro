@@ -1,0 +1,6 @@
+go 1.23
+// local modules
+use (
+ "./app space" // quoted
+ ./lib
+)

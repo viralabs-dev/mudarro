@@ -38,7 +38,7 @@ func (r Runner) Run(root string, s Service, a Action) error {
 		return r.sqliteInit(root, s)
 	}
 	if r.Dry {
-		fmt.Fprintf(r.Out, "%s: %s\n", s.ID, jsonString(a.Command))
+		fmt.Fprintf(r.Out, "%s: %s\n", s.ID, jsonString(goWorkspaceCommand(s, a.Command)))
 		return nil
 	}
 	args, e := expandArgs(a.Command.Args, r.Name)
@@ -73,7 +73,7 @@ func (r Runner) Run(root string, s Service, a Action) error {
 			}
 		}
 	}
-	return r.execute(dir, args)
+	return r.execute(dir, goWorkspaceArgs(s, args))
 }
 func (r Runner) execute(dir string, args []string) error {
 	return r.executor().Run(dir, args, r.In, r.Out)
@@ -106,4 +106,27 @@ func readConfirmation(in io.Reader) (string, error) {
 		}
 	}
 	return "", fmt.Errorf("confirmação excede limite")
+}
+
+// Apply an explicit workspace override only to this child's command. The
+// default inherits Go's workspace discovery and any caller GOWORK value.
+func goWorkspaceArgs(s Service, args []string) []string {
+	if s.Language == "go" && s.GoWorkspace == "off" {
+		return append([]string{"env", "GOWORK=off"}, args...)
+	}
+	return args
+}
+
+func goWorkspaceCommand(s Service, c Command) Command {
+	if s.Language == "go" && s.GoWorkspace == "off" {
+		args := c.Args
+		if c.Shell != "" {
+			args = []string{"bash", "-c", c.Shell}
+			c.Shell = ""
+		}
+		if len(args) > 0 {
+			c.Args = goWorkspaceArgs(s, args)
+		}
+	}
+	return c
 }

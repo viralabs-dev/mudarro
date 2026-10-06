@@ -1,0 +1,13 @@
+{
+  "exit": 0,
+  "sourceBytes": 5242912,
+  "start": {
+    "args": [
+      "go",
+      "run",
+      "./."
+    ],
+    "group": "aplicacao"
+  },
+  "warnings": null
+}

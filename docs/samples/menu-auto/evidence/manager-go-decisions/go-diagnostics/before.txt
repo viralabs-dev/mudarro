@@ -1,0 +1,18 @@
+=== RUN   TestGoWorkspaceDiagnosticsPreviewShowsEffectiveIsolation
+    go_workspace_diagnostics_test.go:31: preview hides effective environment argv: "Action: app:test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"go\"\n  [1] \"test\"\n  [2] \"./...\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n"
+--- FAIL: TestGoWorkspaceDiagnosticsPreviewShowsEffectiveIsolation (0.00s)
+=== RUN   TestGoWorkspaceDiagnosticsDryRunShowsIsolationWithoutExecution
+    go_workspace_diagnostics_test.go:53: dry run hides effective environment argv: "app: {\"args\":[\"go\",\"test\",\"./...\"],\"group\":\"qualidade\"}\n"
+--- FAIL: TestGoWorkspaceDiagnosticsDryRunShowsIsolationWithoutExecution (0.00s)
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/off
+    go_workspace_diagnostics_test.go:74: env absent was not diagnosed: <nil> "OK app: go\nNenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.\n"
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/#00
+=== RUN   TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/inherit
+--- FAIL: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation (0.00s)
+    --- FAIL: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/off (0.00s)
+    --- PASS: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/#00 (0.00s)
+    --- PASS: TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation/inherit (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.017s
+FAIL

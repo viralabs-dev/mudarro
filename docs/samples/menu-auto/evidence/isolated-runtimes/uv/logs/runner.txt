@@ -1,0 +1,292 @@
+{
+  "manager": "uv",
+  "version": "0.12.23",
+  "root": "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final",
+  "steps": [
+    {
+      "argv": [
+        "/tmp/mudarro-runtimes.K7F4J1/uv/tool-venv/bin/uv",
+        "--version"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-runtimes.K7F4J1/uv/tool-venv/bin/uv",
+        "lock",
+        "--offline"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "scan",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final",
+        "--json"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "scan",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final",
+        "--json"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "init",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "init",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final",
+        "--dry-run"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "doctor",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/install.sh"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/install.sh"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/test.sh"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/lint.sh"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/build.sh"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/seed.sh"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/seed.sh"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final/.mudarro/scripts/app-python/fail.sh"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:unknown",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 1,
+      "expected": 1
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:up",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:up",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:status",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:logs",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:restart",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:logs",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:down",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "run",
+        "app-python:status",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 0,
+      "expected": 0
+    },
+    {
+      "argv": [
+        "/tmp/mudarro-timeout-checkpoint/mudarro",
+        "generate",
+        "--root",
+        "/tmp/mudarro-runtimes.K7F4J1/fixtures/uv-final"
+      ],
+      "exit": 1,
+      "expected": 1
+    }
+  ],
+  "runtime": "PASS",
+  "lock": "generated by real uv offline",
+  "generated_idempotence": true,
+  "custom_sqlite_seed": "two runs, one row",
+  "menu_cast": "genuine headless PTY; no desktop screenshot",
+  "start": "explicit configuration, not inferred Python entrypoint",
+  "cleanup": "down/status stopped",
+  "limits": [
+    "zero dependencies; no ORM/framework integration",
+    "native macOS not executed",
+    "failed command tested synchronously; arbitrary descendant cleanup not claimed"
+  ]
+}

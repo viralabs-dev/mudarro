@@ -1,0 +1,13 @@
+=== RUN   TestDoctorSpecialFileExecutableIsRejected
+=== RUN   TestDoctorSpecialFileExecutableIsRejected/fifo-executable
+    doctor_special_file_regression_test.go:48: doctor success=true want=false output="OK app: ./probe-tool\nNenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.\n" err=<nil>
+    doctor_special_file_regression_test.go:55: missing diagnostic "AUSENTE app: ./probe-tool" in "OK app: ./probe-tool\nNenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.\n"
+=== RUN   TestDoctorSpecialFileExecutableIsRejected/regular-executable
+=== RUN   TestDoctorSpecialFileExecutableIsRejected/regular-not-executable
+--- FAIL: TestDoctorSpecialFileExecutableIsRejected (0.01s)
+    --- FAIL: TestDoctorSpecialFileExecutableIsRejected/fifo-executable (0.00s)
+    --- PASS: TestDoctorSpecialFileExecutableIsRejected/regular-executable (0.00s)
+    --- PASS: TestDoctorSpecialFileExecutableIsRejected/regular-not-executable (0.00s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.027s
+FAIL

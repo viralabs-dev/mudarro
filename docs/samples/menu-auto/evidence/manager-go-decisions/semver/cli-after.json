@@ -1,0 +1,128 @@
+{
+  "binarySHA256": "157dbab49fb565006213dabce0ba98dd014a53b9b8d616a6267c00de013a7a1d",
+  "results": [
+    {
+      "packageManager": "npm@1.2.3",
+      "argv": [
+        "/tmp/mudarro-mud035-semver/mudarro-after",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud035-semver/after-fixture-0",
+        "--json"
+      ],
+      "exit": 0,
+      "managers": [
+        "npm"
+      ],
+      "diagnostics": [
+        "Declare commands.start para execu\u00e7\u00e3o local"
+      ]
+    },
+    {
+      "packageManager": "yarn@4.18.1+sha224.abcdef",
+      "argv": [
+        "/tmp/mudarro-mud035-semver/mudarro-after",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud035-semver/after-fixture-1",
+        "--json"
+      ],
+      "exit": 0,
+      "managers": [
+        "yarn"
+      ],
+      "diagnostics": [
+        "Declare commands.start para execu\u00e7\u00e3o local"
+      ]
+    },
+    {
+      "packageManager": "npm@1.2.3-alpha.1+build.001",
+      "argv": [
+        "/tmp/mudarro-mud035-semver/mudarro-after",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud035-semver/after-fixture-2",
+        "--json"
+      ],
+      "exit": 0,
+      "managers": [
+        "npm"
+      ],
+      "diagnostics": [
+        "Declare commands.start para execu\u00e7\u00e3o local"
+      ]
+    },
+    {
+      "packageManager": "npm@latest",
+      "argv": [
+        "/tmp/mudarro-mud035-semver/mudarro-after",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud035-semver/after-fixture-3",
+        "--json"
+      ],
+      "exit": 0,
+      "managers": [
+        null
+      ],
+      "diagnostics": [
+        "package.json: invalid packageManager \"npm@latest\": use npm, pnpm, yarn or bun, optionally with an exact SemVer version; custom tools require explicit commands",
+        "Declare comandos da aplica\u00e7\u00e3o"
+      ]
+    },
+    {
+      "packageManager": "npm@01.2.3",
+      "argv": [
+        "/tmp/mudarro-mud035-semver/mudarro-after",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud035-semver/after-fixture-4",
+        "--json"
+      ],
+      "exit": 0,
+      "managers": [
+        null
+      ],
+      "diagnostics": [
+        "package.json: invalid packageManager \"npm@01.2.3\": use npm, pnpm, yarn or bun, optionally with an exact SemVer version; custom tools require explicit commands",
+        "Declare comandos da aplica\u00e7\u00e3o"
+      ]
+    },
+    {
+      "packageManager": "npm@1.2.3-alpha.01",
+      "argv": [
+        "/tmp/mudarro-mud035-semver/mudarro-after",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud035-semver/after-fixture-5",
+        "--json"
+      ],
+      "exit": 0,
+      "managers": [
+        null
+      ],
+      "diagnostics": [
+        "package.json: invalid packageManager \"npm@1.2.3-alpha.01\": use npm, pnpm, yarn or bun, optionally with an exact SemVer version; custom tools require explicit commands",
+        "Declare comandos da aplica\u00e7\u00e3o"
+      ]
+    },
+    {
+      "packageManager": "npm@1.2.3+build_1",
+      "argv": [
+        "/tmp/mudarro-mud035-semver/mudarro-after",
+        "scan",
+        "--root",
+        "/tmp/mudarro-mud035-semver/after-fixture-6",
+        "--json"
+      ],
+      "exit": 0,
+      "managers": [
+        null
+      ],
+      "diagnostics": [
+        "package.json: invalid packageManager \"npm@1.2.3+build_1\": use npm, pnpm, yarn or bun, optionally with an exact SemVer version; custom tools require explicit commands",
+        "Declare comandos da aplica\u00e7\u00e3o"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "command": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "vet",
+      "./..."
+    ],
+    "exit": 0,
+    "environment": {}
+  },
+  {
+    "command": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "build",
+      "-o",
+      "/tmp/mudarro-unicode/bin/mudarro",
+      "./cmd/mudarro"
+    ],
+    "exit": 0,
+    "environment": {}
+  },
+  {
+    "command": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "build",
+      "-o",
+      "/tmp/mudarro-unicode/bin/mudarro-darwin-arm64",
+      "./cmd/mudarro"
+    ],
+    "exit": 0,
+    "environment": {
+      "GOOS": "darwin",
+      "GOARCH": "arm64"
+    }
+  },
+  {
+    "command": [
+      "/home/danielsouza/sdk/go1.27.1/bin/go",
+      "test",
+      "-c",
+      "-o",
+      "/tmp/mudarro-unicode/bin/terminal-darwin.test",
+      "./test/internal/mudarro/terminal"
+    ],
+    "exit": 0,
+    "environment": {
+      "GOOS": "darwin",
+      "GOARCH": "arm64"
+    }
+  }
+]

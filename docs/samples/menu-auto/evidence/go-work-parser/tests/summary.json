@@ -1,0 +1,19 @@
+{
+  "topLevelGroups": 9,
+  "substantiveGroups": 8,
+  "helpers": 1,
+  "subcases": 14,
+  "race": "PASS",
+  "freshRun": true,
+  "log": "after-followup-fresh.txt",
+  "ownedFifoHelperInvocations": 4,
+  "helpersJoined": true,
+  "watchdogsFired": 0,
+  "remainingBlockers": [],
+  "limits": [
+    "static parsed membership; replacements/toolchains/dependency resolution remain runtime concerns",
+    "per-file 4MiB, not aggregate bound",
+    "stat/open concurrent replacement not atomic",
+    "Linux executed, native Darwin not verified"
+  ]
+}

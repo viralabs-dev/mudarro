@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+[packages]
+[dev-packages]
+[requires]
+python_version = "3.14"
+[scripts]
+start = "python app.py"
+check = "python check.py"
+fail = "python fail.py"
+seed = "python seed.py"

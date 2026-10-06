@@ -1,0 +1,903 @@
+[
+  {
+    "case": "absent",
+    "packageManager": null,
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "npm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "npm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "npm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "npm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "empty",
+    "packageManager": "",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "npm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "npm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "npm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "npm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "npm-version",
+    "packageManager": "npm@11.19.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "npm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "npm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "npm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "npm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "pnpm-version",
+    "packageManager": "pnpm@11.3.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "pnpm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "pnpm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "pnpm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "pnpm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "yarn-version",
+    "packageManager": "yarn@4.0.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "yarn",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "yarn",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "yarn",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "yarn",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "known-unversioned",
+    "packageManager": "pnpm",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "pnpm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "pnpm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "pnpm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "pnpm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "whitespace",
+    "packageManager": " pnpm@11.3.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": " pnpm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  " pnpm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  " pnpm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              " pnpm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "empty-name",
+    "packageManager": "@11.3.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "pending": [
+              "Declare commands.start para execu\u00e7\u00e3o local"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "empty-version",
+    "packageManager": "pnpm@",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "pnpm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "pnpm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "pnpm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "pnpm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "unknown",
+    "packageManager": "unsupported-manager@1.0.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "unsupported-manager",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "unsupported-manager",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "unsupported-manager",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "unsupported-manager",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "path",
+    "packageManager": "./tool@1.0.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "./tool",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "./tool",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "./tool",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "./tool",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "conflict-no-override",
+    "packageManager": null,
+    "locks": [
+      "package-lock.json",
+      "pnpm-lock.yaml"
+    ],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "pending": [
+              "M\u00faltiplos lockfiles: declare manager",
+              "Declare commands.start para execu\u00e7\u00e3o local"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "explicit-override",
+    "packageManager": "pnpm@11.3.0",
+    "locks": [
+      "package-lock.json",
+      "pnpm-lock.yaml"
+    ],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "pnpm",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "pnpm",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "pnpm",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "pnpm",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  },
+  {
+    "case": "bun-characterization",
+    "packageManager": "bun@1.2.0",
+    "locks": [],
+    "command": "mudarro scan --root <exclusive-fixture> --json",
+    "exit": 0,
+    "stdout": {
+      "config": {
+        "version": 1,
+        "name": "mudarro",
+        "services": [
+          {
+            "id": "app-javascript",
+            "dir": ".",
+            "language": "javascript",
+            "manager": "bun",
+            "infrastructure": {
+              "kind": "local"
+            },
+            "database": {},
+            "commands": {
+              "install": {
+                "args": [
+                  "bun",
+                  "install"
+                ],
+                "group": "dependencias"
+              },
+              "start": {
+                "args": [
+                  "bun",
+                  "run",
+                  "start"
+                ],
+                "group": "aplicacao"
+              }
+            }
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "path": ".",
+          "kind": "javascript"
+        }
+      ],
+      "suggestions": [
+        {
+          "service": "app-javascript",
+          "name": "start",
+          "command": {
+            "args": [
+              "bun",
+              "run",
+              "start"
+            ],
+            "group": "aplicacao"
+          },
+          "evidence": "package.json"
+        }
+      ],
+      "warnings": null
+    },
+    "stderr": "",
+    "runtime_manager_executed": false
+  }
+]

@@ -1,0 +1,70 @@
+# # # #     ##  # # # # ### ### # # ###     ### # # ##  #   ### 
+# # # #     # # # # ###  #   #  ### #       #   # # # # #    #  
+# # # # ### ##  # # ###  #   #  ### ##  ### ##   #  ##  #    #  
+# # # #     # # # # ###  #   #  # # #       #   # # #   #    #  
+###  #      # # ### # #  #  ### # # ###     ### # # #   ### ### 
+ ## ### ### 
+#    #   #  
+#    #   #  
+#    #   #  
+ ## ###  #  
+uv-runtime-explicit
+
+
+  Choose an area / Services
+
+   1.  app-python — .
+
+   0.  Back / exit
+  > 1
+
+  Choose an area / app-python
+
+   1.  application
+   2.  database
+   3.  dependencies
+   4.  infrastructure
+   5.  quality
+
+   0.  Back / exit
+  > 5
+
+  Choose an area / quality
+
+   1.  fail
+   2.  lint
+   3.  test
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > 3
+UV real check PASS 3.14.7
+
+
+  Choose an area / quality
+
+   1.  fail
+   2.  lint
+   3.  test
+
+   0.  Back / exit
+  p<number> preview only; number executes
+  > 0
+
+  Choose an area / app-python
+
+   1.  application
+   2.  database
+   3.  dependencies
+   4.  infrastructure
+   5.  quality
+
+   0.  Back / exit
+  > 0
+
+  Choose an area / Services
+
+   1.  app-python — .
+
+   0.  Back / exit
+  > 0

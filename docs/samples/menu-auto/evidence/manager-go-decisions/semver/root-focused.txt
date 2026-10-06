@@ -1,0 +1,36 @@
+=== RUN   TestGoSelectionSortedOfflineSuggestions
+--- PASS: TestGoSelectionSortedOfflineSuggestions (0.00s)
+=== RUN   TestGoSelectionInitPromotesOnlyStart
+--- PASS: TestGoSelectionInitPromotesOnlyStart (0.00s)
+=== RUN   TestGoSelectionMultipleRejectedBeforeWrite
+=== RUN   TestGoSelectionMultipleRejectedBeforeWrite/select
+=== RUN   TestGoSelectionMultipleRejectedBeforeWrite/all
+=== RUN   TestGoSelectionMultipleRejectedBeforeWrite/interactive
+--- PASS: TestGoSelectionMultipleRejectedBeforeWrite (0.01s)
+    --- PASS: TestGoSelectionMultipleRejectedBeforeWrite/select (0.00s)
+    --- PASS: TestGoSelectionMultipleRejectedBeforeWrite/all (0.00s)
+    --- PASS: TestGoSelectionMultipleRejectedBeforeWrite/interactive (0.00s)
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/json/
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/json/inherit
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/json/off
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/json/invalid
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/yaml/
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/yaml/inherit
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/yaml/off
+=== RUN   TestGoSelectionWorkspaceConfigRoundtrip/yaml/invalid
+--- PASS: TestGoSelectionWorkspaceConfigRoundtrip (0.01s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/json/ (0.00s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/json/inherit (0.00s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/json/off (0.00s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/json/invalid (0.00s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/yaml/ (0.00s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/yaml/inherit (0.00s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/yaml/off (0.00s)
+    --- PASS: TestGoSelectionWorkspaceConfigRoundtrip/yaml/invalid (0.00s)
+=== RUN   TestGoSelectionWorkspaceNonGoRejected
+--- PASS: TestGoSelectionWorkspaceNonGoRejected (0.00s)
+=== RUN   TestGoSelectionSingleKeepsAutomaticStartAndDefaultOmitted
+--- PASS: TestGoSelectionSingleKeepsAutomaticStartAndDefaultOmitted (0.00s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	1.047s

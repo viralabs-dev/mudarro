@@ -1,0 +1,32 @@
+{
+  "binary_sha256": "c926247ab2c47f24aa4124ba934cffd02f90bb534b12fd6550b99c246a0fdf60",
+  "checks": [
+    {
+      "argv": [
+        "scan",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"workspaces\": [\n    {\n      \"path\": \"go.work\",\n      \"members\": [\n        \"app space\",\n        \"lib\"\n      ],\n      \"modules\": {\n        \"app space\": \"example.test/app\",\n        \"lib\": \"example.test/lib\"\n      },\n      \"go_version\": \"1.23\"\n    }\n  ],\n  \"config\": {\n    \"version\": 1,\n    \"name\": \"valid\",\n    \"services\": [\n      {\n        \"id\": \"app-space-go\",\n        \"dir\": \"app space\",\n        \"language\": \"go\",\n        \"manager\": \"go\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"go\",\n              \"build\",\n              \"./...\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"install\": {\n            \"args\": [\n              \"go\",\n              \"mod\",\n              \"download\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"start\": {\n            \"args\": [\n              \"go\",\n              \"run\",\n              \"./.\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"go\",\n              \"test\",\n              \"./...\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        }\n      },\n      {\n        \"id\": \"app-space-nested-go\",\n        \"dir\": \"app space/nested\",\n        \"language\": \"go\",\n        \"manager\": \"go\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"go\",\n              \"build\",\n              \"./...\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"install\": {\n            \"args\": [\n              \"go\",\n              \"mod\",\n              \"download\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"test\": {\n            \"args\": [\n              \"go\",\n              \"test\",\n              \"./...\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start: nenhuma entrada Go \u00fanica\"\n        ]\n      },\n      {\n        \"id\": \"lib-go\",\n        \"dir\": \"lib\",\n        \"language\": \"go\",\n        \"manager\": \"go\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"go\",\n              \"build\",\n              \"./...\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"install\": {\n            \"args\": [\n              \"go\",\n              \"mod\",\n              \"download\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"test\": {\n            \"args\": [\n              \"go\",\n              \"test\",\n              \"./...\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        },\n        \"pending\": [\n          \"Declare commands.start: nenhuma entrada Go \u00fanica\"\n        ]\n      },\n      {\n        \"id\": \"other-go\",\n        \"dir\": \"other\",\n        \"language\": \"go\",\n        \"manager\": \"go\",\n        \"infrastructure\": {\n          \"kind\": \"local\"\n        },\n        \"database\": {},\n        \"commands\": {\n          \"build\": {\n            \"args\": [\n              \"go\",\n              \"build\",\n              \"./...\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"install\": {\n            \"args\": [\n              \"go\",\n              \"mod\",\n              \"download\"\n            ],\n            \"group\": \"dependencias\"\n          },\n          \"start\": {\n            \"args\": [\n              \"go\",\n              \"run\",\n              \"./.\"\n            ],\n            \"group\": \"aplicacao\"\n          },\n          \"test\": {\n            \"args\": [\n              \"go\",\n              \"test\",\n              \"./...\"\n            ],\n            \"group\": \"qualidade\"\n          }\n        }\n      }\n    ]\n  },\n  \"evidence\": [\n    {\n      \"path\": \"go.work\",\n      \"kind\": \"go-workspace\"\n    },\n    {\n      \"path\": \"app space\",\n      \"kind\": \"go\"\n    },\n    {\n      \"path\": \"app space/nested\",\n      \"kind\": \"go\"\n    },\n    {\n      \"path\": \"lib\",\n      \"kind\": \"go\"\n    },\n    {\n      \"path\": \"other\",\n      \"kind\": \"go\"\n    }\n  ],\n  \"suggestions\": [\n    {\n      \"purpose\": \"go-start\",\n      \"service\": \"app-space-go\",\n      \"name\": \"go-entry-1\",\n      \"command\": {\n        \"args\": [\n          \"go\",\n          \"run\",\n          \"./.\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"app space\"\n    },\n    {\n      \"purpose\": \"go-start\",\n      \"service\": \"other-go\",\n      \"name\": \"go-entry-1\",\n      \"command\": {\n        \"args\": [\n          \"go\",\n          \"run\",\n          \"./.\"\n        ],\n        \"group\": \"aplicacao\"\n      },\n      \"evidence\": \"other\"\n    }\n  ],\n  \"warnings\": null\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "run",
+        "app-space-go:probe"
+      ],
+      "exit": 0,
+      "stdout": "REAL_WORKSPACE_IMPORT_OK\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "run",
+        "app-space-go:test"
+      ],
+      "exit": 0,
+      "stdout": "?   \texample.test/app\t[no test files]\n",
+      "stderr": ""
+    }
+  ]
+}

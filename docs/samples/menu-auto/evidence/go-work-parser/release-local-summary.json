@@ -1,0 +1,53 @@
+{
+  "archives": [
+    {
+      "archive": "mudarro_darwin_arm64.tar.gz",
+      "required_files_present": true,
+      "entries": [
+        "mudarro",
+        "THIRD_PARTY_NOTICES.md",
+        "LICENSES",
+        "LICENSES/go-toml-v2.txt",
+        "LICENSES/golang.org-x-mod.txt",
+        "LICENSES/gopkg.in-yaml.v3.txt"
+      ]
+    },
+    {
+      "archive": "mudarro_linux_arm64.tar.gz",
+      "required_files_present": true,
+      "entries": [
+        "mudarro",
+        "THIRD_PARTY_NOTICES.md",
+        "LICENSES",
+        "LICENSES/go-toml-v2.txt",
+        "LICENSES/golang.org-x-mod.txt",
+        "LICENSES/gopkg.in-yaml.v3.txt"
+      ]
+    },
+    {
+      "archive": "mudarro_linux_amd64.tar.gz",
+      "required_files_present": true,
+      "entries": [
+        "mudarro",
+        "THIRD_PARTY_NOTICES.md",
+        "LICENSES",
+        "LICENSES/go-toml-v2.txt",
+        "LICENSES/golang.org-x-mod.txt",
+        "LICENSES/gopkg.in-yaml.v3.txt"
+      ]
+    },
+    {
+      "archive": "mudarro_darwin_amd64.tar.gz",
+      "required_files_present": true,
+      "entries": [
+        "mudarro",
+        "THIRD_PARTY_NOTICES.md",
+        "LICENSES",
+        "LICENSES/go-toml-v2.txt",
+        "LICENSES/golang.org-x-mod.txt",
+        "LICENSES/gopkg.in-yaml.v3.txt"
+      ]
+    }
+  ],
+  "scope": "actual four-platform local builds and tar packaging in copied /tmp source only; not published; nonnative binaries not executed"
+}

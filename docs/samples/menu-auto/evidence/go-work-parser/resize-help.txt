@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/danielsouza/dev/viralabs/mudarro/scripts/validate-ui-shell-resize.py", line 4, in <module>
+    binary=pathlib.Path(sys.argv[1]).resolve();output=pathlib.Path(sys.argv[2]).resolve()
+                                                                   ~~~~~~~~^^^
+IndexError: list index out of range

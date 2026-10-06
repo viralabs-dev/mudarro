@@ -143,6 +143,9 @@ func actionPreview(root string, s Service, a Action, locale string) string {
 		}
 		return en
 	}
+	if s.Language == "go" && s.GoWorkspace == "off" {
+		a.Command = goWorkspaceCommand(s, a.Command)
+	}
 	var b strings.Builder
 	fmt.Fprintf(&b, text("Action: %s:%s\nDirectory: %s\n", "Ação: %s:%s\nDiretório: %s\n"), s.ID, a.Name, s.Dir)
 	if a.Blocked != "" {

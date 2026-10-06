@@ -1,0 +1,10 @@
+{
+  "COREPACK_HOME": "/tmp/mudarro-runtimes.K7F4J1/cache/corepack",
+  "COREPACK_ENABLE_PROJECT_SPEC": "0",
+  "COREPACK_ENABLE_NETWORK": "0",
+  "YARN_CACHE_FOLDER": "/tmp/mudarro-runtimes.K7F4J1/cache/npm-classic/runtime",
+  "YARN_GLOBAL_FOLDER": "/tmp/mudarro-runtimes.K7F4J1/yarn-classic/global",
+  "NPM_CONFIG_USERCONFIG": "/tmp/mudarro-runtimes.K7F4J1/config/yarn-npm-user.rc",
+  "NPM_CONFIG_GLOBALCONFIG": "/tmp/mudarro-runtimes.K7F4J1/config/yarn-npm-global.rc",
+  "PATH_note": "Private Yarn shim and verified Mudarro binary directories prefixed to inherited PATH; unrelated inherited entries omitted."
+}

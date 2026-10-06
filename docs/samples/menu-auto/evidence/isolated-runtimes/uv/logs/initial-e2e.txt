@@ -1,0 +1,176 @@
+
+COMMAND ['/tmp/mudarro-runtimes.K7F4J1/uv/tool-venv/bin/uv', '--version']
+uv 0.12.23 (x86_64-unknown-linux-gnu)
+EXIT 0
+
+COMMAND ['/tmp/mudarro-runtimes.K7F4J1/uv/tool-venv/bin/uv', 'lock', '--offline']
+Using CPython 3.14.7 interpreter at: /home/linuxbrew/.linuxbrew/opt/python@3.14/bin/python3.14
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 0.1.0 without checking dependencies    
+Resolved 1 package in 1ms
+EXIT 0
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'scan', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv', '--json']
+{
+  "config": {
+    "version": 1,
+    "name": "uv",
+    "services": [
+      {
+        "id": "app-python",
+        "dir": ".",
+        "language": "python",
+        "manager": "uv",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "uv",
+              "sync"
+            ],
+            "group": "dependencias"
+          }
+        },
+        "pending": [
+          "Declare commands.start; módulo Python não é inferido"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "python"
+    }
+  ],
+  "suggestions": null,
+  "warnings": null
+}
+EXIT 0
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'scan', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv', '--json']
+{
+  "config": {
+    "version": 1,
+    "name": "uv",
+    "services": [
+      {
+        "id": "app-python",
+        "dir": ".",
+        "language": "python",
+        "manager": "uv",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "uv",
+              "sync"
+            ],
+            "group": "dependencias"
+          }
+        },
+        "pending": [
+          "Declare commands.start; módulo Python não é inferido"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "python"
+    }
+  ],
+  "suggestions": null,
+  "warnings": null
+}
+EXIT 0
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'init', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv']
+Project: uv
+- app-python (.): python / uv / local
+  pending: Declare commands.start; Python module is not inferred
+Created mudarro.yaml. Review pending choices, then run mudarro generate.
+EXIT 0
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'init', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv']
+mudarro: configuration already exists; edit the preserved file
+EXIT 1
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'generate', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv', '--dry-run']
+gerar: .mudarro/scripts/app-python/down.sh
+gerar: .mudarro/scripts/app-python/install.sh
+gerar: .mudarro/scripts/app-python/logs.sh
+gerar: .mudarro/scripts/app-python/restart.sh
+gerar: .mudarro/scripts/app-python/status.sh
+gerar: .mudarro/scripts/app-python/up.sh
+gerar: menu.sh
+EXIT 0
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'generate', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv']
+gerar: .mudarro/scripts/app-python/build.sh
+gerar: .mudarro/scripts/app-python/down.sh
+gerar: .mudarro/scripts/app-python/fail.sh
+gerar: .mudarro/scripts/app-python/install.sh
+gerar: .mudarro/scripts/app-python/lint.sh
+gerar: .mudarro/scripts/app-python/logs.sh
+gerar: .mudarro/scripts/app-python/restart.sh
+gerar: .mudarro/scripts/app-python/seed.sh
+gerar: .mudarro/scripts/app-python/start.sh
+gerar: .mudarro/scripts/app-python/status.sh
+gerar: .mudarro/scripts/app-python/test.sh
+gerar: .mudarro/scripts/app-python/up.sh
+gerar: menu.sh
+EXIT 0
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'generate', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv']
+EXIT 0
+
+COMMAND ['/tmp/mudarro-timeout-checkpoint/mudarro', 'doctor', '--root', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv']
+OK app-python: uv
+OK app-python: ps
+Nenhuma dependência executável ausente. Isso não valida conexão, credenciais ou saúde da aplicação.
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/install.sh']
+Using CPython 3.14.7 interpreter at: /home/linuxbrew/.linuxbrew/opt/python@3.14/bin/python3.14
+Creating virtual environment at: .venv
+Resolved 1 package in 0.94ms
+Checked in 0.00ms
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/install.sh']
+Resolved 1 package in 0.66ms
+Checked in 0.00ms
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/test.sh']
+UV real check PASS 3.14.7
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/lint.sh']
+UV real check PASS 3.14.7
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/build.sh']
+UV real check PASS 3.14.7
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/seed.sh']
+UV SQLite custom seed idempotent PASS
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/seed.sh']
+UV SQLite custom seed idempotent PASS
+EXIT 0
+
+COMMAND ['bash', '/tmp/mudarro-runtimes.K7F4J1/fixtures/uv/.mudarro/scripts/app-python/fail.sh']
+expected controlled failure
+mudarro: exit status 7
+EXIT 1

@@ -1,0 +1,35 @@
+[
+  {
+    "argv": [
+      "/tmp/mudarro-mud038-next/diagnostics/mudarro-after",
+      "preview",
+      "app:test",
+      "--root",
+      "/tmp/mudarro-mud038-next/diagnostics/cli-fixture"
+    ],
+    "exit": 0,
+    "output": "Action: app:test\nDirectory: .\nargv (not shell evaluation):\n  [0] \"env\"\n  [1] \"GOWORK=off\"\n  [2] \"go\"\n  [3] \"test\"\n  [4] \"./...\"\nEnvironment references are not expanded. Embedded arbitrary shell secrets may require manual redaction.\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud038-next/diagnostics/mudarro-after",
+      "run",
+      "app:test",
+      "--dry-run",
+      "--root",
+      "/tmp/mudarro-mud038-next/diagnostics/cli-fixture"
+    ],
+    "exit": 0,
+    "output": "app: {\"args\":[\"env\",\"GOWORK=off\",\"go\",\"test\",\"./...\"],\"group\":\"qualidade\"}\n"
+  },
+  {
+    "argv": [
+      "/tmp/mudarro-mud038-next/diagnostics/mudarro-after",
+      "doctor",
+      "--root",
+      "/tmp/mudarro-mud038-next/diagnostics/cli-fixture"
+    ],
+    "exit": 1,
+    "output": "AUSENTE app: env \u2014 configure ou instale explicitamente\nOK app: go\nmudarro: 1 pending item(s); independent actions remain available\n"
+  }
+]

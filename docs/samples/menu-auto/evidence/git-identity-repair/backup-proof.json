@@ -1,0 +1,10 @@
+{
+  "base_head": "56dadbaf62e3515e4bb31bb3c3ff2a583cd642ed",
+  "files_and_directories": 488,
+  "restore_byte_mode_symlink_match": true,
+  "initial_filtered_restore_note": "generic data filter stripped group-write; exact validated own-archive restore passed; first restore preserved for audit",
+  "index_sha256": "aecf3502ee95286649fbb0953dcf3b61b0555853e3ef3dda3cb59deea2624570",
+  "backup_bundle_sha256": "8d9912ad53f3edb2981ba6ee44948e855d42f174dbb21c90b3575741302a42b6",
+  "workingtree_tar_sha256": "dcb1e8bb2414c9395dab05e7882144822fc91d9d2d7089e6ef1889fe7b1ab43c",
+  "at": "2026-10-06T14:04:36.448722+00:00"
+}

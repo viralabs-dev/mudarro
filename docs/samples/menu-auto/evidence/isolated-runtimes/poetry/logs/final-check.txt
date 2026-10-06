@@ -1,0 +1,21 @@
+Installing dependencies from lock file
+app-python: started (PID 1817876)
+Poetry fixture ready
+app-python: stopped
+app-python: stopped
+0
+Poetry quality OK
+##   #  ### ### ##  # #     ##  # # # # ### ### # # ### 
+# # # # #    #  # # # #     # # # # ###  #   #  ### #   
+##  # # ##   #  ##   #      ##  # # ###  #   #  ### ##  
+#   # # #    #  # #  #      # # # # ###  #   #  # # #   
+#    #  ###  #  # #  #      # # ### # #  #  ### # # ### 
+Poetry runtime
+
+
+  Choose an area / Services
+
+   1.  app-python — .
+
+   0.  Back / exit
+  > 

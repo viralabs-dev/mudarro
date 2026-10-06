@@ -1,0 +1,11 @@
+{
+  "name": "mudarro-yarn-classic",
+  "private": true,
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "start": "node app.cjs",
+    "test": "node probe.cjs",
+    "hello": "node hello.cjs",
+    "fail": "node fail.cjs"
+  }
+}

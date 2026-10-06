@@ -1,0 +1,28 @@
+[
+  {
+    "case": "fifo-source",
+    "exit": 0,
+    "starts": [],
+    "warnings": [
+      "Go source must be a regular file: main.go"
+    ],
+    "pending": [
+      [
+        "Declare comandos da aplica\u00e7\u00e3o"
+      ]
+    ]
+  },
+  {
+    "case": "oversized-source",
+    "exit": 0,
+    "starts": [],
+    "warnings": [
+      "Go source main.go: manifest grande demais: /tmp/mudarro-mud038-next/oversized-source/main.go"
+    ],
+    "pending": [
+      [
+        "Declare comandos da aplica\u00e7\u00e3o"
+      ]
+    ]
+  }
+]

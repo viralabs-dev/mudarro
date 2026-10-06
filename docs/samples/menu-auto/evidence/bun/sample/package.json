@@ -1,0 +1,1 @@
+{"name":"bun-runtime-exclusive","version":"1.0.0","private":true,"packageManager":"bun@1.4.0","scripts":{"start":"bun app.js","test":"bun check.js","lint":"bun check.js","build":"bun check.js"}}

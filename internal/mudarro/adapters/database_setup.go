@@ -30,6 +30,9 @@ func SetupActions(s model.Service) []model.Action {
 		if s.Manager == "poetry" {
 			prefix = []string{"poetry", "add"}
 		}
+		if s.Manager == "pipenv" {
+			prefix = []string{"pipenv", "install"}
+		}
 		install = cmd("dependencias", append(prefix, packages...)...)
 	case "goose":
 		install = cmd("dependencias", "go", "install", "github.com/pressly/goose/v3/cmd/goose@v3.24.1")

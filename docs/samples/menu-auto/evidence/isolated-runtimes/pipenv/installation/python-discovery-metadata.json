@@ -1,0 +1,121 @@
+{
+  "info": {
+    "author": null,
+    "author_email": null,
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "License :: OSI Approved :: MIT License",
+      "Operating System :: MacOS :: MacOS X",
+      "Operating System :: Microsoft :: Windows",
+      "Operating System :: POSIX",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.14",
+      "Programming Language :: Python :: 3.15",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Utilities"
+    ],
+    "description": "# [`python-discovery`](https://python-discovery.readthedocs.io/en/latest/)\n\n[![PyPI](https://img.shields.io/pypi/v/python-discovery?style=flat-square)](https://pypi.org/project/python-discovery/)\n[![Supported Python versions](https://img.shields.io/pypi/pyversions/python-discovery.svg)](https://pypi.org/project/python-discovery/)\n[![Downloads](https://static.pepy.tech/badge/python-discovery/month)](https://pepy.tech/project/python-discovery)\n[![check](https://github.com/tox-dev/python-discovery/actions/workflows/check.yaml/badge.svg)](https://github.com/tox-dev/python-discovery/actions/workflows/check.yaml)\n[![Documentation Status](https://readthedocs.org/projects/python-discovery/badge/?version=latest)](https://python-discovery.readthedocs.io/en/latest/?badge=latest)\n\n## What is python-discovery?\n\n`python-discovery` is a library for discovering Python interpreters installed on your machine. You may have multiple\nPython versions from system packages, [pyenv](https://github.com/pyenv/pyenv), [mise](https://mise.jdx.dev/),\n[asdf](https://asdf-vm.com/), [uv](https://docs.astral.sh/uv/), or the Windows registry (PEP 514). This library finds\nthe right one for you.\n\nGive it a requirement like `python3.12` or `>=3.11,<3.13`, and it searches all known locations, verifies each candidate,\nand returns detailed metadata about the match. Results are cached to disk so repeated lookups are fast.\n\nThe library runs on Python 3.8+ and discovers interpreters as old as Python 3.6; anything older is skipped with a\nwarning naming the version it found.\n\n## Usage\n\n```python\nfrom pathlib import Path\n\nfrom python_discovery import DiskCache, get_interpreter\n\ncache = DiskCache(root=Path(\"~/.cache/python-discovery\").expanduser())\nresult = get_interpreter(\"python3.12\", cache=cache)\nif result is not None:\n    print(result.executable)  # /usr/bin/python3.12\n    print(result.implementation)  # CPython\n    print(result.version_info[:3])  # (3, 12, 1)\n```\n\nThe `get_interpreter()` function accepts various specification formats:\n\n- Absolute path: `/usr/bin/python3.12`\n- Version: `3.12`\n- Implementation prefix: `cpython3.12`\n- [Version specifier](https://packaging.python.org/en/latest/specifications/version-specifiers/): `>=3.10`,\n  `>=3.11,<3.13`\n\n## Documentation\n\nFull documentation is available at [python-discovery.readthedocs.io](https://python-discovery.readthedocs.io/en/latest/)\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": null,
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "dynamic": null,
+    "home_page": null,
+    "keywords": "discovery, interpreter, python",
+    "license": "Permission is hereby granted, free of charge, to any person obtaining a\n        copy of this software and associated documentation files (the\n        \"Software\"), to deal in the Software without restriction, including\n        without limitation the rights to use, copy, modify, merge, publish,\n        distribute, sublicense, and/or sell copies of the Software, and to\n        permit persons to whom the Software is furnished to do so, subject to\n        the following conditions:\n        \n        The above copyright notice and this permission notice shall be included\n        in all copies or substantial portions of the Software.\n        \n        THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\n        OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\n        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\n        CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\n        TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\n        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+    "license_expression": null,
+    "license_files": [
+      "LICENSE"
+    ],
+    "maintainer": null,
+    "maintainer_email": "Bern\u00e1t G\u00e1bor <gaborjbernat@gmail.com>",
+    "name": "python-discovery",
+    "package_url": "https://pypi.org/project/python-discovery/",
+    "platform": null,
+    "project_url": "https://pypi.org/project/python-discovery/",
+    "project_urls": {
+      "Changelog": "https://github.com/tox-dev/python-discovery/releases",
+      "Documentation": "https://python-discovery.readthedocs.io",
+      "Homepage": "https://github.com/tox-dev/python-discovery",
+      "Source": "https://github.com/tox-dev/python-discovery",
+      "Tracker": "https://github.com/tox-dev/python-discovery/issues"
+    },
+    "provides_extra": null,
+    "release_url": "https://pypi.org/project/python-discovery/1.6.1/",
+    "requires_dist": [
+      "filelock>=3.15.4"
+    ],
+    "requires_python": ">=3.8",
+    "summary": "Python interpreter discovery",
+    "version": "1.6.1",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 41190561,
+  "ownership": {
+    "organization": "tox",
+    "roles": []
+  },
+  "urls": [
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "fd4e94258896c927fd6e5354988c7b307a0f16b6a25abd5d0b646fcf5cc9fea8"
+      },
+      "digests": {
+        "blake2b_256": "167de9ffbadfbf89c93848412d04594135c4ae8c1d37d9e053b9c3ed718fabc4",
+        "md5": "1051b14a8021c280c57108a70950f30f",
+        "sha256": "d43fcdef879fe795352bd13ccf8d185ba5a9f86f36cfcd00529f596e737442b3"
+      },
+      "downloads": -1,
+      "filename": "python_discovery-1.6.1-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "1051b14a8021c280c57108a70950f30f",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.8",
+      "size": 38664,
+      "upload_time": "2026-09-18T01:31:52",
+      "upload_time_iso_8601": "2026-09-18T01:31:52.448202Z",
+      "url": "https://files.pythonhosted.org/packages/16/7d/e9ffbadfbf89c93848412d04594135c4ae8c1d37d9e053b9c3ed718fabc4/python_discovery-1.6.1-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": false,
+      "digests": {
+        "blake2b_256": "0c57250bd238b966cece44328235eb85290045d059265fdaf7527a3a958123db",
+        "md5": "5b059acd367322dbb547b9ff7bbf78b0",
+        "sha256": "cf87d3627dfb4412437fdd5b13eae402607722998d21567993aedbc59b23c15e"
+      },
+      "downloads": -1,
+      "filename": "python_discovery-1.6.1.tar.gz",
+      "has_sig": false,
+      "md5_digest": "5b059acd367322dbb547b9ff7bbf78b0",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">=3.8",
+      "size": 84338,
+      "upload_time": "2026-09-18T01:31:53",
+      "upload_time_iso_8601": "2026-09-18T01:31:53.971742Z",
+      "url": "https://files.pythonhosted.org/packages/0c/57/250bd238b966cece44328235eb85290045d059265fdaf7527a3a958123db/python_discovery-1.6.1.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ],
+  "vulnerabilities": []
+}

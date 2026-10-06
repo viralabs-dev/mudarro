@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/tmp/mudarro-mud060/mudarro-after",
+    "doctor",
+    "--root",
+    "/tmp/mudarro-mud060/cli-fixture"
+  ],
+  "exit": 1,
+  "output": "AUSENTE app: ./probe-tool \u2014 configure ou instale explicitamente\nmudarro: 1 pending item(s); independent actions remain available\n"
+}

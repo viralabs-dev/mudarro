@@ -1,0 +1,37 @@
+[
+  {
+    "time": 0.509209,
+    "label": "select fixture service",
+    "input": "1\n"
+  },
+  {
+    "time": 1.013346,
+    "label": "select quality group",
+    "input": "5\n"
+  },
+  {
+    "time": 1.51784,
+    "label": "execute real uv test",
+    "input": "3\n"
+  },
+  {
+    "time": 2.518721,
+    "label": "return from execution",
+    "input": "\n"
+  },
+  {
+    "time": 3.023028,
+    "label": "actions back",
+    "input": "0\n"
+  },
+  {
+    "time": 3.526719,
+    "label": "groups back",
+    "input": "0\n"
+  },
+  {
+    "time": 4.029709,
+    "label": "exit",
+    "input": "0\n"
+  }
+]

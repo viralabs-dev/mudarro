@@ -1,0 +1,36 @@
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/cjk/NO_COLOR=
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/cjk/NO_COLOR=1
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/fullwidth-letters/NO_COLOR=
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/fullwidth-letters/NO_COLOR=1
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/combining/NO_COLOR=
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/combining/NO_COLOR=1
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/emoji/NO_COLOR=
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/emoji/NO_COLOR=1
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/joined-family-conservative/NO_COLOR=
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/joined-family-conservative/NO_COLOR=1
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/regional-pair-conservative/NO_COLOR=
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/regional-pair-conservative/NO_COLOR=1
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/ideographic-space/NO_COLOR=
+=== RUN   TestUnicodeResizeKnownCellsStayInsideNarrowMenu/ideographic-space/NO_COLOR=1
+--- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu (0.01s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/cjk/NO_COLOR= (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/cjk/NO_COLOR=1 (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/fullwidth-letters/NO_COLOR= (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/fullwidth-letters/NO_COLOR=1 (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/combining/NO_COLOR= (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/combining/NO_COLOR=1 (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/emoji/NO_COLOR= (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/emoji/NO_COLOR=1 (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/joined-family-conservative/NO_COLOR= (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/joined-family-conservative/NO_COLOR=1 (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/regional-pair-conservative/NO_COLOR= (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/regional-pair-conservative/NO_COLOR=1 (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/ideographic-space/NO_COLOR= (0.00s)
+    --- PASS: TestUnicodeResizeKnownCellsStayInsideNarrowMenu/ideographic-space/NO_COLOR=1 (0.00s)
+=== RUN   TestUnicodeResizePlainLetteringLongNameIsBounded
+--- PASS: TestUnicodeResizePlainLetteringLongNameIsBounded (0.00s)
+=== RUN   TestUnicodeResizeExecutionWriterStripsFormatAndPreservesSplitCombining
+--- PASS: TestUnicodeResizeExecutionWriterStripsFormatAndPreservesSplitCombining (0.00s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro/terminal	1.032s

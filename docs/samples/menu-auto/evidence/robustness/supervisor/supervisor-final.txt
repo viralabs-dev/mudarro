@@ -1,0 +1,36 @@
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-zero
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-one
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-negative
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/empty-token
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/short-token
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/wrong-token
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-root-metadata
+=== RUN   TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-service-metadata
+--- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess (0.89s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-zero (0.03s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-one (0.04s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/pid-negative (0.03s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/empty-token (0.03s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/short-token (0.02s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/wrong-token (0.03s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-root-metadata (0.02s)
+    --- PASS: TestSupervisorIdentityRejectsInvalidStateAndPreservesOwnedProcess/foreign-service-metadata (0.02s)
+=== RUN   TestSupervisorIdentityCorruptJSONMustNotAuthorizeSignals
+--- PASS: TestSupervisorIdentityCorruptJSONMustNotAuthorizeSignals (0.55s)
+=== RUN   TestSupervisorIdentityDoesNotAdoptAnotherProjectSupervisor
+--- PASS: TestSupervisorIdentityDoesNotAdoptAnotherProjectSupervisor (0.82s)
+=== RUN   TestSupervisorIdentityStalePIDAndUnrelatedOwnedPID
+--- PASS: TestSupervisorIdentityStalePIDAndUnrelatedOwnedPID (0.29s)
+=== RUN   TestSupervisorIdentityConcurrentUpAndRestart
+--- PASS: TestSupervisorIdentityConcurrentUpAndRestart (0.73s)
+=== RUN   TestSupervisorIdentityStartupFailureAndSupervisorSignal
+--- PASS: TestSupervisorIdentityStartupFailureAndSupervisorSignal (0.68s)
+=== RUN   TestSupervisorIdentityRejectsForeignExecutableAndEmbeddedMarker
+--- PASS: TestSupervisorIdentityRejectsForeignExecutableAndEmbeddedMarker (0.37s)
+=== RUN   TestSupervisorIdentityRootAndSelectedConfigWithSpaces
+--- PASS: TestSupervisorIdentityRootAndSelectedConfigWithSpaces (0.45s)
+=== RUN   TestSupervisorIdentityRejectsSpoofedArgvZero
+--- PASS: TestSupervisorIdentityRejectsSpoofedArgvZero (0.54s)
+PASS
+ok  	github.com/viralabs-dev/mudarro/test/internal/mudarro	6.336s

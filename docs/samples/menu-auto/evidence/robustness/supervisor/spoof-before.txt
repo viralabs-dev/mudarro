@@ -1,0 +1,7 @@
+=== RUN   TestSupervisorIdentityRejectsSpoofedArgvZero
+    supervisor_identity_regression_test.go:424: spoofed argv[0] adopted foreign executable: <nil> app: running (PID 1596161)
+    supervisor_identity_regression_test.go:431: spoofed argv[0] authorized signalling foreign executable fixture
+--- FAIL: TestSupervisorIdentityRejectsSpoofedArgvZero (0.45s)
+FAIL
+FAIL	github.com/viralabs-dev/mudarro/test/internal/mudarro	0.449s
+FAIL

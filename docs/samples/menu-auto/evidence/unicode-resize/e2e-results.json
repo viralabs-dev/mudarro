@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "bash",
+      "scripts/smoke.sh",
+      "/tmp/mudarro-unicode/bin/mudarro"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "bash",
+      "scripts/validate-menu.sh",
+      "/tmp/mudarro-unicode/bin/mudarro"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "bash",
+      "scripts/validate-ui.sh",
+      "/tmp/mudarro-unicode/bin/mudarro"
+    ],
+    "exit": 0
+  }
+]

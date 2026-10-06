@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "go",
+    "list",
+    "-m"
+  ],
+  "exit": 1,
+  "output": "go: module example.test/identical appears multiple times in workspace\n"
+}

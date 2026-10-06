@@ -1,0 +1,38 @@
+{
+  "config": {
+    "version": 1,
+    "name": "uv-final",
+    "services": [
+      {
+        "id": "app-python",
+        "dir": ".",
+        "language": "python",
+        "manager": "uv",
+        "infrastructure": {
+          "kind": "local"
+        },
+        "database": {},
+        "commands": {
+          "install": {
+            "args": [
+              "uv",
+              "sync"
+            ],
+            "group": "dependencias"
+          }
+        },
+        "pending": [
+          "Declare commands.start; m\u00f3dulo Python n\u00e3o \u00e9 inferido"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".",
+      "kind": "python"
+    }
+  ],
+  "suggestions": null,
+  "warnings": null
+}

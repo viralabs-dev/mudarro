@@ -1,0 +1,1 @@
+print('Poetry quality OK')
