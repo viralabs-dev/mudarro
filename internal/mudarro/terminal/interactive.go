@@ -98,7 +98,10 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 		}
 	}()
 	mouse := v.mouse == "on" || (v.mouse != "off" && interactiveMouseCapable(os.Getenv("TERM")))
-	fmt.Fprint(out, "\x1b[?1049h\x1b[?25l")
+	if !v.ShellActive() {
+		fmt.Fprint(out, "\x1b[?1049h")
+	}
+	fmt.Fprint(out, "\x1b[?25l")
 	if mouse {
 		fmt.Fprint(out, "\x1b[?1002h\x1b[?1006h")
 	}
@@ -106,7 +109,10 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 		if mouse {
 			fmt.Fprint(out, "\x1b[?1006l\x1b[?1002l")
 		}
-		fmt.Fprint(out, "\x1b[?25h\x1b[?1049l")
+		fmt.Fprint(out, "\x1b[?25h")
+		if !v.ShellActive() {
+			fmt.Fprint(out, "\x1b[?1049l")
+		}
 	}()
 	state := InteractiveState{}
 	pending := []byte{}
@@ -120,6 +126,21 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 		default:
 		}
 		width, rows, _ = terminalSize(out)
+		centerTop := 1
+		if v.ShellActive() {
+			width, centerTop, rows = v.ShellGeometry()
+		}
+		if rows == 0 {
+			key, more, err := interactiveRead(in, pending)
+			pending = more
+			if err != nil {
+				return 0, true, err
+			}
+			if key == "q" || key == "0" {
+				return 0, true, nil
+			}
+			continue
+		}
 		visible := len(labels)
 		limit := (rows - 6) / 2
 		if limit < 1 {
@@ -143,18 +164,17 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 			}
 		}
 		state.Navigate("", len(labels), page, len(preview))
-		fmt.Fprint(out, "\x1b[2J\x1b[H")
-		fmt.Fprintln(out, v.style.heading(fitText(v.project+" / "+title, width-1))+"\r")
+		lines := []string{fitText(v.project+" / "+title, width-1)}
 		for i := first; i < first+visible; i++ {
-			label := labels[i]
 			marker := " "
 			if i == state.Selected {
 				marker = ">"
 			}
-			fmt.Fprintf(out, "%s %d. %s\r\n", marker, i+1, v.style.Paint("37", fitText(label, width-8)))
+			lines = append(lines, fmt.Sprintf("%s %d. %s", marker, i+1, fitText(labels[i], width-8)))
 		}
-		fmt.Fprintln(out, fitText(v.text("Down preview · Up close · Tab/number focus · Enter execute · q back", "↓ prévia · ↑ recolher · Tab/número foco · Enter executar · q voltar"), width-1)+"\r")
-		top := visible + 4
+		hint := v.text("Down preview · Up close · Tab/number focus · Enter execute · q back", "↓ prévia · ↑ recolher · Tab/número foco · Enter executar · q voltar")
+		lines = append(lines, fitText(hint, width-1), "")
+		top := centerTop + len(lines)
 		if state.Expanded {
 			for row := 0; row < page; row++ {
 				line := ""
@@ -162,17 +182,32 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 				if n < len(preview) {
 					line = preview[n]
 				}
-				fmt.Fprintf(out, "\x1b[%d;1H%s", top+row, line)
 				if len(preview) > page {
 					thumb := state.Offset * (page - 1) / (len(preview) - page)
 					ch := "│"
 					if row == thumb {
 						ch = "█"
 					}
-					fmt.Fprintf(out, "\x1b[%d;%dH%s", top+row, width, ch)
+					// Reserve the final cell for the drag target, without wrapping.
+					line = fitText(line, width-2)
+					cells := 0
+					for _, r := range line {
+						cells += runeColumns(r)
+					}
+					line += strings.Repeat(" ", max(0, width-1-cells)) + ch
 				}
+				lines = append(lines, line)
 			}
 		}
+		if v.ShellActive() {
+			v.ShellRender(title, lines, hint)
+		} else {
+			fmt.Fprint(out, "\x1b[2J\x1b[H")
+			for i, line := range lines {
+				fmt.Fprintf(out, "\x1b[%d;1H%s", i+1, line)
+			}
+		}
+
 		key, more, readErr := interactiveRead(in, pending)
 		pending = more
 		if readErr != nil {
@@ -188,6 +223,12 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 			var button, x, y int
 			var final rune
 			if _, e := fmt.Sscanf(key, "mouse:%d;%d;%d%c", &button, &x, &y, &final); e == nil {
+				if final == 'm' {
+					dragging = false
+				}
+				if y < top || y >= top+page {
+					continue
+				}
 				if button&64 != 0 {
 					if button&1 == 0 {
 						key = "wheel-up"

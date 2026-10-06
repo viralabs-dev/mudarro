@@ -1,7 +1,6 @@
 package mudarro
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 	"strings"
@@ -24,7 +23,7 @@ func (r Runner) Run(root string, s Service, a Action) error {
 	if a.Command.Destructive && !r.Dry {
 		expected := "APAGAR " + s.ID
 		fmt.Fprintf(r.Out, r.text("Destructive operation %s. Type %q: ", "Operação destrutiva %s. Digite %q: "), a.Name, expected)
-		line, e := bufio.NewReader(r.In).ReadString('\n')
+		line, e := readConfirmation(r.In)
 		if e != nil || strings.TrimSpace(line) != expected {
 			return fmt.Errorf("operação cancelada")
 		}
@@ -85,4 +84,26 @@ func (r Runner) text(en, pt string) string {
 		return pt
 	}
 	return en
+}
+
+// Read only the confirmation line: a pasted second line belongs to the child.
+func readConfirmation(in io.Reader) (string, error) {
+	if in == nil {
+		return "", io.EOF
+	}
+	var b strings.Builder
+	one := make([]byte, 1)
+	for b.Len() < 4096 {
+		n, err := in.Read(one)
+		if n > 0 {
+			if one[0] == '\n' {
+				return b.String(), nil
+			}
+			b.WriteByte(one[0])
+		}
+		if err != nil {
+			return b.String(), err
+		}
+	}
+	return "", fmt.Errorf("confirmação excede limite")
 }

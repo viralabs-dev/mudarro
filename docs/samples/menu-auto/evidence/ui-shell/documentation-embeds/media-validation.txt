@@ -1,0 +1,6 @@
+docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png: PNG 983x739
+docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif: 983x739 55 frames 12.31s loop=0
+docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png: PNG 983x739
+docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif: 983x739 50 frames 12.31s loop=0
+docs/samples/menu-auto/evidence/ui-configuration/frame-dark-en.png: PNG 983x739
+docs/samples/menu-auto/evidence/ui-configuration/aurora-dark-en.gif: 983x739 17 frames 12.90s loop=0

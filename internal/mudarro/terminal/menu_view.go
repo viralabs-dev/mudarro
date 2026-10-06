@@ -10,6 +10,7 @@ import (
 )
 
 type Menu struct {
+	frame                             *shellFrame
 	previews                          []string
 	out                               io.Writer
 	style                             Style
@@ -19,6 +20,10 @@ type Menu struct {
 }
 
 func (v *Menu) Choose(reader *bufio.Reader, title string, labels []string) (int, error) {
+	if v.ShellActive() {
+		n, _, err := v.ChooseInteractive(v.frame.in, title, labels, v.previews)
+		return n, err
+	}
 	s := v.style
 	if s.color {
 		fmt.Fprint(v.out, "\x1b[2J\x1b[H")

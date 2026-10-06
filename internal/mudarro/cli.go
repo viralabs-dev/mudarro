@@ -290,6 +290,12 @@ func menu(root string, c Config, in io.Reader, out io.Writer) error {
 	u := c.UIOptions()
 	view := terminal.NewMenu(out, c.Name, fmt.Sprintf(uiText(c, "%d service(s) · offline detection · no AI", "%d serviço(s) · detecção offline · sem IA"), len(c.Services)))
 	view.Configure(terminal.Presentation{Locale: u.Locale, Theme: u.Theme, Density: u.Density, Lettering: u.Lettering, Mouse: u.Preview.Mouse})
+	if f, ok := in.(*os.File); ok {
+		if _, err := view.BeginShell(f); err != nil {
+			return err
+		}
+		defer view.CloseShell()
+	}
 	style := view.Style()
 	for {
 		labels := []string{}
@@ -349,6 +355,12 @@ func menu(root string, c Config, in io.Reader, out io.Writer) error {
 					break
 				}
 				a := list[n-1]
+				if view.ShellActive() {
+					if err := runShellAction(view, root, c, s, a); err != nil {
+						return err
+					}
+					continue
+				}
 				name := ""
 				if strings.Contains(strings.Join(a.Command.Args, " "), "{name}") {
 					fmt.Fprint(out, uiText(c, "Migration name: ", "Nome da migration: "))

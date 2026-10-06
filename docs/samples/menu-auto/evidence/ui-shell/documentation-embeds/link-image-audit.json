@@ -1,0 +1,239 @@
+{
+  "pages": [
+    {
+      "page": "README.md",
+      "anchor": "recorded-screens",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        }
+      ]
+    },
+    {
+      "page": "docs/pt-BR/README.md",
+      "anchor": "telas-gravadas",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        }
+      ]
+    },
+    {
+      "page": "docs/ui-shell.md",
+      "anchor": "recorded-screens",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        }
+      ]
+    },
+    {
+      "page": "docs/pt-BR/ui-shell.md",
+      "anchor": "telas-gravadas",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        }
+      ]
+    },
+    {
+      "page": "docs/ui-configuration.md",
+      "anchor": "recorded-screens",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-configuration/frame-dark-en.png",
+          "size_bytes": 127754,
+          "sha256": "5c2bdf0321f46a3b4746bb2801d54b0ebab33b49dc63db7112ca30211e80d357"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-configuration/aurora-dark-en.gif",
+          "size_bytes": 178400,
+          "sha256": "2a6956cad6c467785145202d13beffffb65e05a6dc4fd1b4a7c012b9e50850e6"
+        }
+      ]
+    },
+    {
+      "page": "docs/pt-BR/ui-configuration.md",
+      "anchor": "telas-gravadas",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-configuration/frame-dark-en.png",
+          "size_bytes": 127754,
+          "sha256": "5c2bdf0321f46a3b4746bb2801d54b0ebab33b49dc63db7112ca30211e80d357"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-configuration/aurora-dark-en.gif",
+          "size_bytes": 178400,
+          "sha256": "2a6956cad6c467785145202d13beffffb65e05a6dc4fd1b4a7c012b9e50850e6"
+        }
+      ]
+    },
+    {
+      "page": "docs/samples/menu-auto/README.md",
+      "anchor": "recorded-screens",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        }
+      ]
+    },
+    {
+      "page": "docs/pt-BR/samples/menu-auto/README.md",
+      "anchor": "telas-gravadas",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        }
+      ]
+    },
+    {
+      "page": "docs/samples/menu-auto/evidence/ui-shell/README.md",
+      "anchor": "recorded-screens",
+      "embeds": [
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.png",
+          "size_bytes": 71033,
+          "sha256": "a30d0e9cea2a4fdb67a975231d92a81fcc3d25495c64e7e98db3fd157c859ad1"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-dark-en.gif",
+          "size_bytes": 255677,
+          "sha256": "b999b99115b7ad1c9ca5778e957a197bb25300700d64e2616ebe2611f9eb69c4"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.png",
+          "size_bytes": 71779,
+          "sha256": "6c06e2ca989010fc5ac9e5b2372b4d29f7be29e1c34b75bea2d9aa2f0f82ef28"
+        },
+        {
+          "asset": "docs/samples/menu-auto/evidence/ui-shell/aurora-shell-light-ptbr.gif",
+          "size_bytes": 249733,
+          "sha256": "0d3232729d8a829af09ff71482d5ce76562270466dbfe6d719ac04489a418cb5"
+        }
+      ]
+    }
+  ],
+  "broken_links": []
+}

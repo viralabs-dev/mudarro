@@ -1,0 +1,146 @@
+{
+  "profile": "aurora-shell-dark-en",
+  "locale": "en",
+  "theme": "dark",
+  "exit_code": 0,
+  "termios_restored": true,
+  "chrome_checks": 24,
+  "duration_seconds": 11.509,
+  "binary_sha256": "df5521ad6c5a67e80309a1be2d1634b6aa1fd233ceee3d2a0ce89290dffc2fac",
+  "events": [
+    {
+      "time": 0.500861,
+      "label": "service",
+      "hex": "310d"
+    },
+    {
+      "time": 0.901088,
+      "label": "group",
+      "hex": "310d"
+    },
+    {
+      "time": 1.301429,
+      "label": "preview",
+      "hex": "1b5b42"
+    },
+    {
+      "time": 1.701687,
+      "label": "preview page",
+      "hex": "1b5b367e"
+    },
+    {
+      "time": 2.101964,
+      "label": "wheel in preview",
+      "hex": "1b5b3c36353b39383b32304d"
+    },
+    {
+      "time": 2.502214,
+      "label": "outside header mouse",
+      "hex": "1b5b3c36353b39383b324d"
+    },
+    {
+      "time": 2.902481,
+      "label": "collapse",
+      "hex": "1b5b41"
+    },
+    {
+      "time": 3.302647,
+      "label": "execute long/ANSI/stdout+stderr",
+      "hex": "310d"
+    },
+    {
+      "time": 5.002966,
+      "label": "return",
+      "hex": "0d"
+    },
+    {
+      "time": 5.40339,
+      "label": "execute error",
+      "hex": "320d"
+    },
+    {
+      "time": 5.80361,
+      "label": "return error",
+      "hex": "0d"
+    },
+    {
+      "time": 6.203781,
+      "label": "execute stdin",
+      "hex": "330d"
+    },
+    {
+      "time": 6.603991,
+      "label": "owned stdin",
+      "hex": "666978747572652d696e7075740d"
+    },
+    {
+      "time": 7.004358,
+      "label": "return stdin",
+      "hex": "0d"
+    },
+    {
+      "time": 7.404602,
+      "label": "execute cancel",
+      "hex": "340d"
+    },
+    {
+      "time": 7.80489,
+      "label": "Ctrl+C cancel process group",
+      "hex": "03"
+    },
+    {
+      "time": 8.505422,
+      "label": "execute after cancel",
+      "hex": "320d"
+    },
+    {
+      "time": 8.905705,
+      "label": "return repeat",
+      "hex": "0d"
+    },
+    {
+      "time": 9.305994,
+      "label": "destructive prompt",
+      "hex": "350d"
+    },
+    {
+      "time": 9.706295,
+      "label": "explicit confirmation",
+      "hex": "415041474152206175726f72610d7175657565642d6368696c642d696e7075740d"
+    },
+    {
+      "time": 10.106711,
+      "label": "return confirmation",
+      "hex": "0d"
+    },
+    {
+      "time": 10.507017,
+      "label": "actions back",
+      "hex": "71"
+    },
+    {
+      "time": 10.907264,
+      "label": "groups back",
+      "hex": "71"
+    },
+    {
+      "time": 11.307502,
+      "label": "exit",
+      "hex": "71"
+    }
+  ],
+  "capture": "genuine CLI PTY output; injected keys/SGR mouse bytes; no GUI or browser",
+  "cases": [
+    "preview",
+    "mouse bounds",
+    "long output",
+    "ANSI containment",
+    "stderr",
+    "error",
+    "stdin",
+    "cancel descendant",
+    "repeat after cancel",
+    "destructive confirmation",
+    "cleanup"
+  ]
+}

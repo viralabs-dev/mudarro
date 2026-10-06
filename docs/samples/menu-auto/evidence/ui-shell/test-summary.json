@@ -1,0 +1,13 @@
+{
+  "top_level_tests": {
+    "run": 86,
+    "output": 172,
+    "pass": 86
+  },
+  "coverage": {
+    "covered_statements": 1866,
+    "total_statements": 2477,
+    "percent": 75.33,
+    "scope": "./internal/mudarro/...; OR merged duplicate blocks from race coverpkg profile"
+  }
+}
