@@ -38,6 +38,13 @@ if grep -Fxq 'THIRD_PARTY_NOTICES.md' "$tmp/archive-members.txt"; then
   tar -xzf "$tmp/$asset" -C "$tmp" THIRD_PARTY_NOTICES.md LICENSES/golang.org-x-mod.txt LICENSES/go-toml-v2.txt LICENSES/gopkg.in-yaml.v3.txt
   has_notices=true
 fi
+# Mudarro's own MIT license ships in archives from the first release after v0.1.0.
+has_license=false
+if grep -Fxq 'LICENSE' "$tmp/archive-members.txt"; then
+  tar -xzf "$tmp/$asset" -C "$tmp" LICENSE
+  [[ -f "$tmp/LICENSE" && ! -L "$tmp/LICENSE" ]] || { echo 'Arquivo de licença inválido.' >&2; exit 1; }
+  has_license=true
+fi
 mkdir -p "$install_dir"
 [[ ! -L "$install_dir/mudarro" ]] || { echo 'Destino é symlink; escolha outro diretório.' >&2; exit 1; }
 if [[ "$has_notices" == true ]]; then
@@ -47,6 +54,7 @@ if [[ "$has_notices" == true ]]; then
     [[ -f "$tmp/$file" && ! -L "$tmp/$file" ]] || { echo 'Arquivo de licença inválido.' >&2; exit 1; }
     [[ ! -L "$notice_dir/$file" ]] || { echo 'Destino de licença é symlink.' >&2; exit 1; }
   done
+  [[ "$has_license" != true || ! -L "$notice_dir/LICENSE" ]] || { echo 'Destino de licença é symlink.' >&2; exit 1; }
 fi
 target="$(mktemp "$install_dir/.mudarro-install.XXXXXX")"
 cp "$tmp/mudarro" "$target"
@@ -56,6 +64,7 @@ if [[ "$has_notices" == true ]]; then
   mkdir -p "$install_dir/mudarro-licenses/LICENSES"
   cp "$tmp/THIRD_PARTY_NOTICES.md" "$install_dir/mudarro-licenses/"
   cp "$tmp/LICENSES/"*.txt "$install_dir/mudarro-licenses/LICENSES/"
+  if [[ "$has_license" == true ]]; then cp "$tmp/LICENSE" "$install_dir/mudarro-licenses/"; fi
 fi
 printf 'Mudarro instalado: %s/mudarro\n' "$install_dir"
 case ":$PATH:" in *":$install_dir:"*) ;; *) printf 'Adicione ao PATH: export PATH="%s:$PATH"\n' "$install_dir" ;; esac

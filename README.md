@@ -126,3 +126,7 @@ bash scripts/smoke.sh "$PWD/bin/mudarro"
 Earlier configurable-UI checkpoint: **74 tests,76.38% statement coverage**, race/vet/Linux build/Darwin cross-build passed. [Scope and limits](docs/coverage.md).
 
 - [Persistent terminal shell](docs/ui-shell.md)
+
+## License
+
+MIT — see [`LICENSE`](LICENSE). Bundled dependencies keep their own licenses; see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and [`LICENSES/`](LICENSES/).

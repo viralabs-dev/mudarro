@@ -1,5 +1,7 @@
 # Third-party notices
 
+Mudarro itself is licensed under the [MIT License](LICENSE). Release archives include `LICENSE`, and the installer keeps it at `mudarro-licenses/LICENSE`.
+
 The Mudarro binary includes these project dependencies. Preserve their copyright notices and complete license texts when distributing binaries or source incorporating them.
 
 | Module | Version | License text |

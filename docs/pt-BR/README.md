@@ -134,3 +134,7 @@ bash scripts/smoke.sh "$PWD/bin/mudarro"
 Checkpoint anterior da UI configurável: **74 testes,76,38% cobertura de statements**, race/vet/build Linux/cross-build Darwin passaram. [Escopo e limites](coverage.md).
 
 - [Shell de terminal permanente](ui-shell.md)
+
+## Licença
+
+MIT — veja [`LICENSE`](../../LICENSE). As dependências embutidas mantêm as próprias licenças; veja [`THIRD_PARTY_NOTICES.md`](../../THIRD_PARTY_NOTICES.md) e [`LICENSES/`](../../LICENSES/).

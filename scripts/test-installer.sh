@@ -31,12 +31,13 @@ bash "$repo_dir/install.sh"
 bash "$repo_dir/install.sh"
 test "$("$tmp/install/mudarro" version)" = test-version
 # New archives install their complete notices without affecting legacy support.
-cp "$repo_dir/THIRD_PARTY_NOTICES.md" "$tmp/payload/"
+cp "$repo_dir/LICENSE" "$repo_dir/THIRD_PARTY_NOTICES.md" "$tmp/payload/"
 cp -R "$repo_dir/LICENSES" "$tmp/payload/"
-tar -czf "$tmp/assets/$asset" -C "$tmp/payload" mudarro THIRD_PARTY_NOTICES.md LICENSES
+tar -czf "$tmp/assets/$asset" -C "$tmp/payload" mudarro LICENSE THIRD_PARTY_NOTICES.md LICENSES
 (cd "$tmp/assets" && shasum -a 256 "$asset" > checksums.txt)
 bash "$repo_dir/install.sh"
 bash "$repo_dir/install.sh"
+cmp "$tmp/payload/LICENSE" "$tmp/install/mudarro-licenses/LICENSE"
 cmp "$tmp/payload/THIRD_PARTY_NOTICES.md" "$tmp/install/mudarro-licenses/THIRD_PARTY_NOTICES.md"
 for license in golang.org-x-mod.txt go-toml-v2.txt gopkg.in-yaml.v3.txt; do
   cmp "$tmp/payload/LICENSES/$license" "$tmp/install/mudarro-licenses/LICENSES/$license"

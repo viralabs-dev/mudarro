@@ -6,9 +6,9 @@ for platform in linux darwin; do
   for arch in amd64 arm64; do
     dir="$(mktemp -d)"
     CGO_ENABLED=0 GOOS="$platform" GOARCH="$arch" go build -trimpath -ldflags "-s -w -X main.version=$version" -o "$dir/mudarro" ./cmd/mudarro
-    cp THIRD_PARTY_NOTICES.md "$dir/"
+    cp LICENSE THIRD_PARTY_NOTICES.md "$dir/"
     cp -R LICENSES "$dir/"
-    tar -czf "dist/mudarro_${platform}_${arch}.tar.gz" -C "$dir" mudarro THIRD_PARTY_NOTICES.md LICENSES
+    tar -czf "dist/mudarro_${platform}_${arch}.tar.gz" -C "$dir" mudarro LICENSE THIRD_PARTY_NOTICES.md LICENSES
     rm -rf -- "$dir"
   done
 done
