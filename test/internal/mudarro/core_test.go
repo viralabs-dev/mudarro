@@ -146,6 +146,7 @@ func TestExplicitCommandsOverrideAdapters(t *testing.T) {
 	t.Fatal("missing up")
 }
 func TestStructuredArgumentsAndExitCode(t *testing.T) {
+	skipOnWindows(t, "fixture runs POSIX printf")
 	root := t.TempDir()
 	s := sample().Services[0]
 	var out bytes.Buffer
@@ -165,6 +166,7 @@ func TestStructuredArgumentsAndExitCode(t *testing.T) {
 	}
 }
 func TestDestructiveConfirmation(t *testing.T) {
+	skipOnWindows(t, "fixture runs POSIX touch")
 	root := t.TempDir()
 	s := sample().Services[0]
 	a := action("reset", "banco", "touch", "deleted")

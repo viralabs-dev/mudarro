@@ -1,10 +1,9 @@
-//go:build linux || darwin
+//go:build linux || darwin || windows
 
 package terminal
 
 import (
 	"fmt"
-	"io"
 	"os"
 	"os/signal"
 	"strconv"
@@ -81,7 +80,7 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 	}
 	_, _, inputTTY := terminalSize(in)
 	width, rows, outputTTY := terminalSize(out)
-	if !inputTTY || !outputTTY || (os.Getenv("TERM") == "dumb" || os.Getenv("TERM") == "") {
+	if !inputTTY || !outputTTY || (terminalName() == "dumb" || terminalName() == "") {
 		return 0, false, nil
 	}
 	interrupts := make(chan os.Signal, 1)
@@ -97,7 +96,7 @@ func (v *Menu) ChooseInteractive(in *os.File, title string, labels, previews []s
 			err = e
 		}
 	}()
-	mouse := v.mouse == "on" || (v.mouse != "off" && interactiveMouseCapable(os.Getenv("TERM")))
+	mouse := v.mouse == "on" || (v.mouse != "off" && interactiveMouseCapable(terminalName()))
 	if !v.ShellActive() {
 		fmt.Fprint(out, "\x1b[?1049h")
 	}
@@ -332,29 +331,14 @@ func interactiveRead(in *os.File, pending []byte) (string, []byte, error) {
 		if len(pending) > 64 {
 			return "", nil, nil
 		}
-		fd := int(in.Fd())
-		ready, e := interactiveReady(fd)
-		if e == syscall.EINTR {
-			return "", pending, nil
-		}
+		chunk, e := interactiveNext(in)
 		if e != nil {
 			return "", nil, e
 		}
-		if !ready {
+		if len(chunk) == 0 {
 			return "", pending, nil
 		}
-		buf := make([]byte, 1)
-		n, e := syscall.Read(fd, buf)
-		if e != nil {
-			if e == syscall.EINTR || e == syscall.EAGAIN {
-				return "", pending, nil
-			}
-			return "", nil, e
-		}
-		if n == 0 {
-			return "", nil, io.EOF
-		}
-		pending = append(pending, buf[:n]...)
+		pending = append(pending, chunk...)
 	}
 }
 

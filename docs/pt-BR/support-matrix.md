@@ -1,5 +1,21 @@
 [English](../support-matrix.md) · Português (Brasil)
 
+## Windows nativo — MUD-068 (substitui a exclusão da ADR-MUD-007)
+
+O Mudarro agora compila e roda nativamente no Windows 10 1809+/Windows 11 (amd64; arm64 por cross-build). Nenhuma dependência de módulo nova: o código Windows usa só o pacote padrão `syscall`, pelo wrapper interno `winapi` sobre a `kernel32.dll`.
+
+| Área | Comportamento no Windows | Limite |
+|---|---|---|
+| Build | `GOOS=windows go build ./...` e `go vet ./...` passam; código só-Unix foi para arquivos `*_unix.go` (`!windows`) ou `linux \|\| darwin` | Antes da MUD-068 o build Windows falhava em `syscall.Flock`, `syscall.Kill`, `Setsid` e `O_NOFOLLOW` |
+| Ações do menu (`ContextOS`) | Cada comando nasce suspenso, em grupo de processos novo, entra num Job Object próprio e só então é retomado. O cancelamento (Ctrl+C) envia `CTRL_BREAK_EVENT` ao grupo e encerra o job após 300 ms, matando todos os descendentes | `CTRL_BREAK_EVENT` só alcança processos no mesmo console do Mudarro; o resto é encerrado pelo job, sem parada graciosa. Se o host negar jobs aninhados, só o filho direto é encerrado |
+| Supervisor local (`local up/down/restart/status/logs`) | O supervisor roda destacado (`DETACHED_PROCESS`, grupo novo); o serviço roda num Job Object kill-on-close, então o `down` (que encerra o supervisor) derruba a árvore inteira. O lock usa `LockFileEx` | Não há SIGTERM: o `down` é parada forçada, e o serviço precisa tolerá-la. A identidade é a imagem do executável mais um mutex nomeado atrelado ao argv completo e ao token do supervisor (`Local\mudarro-supervisor-<sha256>`), e não o argv lido de `/proc`/`ps`; vale dentro da mesma sessão de logon |
+| Menu interativo e moldura | Console cru via `SetConsoleMode` (`ENABLE_VIRTUAL_TERMINAL_INPUT`, sem eco/linha/entrada processada, Ctrl+C lido como tecla), saída VT via `ENABLE_VIRTUAL_TERMINAL_PROCESSING`, tamanho via `GetConsoleScreenBufferInfo`, espera de tecla via `WaitForSingleObject` + `PeekConsoleInput` | Exige console com VT (Windows 10+). Sem VT, a saída é tratada como não interativa e vale o menu numerado simples. O modo VT de saída fica ligado no console depois que o Mudarro sai |
+| Cor e `TERM` | `NO_COLOR` e `TERM=dumb` continuam desligando cor e menu interativo. Sem `TERM`, o Windows Terminal (`WT_SESSION`) é tratado como `xterm-256color`, e o console clássico como `windows-console` | Mouse ligado por padrão só no Windows Terminal; nos demais, use `ui.preview.mouse: on` |
+| Comandos | Comandos `args` rodam nativamente. Um prefixo `env NOME=valor` (Go com `go_workspace: off`) vira variável de ambiente quando não existe programa `env` | Comandos `shell:`, seeds/scripts `bash` e o `menu.sh` gerado ainda exigem `bash` no PATH (Git for Windows). O `C:\Windows\System32\bash.exe` é o WSL e roda os comandos dentro do Linux |
+| Caminhos | Globs de exclusão sobre caminhos com `/` usam `path.Match` (mesmo resultado em todo SO) | A prévia de scripts recusa symlinks/reparse points via `Lstat` em vez de `O_NOFOLLOW`; FIFO não bloqueante é só Unix |
+
+Validação registrada na MUD-068: `go test ./...` no Linux PASSOU; `go vet` PASSOU para linux, darwin e windows; builds `GOOS=windows`/`darwin`/`freebsd` PASSARAM; `gofmt -l` vazio. Os testes só-Windows (`*_windows_test.go`: E/S do executor, código de saída, cancelamento de árvore que ignora CTRL_BREAK, prefixo `env`, supervisor up/status/down e recusa de estado forjado) rodam apenas no job `windows-latest` do CI; como fumaça extra (não prova), os binários de teste Windows também passaram no Wine 10, exceto fixtures que o Wine não representa (symlinks invisíveis ao `Lstat`, nomes de diretório temporário não ASCII). Os testes só-Unix mantêm build tag `linux || darwin` (PTY, termios, FIFO, fixtures com `sh`). O aceite físico em console (conhost e Windows Terminal) continua pendente.
+
 ## Checkpoint vigente de runtimes autorizados
 
 Toolchains privados aprovados em `/tmp/mudarro-approved-runtimes.6AsmDd` agora possuem validação local genuína: **Rust1.99.0: 46 checks** (build/test offline, binário escolhido42, falha controlada7, startup/restart/down); **JDK25.0.4.1+1/Maven3.10.0: 18 checks** (self-test Java real com biblioteca padrão42/falha7; Maven somente versão); **.NET10.0.401: 31 checks** (console self-test42/falha7, falha/recovery de build, zero pacotes NuGet; HOME preservado na execução final). [Evidências e reprodução runtime](../samples/menu-auto/evidence/next-languages/runtime/README.md).
@@ -159,6 +175,7 @@ Integração runtime requer disponibilidade e autorização; isolar fixtures/cac
 | Kustomize/Helm | validate-kind.sh modo kustomize/integration-helm.sh | Runtime real | Passou, retorno0; PVC montado Bound/UID/conteúdo |
 | Yarn/uv/poetry/Podman runtime | ferramentas host | Não executado | Ausentes; contratos acima não equivalem a runtime. Nenhuma instalação autorizada |
 | macOS/WSL runtime | plataforma externa | Não executado | Darwin cross-build apenas; WSL não disponível |
+| Windows nativo (MUD-068) | testes `*_windows_test.go` | Cross-build/vet local; runtime no CI `windows-latest` | Ver "Windows nativo — MUD-068"; aceite físico em console pendente |
 
 Logs packages-* em samples/menu-auto/evidence. Referência anterior 62,8% era do pacote raiz antes da divisão; usar perfil agregado novo. Não instalar gerenciadores nem executar db-install/install automaticamente. Novas linguagens propostas em [roadmap](language-roadmap.md), sem adapters novos implementados.
 

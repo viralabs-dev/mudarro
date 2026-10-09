@@ -58,6 +58,7 @@ func TestGoWorkspaceDiagnosticsDryRunShowsIsolationWithoutExecution(t *testing.T
 }
 
 func TestGoWorkspaceDiagnosticsDoctorRequiresEnvOnlyForIsolation(t *testing.T) {
+	skipOnWindows(t, "fake go is a POSIX shell script on PATH")
 	tools := t.TempDir()
 	t.Setenv("PATH", tools)
 	for _, mode := range []string{"off", "", "inherit"} {

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/viralabs-dev/mudarro/internal/mudarro/adapters"
 	"os"
+	"path"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -125,7 +126,7 @@ func workspaceMemberExcluded(rel string, excludes []string) bool {
 		}
 	}
 	for _, pattern := range excludes {
-		match, _ := filepath.Match(pattern, rel)
+		match, _ := path.Match(pattern, rel)
 		if match || rel == pattern || strings.HasPrefix(rel, strings.TrimSuffix(pattern, "/")+"/") {
 			return true
 		}

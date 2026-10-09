@@ -138,6 +138,7 @@ func TestPackageManagerValidationScanPreservesExistingGeneratedFiles(t *testing.
 }
 
 func TestPackageManagerValidationExplicitConfigurationKeepsCustomCommands(t *testing.T) {
+	skipOnWindows(t, "fixture runs sh")
 	root := t.TempDir()
 	c := sample()
 	c.Services[0].Language = "javascript"

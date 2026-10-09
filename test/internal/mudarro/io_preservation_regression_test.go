@@ -128,6 +128,7 @@ func TestIOPreservationConfigReadAndInitFailure(t *testing.T) {
 	}
 }
 func TestIOPreservationExecutorOutputExitStatusAndMissingCommand(t *testing.T) {
+	skipOnWindows(t, "fixture runs sh")
 	e := executor.OS{}
 	root := t.TempDir()
 	var output bytes.Buffer
@@ -194,6 +195,7 @@ func TestIOPreservationManifestSpecialFileDoesNotBlock(t *testing.T) {
 	}
 }
 func TestIOPreservationPermissionFailures(t *testing.T) {
+	skipOnWindows(t, "Unix permission bits (chmod 000) do not deny reads on Windows")
 	if os.Getuid() == 0 {
 		t.Skip("permission failure cannot be demonstrated as root")
 	}

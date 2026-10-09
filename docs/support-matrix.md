@@ -1,5 +1,21 @@
 English · [Português (Brasil)](pt-BR/support-matrix.md)
 
+## Native Windows — MUD-068 (supersedes ADR-MUD-007's exclusion)
+
+Mudarro now builds and runs natively on Windows 10 1809+/Windows 11 (amd64; arm64 cross-builds). No new module dependency: the Windows code uses only the standard `syscall` package through the internal `winapi` wrapper around `kernel32.dll`.
+
+| Area | Windows behaviour | Limit |
+|---|---|---|
+| Build | `GOOS=windows go build ./...` and `go vet ./...` pass; Unix-only code moved to `*_unix.go` (`!windows`) or `linux \|\| darwin` files | Before MUD-068 the Windows build failed on `syscall.Flock`, `syscall.Kill`, `Setsid` and `O_NOFOLLOW` |
+| Menu actions (`ContextOS`) | Each command starts suspended in a new process group, joins its own Job Object, then resumes. Cancellation (Ctrl+C) sends `CTRL_BREAK_EVENT` to the group, then terminates the job after 300 ms, ending every descendant | `CTRL_BREAK_EVENT` only reaches processes sharing Mudarro's console; anything else is ended by the job (no graceful stop). A host that denies nested jobs falls back to ending the direct child only |
+| Local supervisor (`local up/down/restart/status/logs`) | Supervisor runs detached (`DETACHED_PROCESS`, new group); the service runs in a kill-on-close Job Object, so `down` (which terminates the supervisor) ends the whole service tree. Run lock uses `LockFileEx` | There is no SIGTERM: `down` is a forced stop and services must tolerate it. Identity is the executable image plus a named mutex bound to the full supervisor argv and token (`Local\mudarro-supervisor-<sha256>`), not the argv read from `/proc`/`ps`; it is valid within the same logon session |
+| Interactive menu and shell frame | Raw console via `SetConsoleMode` (`ENABLE_VIRTUAL_TERMINAL_INPUT`, no echo/line/processed input, Ctrl+C read as a key), VT output via `ENABLE_VIRTUAL_TERMINAL_PROCESSING`, window size via `GetConsoleScreenBufferInfo`, key polling via `WaitForSingleObject` + `PeekConsoleInput` | Needs a console with VT support (Windows 10+). Without it the output is treated as non-interactive and the plain numbered menu is used. VT output mode is left enabled on the console when Mudarro exits |
+| Colour and `TERM` | `NO_COLOR` and `TERM=dumb` still disable colour and the interactive menu. With `TERM` unset, Windows Terminal (`WT_SESSION`) is treated as `xterm-256color` and the classic console as `windows-console` | Mouse reporting is on by default only in Windows Terminal; use `ui.preview.mouse: on` elsewhere |
+| Commands | `args` commands run natively. A leading `env NAME=value` (Go `go_workspace: off`) becomes process environment when no `env` program exists | `shell:` commands, `bash` seeds/scripts and generated `menu.sh` still need `bash` on PATH (Git for Windows). `C:\Windows\System32\bash.exe` is WSL and runs commands inside Linux |
+| Paths | Exclusion globs over slash-normalised paths use `path.Match` (same result on every OS) | Preview of scripts refuses symlinks/reparse points via `Lstat` instead of `O_NOFOLLOW`; FIFO non-blocking is Unix-only |
+
+Validation recorded for MUD-068: Linux `go test ./...` PASS; `go vet` PASS for linux, darwin and windows; `GOOS=windows`/`darwin`/`freebsd` builds PASS; `gofmt -l` empty. Windows-only tests (`*_windows_test.go`: executor I/O, exit code, cancellation of a process tree that ignores CTRL_BREAK, `env` prefix, supervisor up/status/down and forged-state refusal) run only on the CI `windows-latest` job; as an extra smoke (not proof), the cross-compiled Windows test binaries also passed under Wine 10, except fixtures Wine cannot represent (symlinks invisible to `Lstat`, non-ASCII temp directory names). Unix-only tests keep `linux || darwin` build tags (PTY, termios, FIFO, `sh`-based fixtures). Physical console acceptance (conhost and Windows Terminal) remains pending.
+
 ## Current authorized runtime checkpoint
 
 The approved private toolchains in `/tmp/mudarro-approved-runtimes.6AsmDd` now have genuine local validation: **Rust1.99.0: 46 checks** (offline build/test, selected binary42, controlled failure7, startup/restart/down); **JDK25.0.4.1+1/Maven3.10.0: 18 checks** (real Java standard-library self-test42/failure7; Maven version only); **.NET10.0.401: 31 checks** (console self-test42/failure7, build failure/recovery, zero NuGet packages; HOME preserved in final run). [Runtime evidence and reproduction](samples/menu-auto/evidence/next-languages/runtime/README.md).
@@ -126,6 +142,7 @@ Databases: PostgreSQL/SQLite; Prisma/Django/Alembic/Goose. Static evidence: sche
 | Kustomize/Helm | Real runtime | Passed mounted Bound PVC, same UID/content |
 | Yarn/uv/poetry/Podman runtime | Host tools absent | Not executed; contract tests are not runtime |
 | macOS/WSL | Platform unavailable | Not executed; Darwin cross-build only |
+| Windows native (MUD-068) | Cross-build/vet locally; runtime tests in CI `windows-latest` | See "Native Windows — MUD-068"; physical console acceptance pending |
 
 Evidence: packages-* in samples/menu-auto/evidence. Aggregate historical profile 72.0% with coverpkg, not individual test-binary percentages. Infra/database integrations used extraction snapshot b21c91f; subsequent JS collision/named-field changes had final suites and Node/Python/Go/pnpm E2Es rerun. The final test-tree gate is recorded below.
 

@@ -1,7 +1,6 @@
 package mudarro
 
 import (
-	"bytes"
 	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
@@ -11,11 +10,10 @@ import (
 	"os/exec"
 	"os/signal"
 	"path/filepath"
-	"runtime"
-	"strconv"
-	"strings"
 	"syscall"
 	"time"
+
+	"github.com/viralabs-dev/mudarro/internal/mudarro/executor"
 )
 
 type processState struct {
@@ -41,24 +39,7 @@ func running(st processState, configPath string) bool {
 		expected = append(expected, configPath)
 	}
 	expected = append(expected, st.Token)
-	if runtime.GOOS == "linux" {
-		// argv[0] can be forged: also require the actual executable inode.
-		self, err := os.Stat("/proc/self/exe")
-		if err != nil {
-			return false
-		}
-		other, err := os.Stat(filepath.Join("/proc", strconv.Itoa(st.PID), "exe"))
-		if err != nil || !os.SameFile(self, other) {
-			return false
-		}
-		// NUL separators preserve argument boundaries, including roots/configs with spaces.
-		b, err := os.ReadFile(filepath.Join("/proc", strconv.Itoa(st.PID), "cmdline"))
-		return err == nil && bytes.Equal(b, []byte(strings.Join(expected, "\x00")+"\x00"))
-	}
-	// Darwin ps does not expose NUL-separated argv. Compare the entire expected
-	// command, never search for a supervisor/token substring in an unrelated process.
-	b, err := exec.Command("ps", "-ww", "-p", strconv.Itoa(st.PID), "-o", "args=").Output()
-	return err == nil && strings.TrimSuffix(string(b), "\n") == strings.Join(expected, " ")
+	return supervisorIdentity(st, expected)
 }
 func readState(path string) processState {
 	var st processState
@@ -89,10 +70,10 @@ func (r Runner) local(root string, s Service, op string) error {
 		return e
 	}
 	defer lock.Close()
-	if e = syscall.Flock(int(lock.Fd()), syscall.LOCK_EX); e != nil {
+	if e = lockRunFile(lock); e != nil {
 		return e
 	}
-	defer syscall.Flock(int(lock.Fd()), syscall.LOCK_UN)
+	defer unlockRunFile(lock)
 	for _, name := range []string{"state.json", "output.log"} {
 		if _, e = safePath(root, filepath.Join(".mudarro", "run", s.ID, name)); e != nil {
 			return e
@@ -119,7 +100,7 @@ func (r Runner) local(root string, s Service, op string) error {
 		return e
 	case "down", "restart":
 		if alive {
-			if e = syscall.Kill(-st.PID, syscall.SIGTERM); e != nil {
+			if e = stopSupervisor(st.PID); e != nil {
 				return e
 			}
 			for j := 0; j < 100 && running(st, r.ConfigPath); j++ {
@@ -163,19 +144,18 @@ func (r Runner) local(root string, s Service, op string) error {
 	child := exec.Command(executable, supervisorArgs...)
 	child.Stdout = log
 	child.Stderr = log
-	child.SysProcAttr = &syscall.SysProcAttr{Setsid: true}
+	child.SysProcAttr = supervisorProcAttr()
 	if e = child.Start(); e != nil {
 		return e
 	}
 	st = processState{child.Process.Pid, t, root, s.ID}
 	b, _ := json.Marshal(st)
 	if e = atomicWrite(path, b, 0600); e != nil {
-		_ = syscall.Kill(-st.PID, syscall.SIGTERM)
+		_ = stopSupervisor(st.PID)
 		return e
 	}
 	_ = child.Process.Release()
-	time.Sleep(150 * time.Millisecond)
-	if !running(st, r.ConfigPath) {
+	if !supervisorStarted(st, r.ConfigPath) {
 		return fmt.Errorf("aplicação encerrou durante a subida; consulte logs")
 	}
 	fmt.Fprintf(r.Out, r.text("%s: started (PID %d)\n", "%s: iniciado (PID %d)\n"), s.ID, st.PID)
@@ -186,8 +166,12 @@ func supervise(args []string) error {
 		return fmt.Errorf("supervisor inválido")
 	}
 	root, id := args[0], args[1]
+	releaseIdentity, e := holdSupervisorIdentity(args)
+	if e != nil {
+		return e
+	}
+	defer releaseIdentity()
 	var c Config
-	var e error
 	if len(args) == 4 {
 		c, e = LoadFile(root, args[2])
 	} else {
@@ -225,29 +209,34 @@ func supervise(args []string) error {
 	if e != nil {
 		return e
 	}
-	v = goWorkspaceArgs(s, v)
+	v, env := executor.SplitEnv(goWorkspaceArgs(s, v))
 	child := exec.Command(v[0], v[1:]...)
 	child.Dir = dir
+	if env != nil {
+		child.Env = append(os.Environ(), env...)
+	}
 	child.Stdout = os.Stdout
 	child.Stderr = os.Stderr
 	sig := make(chan os.Signal, 2)
 	signal.Notify(sig, syscall.SIGTERM, syscall.SIGINT)
 	defer signal.Stop(sig)
-	if e = child.Start(); e != nil {
+	supervised, e := startSupervised(child)
+	if e != nil {
 		return e
 	}
+	defer supervised.release()
 	done := make(chan error, 1)
 	go func() { done <- child.Wait() }()
 	select {
 	case e = <-done:
 		return e
 	case <-sig:
-		_ = child.Process.Signal(syscall.SIGTERM)
+		_ = supervised.terminate()
 		select {
 		case e = <-done:
 			return e
 		case <-time.After(4 * time.Second):
-			_ = child.Process.Kill()
+			_ = supervised.kill()
 			return <-done
 		}
 	}

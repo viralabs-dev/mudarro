@@ -7,6 +7,7 @@ import (
 	"github.com/viralabs-dev/mudarro/internal/mudarro/model"
 	"github.com/viralabs-dev/mudarro/internal/mudarro/projectfs"
 	"io"
+	"path"
 	"path/filepath"
 	"strings"
 )
@@ -58,7 +59,7 @@ func declarativeExcluded(rel string, excludes []string) bool {
 		}
 	}
 	for _, pat := range excludes {
-		match, _ := filepath.Match(pat, filepath.ToSlash(rel))
+		match, _ := path.Match(pat, filepath.ToSlash(rel))
 		if match || rel == pat || strings.HasPrefix(filepath.ToSlash(rel), strings.TrimSuffix(pat, "/")+"/") {
 			return true
 		}

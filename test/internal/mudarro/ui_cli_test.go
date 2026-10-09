@@ -50,6 +50,7 @@ func TestUICLIInitJSONPreservesExistingAndGenerateIdempotent(t *testing.T) {
 	}
 }
 func TestUICLISelectedConfigWrapperWithSpaces(t *testing.T) {
+	skipOnWindows(t, "generated wrapper is a bash script")
 	root := fixture(t, map[string]string{})
 	name := "config selected.json"
 	c := sample()

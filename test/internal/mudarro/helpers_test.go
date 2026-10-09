@@ -8,6 +8,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"testing"
 )
@@ -86,4 +87,13 @@ func generatedScaffolds(t *testing.T, s Service) (map[string]GeneratedFile, erro
 		return nil
 	})
 	return files, err
+}
+
+// skipOnWindows marks fixtures that depend on POSIX tools or Unix file
+// semantics. Native Windows behaviour is covered by *_windows_test.go.
+func skipOnWindows(t *testing.T, reason string) {
+	t.Helper()
+	if runtime.GOOS == "windows" {
+		t.Skip("Unix-only fixture: " + reason)
+	}
 }
