@@ -30,6 +30,12 @@ export PATH="$tmp/fakebin:$PATH"
 bash "$repo_dir/install.sh"
 bash "$repo_dir/install.sh"
 test "$("$tmp/install/mudarro" version)" = test-version
+for bad in 1.0.0 v1.0 'v1.0.0;id' ../v1.0.0; do
+  if MUDARRO_VERSION="$bad" bash "$repo_dir/install.sh"; then echo "Aceitou versão inválida: $bad" >&2; exit 1; fi
+done
+for bad in 'evil/../x' 'a b/c' owner owner/.. https://x/y a/b/c; do
+  if MUDARRO_REPOSITORY="$bad" bash "$repo_dir/install.sh"; then echo "Aceitou repositório inválido: $bad" >&2; exit 1; fi
+done
 # New archives install their complete notices without affecting legacy support.
 cp "$repo_dir/LICENSE" "$repo_dir/THIRD_PARTY_NOTICES.md" "$tmp/payload/"
 cp -R "$repo_dir/LICENSES" "$tmp/payload/"

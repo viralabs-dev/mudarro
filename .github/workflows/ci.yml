@@ -10,6 +10,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
@@ -21,10 +23,38 @@ jobs:
       - run: go build -o bin/mudarro ./cmd/mudarro
       - run: bash scripts/smoke.sh "$PWD/bin/mudarro"
       - run: bash scripts/test-installer.sh
+      - run: pwsh -NoProfile -File scripts/test-installer.ps1
+      - name: Package release archives (incl. Windows zip)
+        if: runner.os == 'Linux'
+        run: bash scripts/release.sh v0.0.0-ci && cat dist/checksums.txt && unzip -l dist/mudarro_windows_amd64.zip
+  windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      # Keep LF checkouts so golden files and gofmt behave like on Unix.
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - run: go test ./...
+      - run: go vet ./...
+      - run: go build -o bin/mudarro.exe ./cmd/mudarro
+      - run: ./bin/mudarro.exe version
+      # Installer: PowerShell 7 and Windows PowerShell 5.1, real HKCU PATH and NTFS junctions.
+      - run: ./scripts/test-installer.ps1
+      - run: ./scripts/test-installer.ps1 -InstallerShell powershell
   containers:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
@@ -49,6 +79,8 @@ jobs:
         options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod

@@ -44,21 +44,58 @@ Leitura autenticada de permissões Actions retornou enabled=true/allowed_actions
 
 ## Instalação
 
-Linux, macOS e WSL; amd64 e arm64. Não exige Go na máquina do usuário.
+Não exige Go na máquina do usuário. Todo instalador baixa uma release do GitHub por HTTPS, confere o SHA-256 contra o `checksums.txt` e não instala nada se houver divergência.
+
+| Plataforma | Arquiteturas | Instalador | Pacote da release | Situação |
+|---|---|---|---|---|
+| Linux | amd64, arm64 | `install.sh` | `mudarro_linux_<arch>.tar.gz` | Suportado |
+| macOS | amd64 (Intel), arm64 (Apple silicon) | `install.sh` | `mudarro_darwin_<arch>.tar.gz` | Suportado |
+| Windows 10/11 | amd64, arm64 | `install.ps1` (PowerShell 5.1 ou 7+) | `mudarro_windows_<arch>.zip` | Novo: `mudarro.exe` nativo a partir da primeira release que publicar o zip; limites na [matriz de suporte](support-matrix.md) |
+| WSL | amd64, arm64 | `install.sh` dentro da distribuição | pacote Linux | Suportado (comporta-se como Linux) |
+
+### Linux
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh | bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-O instalador baixa a release e verifica SHA-256 antes de instalar. Para fixar uma versão:
+Para fixar uma versão ou mudar o destino:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh |
-  MUDARRO_VERSION=v0.1.0 bash
+  MUDARRO_VERSION=v0.1.0 MUDARRO_INSTALL_DIR="$HOME/bin" bash
 ```
 
-Atualize repetindo a instalação. Desinstale com `rm "$HOME/.local/bin/mudarro"`; os arquivos dos projetos são preservados. A disponibilidade e os testes da versão estão em [Validação](validation.md).
+Atualize repetindo a instalação. Desinstale com `rm "$HOME/.local/bin/mudarro"` (e `rm -r "$HOME/.local/bin/mudarro-licenses"`); os arquivos dos projetos são preservados.
+
+### macOS
+
+O mesmo comando `install.sh` do Linux, para Intel e Apple silicon. O binário não é notarizado; como é baixado pelo `curl`, o macOS não marca o arquivo com quarentena e o Gatekeeper não o bloqueia. Se baixar o `.tar.gz` pelo navegador, retire a quarentena uma vez: `xattr -d com.apple.quarantine ~/.local/bin/mudarro`.
+
+### Windows
+
+No PowerShell (Windows PowerShell 5.1 ou PowerShell 7+), como usuário comum, sem administrador e sem mudar a política de execução:
+
+```powershell
+irm https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.ps1 | iex
+```
+
+Ou baixe o `install.ps1`, revise e execute como arquivo (o bypass vale só para esse processo):
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+- Instala o `mudarro.exe` em `%LOCALAPPDATA%\Programs\mudarro` e as licenças em `mudarro-licenses\`, ao lado.
+- Acrescenta esse diretório ao `PATH` **do usuário** uma única vez (sem duplicar); abra um terminal novo depois.
+- Executa `mudarro.exe version` antes de trocar uma instalação existente; falha de download, de checksum ou dessa verificação mantém a versão anterior.
+- Variáveis: `MUDARRO_VERSION` (`latest` ou `vX.Y.Z`), `MUDARRO_INSTALL_DIR` (caminho absoluto) e `MUDARRO_REPOSITORY` (`dono/nome`). Exemplo: `$env:MUDARRO_VERSION = 'vX.Y.Z'; irm https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.ps1 | iex`.
+- **Atualizar:** repita o mesmo comando.
+- **Desinstalar:** `& ([scriptblock]::Create((irm https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.ps1))) -Uninstall` (ou `.\install.ps1 -Uninstall`). Remove o `mudarro.exe`, o `mudarro-licenses\` e a entrada do `PATH`; os arquivos dos projetos são preservados.
+- **SmartScreen e antivírus:** o `mudarro.exe` não é assinado. O SmartScreen não interfere em arquivos baixados pelo PowerShell, mas pode avisar se o zip for baixado pelo navegador (*Mais informações → Executar assim mesmo*, depois de conferir o SHA-256 no `checksums.txt`). Alguns antivírus sinalizam binários Go não assinados; se a troca falhar, feche processos `mudarro` em execução ou verifique a quarentena.
+
+A disponibilidade e os testes da versão estão em [Validação](validation.md).
 
 ## Uso
 

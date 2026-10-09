@@ -4,11 +4,14 @@ set -euo pipefail
 repo="${MUDARRO_REPOSITORY:-viralabs-dev/mudarro}"
 install_dir="${MUDARRO_INSTALL_DIR:-$HOME/.local/bin}"
 version="${MUDARRO_VERSION:-latest}"
-case "$(uname -s)" in Linux) platform=linux ;; Darwin) platform=darwin ;; *) echo 'Sistema não suportado; Windows deve usar WSL.' >&2; exit 1 ;; esac
+case "$(uname -s)" in Linux) platform=linux ;; Darwin) platform=darwin ;; *) echo 'Sistema não suportado; no Windows use install.ps1 (PowerShell) ou WSL.' >&2; exit 1 ;; esac
 case "$(uname -m)" in x86_64|amd64) arch=amd64 ;; aarch64|arm64) arch=arm64 ;; *) echo 'Arquitetura não suportada.' >&2; exit 1 ;; esac
 for tool in curl tar mktemp; do command -v "$tool" >/dev/null || { echo "Requisito ausente: $tool" >&2; exit 1; }; done
 if [[ "$version" != latest && ! "$version" =~ ^v[0-9]+\.[0-9]+\.[0-9]+([.-][A-Za-z0-9.-]+)?$ ]]; then
   echo 'MUDARRO_VERSION deve ser latest ou uma tag vX.Y.Z.' >&2; exit 1
+fi
+if [[ ! "$repo" =~ ^[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9._-]{1,100}$ || "$repo" =~ /\.\.?$ ]]; then
+  echo 'MUDARRO_REPOSITORY deve ter o formato dono/repositório.' >&2; exit 1
 fi
 asset="mudarro_${platform}_${arch}.tar.gz"
 if [[ "$version" == latest ]]; then

@@ -44,21 +44,58 @@ Authenticated Actions permissions read returned enabled=true/allowed_actions=all
 
 ## Installation
 
-Linux, macOS and WSL; amd64 and arm64. Users do not need Go installed.
+Users do not need Go installed. Every installer downloads a GitHub release over HTTPS, verifies its SHA-256 against `checksums.txt` and refuses to install on any mismatch.
+
+| Platform | Architectures | Installer | Release asset | Status |
+|---|---|---|---|---|
+| Linux | amd64, arm64 | `install.sh` | `mudarro_linux_<arch>.tar.gz` | Supported |
+| macOS | amd64 (Intel), arm64 (Apple silicon) | `install.sh` | `mudarro_darwin_<arch>.tar.gz` | Supported |
+| Windows 10/11 | amd64, arm64 | `install.ps1` (PowerShell 5.1 or 7+) | `mudarro_windows_<arch>.zip` | New: native `mudarro.exe` from the first release that publishes the zip; feature limits in the [support matrix](docs/support-matrix.md) |
+| WSL | amd64, arm64 | `install.sh` inside the distribution | Linux archive | Supported (behaves as Linux) |
+
+### Linux
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh | bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-The installer verifies SHA-256 before installing. Pin a version:
+Pin a version or change the destination:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh |
-  MUDARRO_VERSION=v0.1.0 bash
+  MUDARRO_VERSION=v0.1.0 MUDARRO_INSTALL_DIR="$HOME/bin" bash
 ```
 
-Repeat installation to update. Uninstall with `rm "$HOME/.local/bin/mudarro"`; project files remain. See [validation](docs/validation.md) for measured availability and platform limits.
+Repeat installation to update. Uninstall with `rm "$HOME/.local/bin/mudarro"` (and `rm -r "$HOME/.local/bin/mudarro-licenses"`); project files remain.
+
+### macOS
+
+Same `install.sh` command as Linux, for Intel and Apple silicon. The binary is not notarized; because it is downloaded with `curl`, macOS does not attach the quarantine attribute and Gatekeeper does not block it. If you download the `.tar.gz` through a browser instead, remove the quarantine flag once: `xattr -d com.apple.quarantine ~/.local/bin/mudarro`.
+
+### Windows
+
+Run in PowerShell (Windows PowerShell 5.1 or PowerShell 7+), as a normal user — no administrator rights and no execution-policy change:
+
+```powershell
+irm https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.ps1 | iex
+```
+
+Or download `install.ps1`, review it and run it as a file (the bypass applies only to this process):
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+- Installs `mudarro.exe` into `%LOCALAPPDATA%\Programs\mudarro` and the licenses into `mudarro-licenses\` next to it.
+- Adds that directory to the **user** `PATH` once (never duplicated); open a new terminal afterwards.
+- Runs `mudarro.exe version` before replacing an existing installation; a failed download, checksum or check keeps the previous version.
+- Variables: `MUDARRO_VERSION` (`latest` or `vX.Y.Z`), `MUDARRO_INSTALL_DIR` (absolute path) and `MUDARRO_REPOSITORY` (`owner/name`), e.g. `$env:MUDARRO_VERSION = 'vX.Y.Z'; irm https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.ps1 | iex`.
+- **Update:** run the same command again.
+- **Uninstall:** `& ([scriptblock]::Create((irm https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.ps1))) -Uninstall` (or `.\install.ps1 -Uninstall`). It removes `mudarro.exe`, `mudarro-licenses\` and the `PATH` entry; project files remain.
+- **SmartScreen / antivirus:** `mudarro.exe` is not code-signed. SmartScreen does not prompt for files downloaded by PowerShell, but may warn if you download the zip in a browser (*More info → Run anyway*, after checking the SHA-256 in `checksums.txt`). Some antivirus products flag unsigned Go binaries; if the replacement fails, close running `mudarro` processes or check the quarantine.
+
+See [validation](docs/validation.md) for measured availability and platform limits.
 
 ## Usage
 
