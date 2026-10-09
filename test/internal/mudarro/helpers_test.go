@@ -97,3 +97,14 @@ func skipOnWindows(t *testing.T, reason string) {
 		t.Skip("Unix-only fixture: " + reason)
 	}
 }
+
+// canonicalTempDir returns t.TempDir() resolved the way the runner records a
+// project root (macOS: /var -> /private/var; Windows: 8.3 names -> long names).
+func canonicalTempDir(t *testing.T) string {
+	t.Helper()
+	dir, err := filepath.EvalSymlinks(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	return dir
+}

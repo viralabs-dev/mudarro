@@ -34,7 +34,7 @@ func windowsSupervisorCLI(t *testing.T) *windowsSupervisor {
 	if out, err := build.CombinedOutput(); err != nil {
 		t.Fatalf("build fixture: %v %s", err, out)
 	}
-	f := &windowsSupervisor{t: t, binary: binary, root: t.TempDir()}
+	f := &windowsSupervisor{t: t, binary: binary, root: canonicalTempDir(t)}
 	f.pidFile = filepath.Join(f.root, "service.pid")
 	body := map[string]any{"version": 1, "name": "windows supervisor fixture", "services": []any{map[string]any{"id": "app", "dir": ".", "infrastructure": map[string]any{"kind": "local"}, "commands": map[string]any{"start": map[string]any{"args": windowsHelperArgs(t), "group": "application"}}}}}
 	b, err := json.Marshal(body)

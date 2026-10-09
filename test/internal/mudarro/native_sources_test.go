@@ -183,6 +183,18 @@ func TestNativeSourcesSpecialFilesAreRejectedWithoutOpening(t *testing.T) {
 		t.Skip("Unix socket fixture")
 	}
 	root := nativeFixture(t, map[string]string{"Makefile": "custom-check:\n\ttrue\n"})
+	if runtime.GOOS == "darwin" {
+		// macOS limits unix socket paths to 104 bytes and its TMPDIR is long.
+		short, err := os.MkdirTemp("/tmp", "mud-ns")
+		if err != nil {
+			t.Fatal(err)
+		}
+		t.Cleanup(func() { os.RemoveAll(short) })
+		if err := os.WriteFile(filepath.Join(short, "Makefile"), []byte("custom-check:\n\ttrue\n"), 0o644); err != nil {
+			t.Fatal(err)
+		}
+		root = short
+	}
 	listener, e := net.Listen("unix", filepath.Join(root, "main.c"))
 	if e != nil {
 		t.Fatal(e)

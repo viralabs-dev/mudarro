@@ -45,7 +45,7 @@ func supervisorIdentityCLI(t *testing.T) *supervisorIdentityFixture {
 	if out, err := build.CombinedOutput(); err != nil {
 		t.Fatalf("build fixture: %v %s", err, out)
 	}
-	f := &supervisorIdentityFixture{t: t, binary: binary, root: t.TempDir()}
+	f := &supervisorIdentityFixture{t: t, binary: binary, root: canonicalTempDir(t)}
 	f.configure("exec sleep 30")
 	t.Cleanup(func() {
 		if f.owned != nil {
@@ -366,7 +366,7 @@ func TestSupervisorIdentityRejectsForeignExecutableAndEmbeddedMarker(t *testing.
 }
 func TestSupervisorIdentityRootAndSelectedConfigWithSpaces(t *testing.T) {
 	f := supervisorIdentityCLI(t)
-	f.root = filepath.Join(t.TempDir(), "project with spaces")
+	f.root = filepath.Join(canonicalTempDir(t), "project with spaces")
 	f.configPath = "operations/selected config.json"
 	f.configure("exec sleep 30")
 	st := f.up()
