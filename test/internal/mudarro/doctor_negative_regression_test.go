@@ -26,6 +26,7 @@ func doctorRun(root string) (string, error) {
 }
 
 func TestDoctorMissingAndNonExecutableTools(t *testing.T) {
+	skipOnWindows(t, "Unix executable bits; Windows has none")
 	for _, tc := range []struct {
 		name, args            string
 		directory, executable bool
@@ -84,6 +85,7 @@ func TestDoctorSymlinkAndBlockedConfiguration(t *testing.T) {
 }
 
 func TestDoctorComposeProviderFailureAndScope(t *testing.T) {
+	skipOnWindows(t, "fake providers are POSIX shell scripts on PATH")
 	for _, engine := range []string{"docker", "podman"} {
 		for _, status := range []string{"0", "9"} {
 			t.Run(engine+"/"+status, func(t *testing.T) {

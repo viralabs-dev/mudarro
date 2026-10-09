@@ -27,3 +27,5 @@ func terminalSize(f *os.File) (int, int, bool) {
 }
 
 func terminalColumns(f *os.File) (int, bool) { width, _, tty := terminalSize(f); return width, tty }
+
+func terminalName() string { return os.Getenv("TERM") }

@@ -11,7 +11,6 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
-	"syscall"
 	"unicode"
 
 	"github.com/viralabs-dev/mudarro/internal/mudarro/terminal"
@@ -199,7 +198,7 @@ func actionPreview(root string, s Service, a Action, locale string) string {
 		if err != nil || !initial.Mode().IsRegular() {
 			continue
 		}
-		f, err := os.OpenFile(path, os.O_RDONLY|syscall.O_NONBLOCK|syscall.O_NOFOLLOW, 0)
+		f, err := openPreviewSource(path)
 		if err != nil {
 			continue
 		}

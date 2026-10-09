@@ -151,7 +151,7 @@ func hasJavaScriptLock(f map[string]bool) bool {
 
 func validateWorkspacePattern(pattern string) error {
 	raw := strings.TrimPrefix(pattern, "!")
-	if raw == "" || len(raw) > 4096 || strings.Count(raw, "/") > 127 || strings.ContainsAny(raw, "\\{}()") || filepath.IsAbs(raw) {
+	if raw == "" || len(raw) > 4096 || strings.Count(raw, "/") > 127 || strings.ContainsAny(raw, "\\{}()") || filepath.IsAbs(raw) || strings.HasPrefix(raw, "/") {
 		return fmt.Errorf("unsupported workspace pattern %q", pattern)
 	}
 	for _, part := range strings.Split(raw, "/") {

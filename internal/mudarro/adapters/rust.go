@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/pelletier/go-toml/v2"
 	"github.com/viralabs-dev/mudarro/internal/mudarro/model"
+	"path"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -46,7 +47,7 @@ func cargoExcluded(rel string, excludes []string) bool {
 		}
 	}
 	for _, pattern := range excludes {
-		matched, _ := filepath.Match(pattern, filepath.ToSlash(rel))
+		matched, _ := path.Match(pattern, filepath.ToSlash(rel))
 		if matched || rel == pattern || strings.HasPrefix(filepath.ToSlash(rel), strings.TrimSuffix(pattern, "/")+"/") {
 			return true
 		}
@@ -111,7 +112,7 @@ func cargoWorkspace(root, dir string, m cargoManifest, excludes []string) ([]str
 			continue
 		}
 		if prior, ok := names[child.Package.Name]; ok {
-			issues = append(issues, fmt.Sprintf("duplicate workspace package name %q: %s and %s", child.Package.Name, prior, rel))
+			issues = append(issues, fmt.Sprintf("duplicate workspace package name %q: %s and %s", child.Package.Name, filepath.ToSlash(prior), filepath.ToSlash(rel)))
 		}
 		names[child.Package.Name] = rel
 		seen[rel] = true
@@ -193,6 +194,9 @@ func (Rust) Detect(root, dir string, files map[string]bool, excludes []string) (
 	} else if m.Workspace != nil {
 		members, warnings := cargoWorkspace(root, dir, m, excludes)
 		issues = append(issues, warnings...)
+		for i := range members {
+			members[i] = filepath.ToSlash(members[i])
+		}
 		s.Pending = append(s.Pending, "Cargo workspace explicit members: "+strings.Join(members, ", "))
 	} else {
 		for parent := filepath.Dir(dir); parent != ".." && parent != dir; parent = filepath.Dir(parent) {
@@ -204,7 +208,7 @@ func (Rust) Detect(root, dir string, files map[string]bool, excludes []string) (
 			if err == nil && ancestor.Workspace != nil {
 				members, _ := cargoWorkspace(root, parent, ancestor, excludes)
 				for _, member := range members {
-					if member == dir {
+					if filepath.Clean(member) == filepath.Clean(dir) {
 						s.Pending = append(s.Pending, "Cargo explicit workspace owner: "+filepath.ToSlash(parent))
 						break
 					}

@@ -194,6 +194,7 @@ func TestGoSelectionSingleKeepsAutomaticStartAndDefaultOmitted(t *testing.T) {
 }
 
 func TestGoSelectionWorkspaceRunnerChildEnvironmentScoped(t *testing.T) {
+	skipOnWindows(t, "fixture runs sh/bash and env")
 	t.Setenv("GOWORK", filepath.Join(t.TempDir(), "parent-workspace"))
 	parent := os.Getenv("GOWORK")
 	for _, mode := range []string{"", "inherit", "off"} {

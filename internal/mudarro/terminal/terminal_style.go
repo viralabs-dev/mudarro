@@ -24,7 +24,7 @@ func styleFor(out io.Writer) Style {
 		terminalWidth, rows, interactive = terminalSize(f)
 	}
 	noColor := os.Getenv("NO_COLOR")
-	term := os.Getenv("TERM")
+	term := terminalName()
 	width, err := strconv.Atoi(os.Getenv("COLUMNS"))
 	if err != nil || width < 20 || width > 240 {
 		width = terminalWidth

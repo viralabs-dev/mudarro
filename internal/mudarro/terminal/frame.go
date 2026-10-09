@@ -27,7 +27,7 @@ func (v *Menu) BeginShell(in *os.File) (bool, error) {
 		return true, nil
 	}
 	out, ok := v.out.(*os.File)
-	if !ok || in == nil || out == nil || os.Getenv("TERM") == "" || os.Getenv("TERM") == "dumb" {
+	if !ok || in == nil || out == nil || terminalName() == "" || terminalName() == "dumb" {
 		return false, nil
 	}
 	_, _, inputTTY := frameTerminalSize(in)

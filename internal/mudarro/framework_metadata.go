@@ -6,6 +6,7 @@ import (
 	"github.com/pelletier/go-toml/v2"
 	"github.com/viralabs-dev/mudarro/internal/mudarro/projectfs"
 	"os"
+	"path"
 	"path/filepath"
 	"regexp"
 	"sort"
@@ -87,7 +88,7 @@ func scanFrameworkMetadata(root string, r *Report) {
 }
 func frameworkExcluded(rel string, excludes []string) bool {
 	for _, pat := range excludes {
-		match, _ := filepath.Match(pat, rel)
+		match, _ := path.Match(pat, rel)
 		if match || rel == pat || strings.HasPrefix(rel, strings.TrimSuffix(pat, "/")+"/") {
 			return true
 		}

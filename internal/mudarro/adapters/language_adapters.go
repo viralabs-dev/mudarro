@@ -13,6 +13,7 @@ import (
 	"io"
 	"io/fs"
 	"os"
+	slashpath "path"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -227,7 +228,7 @@ func (Go) Detect(root, dir string, f map[string]bool, excludes []string) (*model
 		rel, _ := filepath.Rel(base, path)
 		rootRel, _ := filepath.Rel(root, path)
 		for _, pat := range excludes {
-			match, _ := filepath.Match(pat, filepath.ToSlash(rootRel))
+			match, _ := slashpath.Match(pat, filepath.ToSlash(rootRel))
 			if match || rootRel == pat || strings.HasPrefix(filepath.ToSlash(rootRel), strings.TrimSuffix(pat, "/")+"/") {
 				if d.IsDir() {
 					return filepath.SkipDir

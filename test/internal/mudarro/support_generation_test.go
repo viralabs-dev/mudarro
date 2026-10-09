@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"runtime"
 	"strings"
 	"testing"
 )
@@ -99,7 +100,7 @@ func TestSupportGenerationPipelineByManager(t *testing.T) {
 			id := report.Config.Services[0].ID
 			for _, name := range []string{"menu.sh", filepath.Join(".mudarro", "scripts", id, "test.sh")} {
 				info, err := os.Stat(filepath.Join(root, name))
-				if err != nil || info.Mode()&0111 == 0 {
+				if err != nil || (runtime.GOOS != "windows" && info.Mode()&0111 == 0) {
 					t.Fatalf("launcher missing/nonexecutable %s %v", name, err)
 				}
 			}

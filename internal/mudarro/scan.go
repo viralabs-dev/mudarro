@@ -6,6 +6,7 @@ import (
 	"github.com/viralabs-dev/mudarro/internal/mudarro/projectfs"
 	"io/fs"
 	"os"
+	slashpath "path"
 	"path/filepath"
 	"regexp"
 	"sort"
@@ -43,7 +44,7 @@ func Scan(root string, excludes []string) (Report, error) {
 		}
 		rel, _ := filepath.Rel(root, path)
 		for _, pat := range excludes {
-			match, _ := filepath.Match(pat, filepath.ToSlash(rel))
+			match, _ := slashpath.Match(pat, filepath.ToSlash(rel))
 			if match || rel == pat || strings.HasPrefix(filepath.ToSlash(rel), strings.TrimSuffix(pat, "/")+"/") {
 				if d.IsDir() {
 					return filepath.SkipDir
@@ -58,7 +59,7 @@ func Scan(root string, excludes []string) (Report, error) {
 				manifest := filepath.Join(filepath.Dir(rel), "mix.exs")
 				excluded := false
 				for _, pat := range excludes {
-					match, _ := filepath.Match(pat, filepath.ToSlash(manifest))
+					match, _ := slashpath.Match(pat, filepath.ToSlash(manifest))
 					if match || manifest == pat || strings.HasPrefix(filepath.ToSlash(manifest), strings.TrimSuffix(pat, "/")+"/") {
 						excluded = true
 						break
@@ -192,12 +193,12 @@ func Scan(root string, excludes []string) (Report, error) {
 				}
 				re := regexp.MustCompile(`(?m)^([A-Za-z0-9][A-Za-z0-9_-]*):[^=]`)
 				for _, m := range re.FindAllStringSubmatch(string(b), -1) {
-					r.Suggestions = append(r.Suggestions, Suggestion{Service: s.ID, Name: "make-" + m[1], Command: cmd("scripts", "make", "-C", filepath.Dir(rel), m[1]), Evidence: filepath.Join(dir, file)})
+					r.Suggestions = append(r.Suggestions, Suggestion{Service: s.ID, Name: "make-" + m[1], Command: cmd("scripts", "make", "-C", filepath.ToSlash(filepath.Dir(rel)), m[1]), Evidence: filepath.Join(dir, file)})
 				}
 			} else {
 				n := strings.TrimSuffix(strings.ReplaceAll(filepath.ToSlash(rel), "/", "-"), ".sh")
 				if identifier.MatchString(n) {
-					r.Suggestions = append(r.Suggestions, Suggestion{Service: s.ID, Name: "script-" + n, Command: cmd("scripts", "bash", rel), Evidence: filepath.Join(dir, file)})
+					r.Suggestions = append(r.Suggestions, Suggestion{Service: s.ID, Name: "script-" + n, Command: cmd("scripts", "bash", filepath.ToSlash(rel)), Evidence: filepath.Join(dir, file)})
 				}
 			}
 		}
@@ -205,7 +206,41 @@ func Scan(root string, excludes []string) (Report, error) {
 	sort.Slice(r.Suggestions, func(i, j int) bool {
 		return r.Suggestions[i].Service+"/"+r.Suggestions[i].Name < r.Suggestions[j].Service+"/"+r.Suggestions[j].Name
 	})
+	slashReportPaths(&r)
 	return r, nil
+}
+
+// slashReportPaths stores project-relative paths with '/' so a configuration
+// saved on Windows stays valid on Linux/macOS. Scanning itself uses native
+// separators; filepath.Join accepts '/' on every OS. It is a no-op on Unix.
+func slashReportPaths(r *Report) {
+	for i := range r.Config.Services {
+		s := &r.Config.Services[i]
+		s.Dir = filepath.ToSlash(s.Dir)
+		s.WorkspaceRoot = filepath.ToSlash(s.WorkspaceRoot)
+		s.Infrastructure.File = filepath.ToSlash(s.Infrastructure.File)
+		s.Database.Path = filepath.ToSlash(s.Database.Path)
+	}
+	for i := range r.Evidence {
+		r.Evidence[i].Path = filepath.ToSlash(r.Evidence[i].Path)
+	}
+	for i := range r.Suggestions {
+		r.Suggestions[i].Evidence = filepath.ToSlash(r.Suggestions[i].Evidence)
+	}
+	for i := range r.Workspaces {
+		w := &r.Workspaces[i]
+		w.Path = filepath.ToSlash(w.Path)
+		for j := range w.Members {
+			w.Members[j] = filepath.ToSlash(w.Members[j])
+		}
+		if w.Modules != nil {
+			modules := make(map[string]string, len(w.Modules))
+			for k, v := range w.Modules {
+				modules[filepath.ToSlash(k)] = v
+			}
+			w.Modules = modules
+		}
+	}
 }
 
 func detectInfrastructure(root string, s *Service, r *Report) {

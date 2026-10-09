@@ -40,6 +40,7 @@ func TestOwnedErrorsRespectLocale(t *testing.T) {
 }
 
 func TestInvalidConfigErrorLocaleAndExternalOutput(t *testing.T) {
+	skipOnWindows(t, "fixture runs sh")
 	for _, tc := range []struct{ locale, want string }{{"en", "version must be 1"}, {"pt-BR", "version deve ser 1"}} {
 		t.Run(tc.locale, func(t *testing.T) {
 			root := t.TempDir()
