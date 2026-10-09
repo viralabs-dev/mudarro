@@ -50,7 +50,7 @@ Não exige Go na máquina do usuário. Todo instalador baixa uma release do GitH
 |---|---|---|---|---|
 | Linux | amd64, arm64 | `install.sh` | `mudarro_linux_<arch>.tar.gz` | Suportado |
 | macOS | amd64 (Intel), arm64 (Apple silicon) | `install.sh` | `mudarro_darwin_<arch>.tar.gz` | Suportado |
-| Windows 10/11 | amd64, arm64 | `install.ps1` (PowerShell 5.1 ou 7+) | `mudarro_windows_<arch>.zip` | Novo: `mudarro.exe` nativo a partir da primeira release que publicar o zip; limites na [matriz de suporte](support-matrix.md) |
+| Windows 10/11 | amd64, arm64 | `install.ps1` (PowerShell 5.1 ou 7+) | `mudarro_windows_<arch>.zip` | Suportado desde a [v0.2.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.2.0): `mudarro.exe` nativo; limites na [matriz de suporte](support-matrix.md) |
 | WSL | amd64, arm64 | `install.sh` dentro da distribuição | pacote Linux | Suportado (comporta-se como Linux) |
 
 ### Linux
@@ -64,7 +64,7 @@ Para fixar uma versão ou mudar o destino:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh |
-  MUDARRO_VERSION=v0.1.0 MUDARRO_INSTALL_DIR="$HOME/bin" bash
+  MUDARRO_VERSION=v0.2.0 MUDARRO_INSTALL_DIR="$HOME/bin" bash
 ```
 
 Atualize repetindo a instalação. Desinstale com `rm "$HOME/.local/bin/mudarro"` (e `rm -r "$HOME/.local/bin/mudarro-licenses"`); os arquivos dos projetos são preservados.

@@ -50,7 +50,7 @@ Users do not need Go installed. Every installer downloads a GitHub release over 
 |---|---|---|---|---|
 | Linux | amd64, arm64 | `install.sh` | `mudarro_linux_<arch>.tar.gz` | Supported |
 | macOS | amd64 (Intel), arm64 (Apple silicon) | `install.sh` | `mudarro_darwin_<arch>.tar.gz` | Supported |
-| Windows 10/11 | amd64, arm64 | `install.ps1` (PowerShell 5.1 or 7+) | `mudarro_windows_<arch>.zip` | New: native `mudarro.exe` from the first release that publishes the zip; feature limits in the [support matrix](docs/support-matrix.md) |
+| Windows 10/11 | amd64, arm64 | `install.ps1` (PowerShell 5.1 or 7+) | `mudarro_windows_<arch>.zip` | Supported since [v0.2.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.2.0): native `mudarro.exe`; feature limits in the [support matrix](docs/support-matrix.md) |
 | WSL | amd64, arm64 | `install.sh` inside the distribution | Linux archive | Supported (behaves as Linux) |
 
 ### Linux
@@ -64,7 +64,7 @@ Pin a version or change the destination:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viralabs-dev/mudarro/main/install.sh |
-  MUDARRO_VERSION=v0.1.0 MUDARRO_INSTALL_DIR="$HOME/bin" bash
+  MUDARRO_VERSION=v0.2.0 MUDARRO_INSTALL_DIR="$HOME/bin" bash
 ```
 
 Repeat installation to update. Uninstall with `rm "$HOME/.local/bin/mudarro"` (and `rm -r "$HOME/.local/bin/mudarro-licenses"`); project files remain.

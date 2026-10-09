@@ -39,9 +39,9 @@ Kubernetes sempre recebe contexto e namespace configurados. O caminho de manifes
 
 ## Distribuição
 
-`scripts/release.sh vX.Y.Z` compila quatro binários sem CGO e produz arquivos `.tar.gz` com `checksums.txt`. O workflow de release é acionado por tags. Linux/macOS usam Bash; WSL recebe o binário Linux.
+`scripts/release.sh vX.Y.Z` compila seis binários sem CGO: Linux/macOS amd64/arm64 em `.tar.gz` e Windows amd64/arm64 em `.zip` (`mudarro.exe`), com `checksums.txt`. O workflow de release é acionado por tags. Linux/macOS usam Bash (`install.sh`); WSL recebe o binário Linux; Windows usa o `install.ps1` (PowerShell 5.1 ou 7+).
 
-O instalador aceita `MUDARRO_VERSION`, `MUDARRO_INSTALL_DIR` e `MUDARRO_REPOSITORY`. Não usa `sudo` nem altera o shell do usuário. Downloads vêm de HTTPS e o hash é verificado antes da troca atômica do binário.
+Os dois instaladores aceitam `MUDARRO_VERSION`, `MUDARRO_INSTALL_DIR` e `MUDARRO_REPOSITORY`. Não usa `sudo` nem altera o shell do usuário. Downloads vêm de HTTPS e o hash é verificado antes da troca atômica do binário.
 
 ## Referências dos templates
 

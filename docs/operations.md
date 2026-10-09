@@ -33,6 +33,6 @@ Kubernetes always uses configured context/namespace; manifests must describe thi
 
 ## Distribution
 
-`scripts/release.sh vX.Y.Z` builds four CGO-free Linux/macOS binaries and tar.gz/checksums.txt. Tags trigger release workflow. WSL uses Linux binaries. Installer accepts MUDARRO_VERSION/MUDARRO_INSTALL_DIR/MUDARRO_REPOSITORY; no sudo or shell changes. HTTPS downloads are hash-verified before atomic replacement.
+`scripts/release.sh vX.Y.Z` builds six CGO-free binaries: Linux/macOS amd64/arm64 as tar.gz and Windows amd64/arm64 as zip (`mudarro.exe`), plus checksums.txt. Tags trigger release workflow. WSL uses Linux binaries. `install.sh` (Linux/macOS/WSL) and `install.ps1` (Windows PowerShell 5.1/7+) accept MUDARRO_VERSION/MUDARRO_INSTALL_DIR/MUDARRO_REPOSITORY; no sudo or shell changes. HTTPS downloads are hash-verified before atomic replacement.
 
 Template references: [Prisma 7 configuration](https://www.prisma.io/docs/orm/v7/reference/prisma-config-reference), [Alembic tutorial](https://alembic.sqlalchemy.org/en/latest/tutorial.html). Measured combinations: [validation](validation.md).

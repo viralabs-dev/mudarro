@@ -107,12 +107,12 @@ Os testes de integração baixam imagens/pacotes e criam ambientes temporários.
 
 ## Distribuição
 
-O repositório é público. A release [v0.1.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.1.0) foi publicada em 2026-10-06, com binários Linux/macOS para amd64/arm64 e `checksums.txt`. A instalação pública real em diretório temporário verificou o checksum e retornou `v0.1.0`. Consulte a [página de releases](https://github.com/viralabs-dev/mudarro/releases) e a CI para versões futuras.
+O repositório é público. A release [v0.1.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.1.0) foi publicada em 2026-10-06, com binários Linux/macOS para amd64/arm64 e `checksums.txt`. A instalação pública real em diretório temporário verificou o checksum e retornou `v0.1.0`. A release [v0.2.0](https://github.com/viralabs-dev/mudarro/releases/tag/v0.2.0) (2026-10-09, tag em `41c29c3`, CI verde em Linux/macOS/Windows) acrescentou os zips Windows amd64/arm64; a instalação pública foi verificada em Linux, macOS 14 (arm64), macOS 15 (Intel) e Windows com PowerShell 7 e 5.1, todos retornando `v0.2.0`. Consulte a [página de releases](https://github.com/viralabs-dev/mudarro/releases) e a CI para versões futuras.
 
 ## Limites conhecidos
 
 - A detecção é baseada em evidências estáticas; não compreende regras de negócio nem garante identificar todo framework possível.
-- Não há shell interativo nativo do Windows; usar WSL.
+- Windows nativo desde a v0.2.0, com os limites da [matriz de suporte](support-matrix.md) (comandos `shell:` e scripts `bash` continuam exigindo `bash` no PATH, como o do Git for Windows).
 - Migrations/seed em containers exigem comandos explícitos quando os runtimes não estão no host.
 - O Prisma 7 testado exige inicializar o arquivo SQLite ausente antes da criação da migration; `db-init` cobre esse caso.
 - O `doctor` verifica executáveis e Compose, não é um health check da aplicação.
