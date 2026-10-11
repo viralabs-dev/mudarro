@@ -5,6 +5,15 @@ English · [Português (Brasil)](docs/pt-BR/README.md)
 Detect a project's stack and generate a Bash menu with ASCII lettering, submenus and operational scripts. Scanning and generation work offline. Downloads occur only through installation actions or tools explicitly invoked by the user.
 
 
+## At a glance
+
+Mudarro is a Go CLI for developers who want one place to find and run a project's operational commands. It detects supported stacks, generates reviewable menus, and preserves existing files.
+
+- **Workflow:** scan the project, review configuration, generate the menu, then run explicit actions.
+- **Implementation:** Go, embedded templates and declarative configuration. No LLM is required for scanning or generation.
+- **See it work:** real terminal recordings below; [usage](#usage) and [architecture](docs/architecture.md).
+- **Validation:** platform limits and the recorded macOS CI failure are documented in [support](docs/support-matrix.md) and [CI status](#current-ci-correction--mud-030).
+
 ## Recorded screens
 
 Current example: project `mudarro`, supplied by `Config.Name`, with real captures refreshed in MUD-055. This revision publishes the refreshed example based on `246048a`; the earlier Aurora checkpoint remains preserved as history.
@@ -34,13 +43,6 @@ Real PTY recording frame in the light palette, with fixed banner and footer.
 Animated real light-theme session in Portuguese. Renderer background illustrates the palette; Mudarro does not change terminal background settings.
 
 [See both themes, details and reproduction](docs/ui-shell.md#recorded-screens).
-
-## Current CI correction — MUD-030
-
-Verified [push CI run37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: completed **failure**. Ubuntu, database and container jobs succeeded; macOS executed and failed in EOF-loop/race-cleanup handling, including panic with index n=-1. Therefore macOS is no longer globally “not executed”: local Darwin cross-compilation passed, but the actual CI runtime failed. Local Podman remains unavailable; container CI passed, distinct from local execution.
-
-Authenticated Actions permissions read returned enabled=true/allowed_actions=all; this does not identify who changed settings. No workflow/config settings, enable action, dispatch or rerun was performed. This corrective commit uses the official [skip ci] marker for the authorized main-only push, honoring the requested no-Actions execution without changing settings. Earlier raw gates/evidence are preserved as historical and superseded for current CI status. Local Linux74-test/76.38% results remain valid for their recorded checkpoint. The portability fix passed 75 local Linux tests with race, vet and Linux/Darwin arm64 compilation. Corrected macOS runtime remains unvalidated; skipping CI does not mean it passed.
-
 
 ## Installation
 
@@ -146,6 +148,13 @@ Ambiguous infrastructure requires explicit configuration. Generation preserves e
 - [Validation](docs/validation.md), [coverage](docs/coverage.md) and [real menu sample](docs/samples/menu-auto/README.md)
 - [Terminal visuals](docs/terminal-visual.md) and [Go decision](docs/language-decision.md)
 - [Documentation languages and maintenance](docs/documentation.md)
+
+## Current CI correction — MUD-030
+
+Verified [push CI run37416072569](https://github.com/viralabs-dev/mudarro/actions/runs/37416072569), head `bade86e`: completed **failure**. Ubuntu, database and container jobs succeeded; macOS executed and failed in EOF-loop/race-cleanup handling, including panic with index n=-1. Therefore macOS is no longer globally “not executed”: local Darwin cross-compilation passed, but the actual CI runtime failed. Local Podman remains unavailable; container CI passed, distinct from local execution.
+
+Authenticated Actions permissions read returned enabled=true/allowed_actions=all; this does not identify who changed settings. No workflow/config settings, enable action, dispatch or rerun was performed. This corrective commit uses the official [skip ci] marker for the authorized main-only push, honoring the requested no-Actions execution without changing settings. Earlier raw gates/evidence are preserved as historical and superseded for current CI status. Local Linux74-test/76.38% results remain valid for their recorded checkpoint. The portability fix passed 75 local Linux tests with race, vet and Linux/Darwin arm64 compilation. Corrected macOS runtime remains unvalidated; skipping CI does not mean it passed.
+
 
 ## Development
 
