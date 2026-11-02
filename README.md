@@ -173,6 +173,10 @@ Earlier configurable-UI checkpoint: **74 tests,76.38% statement coverage**, race
 
 - [Persistent terminal shell](docs/ui-shell.md)
 
+## Support
+
+If this project helps you, you can [buy me a coffee on Ko-fi](https://ko-fi.com/daneiel).
+
 ## License
 
 MIT — see [`LICENSE`](LICENSE). Bundled dependencies keep their own licenses; see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and [`LICENSES/`](LICENSES/).
